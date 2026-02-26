@@ -1,0 +1,44 @@
+/**
+ * Admin styles for Construction Mode
+ */
+
+.cm-logo-field {
+  margin-bottom: 10px;
+}
+
+.cm-logo-field #cm_logo_preview {
+  margin-bottom: 10px;
+}
+
+.cm-logo-field #cm_logo_preview img {
+  max-width: 150px;
+  height: auto;
+  display: block;
+  border: 1px solid #ddd;
+  padding: 5px;
+  background: #fff;
+}
+
+.cm-secret-value-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.cm-secret-value-field input[type='text'] {
+  flex: 1;
+}
+
+.cm-secret-value-field .description {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.form-table th {
+  width: 200px;
+}
+
+.form-table td {
+  padding: 15px 10px;
+}

@@ -1,0 +1,126 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Construction Mode\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-20 09:37+0000\n"
+"PO-Revision-Date: 2026-02-20 09:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: Polski\n"
+"Language: pl_PL\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10 >= 2 && n%10<=4 "
+"&&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.1; wp-6.9.1; php-8.2.23\n"
+"X-Domain: construction-mode"
+
+#: construction-mode.php:40
+msgid "Background color"
+msgstr "Kolor tła"
+
+#. Name of the plugin
+#: construction-mode.php:36
+msgid "Construction Mode"
+msgstr "Tryb budowy"
+
+#: construction-mode.php:52
+msgid "Construction Mode is enabled."
+msgstr "Tryb budowy jest włączony."
+
+#: construction-mode.php:37
+msgid "Construction Mode Settings"
+msgstr "Ustawienia trybu budowy"
+
+#: construction-mode.php:42
+msgid "Description"
+msgstr "Opis"
+
+#: construction-mode.php:43
+msgid "Disable indexing (noindex)"
+msgstr "Wyłącz indeksowanie (noindex)"
+
+#: construction-mode.php:44
+msgid "Disable login page"
+msgstr "Wyłącz stronę logowania"
+
+#. Description of the plugin
+msgid ""
+"Display a custom \"site under construction\" page for all visitors except "
+"admins and those with a secret bypass."
+msgstr ""
+"Wyświetla własną stronę „strona w budowie” dla wszystkich odwiedzających, z "
+"wyjątkiem administratorów oraz osób posiadających tajny dostęp (bypass)."
+
+#: construction-mode.php:38
+msgid "Enable construction mode"
+msgstr "Włącz tryb budowy"
+
+#: construction-mode.php:50
+msgid "Example bypass URL:"
+msgstr "Przykładowy adres URL obejścia:"
+
+#. Author URI of the plugin
+msgid "https://www.weblo.pl"
+msgstr "https://www.weblo.pl"
+
+#: construction-mode.php:39
+msgid "Logo"
+msgstr "Logo"
+
+#: construction-mode.php:49
+msgid "Minimum 8 characters. Recommended: 20+ random characters."
+msgstr "Minimum 8 znaków. Zalecane: 20+ losowych znaków."
+
+#: construction-mode.php:51
+msgid "Regenerate"
+msgstr "Wygeneruj ponownie"
+
+#: construction-mode.php:55
+msgid "Remove logo"
+msgstr "Usuń logo"
+
+#: construction-mode.php:53
+msgid "Save Changes"
+msgstr "Zapisz zmiany"
+
+#: construction-mode.php:46
+msgid "Secret parameter name"
+msgstr "Nazwa tajnego parametru"
+
+#: construction-mode.php:48
+msgid "Secret parameter value"
+msgstr "Wartość tajnego parametru"
+
+#: construction-mode.php:54
+msgid "Select logo"
+msgstr "Wybierz logo"
+
+#: construction-mode.php:256
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: construction-mode.php:41
+msgid "Title"
+msgstr "Tytuł"
+
+#: construction-mode.php:47
+msgid "URL parameter name for bypass (e.g., cm_preview)"
+msgstr "Nazwa parametru URL do obejścia (np. cm_preview)"
+
+#. Author of the plugin
+msgid "Weblo"
+msgstr "Weblo"
+
+#: construction-mode.php:45
+msgid ""
+"When enabled, the login page (wp-login.php) will also show the construction "
+"page, except for administrators."
+msgstr ""
+"Po włączeniu strona logowania (wp-login.php) również będzie wyświetlać "
+"stronę w budowie, z wyjątkiem administratorów."
+
+#. URI of the plugin
+msgid "www.weblo.pl"
+msgstr "www.weblo.pl"

@@ -1,0 +1,122 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Construction Mode\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-20 09:39+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.1; wp-6.9.1; php-8.2.23\n"
+"X-Domain: construction-mode"
+
+#: construction-mode.php:40
+msgid "Background color"
+msgstr ""
+
+#. Name of the plugin
+#: construction-mode.php:36
+msgid "Construction Mode"
+msgstr ""
+
+#: construction-mode.php:52
+msgid "Construction Mode is enabled."
+msgstr ""
+
+#: construction-mode.php:37
+msgid "Construction Mode Settings"
+msgstr ""
+
+#: construction-mode.php:42
+msgid "Description"
+msgstr ""
+
+#: construction-mode.php:43
+msgid "Disable indexing (noindex)"
+msgstr ""
+
+#: construction-mode.php:44
+msgid "Disable login page"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Display a custom \"site under construction\" page for all visitors except "
+"admins and those with a secret bypass."
+msgstr ""
+
+#: construction-mode.php:38
+msgid "Enable construction mode"
+msgstr ""
+
+#: construction-mode.php:50
+msgid "Example bypass URL:"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.weblo.pl"
+msgstr ""
+
+#: construction-mode.php:39
+msgid "Logo"
+msgstr ""
+
+#: construction-mode.php:49
+msgid "Minimum 8 characters. Recommended: 20+ random characters."
+msgstr ""
+
+#: construction-mode.php:51
+msgid "Regenerate"
+msgstr ""
+
+#: construction-mode.php:55
+msgid "Remove logo"
+msgstr ""
+
+#: construction-mode.php:53
+msgid "Save Changes"
+msgstr ""
+
+#: construction-mode.php:46
+msgid "Secret parameter name"
+msgstr ""
+
+#: construction-mode.php:48
+msgid "Secret parameter value"
+msgstr ""
+
+#: construction-mode.php:54
+msgid "Select logo"
+msgstr ""
+
+#: construction-mode.php:256
+msgid "Settings"
+msgstr ""
+
+#: construction-mode.php:41
+msgid "Title"
+msgstr ""
+
+#: construction-mode.php:47
+msgid "URL parameter name for bypass (e.g., cm_preview)"
+msgstr ""
+
+#. Author of the plugin
+msgid "Weblo"
+msgstr ""
+
+#: construction-mode.php:45
+msgid ""
+"When enabled, the login page (wp-login.php) will also show the construction "
+"page, except for administrators."
+msgstr ""
+
+#. URI of the plugin
+msgid "www.weblo.pl"
+msgstr ""
