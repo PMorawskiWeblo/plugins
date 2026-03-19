@@ -1,0 +1,1017 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Fakturownia od Weblo – integracja WooCommerce\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-17 10:54+0000\n"
+"PO-Revision-Date: 2026-03-19 12:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: Polski\n"
+"Language: pl_PL\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10 >= 2 && n%10<=4 "
+"&&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.3; wp-6.9.4; php-8.3.26\n"
+"X-Domain: weblo-fakturownia"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:285
+msgid "Additionally send WooCommerce email with correction PDF attached"
+msgstr "Dodatkowo wyślij e-mail WooCommerce z dołączoną korektą PDF"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:235
+msgid "Additionally send WooCommerce email with invoice PDF attached"
+msgstr "Dodatkowo wyślij e-mail WooCommerce z dołączoną fakturą PDF"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:229
+msgid ""
+"After automatically issuing an invoice, send it to the customer (using "
+"Fakturownia and/or WooCommerce)."
+msgstr ""
+"Po automatycznym wystawieniu faktury wyślij ją do klienta (z Fakturownia "
+"i/lub WooCommerce)."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:772
+msgid "AJAX error while clearing database logs."
+msgstr "Błąd AJAX podczas czyszczenia dzienników bazy danych."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:770
+msgid "AJAX error while clearing debug.log file."
+msgstr "Błąd AJAX podczas czyszczenia pliku debug.log."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:760
+msgid "AJAX error while loading logs."
+msgstr "Błąd AJAX podczas ładowania logów."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:302
+#: includes/class-wc-integration-weblo-fakturownia.php:766
+msgid "AJAX error."
+msgstr "Błąd AJAX."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:659
+msgid "All"
+msgstr "Wszystkie"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:762
+msgid "An unexpected error occurred while testing the connection."
+msgstr "Podczas testowania połączenia wystąpił nieoczekiwany błąd."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:162
+msgid "API authorization token from Fakturownia."
+msgstr "Token autoryzacji API z Fakturownia."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:160
+msgid "API token"
+msgstr "Token API"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:771
+msgid "Are you sure you want to remove all integration logs from the database?"
+msgstr "Czy na pewno chcesz usunąć wszystkie logi integracji z bazy danych?"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:768
+msgid ""
+"Are you sure you want to remove the debug.log file? This action cannot be "
+"undone."
+msgstr ""
+"Czy na pewno chcesz usunąć plik debug.log? Tej czynności nie można cofnąć."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:407
+msgid "Assets version (cache)"
+msgstr "Wersja zasobów (cache)"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:260
+msgid "Automatically issue corrections after order refund"
+msgstr "Automatycznie wystawiaj korekty po zwrocie zamówienia"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:176
+msgid "Automatically issue invoices"
+msgstr "Automatycznie wystawiaj faktury"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:277
+msgid "Automatically send correction to customer"
+msgstr "Automatycznie wysyłaj korektę do klienta"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:225
+msgid "Automatically send invoice to customer"
+msgstr "Automatycznie wysyłaj fakturę do klienta"
+
+#: includes/class-weblo-fakturownia-api-client.php:140
+msgid ""
+"Base invoice not found in Fakturownia (404). It may have been removed, "
+"belongs to a different company/department, or the domain/token are incorrect."
+msgstr ""
+"Nie znaleziono faktury bazowej w Fakturowni (404). Mogła zostać usunięta, "
+"należy do innej firmy/działu lub domena/token są nieprawidłowe."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:652
+msgid ""
+"Below you can find a list of recent errors saved by the plugin. Details for "
+"a specific error are also visible in the order metabox."
+msgstr ""
+"Poniżej znajdziesz listę ostatnich błędów zapisanych przez wtyczkę. "
+"Szczegóły błędu widoczne są również w metaboksie zamówienia."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:630
+msgid "Bulk issuing of missing corrections"
+msgstr "Masowe wystawianie brakujących korekt"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:612
+msgid "Bulk issuing of missing invoices"
+msgstr "Masowe wystawianie brakujących faktur"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:77
+msgid "Bulk operations"
+msgstr "Operacje masowe"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:268
+msgid "Choose how correction positions should be generated."
+msgstr "Wybierz sposób generowania pozycji korekcyjnych."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:197
+msgid ""
+"Choose which date should be set on invoices when issuing them automatically."
+msgstr ""
+"Wybierz datę do ustawienia na fakturach przy automatycznym wystawianiu."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:680
+msgid "Clear database logs"
+msgstr "Wyczyść logi bazy danych"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:686
+msgid "Clear debug.log file"
+msgstr "Wyczyść plik debug.log"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:167
+msgid "Company / department ID (optional)"
+msgstr "ID firmy / działu (opcjonalnie)"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:42
+msgid "Connection"
+msgstr "Połączenie"
+
+#: includes/class-weblo-fakturownia-api-client.php:80
+msgid "Connection to Fakturownia works correctly."
+msgstr "Połączenie z Fakturownią działa poprawnie."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:989
+#: includes/class-wc-integration-weblo-fakturownia.php:1233
+msgid ""
+"Connection with Fakturownia has not been confirmed. Please test the "
+"connection on the \"Connection\" tab."
+msgstr ""
+"Połączenie z Fakturownia nie zostało potwierdzone. Przetestuj połączenie na "
+"zakładce „Połączenie”."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:294
+msgid ""
+"Content of the email sent from WooCommerce (correction). Available "
+"shortcodes: [order_id], [order_number], [order_url], [order_link], "
+"[invoice_id], [invoice_number], [invoice_url], [invoice_link]."
+msgstr ""
+"Treść e-maila wysyłanego z WooCommerce (korekta). Dostępne shortcody: "
+"[order_id], [order_number], [order_url], [order_link], [invoice_id], "
+"[invoice_number], [invoice_url], [invoice_link]."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:244
+msgid ""
+"Content of the email sent from WooCommerce. Available shortcodes: [order_id],"
+" [order_number], [order_url], [order_link], [invoice_id], [invoice_number], "
+"[invoice_url], [invoice_link]."
+msgstr ""
+"Treść e-maila wysyłanego z WooCommerce. Dostępne shortcody: [order_id], "
+"[order_number], [order_url], [order_link], [invoice_id], [invoice_number], "
+"[invoice_url], [invoice_link]."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:100
+msgid "Correction"
+msgstr "Korekta"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:365
+msgid "Correction date"
+msgstr "Data korekty"
+
+#: includes/class-weblo-fakturownia-order-metabox.php:111
+msgid "Correction error:"
+msgstr "Błąd korekty:"
+
+#: includes/class-weblo-fakturownia-order-metabox.php:408
+msgid "Correction has been created."
+msgstr "Korekta została utworzona."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:266
+msgid "Correction mode"
+msgstr "Tryb korekcji"
+
+#: includes/class-weblo-fakturownia-order-metabox.php:121
+msgid "Correction:"
+msgstr "Korekta:"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:65
+msgid "Corrections"
+msgstr "Korekty"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:955
+msgid "Database logs have been cleared."
+msgstr "Logi bazy danych zostały wyczyszczone."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:918
+msgid "debug.log file has been removed."
+msgstr "Plik debug.log został usunięty."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:399
+msgid "Developer mode (cache busting)"
+msgstr "Tryb deweloperski (cache busting)"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:272
+msgid "Differential correction (only changed amounts)"
+msgstr "Korekta różnicowa (tylko zmienione kwoty)"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:249
+msgid "Document notes"
+msgstr "Uwagi do dokumentu"
+
+#: fakturownia.php:205
+msgid "Download invoice PDF"
+msgstr "Pobierz fakturę PDF"
+
+#: includes/class-weblo-fakturownia-order-metabox.php:89
+#: includes/class-weblo-fakturownia-order-metabox.php:129
+msgid "Download PDF"
+msgstr "Pobierz PDF"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:380
+msgid "Email address for integration error notifications."
+msgstr "Adres e-mail do powiadomień o błędach integracji."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:178
+#: includes/class-wc-integration-weblo-fakturownia.php:208
+#: includes/class-wc-integration-weblo-fakturownia.php:227
+#: includes/class-wc-integration-weblo-fakturownia.php:262
+#: includes/class-wc-integration-weblo-fakturownia.php:279
+#: includes/class-wc-integration-weblo-fakturownia.php:387
+#: includes/class-wc-integration-weblo-fakturownia.php:393
+msgid "Enable"
+msgstr "Włącz"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:391
+msgid "Enable debug.log logging"
+msgstr "Włącz logowanie do debug.log"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:385
+msgid "Enable email error notifications"
+msgstr "Włącz powiadomienia e-mail o błędach"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:401
+msgid "Enable random asset versioning"
+msgstr "Włącz losową wersjonowanie zasobów"
+
+#: fakturownia.php:557
+msgid "Error"
+msgstr "Błąd"
+
+#. %s: error details from API
+#: includes/class-weblo-fakturownia-api-client.php:70
+#, php-format
+msgid "Error connecting to Fakturownia: %s"
+msgstr "Błąd połączenia z Fakturownią: %s"
+
+#: includes/class-weblo-fakturownia-order-metabox.php:829
+msgid "Error downloading PDF."
+msgstr "Błąd pobierania PDF."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:378
+msgid "Error notification email"
+msgstr "E-mail powiadomień o błędach"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:758
+msgid "Error while loading logs."
+msgstr "Wystąpił błąd podczas ładowania dzienników."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:301
+#: includes/class-wc-integration-weblo-fakturownia.php:764
+msgid "Error."
+msgstr "Błąd."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:255
+msgid ""
+"Example: Order [order_number] – customer [customer_name] ([customer_email])"
+msgstr ""
+"Przykład: Zamówienie [order_number] – klient [customer_name] "
+"([customer_email])"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:947
+msgid "Failed to clear database logs."
+msgstr "Nie udało się wyczyścić dzienników bazy danych."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:385
+msgid "Failed to create correction."
+msgstr "Nie udało się utworzyć korekty."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:497
+msgid "Failed to create invoice."
+msgstr "Nie udało się utworzyć faktury."
+
+#: fakturownia.php:350 fakturownia.php:366
+#: includes/class-weblo-fakturownia-order-metabox.php:810
+msgid "Failed to download PDF."
+msgstr "Nie udało się pobrać PDF."
+
+#: includes/class-weblo-fakturownia-api-client.php:138
+msgid "Failed to fetch base invoice from API."
+msgstr "Nie udało się pobrać faktury bazowej z API."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:909
+msgid "Failed to remove debug.log file."
+msgstr "Nie udało się usunąć pliku debug.log."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:752
+msgid ""
+"Failed to send email from WordPress. Please check mail (SMTP) configuration "
+"and debug logs."
+msgstr ""
+"Nie udało się wysłać e-maila z WordPress. Sprawdź konfigurację poczty (SMTP) "
+"i logi debugowania."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:623
+msgid "Failed to send invoice by email from Fakturownia."
+msgstr "Nie udało się wysłać faktury e-mailem z Fakturownia."
+
+#: fakturownia.php:504 fakturownia.php:509
+#: includes/class-weblo-fakturownia-order-metabox.php:38
+msgid "Fakturownia"
+msgstr "Fakturownia"
+
+#. %d: HTTP status code
+#: includes/class-weblo-fakturownia-api-client.php:878
+msgid "Fakturownia API returned HTTP %d."
+msgstr "API Fakturowni zwróciło HTTP %d."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:113
+msgid "Fakturownia by Weblo"
+msgstr "Fakturownia by Weblo"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:572
+msgid "Fakturownia by Weblo integration settings"
+msgstr "Ustawienia integracji Fakturownia by Weblo"
+
+#. Name of the plugin
+msgid "Fakturownia by Weblo – WooCommerce integration"
+msgstr "Fakturownia by Weblo – integracja z WooCommerce"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:153
+msgid "Fakturownia domain"
+msgstr "Domena Fakturownia"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:155
+msgid ""
+"Fakturownia domain without https://, for example yourshop.fakturownia.pl"
+msgstr "Domena Fakturownia bez https://, np. yourshop.fakturownia.pl"
+
+#. %d - order ID
+#: fakturownia.php:1158
+msgid "Fakturownia integration error – order #%d"
+msgstr "Błąd integracji Fakturownia – zamówienie #%d"
+
+#. %s: first error message returned by API
+#: includes/class-weblo-fakturownia-order-metabox.php:184
+#, php-format
+msgid "Fakturownia response: %s"
+msgstr "Odpowiedź Fakturowni: %s"
+
+#: fakturownia.php:601 fakturownia.php:697
+msgid "Fakturownia – all"
+msgstr "Fakturownia – wszystkie"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:1421
+msgid "Finished – no more orders to issue corrections for."
+msgstr "Zakończono – brak kolejnych zamówień do wystawienia korekt."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:1121
+msgid "Finished – no more orders to issue invoices for."
+msgstr "Zakończono – brak kolejnych zamówień do wystawienia faktur."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:765
+msgid "Finished."
+msgstr "Gotowy."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:336
+msgid ""
+"For large stores 10–50 is recommended. Higher value = faster, but more "
+"server load."
+msgstr ""
+"Dla dużych sklepów zalecane 10–50. Wyższa wartość = szybciej, ale większe "
+"obciążenie serwera."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:273
+msgid "Full correction (new order value)"
+msgstr "Pełna korekta (nowa wartość zamówienia)"
+
+#: fakturownia.php:602 fakturownia.php:698
+msgid "Has invoice"
+msgstr "Ma fakturę"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:296
+msgid ""
+"Hello,\n"
+"\n"
+"We are sending you the correction document [invoice_number] for order "
+"[order_number] in the attachment.\n"
+"\n"
+"Order: [order_link]\n"
+"Document: [invoice_link]\n"
+"\n"
+"Best regards,\n"
+"Store support"
+msgstr ""
+"Witaj,\n"
+"\n"
+"W załączniku przesyłamy Państwu dokument korygujący [invoice_number] dla "
+"zamówienia [order_number].\n"
+"\n"
+"Zamówienie: [order_link]\n"
+"Dokument: [invoice_link]\n"
+"\n"
+"Z poważaniem,\n"
+"Wsparcie sklepu"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:246
+msgid ""
+"Hello,\n"
+"\n"
+"We are sending you the invoice [invoice_number] for order [order_number] in "
+"the attachment.\n"
+"\n"
+"Order: [order_link]\n"
+"Invoice: [invoice_link]\n"
+"\n"
+"Best regards,\n"
+"Store support"
+msgstr ""
+"Witaj,\n"
+"\n"
+"W załączniku przesyłamy fakturę [invoice_number] dla zamówienia "
+"[order_number].\n"
+"\n"
+"Zamówienie: [order_link]\n"
+"Faktura: [invoice_link]\n"
+"\n"
+"Z poważaniem,\n"
+"Wsparcie sklepu"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:333
+msgid "How many invoices per batch"
+msgstr "Ile faktur na partię"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:301
+msgid "How the shipping cost should be corrected on the correction invoice."
+msgstr "Jak korygować koszt wysyłki na fakturze korekty."
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://weblo.pl/"
+msgstr "https://weblo.pl/"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:651
+msgid "Integration errors (logs)"
+msgstr "Błędy integracji (logi)"
+
+#: includes/class-weblo-fakturownia-api-client.php:396
+msgid "Invalid correction: quantity after correction is below zero."
+msgstr "Nieprawidłowa korekta: ilość po korekcie jest poniżej zera."
+
+#: fakturownia.php:313 fakturownia.php:330 fakturownia.php:344
+msgid "Invalid download link."
+msgstr "Nieprawidłowy link do pobrania."
+
+#: includes/class-weblo-fakturownia-api-client.php:906
+#: includes/class-weblo-fakturownia-api-client.php:914
+msgid "Invalid JSON in response."
+msgstr "Nieprawidłowy kod JSON w odpowiedzi."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:543
+#: includes/class-wc-integration-weblo-fakturownia.php:970
+#: includes/class-wc-integration-weblo-fakturownia.php:1214
+msgid "Invalid security token."
+msgstr "Nieprawidłowy token bezpieczeństwa."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:71
+msgid "Invoice"
+msgstr "Faktura"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:346
+msgid "Invoice date"
+msgstr "Data faktury"
+
+#: fakturownia.php:604 fakturownia.php:700
+msgid "Invoice error"
+msgstr "Błąd faktury"
+
+#: includes/class-weblo-fakturownia-order-metabox.php:524
+msgid "Invoice has been created."
+msgstr "Faktura została utworzona."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:744
+msgid "Invoice has been sent by email (with PDF attachment)."
+msgstr "Faktura została wysłana e-mailem (z załącznikiem PDF)."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:615
+msgid "Invoice has been sent by email from Fakturownia."
+msgstr "Faktura została wysłana e-mailem z Fakturownia."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:195
+msgid "Invoice issue date"
+msgstr "Data wystawienia faktury"
+
+#: includes/class-weblo-fakturownia-order-metabox.php:81
+msgid "Invoice:"
+msgstr "Faktura:"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:50
+msgid "Invoices"
+msgstr "Faktury"
+
+#: includes/class-weblo-fakturownia-order-metabox.php:138
+msgid "Issue correction now"
+msgstr "Wystaw korektę teraz"
+
+#: includes/class-weblo-fakturownia-order-metabox.php:95
+msgid "Issue invoice now"
+msgstr "Wystaw fakturę teraz"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:206
+msgid "Issue invoices for COD orders at different status"
+msgstr "Wystawiaj faktury dla zamówień za pobraniem przy innym statusie"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:634
+msgid "Issue missing corrections"
+msgstr "Wystaw brakujące korekty"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:616
+msgid "Issue missing invoices"
+msgstr "Wystaw brakujące faktury"
+
+#: includes/class-weblo-fakturownia-order-metabox.php:137
+msgid "Issue the invoice first to be able to create a correction."
+msgstr "Najpierw wystaw fakturę, aby móc utworzyć korektę."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:307
+msgid "Issuing correction..."
+msgstr "Wydawanie korekty..."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:299
+msgid "Issuing..."
+msgstr "Wydawanie..."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:68
+msgid "Last error:"
+msgstr "Ostatni błąd:"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:670
+msgid "Limit"
+msgstr "Limit"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:757
+msgid "Loading logs..."
+msgstr "Ładowanie logów..."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:87
+msgid "Logs"
+msgstr "Logi"
+
+#: includes/class-weblo-fakturownia-api-client.php:131
+msgid "Missing base invoice ID (_weblo_fakturownia_invoice_id)."
+msgstr ""
+"Brak identyfikatora faktury podstawowej (_weblo_fakturownia_invoice_id)."
+
+#: fakturownia.php:403
+msgid "Missing base invoice ID."
+msgstr "Brak podstawowego identyfikatora faktury."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:564
+#: includes/class-weblo-fakturownia-order-metabox.php:803
+msgid "Missing data (order_id / invoice_id)."
+msgstr "Brakujące dane (order_id / invoice_id)."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:303
+msgid "Missing data for sending."
+msgstr "Brak danych do wysłania."
+
+#: includes/class-weblo-fakturownia-api-client.php:91
+#: includes/class-weblo-fakturownia-api-client.php:108
+#: includes/class-weblo-fakturownia-api-client.php:769
+msgid "Missing invoice_id."
+msgstr "Brak identyfikatora faktury."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:298
+msgid "Missing order ID."
+msgstr "Brak identyfikatora zamówienia."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:330
+#: includes/class-weblo-fakturownia-order-metabox.php:456
+msgid "Missing order_id."
+msgstr "Brakuje order_id."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:340
+#: includes/class-weblo-fakturownia-order-metabox.php:466
+msgid "Nie znaleziono zamówienia."
+msgstr "Nie znaleziono zamówienia."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:133
+msgid "No correction for this order."
+msgstr "Brak korekty dla tego zamówienia."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:1423
+msgid ""
+"No eligible orders found for bulk corrections. Note: the selected status "
+"filters orders (not refunds). Orders must have an invoice and at least one "
+"refund."
+msgstr ""
+"Nie znaleziono kwalifikujących się zamówień do masowych korekt. Uwaga: "
+"wybrany status filtruje zamówienia (nie zwroty). Zamówienia muszą mieć "
+"fakturę i co najmniej jeden zwrot."
+
+#: fakturownia.php:603 fakturownia.php:699
+msgid "No invoice"
+msgstr "Brak faktury"
+
+#: includes/class-weblo-fakturownia-order-metabox.php:93
+msgid "No invoice for this order."
+msgstr "Brak faktury dla tego zamówienia."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:759
+msgid "No logs to display."
+msgstr "Brak logów do wyświetlenia."
+
+#: includes/class-weblo-fakturownia-api-client.php:561
+#: includes/class-weblo-fakturownia-api-client.php:569
+msgid "No matching refunded items found on base invoice positions."
+msgstr ""
+"Nie znaleziono pasujących pozycji podlegających zwrotowi na pozycjach "
+"faktury bazowej."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:369
+#: includes/class-wc-integration-weblo-fakturownia.php:1456
+msgid "No refunds found for this order."
+msgstr "Nie znaleziono zwrotów dla tego zamówienia."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:584
+msgid "No valid customer email address found on this order."
+msgstr "Nie znaleziono poprawnego adresu e-mail klienta w tym zamówieniu."
+
+#: fakturownia.php:535 fakturownia.php:572
+msgid "None"
+msgstr "Brak"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:252
+msgid ""
+"Notes text added to the invoice (sent to Fakturownia as internal_note). "
+"Available shortcodes: [order_id], [order_number], [customer_name], "
+"[customer_email], [billing_company], [billing_phone]."
+msgstr ""
+"Tekst notatki dodawany do faktury (wysyłany do Fakturownia jako "
+"internal_note). Dostępne shortcody: [order_id], [order_number], "
+"[customer_name], [customer_email], [billing_company], [billing_phone]."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:300
+msgid "OK"
+msgstr "OK"
+
+#: includes/class-weblo-fakturownia-order-metabox.php:84
+#: includes/class-weblo-fakturownia-order-metabox.php:124
+msgid "Open in Fakturownia"
+msgstr "Otwórz w Fakturownia"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:769
+msgid "Operation finished."
+msgstr "Operacja zakończona."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:169
+msgid "Optional company or department ID in Fakturownia."
+msgstr "Opcjonalne ID firmy lub działu w Fakturownia."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:202
+msgid "Order creation date"
+msgstr "Data utworzenia zamówienia"
+
+#: fakturownia.php:322 includes/class-weblo-fakturownia-order-metabox.php:574
+#: includes/class-weblo-fakturownia-api-client.php:126
+#: includes/class-weblo-fakturownia-api-client.php:650
+msgid "Order not found."
+msgstr "Nie znaleziono zamówienia."
+
+#: fakturownia.php:417 includes/class-weblo-fakturownia-order-metabox.php:352
+#: includes/class-weblo-fakturownia-api-client.php:195
+msgid "Order refund"
+msgstr "Zwrot zamówienia"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:1476
+msgid "Order refund (bulk)"
+msgstr "Zwrot zamówienia (masowy)"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:352
+msgid "Order status change date"
+msgstr "Data zmiany statusu zamówienia"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:201
+msgid "Order status change date (default)"
+msgstr "Data zmiany statusu zamówienia (domyślnie)"
+
+#: includes/class-weblo-fakturownia-api-client.php:52
+msgid "Please fill in the domain and API token."
+msgstr "Proszę wypełnić pola dotyczące domeny i tokenu API."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:763
+msgid "Progress: {processed}/{total} | OK: {ok} | Errors: {errors}"
+msgstr "Postęp: {processed}/{total} | OK: {ok} | Błędy: {errors}"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:679
+msgid "Refresh"
+msgstr "Odśwież"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:371
+msgid "Refund date"
+msgstr "Data zwrotu"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:357
+msgid "Refund statuses for bulk corrections"
+msgstr "Statusy zwrotów dla masowych korekt"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:472
+msgid "Restore default template"
+msgstr "Przywróć domyślny szablon"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:306
+msgid "Same as on order"
+msgstr "Tak jak w zamówieniu"
+
+#: fakturownia.php:608 fakturownia.php:704
+msgid "Search by invoice number…"
+msgstr "Szukaj po numerze faktury…"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:328
+msgid "Select order status for which you want to search missing invoices."
+msgstr "Wybierz status zamówienia, dla którego szukasz brakujących faktur."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:186
+msgid "Select order statuses that should trigger invoice issuing."
+msgstr "Wybierz statusy zamówień wyzwalające wystawianie faktur."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:360
+msgid "Select refund status to include in bulk corrections."
+msgstr "Wybierz status zwrotu do uwzględnienia w masowych korektach."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:216
+msgid "Select statuses of COD orders that should trigger invoice issuing."
+msgstr "Wybierz statusy zamówień za pobraniem wyzwalające wystawianie faktur."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:283
+msgid "Send corrections from WooCommerce"
+msgstr "Wyślij korekty z WooCommerce"
+
+#: includes/class-weblo-fakturownia-order-metabox.php:90
+#: includes/class-weblo-fakturownia-order-metabox.php:130
+msgid "Send email"
+msgstr "Wyślij e-mail"
+
+#: includes/class-weblo-fakturownia-order-metabox.php:306
+msgid "Send email again"
+msgstr "Send email again"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:233
+msgid "Send invoices from WooCommerce"
+msgstr "Wyślij faktury z WooCommerce"
+
+#: includes/class-weblo-fakturownia-order-metabox.php:304
+msgid "Sending..."
+msgstr "Przesyłka..."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:305
+msgid "Sent."
+msgstr "Wysłano."
+
+#: fakturownia.php:1232
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: includes/class-weblo-fakturownia-api-client.php:254
+#: includes/class-weblo-fakturownia-api-client.php:692
+msgid "Shipping"
+msgstr "Wysyłka"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:311
+msgid "Shipping amount on correction"
+msgstr "Kwota wysyłki na korekcie"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:299
+msgid "Shipping correction mode"
+msgstr "Tryb korekty wysyłki"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:325
+msgid "Statuses for bulk issuing missing invoices"
+msgstr "Statusy dla masowego wystawiania brakujących faktur"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:212
+msgid "Statuses for COD orders"
+msgstr "Statusy dla zamówień za pobraniem"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:182
+msgid "Statuses that trigger invoice"
+msgstr "Statusy wyzwalające fakturę"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:617
+#: includes/class-wc-integration-weblo-fakturownia.php:635
+msgid "Stop"
+msgstr "Stop"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:1004
+#: includes/class-wc-integration-weblo-fakturownia.php:1248
+msgid "Stopped."
+msgstr "Zatrzymano."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:767
+msgid "Stopping..."
+msgstr "Zatrzymanie..."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:704
+msgid "Test connection"
+msgstr "Test połączenia"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:568
+msgid "Test the connection to unlock the remaining tabs."
+msgstr "Przetestuj połączenie, aby odblokować pozostałe zakładki."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:761
+msgid "Testing connection..."
+msgstr "Testowanie połączenia..."
+
+#: fakturownia.php:317
+msgid "This download link has expired."
+msgstr "Ten link do pobrania wygasł."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:631
+msgid ""
+"This operation runs in the background (AJAX) and issues corrections in "
+"batches based on existing invoices and refunds."
+msgstr ""
+"Ta operacja działa w tle (AJAX) i wystawia korekty partiami na podstawie "
+"istniejących faktur i zwrotów."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:613
+msgid ""
+"This operation runs in the background (AJAX) and issues invoices in batches "
+"to avoid overloading the server."
+msgstr ""
+"Ta operacja działa w tle (AJAX) i wystawia faktury partiami, aby nie "
+"przeciążyć serwera."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:688
+msgid ""
+"This removes the local debug.log file created by the plugin. It does not "
+"affect the integration error logs stored in the database."
+msgstr ""
+"Spowoduje to usunięcie lokalnego pliku debug.log utworzonego przez wtyczkę. "
+"Nie ma to wpływu na dzienniki błędów integracji przechowywane w bazie danych."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:305
+msgid "To 0"
+msgstr "Do 0"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:307
+msgid "To custom amount"
+msgstr "Do niestandardowej kwoty"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:351
+#: includes/class-wc-integration-weblo-fakturownia.php:370
+msgid "Today"
+msgstr "Dzisiaj"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:657
+msgid "Type"
+msgstr "Typ"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:1198
+#: includes/class-wc-integration-weblo-fakturownia.php:1534
+msgid "Unexpected server error during bulk operation."
+msgstr "Nieoczekiwany błąd serwera podczas operacji masowej."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:771
+msgid "Unexpected server error while sending email."
+msgstr "Nieoczekiwany błąd serwera podczas wysyłania e-maila."
+
+#: includes/class-weblo-fakturownia-api-client.php:71
+msgid "Unknown error."
+msgstr "Nieznany błąd."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:409
+msgid ""
+"Used as ver parameter when developer mode is disabled (e.g. 1.0.1). Change "
+"this value to force cache refresh."
+msgstr ""
+"Używane jako parametr ver gdy tryb deweloperski jest wyłączony (np. 1.0.1). "
+"Zmień wartość, aby wymusić odświeżenie cache."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:314
+msgid "Used only when \"To custom amount\" is selected."
+msgstr "Używane tylko gdy wybrano „Do niestandardowej kwoty”."
+
+#. Author of the plugin
+msgid "Weblo"
+msgstr "Weblo"
+
+#: includes/class-weblo-fakturownia-order-metabox.php:66
+#: includes/class-weblo-fakturownia-order-metabox.php:109
+msgid "What happened?"
+msgstr "Co się stało?"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:286
+msgid ""
+"When enabled, besides Fakturownia email we also send a WordPress email with "
+"correction PDF attached."
+msgstr ""
+"Po włączeniu, oprócz e-maila z Fakturownia wysyłamy również e-mail WordPress "
+"z załączoną korektą PDF."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:236
+msgid ""
+"When enabled, besides Fakturownia email we also send a WordPress email with "
+"invoice PDF attached."
+msgstr ""
+"Po włączeniu, oprócz e-maila z Fakturownia wysyłamy również e-mail WordPress "
+"z załączoną fakturą PDF."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:402
+msgid ""
+"When enabled, JS/CSS files receive a random ver parameter to bypass cache "
+"(useful on heavy cache environments)."
+msgstr ""
+"Po włączeniu pliki JS/CSS otrzymują losowy parametr ver, aby ominąć cache "
+"(przydatne w środowiskach z ciężkim cache)."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:394
+msgid ""
+"When enabled, the plugin writes diagnostic logs to fakturownia/logs/debug."
+"log (max 2 MB). Use this only for troubleshooting."
+msgstr ""
+"Po włączeniu wtyczka zapisuje logi diagnostyczne do fakturownia/logs/debug."
+"log (max 2 MB). Używaj tylko do diagnozowania problemów."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:368
+msgid "Which date should be set on corrections in bulk operations."
+msgstr "Która data powinna być ustawiona na korektach w operacjach masowych."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:349
+msgid "Which date should be set on documents in bulk issuing."
+msgstr ""
+"Która data powinna być ustawiona na dokumentach przy masowym wystawianiu."
+
+#: includes/class-wc-integration-weblo-fakturownia.php:291
+msgid "WooCommerce correction email content (template)"
+msgstr "Treść e-maila WooCommerce dla korekty (szablon)"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:241
+msgid "WooCommerce email content (template)"
+msgstr "Treść e-maila WooCommerce (szablon)"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:114
+msgid ""
+"WooCommerce integration with Fakturownia – connection and automation "
+"settings."
+msgstr ""
+"Integracja WooCommerce z Fakturownia – ustawienia połączenia i automatyzacji."
+
+#. Description of the plugin
+msgid "WordPress plugin for integrating WooCommerce with Fakturownia."
+msgstr "Integracja WooCommerce z Fakturownią"
+
+#: includes/class-wc-integration-weblo-fakturownia.php:790
+msgid "You do not have permission to perform this action."
+msgstr "Nie masz uprawnień do wykonania tej akcji."
+
+#: includes/class-weblo-fakturownia-order-metabox.php:320
+#: includes/class-weblo-fakturownia-order-metabox.php:446
+#: includes/class-weblo-fakturownia-order-metabox.php:552
+#: includes/class-weblo-fakturownia-order-metabox.php:796
+#: includes/class-wc-integration-weblo-fakturownia.php:826
+#: includes/class-wc-integration-weblo-fakturownia.php:896
+#: includes/class-wc-integration-weblo-fakturownia.php:933
+#: includes/class-wc-integration-weblo-fakturownia.php:979
+#: includes/class-wc-integration-weblo-fakturownia.php:1223
+msgid "You do not have permission."
+msgstr "Nie masz uprawnień."
+
+#. 1: document number, 2: order number
+#: includes/class-weblo-fakturownia-order-metabox.php:678
+#, php-format
+msgid "Your document %1$s for order %2$s"
+msgstr "Twój dokument %1$s dla zamówienia %2$s"
+
+#: fakturownia.php:1084
+msgid "Your document for your order"
+msgstr "Twój dokument do Twojego zamówienia"
+
+#. 1: invoice number, 2: order number
+#: fakturownia.php:961
+#, php-format
+msgid "Your invoice %1$s for order %2$s"
+msgstr "Twoja faktura %1$s dla zamówienia %2$s"

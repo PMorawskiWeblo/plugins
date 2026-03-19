@@ -1,0 +1,153 @@
+.weblo-fakturownia-admin {
+	max-width: 1120px;
+	margin-top: 10px;
+}
+
+.weblo-fakturownia-admin-head h2 {
+	margin-bottom: 6px;
+}
+
+.weblo-fakturownia-admin-head p {
+	color: #50575e;
+	margin-top: 0;
+	margin-bottom: 14px;
+}
+
+.weblo-fakturownia-test-result {
+	margin-bottom: 14px;
+}
+
+.weblo-fakturownia-tabs {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 12px;
+	box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+	overflow: hidden;
+}
+
+.weblo-fakturownia-tabbar {
+	display: flex;
+	gap: 6px;
+	flex-wrap: wrap;
+	padding: 12px 12px 0;
+	background: linear-gradient(180deg, #f8fafc 0%, #f6f7f7 100%);
+	border-bottom: 1px solid #e4e7ec;
+}
+
+.weblo-fakturownia-tab {
+	appearance: none;
+	border: 1px solid #d0d5dd;
+	background: #fff;
+	padding: 8px 12px;
+	margin: 0;
+	cursor: pointer;
+	border-radius: 8px 8px 0 0;
+	font-weight: 500;
+	color: #344054;
+	transition: all 0.15s ease;
+}
+
+.weblo-fakturownia-tab:hover {
+	background: #f9fafb;
+	color: #1d2939;
+}
+
+.weblo-fakturownia-tab.is-active {
+	background: #2271b1;
+	border-color: #2271b1;
+	color: #fff;
+}
+
+.weblo-fakturownia-tab:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.weblo-fakturownia-tab-panel {
+	padding: 14px;
+	background: #fcfcfd;
+}
+
+.weblo-fakturownia-panel-card {
+	background: #fff;
+	border: 1px solid #eaecf0;
+	border-radius: 10px;
+	padding: 16px;
+}
+
+.weblo-fakturownia-panel-card .form-table th {
+	width: 270px;
+	color: #101828;
+}
+
+.weblo-fakturownia-panel-card .form-table td {
+	color: #475467;
+}
+
+.weblo-fakturownia-divider {
+	border: 0;
+	border-top: 1px solid #eaecf0;
+	margin: 18px 0;
+}
+
+#weblo-fakturownia-bulk-progress,
+#weblo-fakturownia-bulk-corr-progress {
+	margin-top: 10px;
+	max-width: 620px;
+    position: relative;
+}
+
+#weblo-fakturownia-bulk-progress > div,
+#weblo-fakturownia-bulk-corr-progress > div {
+	height: 16px !important;
+	background: #eef2f7 !important;
+	border-radius: 999px !important;
+	overflow: hidden;
+	border: 1px solid #d0d5dd;
+}
+
+#weblo-fakturownia-bulk-progress-bar,
+#weblo-fakturownia-bulk-corr-progress-bar {
+	background: linear-gradient(90deg, #2271b1 0%, #0ea5e9 100%) !important;
+}
+
+#weblo-fakturownia-bulk-progress-text,
+#weblo-fakturownia-bulk-corr-progress-text {
+	font-size: 12px !important;
+	color: #344054 !important;
+	font-weight: 500;
+        position: absolute;
+    top: 0;
+    margin: 0 !important;
+    width: 100%;
+    text-align: center;
+}
+
+#weblo-fakturownia-logs-result .widefat {
+	border: 1px solid #eaecf0;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+#weblo-fakturownia-logs-result .widefat thead th {
+	background: #f9fafb;
+	color: #344054;
+}
+
+.weblo-fakturownia-test-connection-wrap {
+	margin-top: 14px;
+}
+
+.weblo-fakturownia-test-connection-wrap .button {
+	min-height: 34px;
+	padding-inline: 14px;
+}
+
+/* WooCommerce email template editors: keep comfortable writing height */
+.weblo-fakturownia-panel-card .wp-editor-area {
+	min-height: 300px !important;
+}
+
+.weblo-fakturownia-panel-card .wp-editor-wrap .mce-edit-area iframe {
+	min-height: 300px !important;
+}
