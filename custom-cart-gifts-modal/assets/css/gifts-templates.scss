@@ -1,0 +1,240 @@
+.gifts-templates {
+
+    background-color: #F8F8F8;
+    padding: 20px;
+    max-width: 800px !important;
+    border-radius: 5px;
+    margin-top: 20px;
+
+
+
+    @media (max-width: 576px) {
+        background-color: #fff !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+    }
+
+    .splide__arrow {
+        border: none !important;
+        z-index: 10;
+        background: rgba(156, 156, 156, 0.7) !important;
+        padding: 5px !important;
+        width: 32px !important;
+        height: 32px !important;
+
+        &:hover {
+            background: #f37a20 !important;
+        }
+    }
+
+    .splide__list,
+    .splide__track {
+        margin: 0 !important;
+        max-width: 100% !important;
+    }
+
+    .gifts-templates-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        max-width: 600px;
+    }
+
+    .gifts-level {
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #f7d7bb;
+        padding: 10px;
+
+        @media (max-width: 576px) {
+            border: none !important;
+            padding: 0 !important;
+            border: none;
+            max-width: calc(100vw - 20px);
+        }
+
+        .gifts-level-title {
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+
+            .remaining-amount {
+                font-size: 12px;
+                font-weight: 300;
+                color: #000;
+            }
+
+            &.inactive {
+                opacity: 0.6;
+            }
+
+            .show-level {
+
+                transition: transform 0.3s ease-in-out;
+                transform: rotate3d(1, 0, 0, 0deg);
+                background: #111;
+
+                width: 30px;
+                height: 30px;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                border-radius: 30px;
+                &.active {
+                    transform: rotate3d(0, 0, 1, 180deg);
+                }
+            }
+        }
+
+        .gifts-level-items {
+            height: fit-content;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.5s ease-in-out;
+
+            .gifts-level-items-splide {
+                margin-bottom: 10px;
+            }
+
+            &.show {
+                height: fit-content;
+                max-height: 1000px;
+                transition: max-height 0.5s ease-in-out;
+
+            }
+
+            .gift-view {
+
+                display: flex;
+                flex-direction: column;
+                background: #f9f9f7;
+                border-radius: 5px;
+                border: 1px solid #f7d7bb;
+                height: 100%;
+                overflow: hidden;
+                gap: 10px;
+                cursor: pointer;
+                padding: 10px;
+
+                &.shade {
+                    opacity: 0.5;
+                    filter: saturate(0);
+                    transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
+
+                    &:hover {
+                        opacity: 1;
+                        filter: saturate(1);
+                    }
+                }
+
+                &.inactive {
+                    filter: saturate(0);
+                    pointer-events: none;
+                    position: relative;
+
+                    .innactive-overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 10;
+                        background-color: rgba(255, 255, 255, 0.5);
+                        opacity: 1;
+
+                        .innactive-overlay-text {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            text-align: center;
+                        }
+                    }
+                }
+
+                &.choosen {
+                    border: 1px solid #f37a20;
+                    background-color: #fdf7ef !important;
+
+                }
+
+                .gift-image {
+                    width: auto;
+
+                    img {
+                        aspect-ratio: 1/1;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+
+                .gift-info {
+                    display: grid;
+                    grid-template-columns: 2fr 1fr;
+                    width: auto;
+
+                    .gift-name {
+                        font-size: 11px;
+                        grid-column: 1 / span 1;
+                        /*                             padding:0 10px; */
+
+                    }
+
+                    .gift-price {
+                        font-size: 10px;
+                        grid-column: 1 / span 1;
+
+                        del {
+                            margin-right: 5px;
+                            opacity: 0.5;
+                        }
+                    }
+
+                    .gift-slogan {
+                        font-size: 12px;
+                        grid-column: 1 / span 1;
+                    }
+
+                    .gift-add-to-cart,
+                    .gift-remove-from-cart {
+                        display: flex;
+                        justify-content: flex-start;
+                        grid-column: 2 / span 1;
+                        grid-row: 1 / span 1;
+
+                        button {
+                            width: 100%;
+                            background: none;
+                            font-size: 10px;
+                            font-weight: 300;
+                            border: none;
+                            padding: 0;
+                            margin: 0;
+                            cursor: pointer;
+                            height: auto;
+                            color: #f37a20;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+
+    .shipping-notice {
+        p {
+            font-size: 12px;
+            font-weight: 300;
+            color: #000;
+            margin-top: 10px;
+        }
+    }
+
+}

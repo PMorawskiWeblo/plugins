@@ -1,0 +1,46 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Simple Wishlist\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-24 12:59+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.7.1; wp-6.7.2\n"
+"X-Domain: simple-wishlist"
+
+#: includes/class-wishlist-shortcodes.php:122
+msgid "Add all to cart"
+msgstr ""
+
+#: includes/class-wishlist-shortcodes.php:30
+#: includes/class-wishlist-shortcodes.php:110
+msgid "Add to cart"
+msgstr ""
+
+#: includes/class-wishlist-shortcodes.php:31
+msgid "Added!"
+msgstr ""
+
+#. Description of the plugin
+msgid "Prosta wtyczka do obsługi listy życzeń"
+msgstr ""
+
+#. Name of the plugin
+msgid "Simple Wishlist"
+msgstr ""
+
+#. Author of the plugin
+msgid "Weblo"
+msgstr ""
+
+#: simple-wishlist.php:55 includes/class-wishlist-shortcodes.php:88
+msgid "Your wish list is empty"
+msgstr ""

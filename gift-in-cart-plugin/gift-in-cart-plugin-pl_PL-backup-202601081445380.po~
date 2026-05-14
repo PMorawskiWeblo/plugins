@@ -1,0 +1,279 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gift in cart\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-04 12:04+0000\n"
+"PO-Revision-Date: 2026-01-08 14:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: Polski\n"
+"Language: pl_PL\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10 >= 2 && n%10<=4 "
+"&&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.9; php-8.2.23\n"
+"X-Domain: gift-in-cart-plugin"
+
+#: woocommerce/cart/cart-totals.php:245
+msgid "%d-%d BUSINESS DAYS"
+msgstr "%d-%d DNI ROBOCZYCH"
+
+#: new-cart.php:340 inc/samples.php:66
+#: inc/new-cart-addtocart-popup-template.php:252
+#: woocommerce/cart/cart-totals.php:35
+msgid "Add"
+msgstr "Dodaj"
+
+#: inc/new-cart-crosssell-template.php:111
+msgid "Add a "
+msgstr "Dodaj "
+
+#: inc/new-cart-addtocart-popup-template.php:18
+#| msgid "Added to cart (%d)!"
+msgid "Added to cart (%d)"
+msgstr "Dodano do koszyka (%d)"
+
+#: inc/new-cart-gift-template.php:303
+msgid "and"
+msgstr "oraz"
+
+#: new-cart.php:354 woocommerce/cart/cart-totals.php:52
+#: woocommerce/cart/cart-totals.php:52
+msgid "Apply"
+msgstr "Użyj"
+
+#: inc/new-cart-addtocart-popup-template.php:105
+msgid "Bestsellers"
+msgstr "BESTSELLERY"
+
+#: inc/new-cart-gift.php:291
+#, php-format
+msgid ""
+"Cart total (%s) or product quantity (%d) is too low. Required: %s and %d"
+msgstr ""
+"Łączna wartość koszyka (%s) lub ilość produktów (%d) jest zbyt niska. "
+"Wymagane: %s i %d"
+
+#: inc/new-cart-gift.php:282
+msgid "Cart total is too low"
+msgstr "Łączna wartość koszyka jest zbyt niska"
+
+#: new-cart.php:52
+msgid "CART UPDATED."
+msgstr "KOSZYK ZAKTUALIZOWANY."
+
+#: inc/samples.php:11
+msgid "Choose a sample set and add it to your cart with one click."
+msgstr ""
+
+#: inc/new-cart-gift-template.php:305
+msgid "choose gift"
+msgstr "wybierz prezent"
+
+#: inc/new-cart-crosssell-template.php:115
+msgid "Click to add the product to your cart"
+msgstr "Kliknij, aby dodać produkt do koszyka"
+
+#: inc/new-cart-crosssell-template.php:40
+msgid "Complete your care"
+msgstr "Uzupełnij swoją pielęgnację"
+
+#: inc/new-cart-addtocart-popup-template.php:95
+msgid "Continue shopping"
+msgstr "Kontynuuj zakupy"
+
+#: woocommerce/cart/cart-totals.php:44 woocommerce/cart/cart-totals.php:46
+#: woocommerce/cart/cart-totals.php:47
+msgid "Coupon code"
+msgstr "KOD RABATOWY"
+
+#: woocommerce/cart/cart-totals.php:108
+msgid "Delivery"
+msgstr "Dostawa"
+
+#: woocommerce/cart/cart-totals.php:116
+msgid "Discount"
+msgstr "Rabat"
+
+#: new-cart.php:360 woocommerce/cart/cart-totals.php:58
+msgid "Discount applied"
+msgstr "Rabat zastosowany"
+
+#: new-cart.php:334 woocommerce/cart/cart-totals.php:29
+#| msgid "Discount code?"
+msgid "Discount code"
+msgstr "Kod rabatowy"
+
+#: new-cart.php:346 woocommerce/cart/cart-totals.php:41
+msgid "Enter discount code"
+msgstr "Wpisz kod rabatowy"
+
+#: woocommerce/cart/cart-totals.php:271
+msgid "Estimated delivery:"
+msgstr "Przewidywana dostawa:"
+
+#: new-cart.php:154
+msgid "Failed to add sample to cart"
+msgstr ""
+
+#: inc/samples.php:67
+msgid "for"
+msgstr "za"
+
+#: new-cart.php:235
+#, php-format
+msgid "For free shipping: %s. "
+msgstr "Do darmowej dostawy brakuje: %s."
+
+#: inc/new-cart-gift-template.php:128 inc/new-cart-gift-template.php:303
+#: inc/new-cart-gift-product-template.php:39
+msgid "for gift"
+msgstr "do prezentu"
+
+#: new-cart.php:239 new-cart.php:293
+msgid "Free shipping added"
+msgstr "Darmowa dostawa dodana"
+
+#: inc/new-cart-gift-template.php:341
+msgid "From influencer"
+msgstr "Od influencera"
+
+#: inc/new-cart-gift-template.php:123
+msgid "GET YOUR GIFT(S)!"
+msgstr "ODBIERZ PREZENT(Y)!"
+
+#. Name of the plugin
+msgid "Gift in cart"
+msgstr "Prezent w koszyku"
+
+#: inc/new-cart-gift.php:336
+msgid "Gift not found in cart"
+msgstr "Nie znaleziono prezentu w koszyku"
+
+#: inc/new-cart-gift.php:331
+msgid "Gift removed from cart"
+msgstr "Prezent usunięty z koszyka"
+
+#. Description of the plugin
+msgid "Gifty w koszyku"
+msgstr "Prezenty w koszyku"
+
+#: inc/new-cart-addtocart-popup-template.php:97
+msgid "Go to cart and checkout"
+msgstr "Przejdź do koszyka"
+
+#: new-cart.php:173 new-cart.php:198
+msgid "Invalid coupon code."
+msgstr "Nieprawidłowy kod kuponu."
+
+#: new-cart.php:108
+msgid "Invalid product ID"
+msgstr ""
+
+#: new-cart.php:84
+msgid "Invalid request."
+msgstr "Nieprawidłowe żądanie."
+
+#: inc/new-cart-gift-template.php:128 inc/new-cart-gift-product-template.php:39
+#: inc/new-cart-gift-product-template.php:45
+msgid "Missing"
+msgstr "Brakuje"
+
+#: inc/new-cart-gift-template.php:303
+msgid "missing"
+msgstr "brakuje"
+
+#: new-cart.php:276
+#, php-format
+msgid "MISSING FOR FREE SHIPPING: %s"
+msgstr "DO DARMOWEJ DOSTAWY BRAKUJE: %s"
+
+#: inc/new-cart-gift.php:286
+msgid "Not enough eligible products in cart"
+msgstr "Za mało kwalifikujących się produktów w koszyku"
+
+#: inc/new-cart-crosssell-template.php:91
+msgid "opinions"
+msgstr "opinie"
+
+#: woocommerce/cart/cart-totals.php:84
+msgid "Order summary"
+msgstr "Podsumowanie zamówienia"
+
+#: inc/new-cart-gift-product-template.php:52
+msgid "Price progress"
+msgstr "Postęp ceny"
+
+#: new-cart.php:128
+msgid "Product is not available"
+msgstr ""
+
+#: new-cart.php:117 new-cart.php:122
+msgid "Product not found"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:90
+msgid "Products"
+msgstr "Produkty"
+
+#: inc/new-cart-gift-template.php:301 inc/new-cart-gift-product-template.php:91
+msgid "products"
+msgstr "produkty"
+
+#: inc/new-cart-gift-product-template.php:45
+msgid "products for gift"
+msgstr "produkty do prezentu"
+
+#: inc/new-cart-gift-product-template.php:59
+msgid "Quantity progress"
+msgstr "Postęp ilości"
+
+#: new-cart.php:532
+msgid "Sample slogan"
+msgstr ""
+
+#: inc/samples.php:9
+msgid "Select samples for your order"
+msgstr "Dobierz próbki do zamówienia"
+
+#: woocommerce/cart/cart.php:230
+msgid "Selected gift from level"
+msgstr "Wybrany prezent z poziomu"
+
+#: new-cart.php:50
+msgid "The entered code is correct."
+msgstr "Wprowadzony kod jest poprawny."
+
+#: new-cart.php:51
+msgid "The entered code is incorrect."
+msgstr "Podany kod jest nieprawidłowy."
+
+#: woocommerce/cart/cart-totals.php:184 woocommerce/cart/cart-totals.php:185
+msgid "Total"
+msgstr "Razem"
+
+#: new-cart.php:184
+msgid "Unknown error occurred."
+msgstr "Wprowadzony kod jest niepoprawny."
+
+#: new-cart.php:53
+msgid "WE ADDED A GIFT TO YOUR ORDER"
+msgstr "DODALIŚMY PREZENT DO TWOJEGO ZAMÓWIENIA"
+
+#: inc/new-cart-gift.php:301
+msgid "We added a gift to your order"
+msgstr "Dodaliśmy prezent do Twojego zamówienia"
+
+#. Author of the plugin
+msgid "Weblo"
+msgstr "Weblo"
+
+#: woocommerce/cart/cart.php:60
+msgid "Your cart"
+msgstr "Twój koszyk"
+
+#: woocommerce/cart/cart-empty.php:41
+msgid "Your cart is empty"
+msgstr "Twój koszyk jest pusty"

@@ -1,0 +1,200 @@
+/* Status dostępności i prefiks tytułu */
+.out-of-stock.premiere-pending {
+  background-color: #f8f9fa;
+  color: #721c24;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: 1px solid #f5c6cb;
+  margin: 10px 0;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.ppwc-title-prefix {
+  display: inline-block;
+  background: #ff4e4e;
+  color: #fff;
+  padding: 3px 8px;
+  margin-right: 8px;
+  font-size: 0.8em;
+  font-weight: bold;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Countdown */
+.ppwc-countdown-wrapper h3 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.ppwc-countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.ppwc-countdown-active .summary_custom {
+  gap: 20px !important;
+}
+.ppwc-countdown-active .wrap_price_add_to_cart,
+.ppwc-countdown-active #productAccordion,
+.ppwc-countdown-active .order-product-reviews-section,
+.ppwc-countdown-active .summary_custom_add_to_cart {
+  display: none !important;
+}
+
+.ppwc-product-countdown-active .price {
+  display: none !important;
+}
+
+/* Formularz premiery */
+.ppwc-premiere-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 382px;
+  max-width: 100%;
+}
+
+.ppwc-premiere-description {
+  color: #000;
+  font-family: Lora;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.5px;
+}
+
+.ppwc-countdown-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.ppwc-countdown-wrapper h3 {
+  margin-bottom: 0;
+  white-space: nowrap;
+  color: #8c8477;
+  text-align: center;
+  font-family: Lora;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 100%;
+}
+.ppwc-countdown-wrapper .ppwc-countdown {
+  display: flex;
+  gap: 10px;
+}
+.ppwc-countdown-item {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  padding: 4px 6px 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  background: #cec8bc;
+}
+.ppwc-countdown-item .ppwc-label,
+.ppwc-countdown-item .ppwc-countdown-number {
+  color: #4c4b48;
+  text-align: center;
+  font-family: Lora;
+}
+.ppwc-countdown-item .ppwc-label {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+.ppwc-countdown-item .ppwc-countdown-number {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+/* Formularz */
+.ppwc-premiere-form-container h3 {
+  color: #000;
+  font-family: Lora;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 125%;
+  margin-bottom: 0;
+}
+
+#ppwc-premiere-signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ppwc-premiere-form-row {
+  display: flex;
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  .ppwc-premiere-form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.ppwc-premiere-form-group {
+  width: 100%;
+}
+.ppwc-premiere-form-group input[type='text'],
+.ppwc-premiere-form-group input[type='url'],
+.ppwc-premiere-form-group input[type='email'],
+.ppwc-premiere-form-group input[type='tel'],
+.ppwc-premiere-form-group input[type='password'],
+.ppwc-premiere-form-group input[type='number'],
+.ppwc-premiere-form-group input[type='search'],
+.ppwc-premiere-form-group textarea {
+  border: none;
+  height: 34px;
+  padding: 5px 0;
+  border-bottom: 1px solid #cec8bc;
+  color: #8c8376;
+  font-family: Lora;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.5px;
+}
+.ppwc-premiere-form-consent {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ppwc-premiere-form-consent label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #000;
+  font-family: Lora;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+}
+.ppwc-premiere-form-button {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .ppwc-premiere-form-container .ppwc-countdown-wrapper {
+    gap: 10px;
+  }
+  .ppwc-countdown-item {
+    width: 40px;
+    height: 40px;
+  }
+  .ppwc-countdown-item .ppwc-countdown-number {
+    font-size: 18px;
+  }
+  .ppwc-countdown-item .ppwc-label {
+    font-size: 9px;
+  }
+}

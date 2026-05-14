@@ -1,0 +1,76 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Notify about availability\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-23 11:15+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.6; wp-6.4.2\n"
+"X-Domain: notify_about_availability"
+
+#: notify_about_availability.php:162
+msgid "E-mail address, size, and variation ID are required."
+msgstr ""
+
+#: notify_about_availability.php:88
+msgid "E-mail text"
+msgstr ""
+
+#: notify_about_availability.php:83
+msgid "Email title"
+msgstr ""
+
+#: notify_about_availability.php:93
+msgid "Image"
+msgstr ""
+
+#: notify_about_availability.php:53
+msgid "Notify About Availability"
+msgstr ""
+
+#. Name of the plugin
+msgid "Notify about availability"
+msgstr ""
+
+#: notify_about_availability.php:52
+msgid "Notify About Availability Options"
+msgstr ""
+
+#. Author of the plugin
+msgid "Piotr Morawski - Weblo"
+msgstr ""
+
+#: notify_about_availability.php:97
+msgid "Save Changes"
+msgstr ""
+
+#. Description of the plugin
+msgid "This plugin allows users to get notified about product availability."
+msgstr ""
+
+#: notify_about_availability.php:168
+msgid "We will notify you about the availability"
+msgstr ""
+
+#: notify_about_availability.php:94
+msgid ""
+"You can use <strong>[product_img]</strong> as an image or your own link."
+msgstr ""
+
+#: notify_about_availability.php:84
+msgid "You can use <strong>[product_name]</strong> to substitute variables."
+msgstr ""
+
+#: notify_about_availability.php:89
+msgid ""
+"You can use <strong>[product_name]</strong>, <strong>[link]</strong> and "
+"<strong>[add_to_cart]</strong> to substitute variables."
+msgstr ""

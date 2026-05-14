@@ -1,0 +1,171 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Product Premiere for WooCommerce\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-12 13:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.8.1; php-8.2.23\n"
+"X-Domain: product-premiere"
+
+#: includes/settings.php:159
+msgid "Actions"
+msgstr ""
+
+#: includes/settings.php:135
+msgid "Add New Consent"
+msgstr ""
+
+#: includes/admin.php:44
+msgid "Additional MailerLite Group ID"
+msgstr ""
+
+#. Description of the plugin
+msgid "Adds product premiere functionality to WooCommerce products."
+msgstr ""
+
+#: includes/settings.php:121
+msgid "Button Text"
+msgstr ""
+
+#: includes/settings.php:156 includes/settings.php:172
+msgid "Consent ID"
+msgstr ""
+
+#: includes/settings.php:157
+msgid "Consent Text"
+msgstr ""
+
+#: includes/settings.php:133
+msgid "Consents"
+msgstr ""
+
+#: includes/settings.php:112
+msgid "Countdown Text"
+msgstr ""
+
+#: includes/public.php:173
+msgid "days"
+msgstr ""
+
+#: includes/admin.php:40
+msgid "Enable premiere for this product."
+msgstr ""
+
+#: includes/settings.php:218
+msgid "Enter the ID of the group where subscribers should be added"
+msgstr ""
+
+#: includes/settings.php:205
+msgid ""
+"Enter your MailerLite API key from https://app.mailerlite."
+"com/integrations/api/"
+msgstr ""
+
+#: includes/public.php:398
+msgid "Failed to save your data. Please try again."
+msgstr ""
+
+#: includes/settings.php:103
+msgid "Form Title"
+msgstr ""
+
+#: includes/public.php:177
+msgid "hours"
+msgstr ""
+
+#: includes/settings.php:199
+msgid "MailerLite API Key"
+msgstr ""
+
+#: includes/settings.php:212
+msgid "MailerLite Group ID"
+msgstr ""
+
+#: includes/settings.php:195
+msgid "MailerLite Integration"
+msgstr ""
+
+#: includes/public.php:181
+msgid "minutes"
+msgstr ""
+
+#: includes/public.php:191 includes/public.php:219
+msgid "Notify me about the premiere"
+msgstr ""
+
+#: includes/public.php:124
+msgid "Please fill in all required fields."
+msgstr ""
+
+#: includes/admin.php:25
+msgid "Premiere Date"
+msgstr ""
+
+#: includes/admin.php:33
+msgid "Premiere Description"
+msgstr ""
+
+#: includes/admin.php:39
+msgid "Premiere Enabled"
+msgstr ""
+
+#. Name of the plugin
+msgid "Product Premiere for WooCommerce"
+msgstr ""
+
+#: includes/settings.php:91
+msgid "Product Title Prefix"
+msgstr ""
+
+#: includes/public.php:421
+#, php-format
+msgid "Produkt będzie dostępny od %s"
+msgstr ""
+
+#: includes/settings.php:184
+msgid "Remove"
+msgstr ""
+
+#: includes/settings.php:158
+msgid "Required"
+msgstr ""
+
+#: includes/public.php:185
+msgid "seconds"
+msgstr ""
+
+#: includes/admin.php:45
+msgid ""
+"Subscribers will be added to this group in addition to the default group "
+"from plugin settings."
+msgstr ""
+
+#: includes/public.php:123 includes/public.php:392
+msgid "Thank you! You will be notified about the premiere."
+msgstr ""
+
+#: includes/settings.php:97
+msgid ""
+"This text will be added before the product title if premiere date is set"
+msgstr ""
+
+#. Author of the plugin
+msgid "Weblo"
+msgstr ""
+
+#: includes/public.php:201
+msgid "Your email"
+msgstr ""
+
+#: includes/public.php:197
+msgid "Your name"
+msgstr ""

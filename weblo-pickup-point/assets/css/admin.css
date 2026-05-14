@@ -1,0 +1,96 @@
+/**
+ * Admin Styles for Weblo Pick-up Point
+ */
+
+.weblo-pickup-points-table-wrapper {
+	margin-top: 10px;
+}
+
+.weblo-pickup-points-table {
+	border-collapse: collapse;
+	margin-bottom: 10px;
+}
+
+.weblo-pickup-points-table th {
+	background: #f9f9f9;
+	padding: 10px;
+	text-align: left;
+	border: 1px solid #ddd;
+	font-weight: 600;
+}
+
+.weblo-pickup-points-table td {
+	padding: 8px 10px;
+	border: 1px solid #ddd;
+	vertical-align: middle;
+}
+
+.weblo-pickup-point-row {
+	cursor: move;
+}
+
+.weblo-pickup-point-row:hover {
+	background-color: #f9f9f9;
+}
+
+.sort-handle {
+	cursor: move;
+	text-align: center;
+	width: 30px;
+}
+
+.sort-handle .dashicons {
+	color: #999;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+.sort-handle:hover .dashicons {
+	color: #333;
+}
+
+.weblo-point-name,
+.weblo-point-price {
+	width: 100%;
+	padding: 5px 8px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	font-size: 14px;
+}
+
+.weblo-point-name:focus,
+.weblo-point-price:focus {
+	border-color: #0073aa;
+	outline: none;
+	box-shadow: 0 0 0 1px #0073aa;
+}
+
+.weblo-point-price {
+	text-align: right;
+}
+
+.actions-column {
+	text-align: center;
+}
+
+.weblo-remove-point {
+	margin: 0;
+}
+
+.weblo-no-points td {
+	text-align: center;
+	color: #999;
+	font-style: italic;
+	padding: 20px !important;
+}
+
+.weblo-add-point {
+	margin-top: 10px;
+}
+
+/* Sortable helper */
+.ui-sortable-helper {
+	background: #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+

@@ -1,0 +1,122 @@
+$color: #f37a20;
+$text_color: #fff;
+$innactive: #d3d3d3;
+
+.gifts-progress-bar {
+
+    // border: 1px solid #f7d7bb;
+    // border-radius: 5px;
+    // margin-bottom: 10px;
+
+    @media (max-width:576px) {
+        border: none;
+        padding:0;
+    }
+    .gifts-progress-bar-title {
+        font-size: 14px;
+        font-weight: normal;
+        text-align: left;
+        margin-bottom: 36px;
+        @media (max-width:576px) {
+            font-size: 12px;
+        }
+    }
+    .gifts-progress-bar-remaining {
+        font-size: 12px;
+        margin-bottom: 13px;
+        text-align: center;
+
+        bdi {
+            font-weight: bold;
+        }
+    }
+    .gifts-progress-bar-inner {
+
+        margin-bottom: 20px;
+        
+        .gift-progress-section {
+            position: relative;
+            height: 30px;
+            width: 100%;
+            z-index: 0;
+            .progress-line {
+                background-color: $color;
+                height: 3px;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                z-index: 1;
+
+            }
+            .progress-line-track {
+                background-color: $innactive;
+                height: 3px;
+                width: 100%;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                z-index: 0;
+            }
+
+            .gift-progress-max-value {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translate(0,-50%);
+                width: 20px;
+                height: 20px;
+                border-radius: 40px;
+                background-color: $color;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 10px;
+                color: #fff;
+                z-index: 1;
+                &.inactive {
+                    background: $innactive;
+                }
+                &.last {
+                    transform: translate(0,-50%);
+                }
+                &.first {
+                    transform: translate(0,-50%);
+
+                }
+                @media (max-width:576px) {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            .gift-progress-section-title {
+                position: absolute;
+                top: 0;
+                left: 100%;
+                transform: translate(calc(-50% - 20px), -14px);
+                font-size: 12px;
+                text-wrap: nowrap;
+                @media (max-width:576px) {
+                    transform: translate(calc(-50% - 10px), -10px);
+                }
+                &.first {
+                    left: 0;
+                    right: auto;
+                    transform: translate(0,-14px);
+                    @media (max-width:576px) {
+                        transform: translate(0, -10px);
+                    }
+                }
+                &.last {
+                    left: auto;
+                    right: 0;
+                    transform: translate(0,-14px);
+                    @media (max-width:576px) {
+                        transform: translate(0, -10px);
+                    }
+                }
+            }
+        }
+    }
+}

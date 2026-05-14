@@ -1,0 +1,53 @@
+.product-item, .cross-sell-product {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.gift-level{
+    border: 1px solid #ccc;
+    padding:0 10px 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+   h2 {
+        margin: 20px 0;
+        font-size: 24px;
+    }
+}
+
+.show-gifts-container{
+    border: 1px solid #ccc;
+    padding:10px 10px 20px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.control-wrap{
+    padding: 10px 10px 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+
+    background-color: #fff;
+}
+.producty-template{
+    margin-bottom: 10px;
+}
+
+.btns-wrap-right{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#remove-gift-level{
+    background-color: rgb(175, 72, 72);
+    color: #fff;
+    border: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 10px 0 20px;
+}

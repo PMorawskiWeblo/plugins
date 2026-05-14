@@ -1,0 +1,162 @@
+.storeguide-ai-tabs {
+	margin: 18px 0 14px;
+}
+
+.storeguide-ai-tools-form {
+	max-width: 960px;
+}
+
+.storeguide-ai-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 12px;
+	margin: 16px 0;
+}
+
+.storeguide-ai-card {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	padding: 16px;
+	margin: 12px 0;
+}
+
+.storeguide-ai-card h3 {
+	margin-top: 0;
+}
+
+.storeguide-ai-card p {
+	margin: 8px 0;
+}
+
+.storeguide-ai-tooltip {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 16px;
+	height: 16px;
+	margin-left: 6px;
+	border-radius: 50%;
+	background: #2271b1;
+	color: #fff;
+	font-size: 11px;
+	font-weight: 700;
+	line-height: 1;
+	cursor: help;
+	vertical-align: middle;
+}
+
+.storeguide-ai-coupon-table th,
+.storeguide-ai-coupon-table td {
+	vertical-align: middle;
+}
+
+.storeguide-ai-coupon-table {
+	table-layout: fixed;
+}
+
+.storeguide-ai-coupon-table th:nth-child(1),
+.storeguide-ai-coupon-table td:nth-child(1) {
+	width: 38%;
+}
+
+.storeguide-ai-coupon-table th:nth-child(2),
+.storeguide-ai-coupon-table td:nth-child(2),
+.storeguide-ai-coupon-table th:nth-child(3),
+.storeguide-ai-coupon-table td:nth-child(3) {
+	width: 17%;
+}
+
+.storeguide-ai-coupon-table th:nth-child(4),
+.storeguide-ai-coupon-table td:nth-child(4) {
+	width: 20%;
+}
+
+.storeguide-ai-coupon-table th:nth-child(5),
+.storeguide-ai-coupon-table td:nth-child(5) {
+	width: 8%;
+	text-align: right;
+}
+
+.storeguide-ai-coupon-table th {
+	font-weight: 600;
+}
+
+.storeguide-ai-coupon-table td {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.storeguide-ai-coupon-table .storeguide-ai-coupon-select {
+	width: 100%;
+}
+
+.storeguide-ai-coupon-table .select2-container,
+.storeguide-ai-coupon-table .selectWoo-container {
+	width: 100% !important;
+}
+
+.storeguide-ai-coupon-table input[type="date"] {
+	width: 100%;
+	min-width: 140px;
+}
+
+.storeguide-ai-coupon-table .button-link-delete {
+	color: #b32d2e;
+}
+
+.storeguide-ai-coupon-table .select2-container .select2-selection--single,
+.storeguide-ai-coupon-table .selectWoo-container .select2-selection--single {
+	height: 34px;
+	border-color: #8c8f94;
+}
+
+.storeguide-ai-coupon-table .select2-container--default .select2-selection--single .select2-selection__rendered,
+.storeguide-ai-coupon-table .selectWoo-container--default .select2-selection--single .select2-selection__rendered {
+	line-height: 32px;
+}
+
+.storeguide-ai-coupon-table .select2-dropdown,
+.storeguide-ai-coupon-table .selectWoo-dropdown,
+.select2-container .select2-dropdown,
+.selectWoo-container .select2-dropdown {
+	background: #fff;
+	border: 1px solid #8c8f94;
+	z-index: 100000;
+}
+
+.storeguide-ai-coupon-table .select2-results__options,
+.select2-container .select2-results__options {
+	background: #fff;
+}
+
+.storeguide-ai-coupon-table .select2-results__option,
+.select2-container .select2-results__option {
+	background: #fff;
+	color: #1d2327;
+}
+
+.storeguide-ai-coupon-table .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+	background: #2271b1;
+	color: #fff;
+}
+
+@media (max-width: 1024px) {
+	.storeguide-ai-coupon-table {
+		table-layout: auto;
+	}
+
+	.storeguide-ai-coupon-table th:nth-child(1),
+	.storeguide-ai-coupon-table td:nth-child(1),
+	.storeguide-ai-coupon-table th:nth-child(2),
+	.storeguide-ai-coupon-table td:nth-child(2),
+	.storeguide-ai-coupon-table th:nth-child(3),
+	.storeguide-ai-coupon-table td:nth-child(3),
+	.storeguide-ai-coupon-table th:nth-child(4),
+	.storeguide-ai-coupon-table td:nth-child(4),
+	.storeguide-ai-coupon-table th:nth-child(5),
+	.storeguide-ai-coupon-table td:nth-child(5) {
+		width: auto;
+	}
+}

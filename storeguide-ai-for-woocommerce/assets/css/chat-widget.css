@@ -1,0 +1,318 @@
+.storeguide-ai-widget {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	z-index: 9999;
+	max-width: 360px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	--sg-toggle-bg: #2271b1;
+	--sg-toggle-text: #ffffff;
+	--sg-toggle-radius: 999px;
+	--sg-toggle-font-size: 14px;
+	--sg-send-bg: #2271b1;
+	--sg-send-text: #ffffff;
+	--sg-send-radius: 8px;
+	--sg-send-font-size: 13px;
+}
+
+.storeguide-ai-widget.storeguide-ai-bottom-left {
+	left: 20px;
+	right: auto;
+	align-items: flex-start;
+}
+
+.storeguide-ai-toggle {
+	background: var(--sg-toggle-bg);
+	color: var(--sg-toggle-text);
+	border: none;
+	border-radius: var(--sg-toggle-radius);
+	padding: 10px 16px;
+	cursor: pointer;
+	font-size: var(--sg-toggle-font-size);
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	box-shadow: 0 10px 24px rgba( 15, 23, 42, 0.22 );
+	transition: transform 0.18s ease, box-shadow 0.22s ease, filter 0.22s ease, border-radius 0.22s ease;
+}
+
+.storeguide-ai-toggle:hover {
+	transform: translateY( -1px );
+	box-shadow: 0 14px 28px rgba( 15, 23, 42, 0.28 );
+	filter: saturate( 1.05 );
+}
+
+.storeguide-ai-toggle:active {
+	transform: translateY( 0 );
+	box-shadow: 0 8px 18px rgba( 15, 23, 42, 0.2 );
+}
+
+.storeguide-ai-toggle:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba( 37, 99, 235, 0.35 ), 0 14px 28px rgba( 15, 23, 42, 0.28 );
+}
+
+.storeguide-ai-panel {
+	position: absolute;
+	right: 0;
+	bottom: calc( 100% + 8px );
+	margin-top: 0;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 10px;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+	padding: 12px;
+	opacity: 0;
+	transform: translateY( 8px ) scale( 0.98 );
+	transform-origin: bottom right;
+	transition: opacity 0.22s ease, transform 0.22s ease;
+	will-change: opacity, transform;
+	backdrop-filter: blur( 6px );
+	width: min( 360px, calc( 100vw - 40px ) );
+}
+
+.storeguide-ai-widget.storeguide-ai-bottom-left .storeguide-ai-panel {
+	left: 0;
+	right: auto;
+}
+
+.storeguide-ai-widget.storeguide-ai-bottom-left .storeguide-ai-panel {
+	transform-origin: bottom left;
+}
+
+.storeguide-ai-panel.is-open {
+	opacity: 1;
+	transform: translateY( 0 ) scale( 1 );
+}
+
+.storeguide-ai-panel.storeguide-ai-theme-dark {
+	background: rgba( 15, 23, 42, 0.96 );
+	color: #e2e8f0;
+	border-color: #1e293b;
+	box-shadow: 0 10px 32px rgba( 2, 6, 23, 0.5 );
+}
+
+.storeguide-ai-panel.storeguide-ai-theme-dark .storeguide-ai-form input {
+	background: #0b1220;
+	border: 1px solid #334155;
+	color: #e2e8f0;
+}
+
+.storeguide-ai-panel.storeguide-ai-theme-dark .storeguide-ai-form button {
+	border-color: rgba( 255, 255, 255, 0.18 );
+}
+
+.storeguide-ai-panel.storeguide-ai-theme-dark .storeguide-ai-message-assistant {
+	background: #1e293b;
+	color: #e2e8f0;
+}
+
+.storeguide-ai-panel.storeguide-ai-theme-dark .storeguide-ai-message-assistant::before {
+	color: #94a3b8;
+}
+
+.storeguide-ai-messages {
+	min-height: 120px;
+	max-height: 280px;
+	overflow: auto;
+	margin: 10px 0;
+	display: grid;
+	gap: 10px;
+	padding-right: 2px;
+}
+
+.storeguide-ai-message {
+	position: relative;
+	max-width: 88%;
+	padding: 10px 12px;
+	border-radius: 14px;
+	font-size: 13px;
+	line-height: 1.4;
+	white-space: pre-line;
+	word-break: break-word;
+}
+
+.storeguide-ai-message::before {
+	display: block;
+	font-size: 11px;
+	font-weight: 600;
+	margin-bottom: 5px;
+	opacity: 0.75;
+}
+
+.storeguide-ai-message-user {
+	margin-left: auto;
+	background: #2563eb;
+	color: #fff;
+	border-bottom-right-radius: 4px;
+}
+
+.storeguide-ai-message-user::before {
+	content: "Ty";
+	color: rgba(255, 255, 255, 0.9);
+}
+
+.storeguide-ai-message-assistant {
+	margin-right: auto;
+	background: #eef2ff;
+	color: #1e293b;
+	border-bottom-left-radius: 4px;
+}
+
+.storeguide-ai-message-assistant::before {
+	content: "Asystent";
+	color: #334155;
+}
+
+.storeguide-ai-typing::before {
+	content: "Asystent mysli";
+}
+
+.storeguide-ai-typing-dots {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	height: 12px;
+}
+
+.storeguide-ai-typing-dots span {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: currentColor;
+	opacity: 0.35;
+	animation: storeguide-ai-dot-pulse 1s infinite ease-in-out;
+}
+
+.storeguide-ai-typing-dots span:nth-child(2) {
+	animation-delay: 0.16s;
+}
+
+.storeguide-ai-typing-dots span:nth-child(3) {
+	animation-delay: 0.32s;
+}
+
+@keyframes storeguide-ai-dot-pulse {
+	0%, 80%, 100% {
+		transform: scale( 0.7 );
+		opacity: 0.3;
+	}
+	40% {
+		transform: scale( 1 );
+		opacity: 1;
+	}
+}
+
+.storeguide-ai-form {
+	display: flex;
+	gap: 8px;
+}
+
+.storeguide-ai-form input {
+	flex: 1;
+	border: 1px solid #cbd5e1;
+	border-radius: 8px;
+	padding: 10px 11px;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.storeguide-ai-form input:focus {
+	outline: none;
+	border-color: #3b82f6;
+	box-shadow: 0 0 0 3px rgba( 59, 130, 246, 0.22 );
+}
+
+.storeguide-ai-form button {
+	background: var(--sg-send-bg);
+	color: var(--sg-send-text);
+	border: 1px solid transparent;
+	border-radius: var(--sg-send-radius);
+	font-size: var(--sg-send-font-size);
+	padding: 0 12px;
+	cursor: pointer;
+	box-shadow: 0 6px 14px rgba( 37, 99, 235, 0.25 );
+	transition: transform 0.16s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.storeguide-ai-form button:hover {
+	transform: translateY( -1px );
+	box-shadow: 0 10px 18px rgba( 37, 99, 235, 0.3 );
+	filter: brightness( 1.03 );
+}
+
+.storeguide-ai-form button:active {
+	transform: translateY( 0 );
+	box-shadow: 0 5px 12px rgba( 37, 99, 235, 0.24 );
+}
+
+.storeguide-ai-form button:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba( 37, 99, 235, 0.3 ), 0 10px 18px rgba( 37, 99, 235, 0.3 );
+}
+
+.storeguide-ai-results {
+	display: grid;
+	gap: 8px;
+	margin: 10px 0 0;
+}
+
+.storeguide-ai-result-card {
+	display: grid;
+	grid-template-columns: 52px 1fr;
+	gap: 10px;
+	padding: 8px;
+	border: 1px solid #e2e8f0;
+	border-radius: 8px;
+	background: #fafafa;
+	transition: transform 0.16s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.storeguide-ai-result-card:hover {
+	transform: translateY( -1px );
+	border-color: #cbd5e1;
+	box-shadow: 0 8px 18px rgba( 15, 23, 42, 0.08 );
+}
+
+.storeguide-ai-result-thumb {
+	width: 52px;
+	height: 52px;
+	object-fit: cover;
+	border-radius: 6px;
+}
+
+.storeguide-ai-result-body {
+	display: grid;
+	gap: 4px;
+}
+
+.storeguide-ai-result-title-link {
+	font-weight: 700;
+	font-size: 13px;
+	line-height: 1.3;
+	text-decoration: none;
+	color: #1e293b;
+}
+
+.storeguide-ai-result-title-link:hover {
+	text-decoration: underline;
+}
+
+.storeguide-ai-result-price {
+	font-size: 12px;
+	color: #0f766e;
+	font-weight: 600;
+}
+
+.storeguide-ai-result-stock {
+	font-size: 12px;
+	color: #475569;
+}
+
+.storeguide-ai-result-link {
+	font-size: 12px;
+	text-decoration: none;
+	color: #2563eb;
+}

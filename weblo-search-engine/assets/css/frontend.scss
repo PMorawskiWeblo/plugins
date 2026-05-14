@@ -1,0 +1,406 @@
+/**
+ * Frontend styles for Weblo Search Engine.
+ *
+ * @package Weblo_Search_Engine
+ */
+
+/* Main container */
+.weblo-search-engine {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+  padding: 3rem 0;
+  z-index: 999999;
+  background-color: #faf8f7;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 3rem;
+  &.weblo-search-engine.weblo-search-hidden {
+    display: none;
+  }
+}
+
+/* Close container button (absolute top) */
+.weblo-search-close-container {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+  display: flex;
+  width: 2.5rem;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  :hover {
+    opacity: 0.7;
+  }
+  svg {
+    display: block;
+  }
+}
+.weblo-search-engine-container-content {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+.weblo-search-input-wrapper {
+  position: relative;
+  flex: 1 0 0;
+}
+.wrap_input_close {
+  gap: 3rem;
+}
+.weblo-search-input {
+  width: 100%;
+  padding: 0.625rem 0;
+  font-size: 16px;
+  border-bottom: 1px solid var(--UI-Border-Dark-Transparent-Light, rgba(109, 96, 89, 0.2));
+  border-radius: 0px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  color: var(--UI-Text-Secondary, #6d6059);
+  /* Desktop/Input */
+  font-family: 'Galano Grotesque';
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.40625rem */
+  @media (max-width: 992px) {
+    font-size: 0.875rem;
+    border-bottom: 1px solid var(--UI-Border-Dark-Transparent-Light, rgba(109, 96, 89, 0.2));
+  }
+}
+
+.weblo-search-input:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.weblo-search-loading {
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 14px;
+  z-index: 3;
+}
+
+/* Clear input button */
+.weblo-search-clear-input {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  transition: opacity 0.3s ease;
+}
+
+.weblo-search-clear-input:hover {
+  opacity: 0.7;
+}
+
+.weblo-search-clear-input svg {
+  display: block;
+}
+
+/* Results wrapper */
+.weblo-search-results-wrapper {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.weblo-search-products {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  @media (max-width: 992px) {
+    gap: 0.75rem;
+  }
+  .weblo-search-products-container {
+    .weblo-search-recommended-products,
+    .weblo-search-results {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-height: 30rem;
+      overflow: auto;
+      scrollbar-width: thin;
+      scrollbar-color: transparent transparent;
+      @media (max-width: 992px) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+        overflow-x: scroll;
+        max-width: 100vw;
+      }
+      &::-webkit-scrollbar {
+        width: 2px;
+        background: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 2px;
+      }
+      &:hover {
+        scrollbar-color: #a2693c transparent;
+        &::-webkit-scrollbar-thumb {
+          background: #a2693c;
+        }
+      }
+    }
+  }
+}
+/* Section titles */
+.weblo-search-section-title,
+.weblo-search-section-title {
+  color: var(--UI-Text-Primary, #1c0c0a);
+
+  /* Desktop/H4 Medium */
+  font-family: 'Galano Grotesque';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 30px */
+  text-transform: uppercase;
+}
+
+.weblo-search-section-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.weblo-search-categories {
+  width: 24rem;
+}
+
+.weblo-search-recommended-categories,
+.weblo-search-categories-results {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.75rem;
+  .search-category {
+    display: flex;
+    align-items: center;
+    gap: 0.38rem;
+    transition: background-color 0.3s ease;
+    &:hover {
+      a {
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: #47170d;
+        }
+      }
+    }
+    a {
+      color: var(--Brand-Primary, #47170d);
+      font-family: 'Galano Grotesque';
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%; /* 1.2rem */
+      text-transform: uppercase;
+      padding: 0.5rem 0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+  }
+}
+.search-category {
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.38rem;
+  }
+}
+.search-category-child {
+  padding-left: 1.5rem;
+}
+
+/* No results */
+.weblo-search-no-results,
+.weblo-search-no-results p {
+  color: var(--UI-Text-Secondary, #6d6059);
+  font-family: 'Galano Grotesque';
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.875rem */
+  @media (max-width: 992px) {
+    font-size: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.weblo-search-results .search-product,
+.weblo-search-categories-results .search-category {
+  animation: fadeIn 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .weblo-search-results-wrapper {
+    flex-direction: column;
+  }
+
+  .weblo-search-column {
+    min-width: 100%;
+  }
+}
+
+/* Product item */
+.search-product {
+  display: flex;
+  gap: 1.5rem;
+  @media (max-width: 992px) {
+    min-width: 272px;
+    width: 272px;
+  }
+  &:hover {
+    img {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+  }
+  .product-image {
+    overflow: hidden;
+    a {
+      display: flex;
+      width: 4.88675rem;
+      align-self: stretch;
+      aspect-ratio: 78.19 / 139;
+      height: 100%;
+      @media (max-width: 992px) {
+        width: 81.563px;
+        flex-shrink: 0;
+        align-self: stretch;
+        aspect-ratio: 81.56/145;
+      }
+      img {
+        transition: transform 0.3s ease;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.product-info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex: 1;
+  .product-info-line-title-description {
+    .product-info-line-title {
+      display: flex;
+      flex-direction: column;
+      gap: 0.38rem;
+      .product-line {
+        color: var(--UI-Text-Secondary, #6d6059);
+        font-family: 'Galano Grotesque';
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%; /* 0.9rem */
+        letter-spacing: 0.0225rem;
+        text-transform: uppercase;
+      }
+      .product-title {
+        a {
+          color: var(--UI-Text-Primary, #1c0c0a);
+          font-family: 'Galano Grotesque';
+          font-size: 1.25rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-height: 3em;
+          @media (max-width: 992px) {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+    .description-text {
+      color: var(--UI-Text-Secondary, #6d6059);
+      font-family: 'Galano Grotesque';
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-height: 3em;
+      @media (max-width: 992px) {
+        font-size: 0.875rem;
+      }
+    }
+  }
+  .price {
+    color: var(--UI-Text-Primary, #1c0c0a);
+
+    /* Desktop/Price */
+    font-family: 'Galano Grotesque';
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 1.6875rem */
+    @media (max-width: 992px) {
+      font-size: 1rem;
+    }
+    ins {
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,420 @@
+[2025-12-16 10:05:06] modify_field_args called for key: billing_email
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for billing_email: label=Adres e-mail, placeholder=Adres e-mail
+[2025-12-16 10:05:06] Found translation for billing_email: Adres e-mail
+[2025-12-16 10:05:06] Modified args for billing_email: label=Adres e-mail, placeholder=Adres e-mail
+[2025-12-16 10:05:06] modify_field_args called for key: billing_phone
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for billing_phone: label=Numer telefonu, placeholder=Numer telefonu
+[2025-12-16 10:05:06] Found translation for billing_phone: Numer telefonu
+[2025-12-16 10:05:06] Modified args for billing_phone: label=Numer telefonu, placeholder=Numer telefonu
+[2025-12-16 10:05:06] modify_field_args called for key: billing_first_name
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for billing_first_name: label=Imię, placeholder=Imię
+[2025-12-16 10:05:06] Found translation for billing_first_name: Imię
+[2025-12-16 10:05:06] Modified args for billing_first_name: label=Imię, placeholder=Imię
+[2025-12-16 10:05:06] modify_field_args called for key: billing_last_name
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for billing_last_name: label=Nazwisko, placeholder=Nazwisko
+[2025-12-16 10:05:06] Found translation for billing_last_name: Nazwisko
+[2025-12-16 10:05:06] Modified args for billing_last_name: label=Nazwisko, placeholder=Nazwisko
+[2025-12-16 10:05:06] modify_field_args called for key: billing_address_1
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for billing_address_1: label=Ulica i numer, placeholder=Ulica i numer
+[2025-12-16 10:05:06] Found translation for billing_address_1: Ulica i numer
+[2025-12-16 10:05:06] Modified args for billing_address_1: label=Ulica i numer, placeholder=Ulica i numer
+[2025-12-16 10:05:06] modify_field_args called for key: billing_address_2
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for billing_address_2: label=Mieszkanie, apartament, jednostka (opcjonalnie), placeholder=Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:05:06] Found translation for billing_address_2: Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:05:06] Modified args for billing_address_2: label=Mieszkanie, apartament, jednostka (opcjonalnie), placeholder=Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:05:06] modify_field_args called for key: billing_postcode
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for billing_postcode: label=Kod pocztowy, placeholder=Kod pocztowy
+[2025-12-16 10:05:06] Found translation for billing_postcode: Kod pocztowy
+[2025-12-16 10:05:06] Modified args for billing_postcode: label=Kod pocztowy, placeholder=Kod pocztowy
+[2025-12-16 10:05:06] modify_field_args called for key: billing_city
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for billing_city: label=Miasto, placeholder=Miasto
+[2025-12-16 10:05:06] Found translation for billing_city: Miasto
+[2025-12-16 10:05:06] Modified args for billing_city: label=Miasto, placeholder=Miasto
+[2025-12-16 10:05:06] modify_field_args called for key: billing_state
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for billing_state: label=Województwo / Powiat, placeholder=
+[2025-12-16 10:05:06] Found translation for billing_state: Województwo / Powiat
+[2025-12-16 10:05:06] Modified args for billing_state: label=Województwo / Powiat, placeholder=Województwo / Powiat
+[2025-12-16 10:05:06] modify_field_args called for key: billing_country
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for billing_country: label=Kraj / Region, placeholder=
+[2025-12-16 10:05:06] Found translation for billing_country: Kraj / Region
+[2025-12-16 10:05:06] Modified args for billing_country: label=Kraj / Region, placeholder=Kraj / Region
+[2025-12-16 10:05:06] modify_field_args called for key: billing_company
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for billing_company: label=Nazwa firmy, placeholder=Nazwa firmy
+[2025-12-16 10:05:06] No translation found for key: billing_company
+[2025-12-16 10:05:06] Modifying Company field: billing_company
+[2025-12-16 10:05:06] modify_field_args called for key: billing_nip
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for billing_nip: label=Numer Identyfikacji Podatkowej (NIP), placeholder=Numer Identyfikacji Podatkowej (NIP)
+[2025-12-16 10:05:06] No translation found for key: billing_nip
+[2025-12-16 10:05:06] Modifying NIP field: billing_nip
+[2025-12-16 10:05:06] modify_field_args called for key: shipping_first_name
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for shipping_first_name: label=Imię, placeholder=Imię
+[2025-12-16 10:05:06] Found translation for shipping_first_name: Imię
+[2025-12-16 10:05:06] Modified args for shipping_first_name: label=Imię, placeholder=Imię
+[2025-12-16 10:05:06] modify_field_args called for key: shipping_last_name
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for shipping_last_name: label=Nazwisko, placeholder=Nazwisko
+[2025-12-16 10:05:06] Found translation for shipping_last_name: Nazwisko
+[2025-12-16 10:05:06] Modified args for shipping_last_name: label=Nazwisko, placeholder=Nazwisko
+[2025-12-16 10:05:06] modify_field_args called for key: shipping_country
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for shipping_country: label=Kraj / Region, placeholder=
+[2025-12-16 10:05:06] Found translation for shipping_country: Kraj / Region
+[2025-12-16 10:05:06] Modified args for shipping_country: label=Kraj / Region, placeholder=Kraj / Region
+[2025-12-16 10:05:06] modify_field_args called for key: shipping_address_1
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for shipping_address_1: label=Ulica i numer, placeholder=Ulica i numer
+[2025-12-16 10:05:06] Found translation for shipping_address_1: Ulica i numer
+[2025-12-16 10:05:06] Modified args for shipping_address_1: label=Ulica i numer, placeholder=Ulica i numer
+[2025-12-16 10:05:06] modify_field_args called for key: shipping_address_2
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for shipping_address_2: label=Mieszkanie, apartament, jednostka (opcjonalnie), placeholder=Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:05:06] Found translation for shipping_address_2: Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:05:06] Modified args for shipping_address_2: label=Mieszkanie, apartament, jednostka (opcjonalnie), placeholder=Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:05:06] modify_field_args called for key: shipping_postcode
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for shipping_postcode: label=Kod pocztowy, placeholder=Kod pocztowy
+[2025-12-16 10:05:06] Found translation for shipping_postcode: Kod pocztowy
+[2025-12-16 10:05:06] Modified args for shipping_postcode: label=Kod pocztowy, placeholder=Kod pocztowy
+[2025-12-16 10:05:06] modify_field_args called for key: shipping_city
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for shipping_city: label=Miasto, placeholder=Miasto
+[2025-12-16 10:05:06] Found translation for shipping_city: Miasto
+[2025-12-16 10:05:06] Modified args for shipping_city: label=Miasto, placeholder=Miasto
+[2025-12-16 10:05:06] modify_field_args called for key: shipping_state
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for shipping_state: label=Województwo / Powiat, placeholder=
+[2025-12-16 10:05:06] Found translation for shipping_state: Województwo / Powiat
+[2025-12-16 10:05:06] Modified args for shipping_state: label=Województwo / Powiat, placeholder=Województwo / Powiat
+[2025-12-16 10:05:06] modify_field_args called for key: order_comments
+[2025-12-16 10:05:06] enable_custom_checkout: yes
+[2025-12-16 10:05:06] Original args for order_comments: label=Uwagi do zamówienia, placeholder=Uwagi do zamówienia
+[2025-12-16 10:05:06] Found translation for order_comments: Uwagi do zamówienia
+[2025-12-16 10:05:06] Modified args for order_comments: label=Uwagi do zamówienia, placeholder=Uwagi do zamówienia
+[2025-12-16 10:07:43] modify_field_args called for key: billing_email
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for billing_email: label=Adres e-mail, placeholder=Adres e-mail
+[2025-12-16 10:07:43] Found translation for billing_email: Adres e-mail
+[2025-12-16 10:07:43] Modified args for billing_email: label=Adres e-mail, placeholder=Adres e-mail
+[2025-12-16 10:07:43] modify_field_args called for key: billing_phone
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for billing_phone: label=Numer telefonu, placeholder=Numer telefonu
+[2025-12-16 10:07:43] Found translation for billing_phone: Numer telefonu
+[2025-12-16 10:07:43] Modified args for billing_phone: label=Numer telefonu, placeholder=Numer telefonu
+[2025-12-16 10:07:43] modify_field_args called for key: billing_first_name
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for billing_first_name: label=Imię, placeholder=Imię
+[2025-12-16 10:07:43] Found translation for billing_first_name: Imię
+[2025-12-16 10:07:43] Modified args for billing_first_name: label=Imię, placeholder=Imię
+[2025-12-16 10:07:43] modify_field_args called for key: billing_last_name
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for billing_last_name: label=Nazwisko, placeholder=Nazwisko
+[2025-12-16 10:07:43] Found translation for billing_last_name: Nazwisko
+[2025-12-16 10:07:43] Modified args for billing_last_name: label=Nazwisko, placeholder=Nazwisko
+[2025-12-16 10:07:43] modify_field_args called for key: billing_address_1
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for billing_address_1: label=Ulica i numer, placeholder=Ulica i numer
+[2025-12-16 10:07:43] Found translation for billing_address_1: Ulica i numer
+[2025-12-16 10:07:43] Modified args for billing_address_1: label=Ulica i numer, placeholder=Ulica i numer
+[2025-12-16 10:07:43] modify_field_args called for key: billing_address_2
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for billing_address_2: label=Mieszkanie, apartament, jednostka (opcjonalnie), placeholder=Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:07:43] Found translation for billing_address_2: Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:07:43] Modified args for billing_address_2: label=Mieszkanie, apartament, jednostka (opcjonalnie), placeholder=Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:07:43] modify_field_args called for key: billing_postcode
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for billing_postcode: label=Kod pocztowy, placeholder=Kod pocztowy
+[2025-12-16 10:07:43] Found translation for billing_postcode: Kod pocztowy
+[2025-12-16 10:07:43] Modified args for billing_postcode: label=Kod pocztowy, placeholder=Kod pocztowy
+[2025-12-16 10:07:43] modify_field_args called for key: billing_city
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for billing_city: label=Miasto, placeholder=Miasto
+[2025-12-16 10:07:43] Found translation for billing_city: Miasto
+[2025-12-16 10:07:43] Modified args for billing_city: label=Miasto, placeholder=Miasto
+[2025-12-16 10:07:43] modify_field_args called for key: billing_state
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for billing_state: label=Województwo / Powiat, placeholder=
+[2025-12-16 10:07:43] Found translation for billing_state: Województwo / Powiat
+[2025-12-16 10:07:43] Modified args for billing_state: label=Województwo / Powiat, placeholder=Województwo / Powiat
+[2025-12-16 10:07:43] modify_field_args called for key: billing_country
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for billing_country: label=Kraj / Region, placeholder=
+[2025-12-16 10:07:43] Found translation for billing_country: Kraj / Region
+[2025-12-16 10:07:43] Modified args for billing_country: label=Kraj / Region, placeholder=Kraj / Region
+[2025-12-16 10:07:43] modify_field_args called for key: billing_company
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for billing_company: label=Nazwa firmy, placeholder=Nazwa firmy
+[2025-12-16 10:07:43] No translation found for key: billing_company
+[2025-12-16 10:07:43] Modifying Company field: billing_company
+[2025-12-16 10:07:43] modify_field_args called for key: billing_nip
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for billing_nip: label=Numer Identyfikacji Podatkowej (NIP), placeholder=Numer Identyfikacji Podatkowej (NIP)
+[2025-12-16 10:07:43] No translation found for key: billing_nip
+[2025-12-16 10:07:43] Modifying NIP field: billing_nip
+[2025-12-16 10:07:43] modify_field_args called for key: shipping_first_name
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for shipping_first_name: label=Imię, placeholder=Imię
+[2025-12-16 10:07:43] Found translation for shipping_first_name: Imię
+[2025-12-16 10:07:43] Modified args for shipping_first_name: label=Imię, placeholder=Imię
+[2025-12-16 10:07:43] modify_field_args called for key: shipping_last_name
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for shipping_last_name: label=Nazwisko, placeholder=Nazwisko
+[2025-12-16 10:07:43] Found translation for shipping_last_name: Nazwisko
+[2025-12-16 10:07:43] Modified args for shipping_last_name: label=Nazwisko, placeholder=Nazwisko
+[2025-12-16 10:07:43] modify_field_args called for key: shipping_country
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for shipping_country: label=Kraj / Region, placeholder=
+[2025-12-16 10:07:43] Found translation for shipping_country: Kraj / Region
+[2025-12-16 10:07:43] Modified args for shipping_country: label=Kraj / Region, placeholder=Kraj / Region
+[2025-12-16 10:07:43] modify_field_args called for key: shipping_address_1
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for shipping_address_1: label=Ulica i numer, placeholder=Ulica i numer
+[2025-12-16 10:07:43] Found translation for shipping_address_1: Ulica i numer
+[2025-12-16 10:07:43] Modified args for shipping_address_1: label=Ulica i numer, placeholder=Ulica i numer
+[2025-12-16 10:07:43] modify_field_args called for key: shipping_address_2
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for shipping_address_2: label=Mieszkanie, apartament, jednostka (opcjonalnie), placeholder=Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:07:43] Found translation for shipping_address_2: Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:07:43] Modified args for shipping_address_2: label=Mieszkanie, apartament, jednostka (opcjonalnie), placeholder=Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:07:43] modify_field_args called for key: shipping_postcode
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for shipping_postcode: label=Kod pocztowy, placeholder=Kod pocztowy
+[2025-12-16 10:07:43] Found translation for shipping_postcode: Kod pocztowy
+[2025-12-16 10:07:43] Modified args for shipping_postcode: label=Kod pocztowy, placeholder=Kod pocztowy
+[2025-12-16 10:07:43] modify_field_args called for key: shipping_city
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for shipping_city: label=Miasto, placeholder=Miasto
+[2025-12-16 10:07:43] Found translation for shipping_city: Miasto
+[2025-12-16 10:07:43] Modified args for shipping_city: label=Miasto, placeholder=Miasto
+[2025-12-16 10:07:43] modify_field_args called for key: shipping_state
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for shipping_state: label=Województwo / Powiat, placeholder=
+[2025-12-16 10:07:43] Found translation for shipping_state: Województwo / Powiat
+[2025-12-16 10:07:43] Modified args for shipping_state: label=Województwo / Powiat, placeholder=Województwo / Powiat
+[2025-12-16 10:07:43] modify_field_args called for key: order_comments
+[2025-12-16 10:07:43] enable_custom_checkout: yes
+[2025-12-16 10:07:43] Original args for order_comments: label=Uwagi do zamówienia, placeholder=Uwagi do zamówienia
+[2025-12-16 10:07:43] Found translation for order_comments: Uwagi do zamówienia
+[2025-12-16 10:07:43] Modified args for order_comments: label=Uwagi do zamówienia, placeholder=Uwagi do zamówienia
+[2025-12-16 10:08:44] modify_field_args called for key: billing_email
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for billing_email: label=Adres e-mail, placeholder=Adres e-mail
+[2025-12-16 10:08:44] Found translation for billing_email: Adres e-mail
+[2025-12-16 10:08:44] Modified args for billing_email: label=Adres e-mail, placeholder=Adres e-mail
+[2025-12-16 10:08:44] modify_field_args called for key: billing_phone
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for billing_phone: label=Numer telefonu, placeholder=Numer telefonu
+[2025-12-16 10:08:44] Found translation for billing_phone: Numer telefonu
+[2025-12-16 10:08:44] Modified args for billing_phone: label=Numer telefonu, placeholder=Numer telefonu
+[2025-12-16 10:08:44] modify_field_args called for key: billing_first_name
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for billing_first_name: label=Imię, placeholder=Imię
+[2025-12-16 10:08:44] Found translation for billing_first_name: Imię
+[2025-12-16 10:08:44] Modified args for billing_first_name: label=Imię, placeholder=Imię
+[2025-12-16 10:08:44] modify_field_args called for key: billing_last_name
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for billing_last_name: label=Nazwisko, placeholder=Nazwisko
+[2025-12-16 10:08:44] Found translation for billing_last_name: Nazwisko
+[2025-12-16 10:08:44] Modified args for billing_last_name: label=Nazwisko, placeholder=Nazwisko
+[2025-12-16 10:08:44] modify_field_args called for key: billing_address_1
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for billing_address_1: label=Ulica i numer, placeholder=Ulica i numer
+[2025-12-16 10:08:44] Found translation for billing_address_1: Ulica i numer
+[2025-12-16 10:08:44] Modified args for billing_address_1: label=Ulica i numer, placeholder=Ulica i numer
+[2025-12-16 10:08:44] modify_field_args called for key: billing_address_2
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for billing_address_2: label=Mieszkanie, apartament, jednostka (opcjonalnie), placeholder=Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:08:44] Found translation for billing_address_2: Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:08:44] Modified args for billing_address_2: label=Mieszkanie, apartament, jednostka (opcjonalnie), placeholder=Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:08:44] modify_field_args called for key: billing_postcode
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for billing_postcode: label=Kod pocztowy, placeholder=Kod pocztowy
+[2025-12-16 10:08:44] Found translation for billing_postcode: Kod pocztowy
+[2025-12-16 10:08:44] Modified args for billing_postcode: label=Kod pocztowy, placeholder=Kod pocztowy
+[2025-12-16 10:08:44] modify_field_args called for key: billing_city
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for billing_city: label=Miasto, placeholder=Miasto
+[2025-12-16 10:08:44] Found translation for billing_city: Miasto
+[2025-12-16 10:08:44] Modified args for billing_city: label=Miasto, placeholder=Miasto
+[2025-12-16 10:08:44] modify_field_args called for key: billing_state
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for billing_state: label=Województwo / Powiat, placeholder=
+[2025-12-16 10:08:44] Found translation for billing_state: Województwo / Powiat
+[2025-12-16 10:08:44] Modified args for billing_state: label=Województwo / Powiat, placeholder=Województwo / Powiat
+[2025-12-16 10:08:44] modify_field_args called for key: billing_country
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for billing_country: label=Kraj / Region, placeholder=
+[2025-12-16 10:08:44] Found translation for billing_country: Kraj / Region
+[2025-12-16 10:08:44] Modified args for billing_country: label=Kraj / Region, placeholder=Kraj / Region
+[2025-12-16 10:08:44] modify_field_args called for key: billing_company
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for billing_company: label=Nazwa firmy, placeholder=Nazwa firmy
+[2025-12-16 10:08:44] No translation found for key: billing_company
+[2025-12-16 10:08:44] Modifying Company field: billing_company
+[2025-12-16 10:08:44] modify_field_args called for key: billing_nip
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for billing_nip: label=Numer Identyfikacji Podatkowej (NIP), placeholder=Numer Identyfikacji Podatkowej (NIP)
+[2025-12-16 10:08:44] No translation found for key: billing_nip
+[2025-12-16 10:08:44] Modifying NIP field: billing_nip
+[2025-12-16 10:08:44] modify_field_args called for key: shipping_first_name
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for shipping_first_name: label=Imię, placeholder=Imię
+[2025-12-16 10:08:44] Found translation for shipping_first_name: Imię
+[2025-12-16 10:08:44] Modified args for shipping_first_name: label=Imię, placeholder=Imię
+[2025-12-16 10:08:44] modify_field_args called for key: shipping_last_name
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for shipping_last_name: label=Nazwisko, placeholder=Nazwisko
+[2025-12-16 10:08:44] Found translation for shipping_last_name: Nazwisko
+[2025-12-16 10:08:44] Modified args for shipping_last_name: label=Nazwisko, placeholder=Nazwisko
+[2025-12-16 10:08:44] modify_field_args called for key: shipping_country
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for shipping_country: label=Kraj / Region, placeholder=
+[2025-12-16 10:08:44] Found translation for shipping_country: Kraj / Region
+[2025-12-16 10:08:44] Modified args for shipping_country: label=Kraj / Region, placeholder=Kraj / Region
+[2025-12-16 10:08:44] modify_field_args called for key: shipping_address_1
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for shipping_address_1: label=Ulica i numer, placeholder=Ulica i numer
+[2025-12-16 10:08:44] Found translation for shipping_address_1: Ulica i numer
+[2025-12-16 10:08:44] Modified args for shipping_address_1: label=Ulica i numer, placeholder=Ulica i numer
+[2025-12-16 10:08:44] modify_field_args called for key: shipping_address_2
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for shipping_address_2: label=Mieszkanie, apartament, jednostka (opcjonalnie), placeholder=Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:08:44] Found translation for shipping_address_2: Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:08:44] Modified args for shipping_address_2: label=Mieszkanie, apartament, jednostka (opcjonalnie), placeholder=Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:08:44] modify_field_args called for key: shipping_postcode
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for shipping_postcode: label=Kod pocztowy, placeholder=Kod pocztowy
+[2025-12-16 10:08:44] Found translation for shipping_postcode: Kod pocztowy
+[2025-12-16 10:08:44] Modified args for shipping_postcode: label=Kod pocztowy, placeholder=Kod pocztowy
+[2025-12-16 10:08:44] modify_field_args called for key: shipping_city
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for shipping_city: label=Miasto, placeholder=Miasto
+[2025-12-16 10:08:44] Found translation for shipping_city: Miasto
+[2025-12-16 10:08:44] Modified args for shipping_city: label=Miasto, placeholder=Miasto
+[2025-12-16 10:08:44] modify_field_args called for key: shipping_state
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for shipping_state: label=Województwo / Powiat, placeholder=
+[2025-12-16 10:08:44] Found translation for shipping_state: Województwo / Powiat
+[2025-12-16 10:08:44] Modified args for shipping_state: label=Województwo / Powiat, placeholder=Województwo / Powiat
+[2025-12-16 10:08:44] modify_field_args called for key: order_comments
+[2025-12-16 10:08:44] enable_custom_checkout: yes
+[2025-12-16 10:08:44] Original args for order_comments: label=Uwagi do zamówienia, placeholder=Uwagi do zamówienia
+[2025-12-16 10:08:44] Found translation for order_comments: Uwagi do zamówienia
+[2025-12-16 10:08:44] Modified args for order_comments: label=Uwagi do zamówienia, placeholder=Uwagi do zamówienia
+[2025-12-16 10:09:32] modify_field_args called for key: billing_email
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for billing_email: label=Adres e-mail, placeholder=Adres e-mail
+[2025-12-16 10:09:32] Found translation for billing_email: Adres e-mail
+[2025-12-16 10:09:32] Modified args for billing_email: label=Adres e-mail, placeholder=Adres e-mail
+[2025-12-16 10:09:32] modify_field_args called for key: billing_phone
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for billing_phone: label=Numer telefonu, placeholder=Numer telefonu
+[2025-12-16 10:09:32] Found translation for billing_phone: Numer telefonu
+[2025-12-16 10:09:32] Modified args for billing_phone: label=Numer telefonu, placeholder=Numer telefonu
+[2025-12-16 10:09:32] modify_field_args called for key: billing_first_name
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for billing_first_name: label=Imię, placeholder=Imię
+[2025-12-16 10:09:32] Found translation for billing_first_name: Imię
+[2025-12-16 10:09:32] Modified args for billing_first_name: label=Imię, placeholder=Imię
+[2025-12-16 10:09:32] modify_field_args called for key: billing_last_name
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for billing_last_name: label=Nazwisko, placeholder=Nazwisko
+[2025-12-16 10:09:32] Found translation for billing_last_name: Nazwisko
+[2025-12-16 10:09:32] Modified args for billing_last_name: label=Nazwisko, placeholder=Nazwisko
+[2025-12-16 10:09:32] modify_field_args called for key: billing_address_1
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for billing_address_1: label=Ulica i numer, placeholder=Ulica i numer
+[2025-12-16 10:09:32] Found translation for billing_address_1: Ulica i numer
+[2025-12-16 10:09:32] Modified args for billing_address_1: label=Ulica i numer, placeholder=Ulica i numer
+[2025-12-16 10:09:32] modify_field_args called for key: billing_address_2
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for billing_address_2: label=Mieszkanie, apartament, jednostka (opcjonalnie), placeholder=Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:09:32] Found translation for billing_address_2: Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:09:32] Modified args for billing_address_2: label=Mieszkanie, apartament, jednostka (opcjonalnie), placeholder=Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:09:32] modify_field_args called for key: billing_postcode
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for billing_postcode: label=Kod pocztowy, placeholder=Kod pocztowy
+[2025-12-16 10:09:32] Found translation for billing_postcode: Kod pocztowy
+[2025-12-16 10:09:32] Modified args for billing_postcode: label=Kod pocztowy, placeholder=Kod pocztowy
+[2025-12-16 10:09:32] modify_field_args called for key: billing_city
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for billing_city: label=Miasto, placeholder=Miasto
+[2025-12-16 10:09:32] Found translation for billing_city: Miasto
+[2025-12-16 10:09:32] Modified args for billing_city: label=Miasto, placeholder=Miasto
+[2025-12-16 10:09:32] modify_field_args called for key: billing_state
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for billing_state: label=Województwo / Powiat, placeholder=
+[2025-12-16 10:09:32] Found translation for billing_state: Województwo / Powiat
+[2025-12-16 10:09:32] Modified args for billing_state: label=Województwo / Powiat, placeholder=Województwo / Powiat
+[2025-12-16 10:09:32] modify_field_args called for key: billing_country
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for billing_country: label=Kraj / Region, placeholder=
+[2025-12-16 10:09:32] Found translation for billing_country: Kraj / Region
+[2025-12-16 10:09:32] Modified args for billing_country: label=Kraj / Region, placeholder=Kraj / Region
+[2025-12-16 10:09:32] modify_field_args called for key: billing_company
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for billing_company: label=Nazwa firmy, placeholder=Nazwa firmy
+[2025-12-16 10:09:32] No translation found for key: billing_company
+[2025-12-16 10:09:32] Modifying Company field: billing_company
+[2025-12-16 10:09:32] modify_field_args called for key: billing_nip
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for billing_nip: label=Numer Identyfikacji Podatkowej (NIP), placeholder=Numer Identyfikacji Podatkowej (NIP)
+[2025-12-16 10:09:32] No translation found for key: billing_nip
+[2025-12-16 10:09:32] Modifying NIP field: billing_nip
+[2025-12-16 10:09:32] modify_field_args called for key: shipping_first_name
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for shipping_first_name: label=Imię, placeholder=Imię
+[2025-12-16 10:09:32] Found translation for shipping_first_name: Imię
+[2025-12-16 10:09:32] Modified args for shipping_first_name: label=Imię, placeholder=Imię
+[2025-12-16 10:09:32] modify_field_args called for key: shipping_last_name
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for shipping_last_name: label=Nazwisko, placeholder=Nazwisko
+[2025-12-16 10:09:32] Found translation for shipping_last_name: Nazwisko
+[2025-12-16 10:09:32] Modified args for shipping_last_name: label=Nazwisko, placeholder=Nazwisko
+[2025-12-16 10:09:32] modify_field_args called for key: shipping_country
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for shipping_country: label=Kraj / Region, placeholder=
+[2025-12-16 10:09:32] Found translation for shipping_country: Kraj / Region
+[2025-12-16 10:09:32] Modified args for shipping_country: label=Kraj / Region, placeholder=Kraj / Region
+[2025-12-16 10:09:32] modify_field_args called for key: shipping_address_1
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for shipping_address_1: label=Ulica i numer, placeholder=Ulica i numer
+[2025-12-16 10:09:32] Found translation for shipping_address_1: Ulica i numer
+[2025-12-16 10:09:32] Modified args for shipping_address_1: label=Ulica i numer, placeholder=Ulica i numer
+[2025-12-16 10:09:32] modify_field_args called for key: shipping_address_2
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for shipping_address_2: label=Mieszkanie, apartament, jednostka (opcjonalnie), placeholder=Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:09:32] Found translation for shipping_address_2: Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:09:32] Modified args for shipping_address_2: label=Mieszkanie, apartament, jednostka (opcjonalnie), placeholder=Mieszkanie, apartament, jednostka (opcjonalnie)
+[2025-12-16 10:09:32] modify_field_args called for key: shipping_postcode
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for shipping_postcode: label=Kod pocztowy, placeholder=Kod pocztowy
+[2025-12-16 10:09:32] Found translation for shipping_postcode: Kod pocztowy
+[2025-12-16 10:09:32] Modified args for shipping_postcode: label=Kod pocztowy, placeholder=Kod pocztowy
+[2025-12-16 10:09:32] modify_field_args called for key: shipping_city
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for shipping_city: label=Miasto, placeholder=Miasto
+[2025-12-16 10:09:32] Found translation for shipping_city: Miasto
+[2025-12-16 10:09:32] Modified args for shipping_city: label=Miasto, placeholder=Miasto
+[2025-12-16 10:09:32] modify_field_args called for key: shipping_state
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for shipping_state: label=Województwo / Powiat, placeholder=
+[2025-12-16 10:09:32] Found translation for shipping_state: Województwo / Powiat
+[2025-12-16 10:09:32] Modified args for shipping_state: label=Województwo / Powiat, placeholder=Województwo / Powiat
+[2025-12-16 10:09:32] modify_field_args called for key: order_comments
+[2025-12-16 10:09:32] enable_custom_checkout: yes
+[2025-12-16 10:09:32] Original args for order_comments: label=Uwagi do zamówienia, placeholder=Uwagi do zamówienia
+[2025-12-16 10:09:32] Found translation for order_comments: Uwagi do zamówienia
+[2025-12-16 10:09:32] Modified args for order_comments: label=Uwagi do zamówienia, placeholder=Uwagi do zamówienia

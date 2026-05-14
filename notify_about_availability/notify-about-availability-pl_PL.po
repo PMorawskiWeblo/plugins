@@ -1,0 +1,96 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Notify about availability\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-02 10:40+0000\n"
+"PO-Revision-Date: 2026-01-14 08:33+0000\n"
+"Last-Translator: \n"
+"Language-Team: Polski\n"
+"Language: pl_PL\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10 >= 2 && n%10<=4 "
+"&&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.9; php-8.2.23\n"
+"X-Domain: notify-about-availability"
+
+#: notify_about_availability.php:464
+msgid "-- Wybierz produkt --"
+msgstr "-- Wybierz produkt --"
+
+#: notify_about_availability.php:524
+msgid "Adresy email zostały zaimportowane, ale produkt nie jest dostępny."
+msgstr "Adresy email zostały zaimportowane, ale produkt nie jest dostępny."
+
+#: notify_about_availability.php:29
+msgid "An error occurred. Please try again."
+msgstr "Wystąpił błąd. Spróbuj ponownie."
+
+#: notify_about_availability.php:508
+msgid "brak"
+msgstr "brak"
+
+#: notify_about_availability.php:93
+msgid "Email address"
+msgstr "E-MAIL"
+
+#: notify_about_availability.php:28
+msgid "Email is required"
+msgstr "Adres e-mail jest wymagany"
+
+#: notify_about_availability.php:486
+msgid "Importuj i wyślij powiadomienia"
+msgstr "Importuj i wyślij powiadomienia"
+
+#. Name of the plugin
+msgid "Notify about availability"
+msgstr "Powiadom o dostępności"
+
+#: notify_about_availability.php:100
+msgid "Notify me"
+msgstr "POWIADOM MNIE"
+
+#. Author of the plugin
+msgid "Piotr Morawski - Weblo"
+msgstr "Piotr Morawski - Weblo"
+
+#: notify_about_availability.php:481
+msgid ""
+"Plik CSV z jedną kolumną zawierającą adresy email (pierwszy wiersz zostanie "
+"pominięty)"
+msgstr ""
+"Plik CSV z jedną kolumną zawierającą adresy email (pierwszy wiersz zostanie "
+"pominięty)"
+
+#: notify_about_availability.php:476
+msgid "Plik CSV z mailami"
+msgstr "Plik CSV z mailami"
+
+#: notify_about_availability.php:522
+msgid "Powiadomienia zostały wysłane!"
+msgstr "Powiadomienia zostały wysłane!"
+
+#. Description of the plugin
+msgid "This plugin allows users to get notified about product availability."
+msgstr ""
+"Ta wtyczka umożliwia użytkownikom otrzymywanie powiadomień o dostępności "
+"produktu."
+
+#: notify_about_availability.php:85
+msgid ""
+"This product is currently unavailable. Leave your email and we'll notify you "
+"when it becomes available."
+msgstr ""
+"Produkt chwilowo niedostępny. Zostaw e-mail, a powiadomimy Cię, gdy będzie "
+"dostępny."
+
+#: notify_about_availability.php:460
+msgid "Wybierz produkt"
+msgstr "Wybierz produkt"
+
+#: notify_about_availability.php:442 notify_about_availability.php:443
+#: notify_about_availability.php:454
+msgid "Zaległe powiadomienia"
+msgstr "Zaległe powiadomienia"

@@ -1,0 +1,102 @@
+{
+	"name": "wpdesk/flexible-shiping-pro",
+	"authors": [
+		{
+			"name": "Krzysiek",
+			"email": "krzysiek@wpdesk.pl"
+		}
+	],
+	"config": {
+		"platform": {
+			"php": "7.4"
+		},
+		"platform-check": false,
+		"sort-packages": true,
+		"allow-plugins": {
+			"cweagans/composer-patches": true,
+			"kylekatarnls/update-helper": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"wpdesk/wp-codeception": true,
+			"wpdesk/wp-wpdesk-activation-reminder": true,
+			"wpdesk/wp-wpdesk-composer": true
+		},
+		"gitlab-domains": ["gitlab.wpdesk.dev"]
+	},
+	"prefer-stable": true,
+	"minimum-stability": "stable",
+	"autoload": {
+		"classmap": [
+			"classes",
+			"vendor_prefixed"
+		],
+		"psr-4": {
+			"WPDesk\\FSPro\\TableRate\\": "src/WPDesk/FSPro/TableRate/",
+			"WPDesk\\FSPro\\Blocks\\": "src/WPDesk/FSPro/Blocks/",
+			"WPDesk\\FSPro\\ShippingMethod\\": "src/WPDesk/FSPro/ShippingMethod/"
+		}
+	},
+	"require-dev": {
+		"10up/wp_mock": "*",
+		"octolize/wp-betterdocs-beacon": "^1.0.2",
+		"octolize/wp-octolize-tracker": "^1.2",
+		"octolize/wp-onboarding": "^1.9",
+		"octolize/wp-plugin-update-reminder": "^1",
+		"phpunit/phpunit": "^7||^8||^9",
+		"wpdesk/wp-builder": "^2.1",
+		"wpdesk/wp-codeception": "^2.7.10",
+		"wpdesk/wp-forms": "^2.4",
+		"wpdesk/wp-logs": "^1.11.0",
+		"wpdesk/wp-plugin-flow-paid": "^1.0.2",
+		"wpdesk/wp-wpdesk-composer": "^3",
+		"wpdesk/wp-wpdesk-fs-compatibility": "^1.0.0",
+		"wpdesk/wp-wpdesk-fs-table-rate": "^4",
+		"psr/log": "^1||^2||^3"
+	},
+	"autoload-dev": {
+		"classmap": [
+			"tests"
+		],
+		"exclude-from-classmap": [
+			"tests/unit/stubs"
+		]
+	},
+	"extra": {
+		"php-requires": "7.4",
+		"text-domain": "flexible-shipping-pro",
+		"translations-folder": "lang",
+		"translation-file-headers": {
+			"Project-Id-Version": "Flexible Shipping PRO",
+			"Last-Translator": "Grzegorz Rola <grola@wpdesk.pl>",
+			"X-Poedit-WPHeader": "flexible-shipping-pro.php"
+		},
+		"po-files": {
+			"pl_PL": "pl_PL.po"
+		},
+		"minify-assets": {
+			"js": [
+				"assets/js/admin.js"
+			],
+			"css": [
+				"assets/css/admin.css"
+			]
+		}
+	},
+	"scripts": {
+		"test": "echo composer is alive",
+		"phpcs": "phpcs",
+		"phpunit-unit": "phpunit --configuration phpunit-unit.xml --coverage-text --colors=never",
+		"phpunit-unit-coverage": "phpunit --configuration phpunit-unit.xml --coverage-html build-coverage",
+		"phpunit-integration": "phpunit --configuration phpunit-integration.xml --coverage-text --colors=never",
+		"docs": "apigen generate"
+	},
+	"repositories": {
+		"octolize": {
+			"type": "composer",
+			"url": "https://gitlab.wpdesk.dev/api/v4/group/wpdesk/-/packages/composer/"
+		},
+		"wpdesk": {
+			"type": "composer",
+			"url": "https://gitlab.wpdesk.dev/api/v4/group/wpdesk/-/packages/composer/"
+		}
+	}
+}

@@ -1,0 +1,68 @@
+# Copyright (C) 2024 Weblo
+# This file is distributed under the same license as the Weblo Pick-up Point plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Weblo Pick-up Point 1.0.0\n"
+"Report-Msgid-Bugs-To: https://weblo.pl\n"
+"POT-Creation-Date: 2024-01-01 12:00+0000\n"
+"PO-Revision-Date: 2026-01-14 13:57+0000\n"
+"Last-Translator: GRUPA Śliwka\n"
+"Language-Team: Polski\n"
+"Language: pl_PL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10 >= 2 && n%10<=4 "
+"&&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.8.1; php-8.2.23"
+
+#: weblo-pickup-point.php
+msgid "Weblo Pick-up Point requires WooCommerce to be installed and active."
+msgstr ""
+
+#: includes/class-weblo-pickup-point-method.php
+msgid "Pick-up point"
+msgstr ""
+
+#: includes/class-weblo-pickup-point-method.php
+msgid "Let customers pick up their order at a selected location."
+msgstr ""
+
+#: includes/class-weblo-pickup-point-method.php
+msgid "Method title"
+msgstr ""
+
+#: includes/class-weblo-pickup-point-method.php
+msgid "This controls the title which the user sees during checkout."
+msgstr ""
+
+#: includes/class-weblo-pickup-point-method.php
+msgid "Pick-up points"
+msgstr ""
+
+#: includes/class-weblo-pickup-point-method.php
+msgid ""
+"Define one pick-up point per line in the format: Name | Price. Example: "
+"Island Galeria Mokotow | 0"
+msgstr ""
+
+#: includes/class-weblo-pickup-point-frontend.php
+msgid "Select a pick-up point"
+msgstr ""
+
+#: includes/class-weblo-pickup-point-frontend.php
+msgid "Please select a pick-up point"
+msgstr ""
+
+#: includes/class-weblo-pickup-point-frontend.php
+msgid "Please select a pick-up point to continue."
+msgstr ""
+
+#: includes/class-weblo-pickup-point-frontend.php
+msgid "Location:"
+msgstr ""
+
+#: includes/class-weblo-pickup-point-frontend.php
+msgid "Shipping cost:"
+msgstr ""

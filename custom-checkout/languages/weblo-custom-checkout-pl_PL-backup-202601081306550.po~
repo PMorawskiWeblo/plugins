@@ -1,0 +1,471 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Weblo Custom Checkout\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-15 13:56+0000\n"
+"PO-Revision-Date: 2026-01-08 13:04+0000\n"
+"Last-Translator: \n"
+"Language-Team: Polski\n"
+"Language: pl_PL\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10 >= 2 && n%10<=4 "
+"&&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.9; php-8.2.23\n"
+"X-Domain: weblo-custom-checkout"
+
+#: woocommerce/checkout/form-checkout.php:298
+msgid "%d-%d BUSINESS DAYS"
+msgstr "%d-%d DNI ROBOCZE"
+
+#: woocommerce/checkout/review-order.php:222
+#, php-format
+msgid "(Total with tax: %s)"
+msgstr "(Łącznie z podatkiem %s)"
+
+#: includes/class-weblo-custom-checkout.php:940
+#: includes/class-weblo-custom-checkout.php:941
+msgid "Account password"
+msgstr "Hasło do konta"
+
+#: includes/class-weblo-custom-checkout.php:936
+#: includes/class-weblo-custom-checkout.php:937
+msgid "Account username"
+msgstr "Nazwa użytkownika"
+
+#: includes/class-weblo-custom-checkout.php:418
+msgid "Add Consent"
+msgstr "Dodaj zgodę"
+
+#: woocommerce/checkout/form-shipping.php:66
+msgid "Additional information"
+msgstr "Informacje dodatkowe"
+
+#: includes/class-weblo-custom-checkout.php:807
+#: includes/class-weblo-custom-checkout.php:808
+#: includes/class-weblo-custom-checkout.php:906
+#: includes/class-weblo-custom-checkout.php:907
+msgid "Apartment, suite, unit (optional)"
+msgstr "Mieszkanie, apartament, jednostka (opcjonalnie)"
+
+#: includes/class-weblo-custom-checkout.php:120
+msgid "Asset version (used when developer mode is off)"
+msgstr "Wersja zasobów (używana, gdy tryb dewelopera jest wyłączony)"
+
+#: woocommerce/checkout/form-billing.php:57
+msgid "Billing address"
+msgstr "Adres rozliczeniowy"
+
+#: woocommerce/checkout/form-checkout.php:43
+msgid "Buyer details"
+msgstr "Dane kupującego"
+
+#: woocommerce/checkout/form-checkout.php:32
+msgid "Cart"
+msgstr "Koszyk"
+
+#: woocommerce/checkout/form-checkout.php:174
+msgid "Change"
+msgstr "Zmień"
+
+#: woocommerce/checkout/form-checkout.php:90
+msgid "Checkout"
+msgstr "Zamówienie"
+
+#: includes/class-weblo-custom-checkout.php:46
+#: includes/class-weblo-custom-checkout.php:47
+#: includes/class-weblo-custom-checkout.php:216
+msgid "Checkout Settings"
+msgstr "Ustawienia kasy"
+
+#: includes/class-weblo-custom-checkout.php:817
+#: includes/class-weblo-custom-checkout.php:818
+#: includes/class-weblo-custom-checkout.php:914
+#: includes/class-weblo-custom-checkout.php:915
+msgid "City"
+msgstr "Miasto"
+
+#: includes/class-weblo-custom-checkout.php:831
+#: includes/class-weblo-custom-checkout.php:832
+#: includes/class-weblo-custom-checkout.php:848
+#: includes/class-weblo-custom-checkout.php:849
+#: includes/class-weblo-custom-checkout.php:898
+#: includes/class-weblo-custom-checkout.php:899
+msgid "Company name"
+msgstr "Nazwa firmy"
+
+#: includes/class-weblo-custom-checkout.php:136
+msgid "Company name field ID"
+msgstr "ID pola nazwy firmy"
+
+#: includes/class-weblo-custom-checkout.php:968
+msgid "Company name is required when requesting a VAT invoice."
+msgstr "Nazwa firmy jest wymagana przy żądaniu faktury VAT."
+
+#: includes/class-weblo-custom-checkout.php:944
+#: includes/class-weblo-custom-checkout.php:945
+msgid "Confirm password"
+msgstr "Potwierdź hasło"
+
+#: includes/class-weblo-custom-checkout.php:389
+#: includes/class-weblo-custom-checkout.php:484
+msgid "Consent text:"
+msgstr "Treść zgody:"
+
+#: includes/class-weblo-custom-checkout.php:152
+msgid "Consents"
+msgstr "Zgody"
+
+#: includes/class-weblo-custom-checkout.php:1048
+msgid "Control global checkout settings."
+msgstr "Steruj globalnymi ustawieniami kasy."
+
+#: includes/class-weblo-custom-checkout.php:822
+#: includes/class-weblo-custom-checkout.php:921
+msgid "Country / Region"
+msgstr "Kraj / Region"
+
+#: includes/class-weblo-custom-checkout.php:81
+msgid "Current status"
+msgstr "Aktualny status"
+
+#: includes/class-weblo-custom-checkout.php:246
+msgid "Custom checkout is disabled."
+msgstr "Niestandardowa kasa jest wyłączona."
+
+#: includes/class-weblo-custom-checkout.php:245
+msgid "Custom checkout is enabled."
+msgstr "Niestandardowa kasa jest włączona."
+
+#: includes/class-weblo-custom-checkout.php:380
+#: includes/class-weblo-custom-checkout.php:483
+msgid "Custom ID:"
+msgstr "Niestandardowe ID:"
+
+#: woocommerce/checkout/review-order.php:117
+#: woocommerce/checkout/review-order.php:129
+msgid "Delivery"
+msgstr "Dostawa"
+
+#: woocommerce/checkout/form-checkout.php:53
+msgid "Delivery and payment"
+msgstr "Dostawa I płatność"
+
+#: includes/class-weblo-custom-checkout.php:105
+msgid "Developer"
+msgstr "Deweloper"
+
+#: includes/class-weblo-custom-checkout.php:112
+msgid "Developer mode (random asset versions)"
+msgstr "Tryb dewelopera (losowe wersje zasobów)"
+
+#: woocommerce/checkout/review-order.php:146
+msgid "Discount"
+msgstr "Rabat"
+
+#: includes/class-weblo-custom-checkout.php:782
+#: includes/class-weblo-custom-checkout.php:783
+msgid "Email address"
+msgstr "Email"
+
+#: includes/class-weblo-custom-checkout.php:89
+msgid "Enable coupons in checkout"
+msgstr "Włącz kupony w kasie"
+
+#: includes/class-weblo-custom-checkout.php:73
+msgid "Enable custom checkout"
+msgstr "Włącz niestandardową kasę"
+
+#: includes/class-weblo-custom-checkout.php:128
+msgid "Enable debug log"
+msgstr "Włącz log debugowania"
+
+#: includes/class-weblo-custom-checkout.php:97
+msgid "Enable login in checkout"
+msgstr "Włącz logowanie w kasie"
+
+#: includes/class-weblo-custom-checkout.php:368
+#: includes/class-weblo-custom-checkout.php:481
+msgid "Enabled"
+msgstr "Włączone"
+
+#: woocommerce/checkout/form-billing.php:60
+msgid "Enter the billing address of the agreement with your payment method."
+msgstr "Wprowadź adres rozliczeniowy zgodny z metodą płatności."
+
+#: includes/class-weblo-custom-checkout.php:323
+msgid "Field ID for Company name (used when VAT invoice checkbox is checked)."
+msgstr "ID pola nazwy firmy (używane, gdy zaznaczona jest faktura VAT)."
+
+#: includes/class-weblo-custom-checkout.php:335
+msgid "Field ID for Tax Identification Number (NIP) - must be 10 digits."
+msgstr "ID pola Numeru Identyfikacji Podatkowej (NIP) – musi mieć 10 cyfr."
+
+#: includes/class-weblo-custom-checkout.php:792
+#: includes/class-weblo-custom-checkout.php:793
+#: includes/class-weblo-custom-checkout.php:890
+#: includes/class-weblo-custom-checkout.php:891
+msgid "First name"
+msgstr "Imię"
+
+#: includes/class-weblo-custom-checkout.php:66
+msgid "General"
+msgstr "Ogólne"
+
+#: woocommerce/checkout/form-checkout.php:240
+msgid "Go to delivery and payment"
+msgstr "Przejdź do dostawy i płatności"
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://weblo.pl"
+msgstr "https://weblo.pl"
+
+#: woocommerce/checkout/form-shipping.php:75
+msgid "I have a note about my order"
+msgstr "Mam uwagę do zamówienia"
+
+#: woocommerce/checkout/form-billing.php:42
+msgid "I want a vat invoice"
+msgstr "Chcę fakturę VAT"
+
+#: includes/class-weblo-custom-checkout.php:797
+#: includes/class-weblo-custom-checkout.php:798
+#: includes/class-weblo-custom-checkout.php:894
+#: includes/class-weblo-custom-checkout.php:895
+msgid "Last name"
+msgstr "Nazwisko"
+
+#: includes/class-weblo-custom-checkout.php:159
+msgid "Manage consents"
+msgstr "Zarządzaj zgodami"
+
+#: includes/class-weblo-custom-checkout.php:342
+msgid ""
+"Manage consents displayed in the checkout. You can add, edit, reorder, "
+"enable/disable, and set custom IDs for each consent."
+msgstr ""
+"Zarządzaj zgodami wyświetlanymi w kasie. Możesz dodawać, edytować, zmieniać "
+"kolejność, włączać/wyłączać i ustawiać niestandardowe ID dla każdej zgody."
+
+#: includes/class-weblo-custom-checkout.php:354
+#: includes/class-weblo-custom-checkout.php:487
+msgid "No consents added yet. Click \"Add Consent\" to create one."
+msgstr ""
+"Nie dodano jeszcze żadnej zgody. Kliknij „Dodaj zgodę”, aby utworzyć nową."
+
+#: includes/class-weblo-custom-checkout.php:930
+#: includes/class-weblo-custom-checkout.php:931
+msgid "Order notes"
+msgstr "Uwagi do zamówienia"
+
+#: woocommerce/checkout/form-checkout.php:229
+msgid "Order summary"
+msgstr "Podsumowanie zamówienia"
+
+#: woocommerce/checkout/form-checkout.php:249
+msgid "Pay for your order"
+msgstr "Opłać zamówienie"
+
+#: woocommerce/checkout/form-checkout.php:198
+msgid "Payment methods"
+msgstr "Metoda płatności"
+
+#: includes/class-weblo-custom-checkout.php:787
+#: includes/class-weblo-custom-checkout.php:788
+#: includes/class-weblo-custom-checkout.php:924
+#: includes/class-weblo-custom-checkout.php:925
+msgid "Phone number"
+msgstr "Numer telefonu"
+
+#: includes/class-weblo-custom-checkout.php:675
+msgid "Phone number must contain at least 9 digits."
+msgstr "Numer telefonu musi zawierać co najmniej 9 cyfr."
+
+#. Author of the plugin
+msgid "Piotr Morawski"
+msgstr "Piotr Morawski"
+
+#: woocommerce/checkout/form-checkout.php:213
+msgid "Please fill in your details above to see available payment methods."
+msgstr "Wypełnij powyższe dane, aby zobaczyć dostępne metody płatności."
+
+#: includes/class-weblo-custom-checkout.php:812
+#: includes/class-weblo-custom-checkout.php:813
+#: includes/class-weblo-custom-checkout.php:910
+#: includes/class-weblo-custom-checkout.php:911
+msgid "Postcode"
+msgstr "Kod pocztowy"
+
+#: includes/class-weblo-custom-checkout.php:676
+msgid "Postcode must be in format XX-XXX or XXXXX."
+msgstr "Kod pocztowy musi mieć format XX-XXX lub XXXXX."
+
+#: woocommerce/checkout/review-order.php:96
+msgid "Products"
+msgstr "Produkty"
+
+#: woocommerce/checkout/form-billing.php:53
+msgid "Provide your details"
+msgstr "Podaj swoje dane"
+
+#. Description of the plugin
+msgid "Provides a customizable checkout experience with versioned assets."
+msgstr "Zapewnia konfigurowalny proces kasy z wersjonowanymi zasobami."
+
+#: includes/class-weblo-custom-checkout.php:411
+#: includes/class-weblo-custom-checkout.php:485
+msgid "Remove"
+msgstr "Usuń"
+
+#: includes/class-weblo-custom-checkout.php:235
+msgid "Replace the default checkout with a custom experience."
+msgstr "Zastąp domyślną kasę niestandardowym procesem."
+
+#: includes/class-weblo-custom-checkout.php:374
+#: includes/class-weblo-custom-checkout.php:482
+msgid "Required"
+msgstr "Wymagane"
+
+#: includes/class-weblo-custom-checkout.php:221
+msgid "Save changes"
+msgstr "Zapisz zmiany"
+
+#: woocommerce/checkout/form-checkout.php:185
+msgid "Select a delivery method."
+msgstr "Wybierz metodę dostawy."
+
+#: woocommerce/checkout/form-checkout.php:201
+msgid "Select payment method."
+msgstr "Wybierz sposób płatności."
+
+#: woocommerce/checkout/form-shipping.php:32
+msgid "Ship to a different address?"
+msgstr "Chcę podać inne dane dostawy"
+
+#: woocommerce/checkout/form-checkout.php:118
+msgid "Shipping details"
+msgstr "Dane do wysyłki"
+
+#: woocommerce/checkout/form-checkout.php:182
+msgid "Shipping methods"
+msgstr "Sposób dostawy"
+
+#: includes/class-weblo-custom-checkout.php:259
+msgid "Show coupon form in checkout."
+msgstr "Pokaż formularz kuponu w kasie."
+
+#: includes/class-weblo-custom-checkout.php:271
+msgid "Show login form in checkout."
+msgstr "Pokaż formularz logowania w kasie."
+
+#. $1 and $2 opening and closing emphasis tags respectively
+#: woocommerce/checkout/form-checkout.php:251
+#, php-format
+msgid ""
+"Since your browser does not support JavaScript, or it is disabled, please "
+"ensure you click the %1$sUpdate Totals%2$s button before placing your order. "
+"You may be charged more than the amount stated above if you fail to do so."
+msgstr ""
+"Ponieważ Twoja przeglądarka nie obsługuje JavaScript lub jest on wyłączony, "
+"przed złożeniem zamówienia kliknij przycisk %1$sAktualizuj sumę%2$s. W "
+"przeciwnym razie opłata może przekroczyć kwotę podaną powyżej."
+
+#: woocommerce/checkout/form-checkout.php:213
+msgid ""
+"Sorry, it seems that there are no available payment methods for your "
+"location. Please contact us if you require assistance or wish to make "
+"alternate arrangements."
+msgstr ""
+"Przepraszamy, wygląda na to, że w Twojej lokalizacji nie ma dostępnych metod "
+"płatności. Skontaktuj się z nami, jeśli potrzebujesz pomocy lub chcesz "
+"ustalić alternatywne warunki."
+
+#: includes/class-weblo-custom-checkout.php:826
+#: includes/class-weblo-custom-checkout.php:918
+msgid "State / County"
+msgstr "Województwo / Powiat"
+
+#: includes/class-weblo-custom-checkout.php:802
+#: includes/class-weblo-custom-checkout.php:803
+#: includes/class-weblo-custom-checkout.php:902
+#: includes/class-weblo-custom-checkout.php:903
+msgid "Street and number"
+msgstr "Ulica i numer"
+
+#: woocommerce/checkout/form-checkout.php:63
+msgid "Summary"
+msgstr "Podsumowanie"
+
+#: includes/class-weblo-custom-checkout.php:856
+#: includes/class-weblo-custom-checkout.php:857
+#: includes/class-weblo-custom-checkout.php:877
+#: includes/class-weblo-custom-checkout.php:878
+msgid "Tax Identification Number"
+msgstr "Numer Identyfikacji Podatkowej (NIP)"
+
+#: includes/class-weblo-custom-checkout.php:144
+msgid "Tax Identification Number (NIP) field ID"
+msgstr "ID pola Numeru Identyfikacji Podatkowej (NIP)"
+
+#: includes/class-weblo-custom-checkout.php:974
+msgid ""
+"Tax Identification Number (NIP) is required when requesting a VAT invoice."
+msgstr ""
+"Numer Identyfikacji Podatkowej (NIP) jest wymagany przy żądaniu faktury VAT."
+
+#: includes/class-weblo-custom-checkout.php:976
+msgid "Tax Identification Number (NIP) must be exactly 10 digits."
+msgstr "Numer Identyfikacji Podatkowej (NIP) musi mieć dokładnie 10 cyfr."
+
+#: includes/class-weblo-custom-checkout.php:677
+msgid "Tax Identification Number must be exactly 10 digits."
+msgstr "Numer Identyfikacji Podatkowej musi mieć dokładnie 10 cyfr."
+
+#: includes/class-weblo-custom-checkout.php:674
+msgid "This field is required."
+msgstr "To pole jest wymagane."
+
+#: woocommerce/checkout/review-order.php:195
+msgid "Total sum"
+msgstr "Razem"
+
+#: woocommerce/checkout/form-checkout.php:256
+msgid "Update totals"
+msgstr "Aktualizacja sum"
+
+#: includes/class-weblo-custom-checkout.php:296
+msgid ""
+"Used only when developer mode is disabled. Leave empty to use plugin version."
+msgstr ""
+"Używane tylko, gdy tryb dewelopera jest wyłączony. Pozostaw puste, aby użyć "
+"wersji wtyczki."
+
+#. Name of the plugin
+msgid "Weblo Custom Checkout"
+msgstr "Weblo Niestandardowa Kasa"
+
+#: includes/class-weblo-custom-checkout.php:283
+msgid "When enabled, CSS/JS versions will be randomized."
+msgstr "Po włączeniu wersje CSS/JS będą losowe."
+
+#: includes/class-weblo-custom-checkout.php:308
+msgid "Write debug log to the plugin folder (max 5MB, auto-truncate)."
+msgstr ""
+"Zapisz log debugowania w folderze wtyczki (maks. 5 MB, automatyczne "
+"obcinanie)."
+
+#: includes/class-weblo-custom-checkout.php:1000
+msgid "You must accept all required consents."
+msgstr "Musisz zaakceptować wszystkie wymagane zgody."
+
+#: includes/class-weblo-custom-checkout.php:999
+#, php-format
+msgid "You must accept: %s"
+msgstr "Musisz zaakceptować: %s"
+
+#: woocommerce/checkout/form-checkout.php:81
+msgid "You must be logged in to checkout."
+msgstr "Aby dokonać zakupu, musisz się zalogować."

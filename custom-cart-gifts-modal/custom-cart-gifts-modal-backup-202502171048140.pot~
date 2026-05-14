@@ -1,0 +1,265 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Custom Cart Gifts Modal\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-17 10:08+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.7.1; wp-6.7.1\n"
+"X-Domain: custom-cart-gifts-modal"
+
+#: templates/woocommerce/cart/gifts-template.php:74
+msgid " - choose a gift:"
+msgstr ""
+
+#. %s location.
+#: templates/woocommerce/cart/cart-totals.php:108
+#, php-format
+msgid "(estimated for %s)"
+msgstr ""
+
+#: templates/woocommerce/cart/gifts-template.php:109
+msgid "* Shipping costs are not included in gift thresholds calculation."
+msgstr ""
+
+#: templates/woocommerce/cart/gift-template.php:84
+msgid "+ Add"
+msgstr ""
+
+#: templates/woocommerce/cart/gift-template.php:90
+msgid "- Remove"
+msgstr ""
+
+#: admin/class-admin.php:279 templates/woocommerce/cart/cart.php:44
+msgid "Add products for {remaining} to get free delivery!"
+msgstr ""
+
+#: templates/cross-sell-product.php:95
+#: templates/cross-sell-product-template.php:119
+msgid "Add to cart"
+msgstr ""
+
+#: includes/class-cart-crosssells.php:235
+msgid "Added to cart"
+msgstr ""
+
+#: templates/woocommerce/cart/cart-totals.php:88
+#: templates/woocommerce/cart/cart-totals.php:237
+#: templates/woocommerce/cart/cart-totals.php:237
+msgid "Apply coupon"
+msgstr ""
+
+#: templates/woocommerce/cart/cart-item.php:127
+msgid "Available on backorder"
+msgstr ""
+
+#: templates/woocommerce/cart/cart.php:26
+msgid "Cart"
+msgstr ""
+
+#: templates/woocommerce/cart/cart-totals.php:26
+msgid "Cart totals"
+msgstr ""
+
+#: templates/modal-template.php:11
+msgid "Check out also:"
+msgstr ""
+
+#: admin/class-admin.php:280 templates/woocommerce/cart/cart.php:56
+msgid "Congratulations! You get free delivery!"
+msgstr ""
+
+#: templates/modal-template.php:24
+msgid "Continue shopping"
+msgstr ""
+
+#: templates/woocommerce/cart/cart-totals.php:88
+#: templates/woocommerce/cart/cart-totals.php:237
+msgid "Coupon code"
+msgstr ""
+
+#: templates/woocommerce/cart/cart-totals.php:88
+#: templates/woocommerce/cart/cart-totals.php:237
+msgid "Coupon:"
+msgstr ""
+
+#: templates/woocommerce/cart/cart-totals.php:67
+msgid "Coupons"
+msgstr ""
+
+#. Name of the plugin
+msgid "Custom Cart + Crosssell Page"
+msgstr ""
+
+#: custom-cart-gifts-modal.php:28
+msgid "Custom Cart Gifts Modal wymaga zainstalowanego i aktywnego WooCommerce."
+msgstr ""
+
+#: admin/class-admin.php:432 templates/woocommerce/cart/cart-totals.php:195
+msgid "Expected delivery time"
+msgstr ""
+
+#: includes/class-custom-cart.php:129 includes/class-custom-cart.php:148
+msgid "Gift has been added to cart"
+msgstr ""
+
+#: includes/class-custom-cart.php:171
+msgid "Gift has been removed from cart"
+msgstr ""
+
+#: includes/class-custom-cart.php:246
+msgid "Gift has been removed from cart because it is out of stock."
+msgstr ""
+
+#: includes/class-custom-cart.php:248
+msgid ""
+"Gift has been removed from cart because you no longer meet the requirements."
+msgstr ""
+
+#: templates/woocommerce/cart/cart-item.php:116
+msgid "GIFT! "
+msgstr ""
+
+#: templates/modal-template.php:25
+msgid "Go to cart"
+msgstr ""
+
+#: templates/woocommerce/cart/cart.php:50
+msgid "Go to shop"
+msgstr ""
+
+#: templates/woocommerce/cart/cart-totals.php:232
+msgid "Have a coupon?"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://weblo.pl"
+msgstr ""
+
+#: templates/woocommerce/cart/gifts-progress-bar.php:97
+#: templates/woocommerce/cart/gifts-template.php:59
+msgid "Level "
+msgstr ""
+
+#: admin/class-admin.php:213
+#: templates/woocommerce/cart/gifts-progress-bar.php:7
+msgid "Match products and receive maximum benefits!"
+msgstr ""
+
+#: templates/woocommerce/cart/gift-template.php:65
+msgid "Out of stock"
+msgstr ""
+
+#: templates/woocommerce/cart/cart-item.php:164
+#: templates/woocommerce/cart/cart-item.php:185
+msgid "Price"
+msgstr ""
+
+#: includes/class-crossell-page.php:117
+#: templates/woocommerce/cart/cart-totals.php:163
+#: templates/woocommerce/cart/cart-totals.php:169
+#: templates/woocommerce/cart/cart-totals.php:215
+#: templates/woocommerce/cart/cart-totals.php:221
+msgid "Proceed to shipping and payment"
+msgstr ""
+
+#: templates/woocommerce/cart/cart-item.php:38
+msgid "Product"
+msgstr ""
+
+#: includes/class-cart-crosssells.php:75 includes/class-cart-crosssells.php:160
+msgid "Product has been added to cart"
+msgstr ""
+
+#: includes/class-cart-crosssells.php:210
+msgid "Product has been removed from cart"
+msgstr ""
+
+#: includes/class-custom-cart.php:278
+msgid ""
+"Product has been removed from cart because you no longer meet the "
+"requirements."
+msgstr ""
+
+#: templates/woocommerce/cart/cart-item.php:133
+msgid "Quantity"
+msgstr ""
+
+#: templates/woocommerce/cart/gifts-progress-bar.php:128
+msgid "Remaining to next level: "
+msgstr ""
+
+#: templates/woocommerce/cart/gifts-template.php:66
+msgid "Remaining: "
+msgstr ""
+
+#: templates/woocommerce/cart/cart-totals.php:72
+msgid "Remove coupon"
+msgstr ""
+
+#: templates/cross-sell-product-template.php:107
+msgid "Remove from cart"
+msgstr ""
+
+#: includes/class-crossell-page.php:114
+msgid "Return to cart"
+msgstr ""
+
+#: templates/woocommerce/cart/gifts-template.php:36
+msgid "Select gifts"
+msgstr ""
+
+#: templates/cross-sell-product.php:85
+#: templates/cross-sell-product-template.php:91
+msgid "Select variant"
+msgstr ""
+
+#: templates/woocommerce/cart/cart-totals.php:46
+#: templates/woocommerce/cart/cart-totals.php:47
+msgid "Shipping"
+msgstr ""
+
+#: templates/woocommerce/cart/cart-totals.php:31
+#: templates/woocommerce/cart/cart-totals.php:32
+msgid "Subtotal"
+msgstr ""
+
+#: templates/woocommerce/cart/cart-totals.php:136
+#: templates/woocommerce/cart/cart-totals.php:137
+#: templates/woocommerce/cart/cart-totals.php:205
+#: templates/woocommerce/cart/cart-totals.php:206
+msgid "Total"
+msgstr ""
+
+#: includes/class-crossell-page.php:43
+msgid "Total:"
+msgstr ""
+
+#: templates/woocommerce/cart/cart.php:81
+msgid "Update cart"
+msgstr ""
+
+#. Author of the plugin
+msgid "weblo.pl"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Wtyczka wyświetlająca modal z prezentami w koszyku + strona z crosssellami"
+msgstr ""
+
+#: includes/class-custom-cart.php:135
+msgid "You cannot add this product to cart"
+msgstr ""
+
+#: includes/class-crossell-page.php:40
+msgid "Your cart total:"
+msgstr ""

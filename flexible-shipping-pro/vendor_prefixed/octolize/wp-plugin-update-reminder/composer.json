@@ -1,0 +1,50 @@
+{
+    "name": "octolize\/wp-plugin-update-reminder",
+    "authors": [
+        {
+            "name": "Grzegorz Rola",
+            "email": "grola@octolize.com"
+        }
+    ],
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "7.4"
+        }
+    },
+    "require": {
+        "php": ">=7.4",
+        "psr\/log": "^1.1",
+        "wpdesk\/wp-notice": "^3.2",
+        "wpdesk\/wp-plugin-flow": "^3.2"
+    },
+    "require-dev": {
+        "10up\/wp_mock": "*",
+        "mockery\/mockery": "*",
+        "php-stubs\/wordpress-stubs": "^6.6",
+        "phpunit\/phpunit": "^7||^8||^9",
+        "squizlabs\/php_codesniffer": "^3.0.2",
+        "wimg\/php-compatibility": "^8",
+        "wp-coding-standards\/wpcs": "^0.14.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "FSProVendor\\Octolize\\PluginUpdateReminder\\": "src\/"
+        }
+    },
+    "autoload-dev": {},
+    "extra": {
+        "text-domain": "wp-plugin-update-reminder",
+        "translations-folder": "lang",
+        "po-files": {
+            "pl_PL": "pl_PL.po"
+        }
+    },
+    "scripts": {
+        "phpcs": "phpcs",
+        "phpunit-unit": "phpunit --configuration phpunit-unit.xml --coverage-html build-coverage",
+        "phpunit-unit-fast": "phpunit --configuration phpunit-unit.xml --no-coverage",
+        "phpunit-integration": "phpunit --configuration phpunit-integration.xml --coverage-text --colors=never",
+        "phpunit-integration-fast": "phpunit --configuration phpunit-integration.xml --no-coverage"
+    }
+}
