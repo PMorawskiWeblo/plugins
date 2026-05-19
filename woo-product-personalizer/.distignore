@@ -1,0 +1,8 @@
+.python-deps/
+bin/
+cursor-*.md
+.git/
+.gitignore
+.distignore
+*.md
+!readme.txt
