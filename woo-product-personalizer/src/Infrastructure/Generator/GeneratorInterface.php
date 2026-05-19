@@ -21,7 +21,8 @@ interface GeneratorInterface {
 	 * @param int    $item_id      Order line item ID.
 	 * @param string $preview_data Base64, local path, or image URL.
 	 * @param string $directory    Output directory.
+	 * @param string $filename_tag Filename tag (e.g. projekt, warstwy).
 	 * @return array{path: string, url: string}
 	 */
-	public function generate( $order_id, $item_id, $preview_data, $directory );
+	public function generate( $order_id, $item_id, $preview_data, $directory, $filename_tag = 'projekt' );
 }

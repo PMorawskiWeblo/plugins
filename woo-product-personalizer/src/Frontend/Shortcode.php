@@ -62,6 +62,9 @@ class Shortcode {
 			self::TAG
 		);
 
-		return $this->controller->render( absint( $atts['product_id'] ) );
+		$product_id = absint( $atts['product_id'] );
+
+		// Modal mode needs the trigger button; render_button() includes modal + button.
+		return $this->controller->render_button( $product_id );
 	}
 }

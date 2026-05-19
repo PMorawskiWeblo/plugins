@@ -20,6 +20,7 @@ class CartPreviewStorage {
 	const THUMB_MAX_WIDTH  = 480;
 	const THUMB_QUALITY    = 82;
 	const FULL_FILENAME    = 'full.png';
+	const LAYERS_FILENAME  = 'layers.png';
 	const THUMB_FILENAME   = 'preview.jpg';
 
 	/**
@@ -89,6 +90,97 @@ class CartPreviewStorage {
 			'full_url'  => $full_url,
 			'full_path' => $full_path,
 		);
+	}
+
+	/**
+	 * Store layers-only preview (photos + text, no background) in an existing preview folder.
+	 *
+	 * @param string $id       Preview ID from store_from_data_url().
+	 * @param string $data_url Canvas data URL.
+	 * @return array{path: string, url: string}|false
+	 */
+	public function store_layers_from_data_url( $id, $data_url ) {
+		$binary = $this->decode_data_url( $data_url );
+
+		if ( false === $binary ) {
+			return false;
+		}
+
+		$dir = $this->find_preview_dir( $id );
+
+		if ( ! $dir ) {
+			return false;
+		}
+
+		$path = trailingslashit( $dir ) . self::LAYERS_FILENAME;
+
+		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents
+		if ( false === file_put_contents( $path, $binary ) ) {
+			$this->logger->error( 'Failed to write cart layers preview file.', array( 'id' => $id ) );
+			return false;
+		}
+
+		return array(
+			'path' => $path,
+			'url'  => $this->preview_file_url( $id, self::LAYERS_FILENAME ),
+		);
+	}
+
+	/**
+	 * Absolute path to the layers-only preview file.
+	 *
+	 * @param string $id Preview ID.
+	 * @return string|false
+	 */
+	public function get_layers_path( $id ) {
+		$dir = $this->find_preview_dir( $id );
+
+		if ( ! $dir ) {
+			return false;
+		}
+
+		$path = trailingslashit( $dir ) . self::LAYERS_FILENAME;
+
+		return is_readable( $path ) ? $path : false;
+	}
+
+	/**
+	 * Resolve layers preview file for production PNG generation.
+	 *
+	 * @param string $preview_id  Stored preview ID.
+	 * @param string $preview_url Layers preview URL from order meta.
+	 * @return string|false
+	 */
+	public function resolve_layers_production_path( $preview_id, $preview_url = '' ) {
+		$path = $this->get_layers_path( $preview_id );
+
+		if ( false !== $path ) {
+			return $path;
+		}
+
+		return $this->layers_path_from_preview_url( $preview_url );
+	}
+
+	/**
+	 * Map a layers preview URL to layers.png in the cart preview folder.
+	 *
+	 * @param string $url Preview URL.
+	 * @return string|false
+	 */
+	public function layers_path_from_preview_url( $url ) {
+		$local = $this->uploads->url_to_local_path( $url );
+
+		if ( false === $local || is_dir( $local ) ) {
+			return false;
+		}
+
+		if ( self::LAYERS_FILENAME === basename( $local ) ) {
+			return $local;
+		}
+
+		$layers = trailingslashit( dirname( $local ) ) . self::LAYERS_FILENAME;
+
+		return is_readable( $layers ) ? $layers : false;
 	}
 
 	/**

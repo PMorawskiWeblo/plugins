@@ -41,9 +41,10 @@ class GeneratorManager {
 	 * @param int    $item_id      Order line item ID.
 	 * @param string $preview_data Preview data.
 	 * @param string $directory    Directory.
+	 * @param string $filename_tag Filename tag.
 	 * @return array{path: string, url: string}
 	 */
-	public function generate( $order_id, $item_id, $preview_data, $directory ) {
-		return $this->generator->generate( $order_id, $item_id, $preview_data, $directory );
+	public function generate( $order_id, $item_id, $preview_data, $directory, $filename_tag = 'projekt' ) {
+		return $this->generator->generate( $order_id, $item_id, $preview_data, $directory, $filename_tag );
 	}
 }

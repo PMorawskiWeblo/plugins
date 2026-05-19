@@ -128,8 +128,9 @@ class SettingsPage {
 				: $defaults['frontend_mode'],
 			'button_position'        => sanitize_text_field( $input['button_position'] ?? $defaults['button_position'] ),
 			'shortcode_only'         => ! empty( $input['shortcode_only'] ),
-			'default_button_label'   => sanitize_text_field( $input['default_button_label'] ?? $defaults['default_button_label'] ),
-			'default_accept_text'    => sanitize_textarea_field( $input['default_accept_text'] ?? $defaults['default_accept_text'] ),
+			'default_button_label'           => sanitize_text_field( $input['default_button_label'] ?? $defaults['default_button_label'] ),
+			'default_button_label_completed' => sanitize_text_field( $input['default_button_label_completed'] ?? $defaults['default_button_label_completed'] ),
+			'default_accept_text'            => sanitize_textarea_field( $input['default_accept_text'] ?? $defaults['default_accept_text'] ),
 			'debug_enabled'          => ! empty( $input['debug_enabled'] ),
 			'cleanup_enabled'        => ! empty( $input['cleanup_enabled'] ),
 			'cleanup_interval'       => in_array( (int) ( $input['cleanup_interval'] ?? 14 ), array( 7, 14, 30 ), true )

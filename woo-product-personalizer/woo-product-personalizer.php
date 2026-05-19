@@ -4,7 +4,7 @@
  * Plugin Name:       Woo Product Personalizer
  * Plugin URI:        https://weblo.pl/
  * Description:       Personalize WooCommerce products with image and text layouts, live preview, and order production files.
- * Version:           2.0
+ * Version:           2.0.2
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Weblo
@@ -18,7 +18,7 @@
 
 defined('ABSPATH') || exit;
 
-define('WPP_VERSION', '2.0');
+define('WPP_VERSION', '2.0.2');
 define('WPP_PLUGIN_FILE', __FILE__);
 define('WPP_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('WPP_PLUGIN_URL', plugin_dir_url(__FILE__));

@@ -192,6 +192,41 @@ class PreviewDisplay {
 	}
 
 	/**
+	 * Admin order item preview: photos on masks + text only (transparent background).
+	 *
+	 * @param \WC_Order_Item $item Order item.
+	 * @return void
+	 */
+	public static function render_admin_layers_preview( $item ) {
+		if ( ! $item instanceof \WC_Order_Item || 'yes' !== $item->get_meta( '_wpp_personalized' ) ) {
+			return;
+		}
+
+		$source = (string) $item->get_meta( '_wpp_layers_production_url' );
+
+		echo '<p class="wpp-order-item-meta__preview-label"><strong>' . esc_html__( 'Layers preview (no background)', 'woo-product-personalizer' ) . '</strong></p>';
+
+		if ( self::is_preview_available( $source ) ) {
+			$img_style = 'max-width:220px;height:auto;border:1px solid #ddd;border-radius:4px;'
+				. 'background:repeating-conic-gradient(#e8e8e8 0 25%, #fff 0 50%) 50% / 16px 16px;';
+			printf(
+				'<p class="wpp-order-item-meta__preview wpp-order-item-meta__preview--layers"><a href="%1$s" target="_blank" rel="noopener noreferrer"><img src="%1$s" alt="%2$s" style="%3$s" /></a></p>',
+				esc_url( $source ),
+				esc_attr__( 'Personalization layers preview', 'woo-product-personalizer' ),
+				esc_attr( $img_style )
+			);
+			return;
+		}
+
+		if ( '' !== $source || '' !== (string) $item->get_meta( '_wpp_layers_production_file' ) ) {
+			printf(
+				'<p class="wpp-order-item-meta__preview wpp-order-item-meta__preview--unavailable"><em>%s</em></p>',
+				esc_html( self::get_unavailable_message() )
+			);
+		}
+	}
+
+	/**
 	 * Resolve a public asset URL to a local path when possible.
 	 *
 	 * @param string $url URL.

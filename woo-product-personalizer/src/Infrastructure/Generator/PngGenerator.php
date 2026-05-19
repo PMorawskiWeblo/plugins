@@ -49,11 +49,16 @@ class PngGenerator implements GeneratorInterface {
 	 * @param int    $item_id      Order line item ID.
 	 * @param string $preview_data Data URL, local path, or image URL.
 	 * @param string $directory    Directory.
+	 * @param string $filename_tag Filename tag without extension.
 	 * @return array{path: string, url: string}
 	 */
-	public function generate( $order_id, $item_id, $preview_data, $directory ) {
-		$item_id  = absint( $item_id );
-		$filename = absint( $order_id ) . '_item_' . ( $item_id ? $item_id : '0' ) . '_projekt.png';
+	public function generate( $order_id, $item_id, $preview_data, $directory, $filename_tag = 'projekt' ) {
+		$item_id      = absint( $item_id );
+		$filename_tag = sanitize_file_name( (string) $filename_tag );
+		if ( '' === $filename_tag ) {
+			$filename_tag = 'projekt';
+		}
+		$filename = absint( $order_id ) . '_item_' . ( $item_id ? $item_id : '0' ) . '_' . $filename_tag . '.png';
 		$path     = trailingslashit( $directory ) . $filename;
 		$url      = trailingslashit( $this->uploads->order_url( $order_id ) ) . $filename;
 

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Woo Product Personalizer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-18 10:08+0000\n"
-"PO-Revision-Date: 2026-05-18 10:14+0000\n"
+"PO-Revision-Date: 2026-05-19 09:11+0000\n"
 "Last-Translator: \n"
 "Language-Team: Polski\n"
 "Language: pl_PL\n"
@@ -89,7 +89,7 @@ msgstr "Automatyczne czyszczenie"
 #: src/Frontend/PersonalizerController.php:231
 #: templates/frontend/partials/transform-toolbar.php:34
 msgid "Auto-fit"
-msgstr "Dopasuj automatycznie"
+msgstr "Dopasuj"
 
 #: templates/admin/layout-metabox.php:50
 msgid "Background image"
@@ -146,11 +146,11 @@ msgstr "Interwał czyszczenia"
 msgid "Click to select background image"
 msgstr "Kliknij, aby wybrać obraz tła"
 
-#: src/Core/Assets.php:128
+#: src/Core/Assets.php:134
 msgid "Click to select mask image"
 msgstr "Kliknij, aby wybrać obraz maski"
 
-#: src/Core/Assets.php:114
+#: src/Core/Assets.php:117
 msgid "Clone"
 msgstr "Duplikuj"
 
@@ -160,11 +160,11 @@ msgstr "Duplikuj"
 msgid "Close"
 msgstr "Zamknij"
 
-#: templates/admin/layout-metabox.php:34 src/Core/Assets.php:121
+#: templates/admin/layout-metabox.php:34 src/Core/Assets.php:127
 msgid "Collapse all"
 msgstr "Zwiń wszystko"
 
-#: src/Core/Assets.php:118
+#: src/Core/Assets.php:124
 msgid "Collapse settings"
 msgstr "Zwiń ustawienia"
 
@@ -180,7 +180,7 @@ msgstr ""
 "Skonfiguruj obszar roboczy, sloty obrazów i pola tekstowe. Użyj kreatora "
 "wizualnego lub edytuj JSON bezpośrednio."
 
-#: templates/admin/layout-metabox.php:118 src/Core/Assets.php:119
+#: templates/admin/layout-metabox.php:118 src/Core/Assets.php:125
 msgid "Copy JSON"
 msgstr "Kopiuj JSON"
 
@@ -192,7 +192,7 @@ msgstr "Kopiuj JSON do schowka"
 msgid "Could not create the ZIP archive."
 msgstr "Nie udało się utworzyć archiwum ZIP."
 
-#: src/Infrastructure/Uploads/UploadsManager.php:149
+#: src/Infrastructure/Uploads/UploadsManager.php:183
 msgid "Could not create upload directory."
 msgstr "Nie udało się utworzyć katalogu przesyłania plików."
 
@@ -216,6 +216,25 @@ msgstr "Domyślna treść zgody"
 msgid "Default button label"
 msgstr "Domyślna etykieta przycisku"
 
+#: templates/admin/settings-page.php:57
+msgid "Default completed button label"
+msgstr "Domyślna etykieta po personalizacji"
+
+#: templates/admin/settings-page.php:60
+msgid ""
+"Shown on the product page after all required personalization fields are valid "
+"(when add to cart is blocked until personalization is complete)."
+msgstr ""
+"Wyświetlane na stronie produktu, gdy wszystkie wymagane pola personalizacji "
+"są poprawne (gdy dodawanie do koszyka jest zablokowane do ukończenia "
+"personalizacji)."
+
+#: src/Infrastructure/Repository/SettingsRepository.php:39
+#: src/Frontend/PersonalizerController.php:237
+msgctxt "completed personalize button"
+msgid "Personalized"
+msgstr "Spersonalizowano"
+
 #: templates/admin/settings-page.php:180
 msgid "Delete folders"
 msgstr "Usuń foldery"
@@ -229,7 +248,7 @@ msgstr ""
 msgid "Display mode"
 msgstr "Tryb wyświetlania"
 
-#: src/Admin/OrderMetaBox.php:83
+#: src/Admin/OrderItemMetaDisplay.php:242 src/Admin/OrderMetaBox.php:84
 msgid "Download all files (ZIP)"
 msgstr "Pobierz wszystkie pliki (ZIP)"
 
@@ -240,6 +259,10 @@ msgid ""
 msgstr ""
 "Przeciągnij, aby przesunąć. Użyj uchwytów w rogach, aby zmienić szerokość i "
 "wysokość. Kliknij element, aby edytować jego ustawienia."
+
+#: src/Core/Assets.php:120
+msgid "Drag to reorder"
+msgstr "Przeciągnij, aby zmienić kolejność"
 
 #: templates/admin/settings-page.php:191
 msgid "Dry run (report only, do not delete)"
@@ -297,11 +320,11 @@ msgstr "Co 30 dni"
 msgid "Every 7 days"
 msgstr "Co 7 dni"
 
-#: src/Core/Assets.php:122
+#: src/Core/Assets.php:128
 msgid "Expand all"
 msgstr "Rozwiń wszystko"
 
-#: src/Core/Assets.php:117
+#: src/Core/Assets.php:123
 msgid "Expand settings"
 msgstr "Rozwiń ustawienia"
 
@@ -321,13 +344,17 @@ msgstr ""
 msgid "Failed to encode export file."
 msgstr "Nie udało się zakodować pliku eksportu."
 
-#: src/Infrastructure/Uploads/UploadsManager.php:167
+#: src/Infrastructure/Uploads/UploadsManager.php:201
 msgid "Failed to store uploaded file."
 msgstr "Nie udało się zapisać przesłanego pliku."
 
 #: src/Frontend/PersonalizerController.php:275
 msgid "File too large."
 msgstr "Plik jest za duży."
+
+#: src/Admin/OrderItemMetaDisplay.php:232
+msgid "Files are not ready yet. Refresh the page in a moment."
+msgstr "Pliki nie są jeszcze gotowe. Odśwież stronę za chwilę."
 
 #: templates/frontend/partials/transform-toolbar.php:30
 msgid "Flip H"
@@ -349,14 +376,14 @@ msgstr "Odbij pionowo"
 msgid "Font"
 msgstr "Czcionka"
 
-#: src/Admin/OrderItemMetaDisplay.php:129
-#: src/Helpers/PersonalizationSummaryHelper.php:146
+#: src/Admin/OrderItemMetaDisplay.php:156
+#: src/Helpers/PersonalizationSummaryHelper.php:132
 #: templates/frontend/partials/transform-toolbar.php:45
 msgid "Font family"
 msgstr "Rodzina czcionki"
 
-#: src/Admin/OrderItemMetaDisplay.php:128
-#: src/Helpers/PersonalizationSummaryHelper.php:142
+#: src/Admin/OrderItemMetaDisplay.php:155
+#: src/Helpers/PersonalizationSummaryHelper.php:128
 msgid "Font size"
 msgstr "Rozmiar czcionki"
 
@@ -377,7 +404,7 @@ msgstr "Frontend"
 msgid "General"
 msgstr "Ogólne"
 
-#: src/Core/Assets.php:134
+#: src/Core/Assets.php:140
 msgid "Google Fonts"
 msgstr "Google Fonts"
 
@@ -412,7 +439,7 @@ msgstr "https://weblo.pl/"
 msgid "I accept the preview shown above."
 msgstr "Akceptuję podgląd pokazany powyżej."
 
-#: templates/admin/layout-metabox.php:63 src/Core/Assets.php:129
+#: templates/admin/layout-metabox.php:63 src/Core/Assets.php:135
 msgid "Image URL"
 msgstr "URL obrazu"
 
@@ -440,7 +467,7 @@ msgstr "W treści"
 msgid "Invalid file type or size."
 msgstr "Nieprawidłowy typ lub rozmiar pliku."
 
-#: src/Infrastructure/Uploads/UploadsManager.php:154
+#: src/Infrastructure/Uploads/UploadsManager.php:188
 msgid "Invalid file type."
 msgstr "Nieprawidłowy typ pliku."
 
@@ -462,11 +489,11 @@ msgstr "Nieprawidłowy plik JSON."
 msgid "JSON configuration"
 msgstr "Konfiguracja JSON"
 
-#: src/Core/Assets.php:120
+#: src/Core/Assets.php:126
 msgid "JSON copied to clipboard."
 msgstr "Skopiowano JSON do schowka."
 
-#: src/Core/Assets.php:113
+#: src/Core/Assets.php:116
 msgid "Label"
 msgstr "Etykieta"
 
@@ -478,7 +505,7 @@ msgstr "Układ"
 msgid "Layout configuration"
 msgstr "Konfiguracja układu"
 
-#: src/Integrations/WooCommerce/CartHooks.php:125
+#: src/Integrations/WooCommerce/CartHooks.php:135
 msgid "Layout configuration error."
 msgstr "Błąd konfiguracji układu."
 
@@ -502,7 +529,7 @@ msgstr "Układ został pomyślnie zaimportowany."
 msgid "Layout not found."
 msgstr "Nie znaleziono układu."
 
-#: src/Admin/OrderItemMetaDisplay.php:84
+#: src/Admin/OrderItemMetaDisplay.php:106
 msgid "Layout:"
 msgstr "Układ:"
 
@@ -534,7 +561,7 @@ msgstr "Brak konfiguracji układu."
 msgid "Modal"
 msgstr "Modal"
 
-#: src/Frontend/PersonalizerController.php:225
+#: src/Core/Assets.php:119 src/Frontend/PersonalizerController.php:225
 #: templates/frontend/partials/transform-toolbar.php:20
 msgid "Move down"
 msgstr "Przesuń w dół"
@@ -549,7 +576,7 @@ msgstr "Przesuń w lewo"
 msgid "Move right"
 msgstr "Przesuń w prawo"
 
-#: src/Frontend/PersonalizerController.php:224
+#: src/Core/Assets.php:118 src/Frontend/PersonalizerController.php:224
 #: templates/frontend/partials/transform-toolbar.php:18
 msgid "Move up"
 msgstr "Przesuń w górę"
@@ -583,7 +610,7 @@ msgstr "Nie znaleziono układów."
 msgid "No personalization package found for this order."
 msgstr "Nie znaleziono pakietu personalizacji dla tego zamówienia."
 
-#: src/Admin/OrderMetaBox.php:70
+#: src/Admin/OrderMetaBox.php:71
 msgid "No personalized items in this order."
 msgstr "To zamówienie nie zawiera spersonalizowanych pozycji."
 
@@ -620,12 +647,12 @@ msgid "Only delete folders for completed/cancelled/refunded orders"
 msgstr ""
 "Usuwaj foldery tylko dla zamówień zakończonych, anulowanych lub zwróconych"
 
-#: templates/admin/layout-metabox.php:82 src/Core/Assets.php:125
+#: templates/admin/layout-metabox.php:82 src/Core/Assets.php:131
 msgid "Open media library"
 msgstr "Otwórz bibliotekę mediów"
 
 #. %s: link to Google Fonts
-#: src/Core/Assets.php:133
+#: src/Core/Assets.php:139
 #, php-format
 msgid ""
 "Paste one CSS embed link per line from %s. One link applies the font "
@@ -634,15 +661,15 @@ msgstr ""
 "Wklej jeden link osadzenia CSS z %s w osobnej linii. Jeden link zastosuje "
 "czcionkę automatycznie; wiele linków wyświetli klientom wybór czcionki."
 
-#: src/Admin/OrderMetaBox.php:52 src/Admin/ProductMetaBox.php:64
+#: src/Admin/OrderMetaBox.php:53 src/Admin/ProductMetaBox.php:64
 msgid "Personalization"
 msgstr "Personalizacja"
 
-#: src/Integrations/WooCommerce/CartHooks.php:119
+#: src/Integrations/WooCommerce/CartHooks.php:129
 msgid "Personalization data is missing."
 msgstr "Brakuje danych personalizacji."
 
-#: src/Admin/OrderItemMetaDisplay.php:90
+#: src/Admin/OrderItemMetaDisplay.php:112
 msgid "Personalization details"
 msgstr "Szczegóły personalizacji"
 
@@ -650,16 +677,16 @@ msgstr "Szczegóły personalizacji"
 msgid "Personalization is not available for this product."
 msgstr "Personalizacja nie jest dostępna dla tego produktu."
 
-#: src/Integrations/WooCommerce/CartHooks.php:130
+#: src/Integrations/WooCommerce/CartHooks.php:140
 msgid "Personalization layout mismatch."
 msgstr "Niezgodność układu personalizacji."
 
 #: templates/frontend/cart-preview-popup.php:14
-#: src/Admin/OrderItemMetaDisplay.php:101
+#: src/Integrations/WooCommerce/PreviewDisplay.php:181
 msgid "Personalization preview"
 msgstr "Podgląd personalizacji"
 
-#: src/Integrations/WooCommerce/CartHooks.php:113
+#: src/Integrations/WooCommerce/CartHooks.php:123
 msgid ""
 "Personalization security check failed. Please refresh the page and try again."
 msgstr ""
@@ -682,11 +709,11 @@ msgstr ""
 "Personalizuj produkty WooCommerce za pomocą układów obrazów i tekstu, "
 "podglądu na żywo oraz plików produkcyjnych zamówienia."
 
-#: src/Admin/OrderMetaBox.php:119
+#: src/Admin/OrderMetaBox.php:131
 msgid "Personalized"
 msgstr "Spersonalizowany"
 
-#: src/Admin/OrderItemMetaDisplay.php:79
+#: src/Admin/OrderItemMetaDisplay.php:101
 msgid "Personalized product"
 msgstr "Spersonalizowany produkt"
 
@@ -706,28 +733,52 @@ msgstr "Zaakceptuj podgląd przed dodaniem do koszyka."
 msgid "Prefixed [WPP] messages in the browser console."
 msgstr "Komunikaty z prefiksem [WPP] w konsoli przeglądarki."
 
-#: src/Admin/OrderItemMetaDisplay.php:97
+#: src/Integrations/WooCommerce/PreviewDisplay.php:175
 msgid "Preview"
 msgstr "Podgląd"
+
+#: src/Integrations/WooCommerce/PreviewDisplay.php:23
+msgid "Preview removed"
+msgstr "Podgląd usunięty"
 
 #: src/Admin/SettingsPage.php:67 src/Admin/SettingsPage.php:68
 msgid "Product Personalizer"
 msgstr "Personalizator produktu"
 
-#: src/Admin/OrderMetaBox.php:103
+#: src/Admin/OrderItemMetaDisplay.php:229
+msgid "Production package"
+msgstr "Pakiet produkcyjny"
+
+#: src/Admin/OrderItemMetaDisplay.php:208 src/Admin/OrderMetaBox.php:110
 msgid "Production PNG"
 msgstr "Produkcyjny PNG"
 
-#: src/Core/Assets.php:115
+#: src/Integrations/WooCommerce/PreviewDisplay.php:201
+msgid "Layers preview (no background)"
+msgstr "Podgląd warstw (bez tła)"
+
+#: src/Integrations/WooCommerce/PreviewDisplay.php:207
+msgid "Personalization layers preview"
+msgstr "Podgląd warstw personalizacji"
+
+#: src/Admin/OrderItemMetaDisplay.php:228
+msgid "Layers PNG (no background)"
+msgstr "PNG warstw (bez tła)"
+
+#: src/Admin/OrderItemMetaDisplay.php:251 src/Admin/OrderMetaBox.php:93
+msgid "Regenerate production files"
+msgstr "Regeneruj pliki produkcyjne"
+
+#: src/Core/Assets.php:121
 msgid "Remove"
 msgstr "Usuń"
 
 #: templates/admin/layout-metabox.php:76 templates/admin/layout-metabox.php:77
-#: src/Core/Assets.php:124
+#: src/Core/Assets.php:130
 msgid "Remove image"
 msgstr "Usuń obraz"
 
-#: src/Core/Assets.php:127
+#: src/Core/Assets.php:133
 msgid "Remove mask"
 msgstr "Usuń maskę"
 
@@ -793,16 +844,16 @@ msgstr ""
 msgid "Search Layouts"
 msgstr "Szukaj układów"
 
-#: src/Admin/OrderMetaBox.php:110
+#: src/Admin/OrderMetaBox.php:122
 msgid "See line items below for preview thumbnails and details."
 msgstr "Zobacz pozycje poniżej, aby wyświetlić miniatury podglądu i szczegóły."
 
 #: templates/admin/layout-metabox.php:71 templates/admin/layout-metabox.php:72
-#: src/Core/Assets.php:123
+#: src/Core/Assets.php:129
 msgid "Select image"
 msgstr "Wybierz obraz"
 
-#: src/Core/Assets.php:126
+#: src/Core/Assets.php:132
 msgid "Select mask"
 msgstr "Wybierz maskę"
 
@@ -823,11 +874,7 @@ msgstr "Tylko shortcode"
 msgid "Shortcode: [woo_product_personalizer]"
 msgstr "Shortcode: [woo_product_personalizer]"
 
-#: src/Integrations/WooCommerce/PreviewDisplay.php:23
-msgid "Preview removed"
-msgstr "Podgląd usunięty"
-
-#: src/Integrations/WooCommerce/PreviewDisplay.php:110
+#: src/Integrations/WooCommerce/PreviewDisplay.php:116
 msgid "Show personalization"
 msgstr "Pokaż personalizację"
 
@@ -842,7 +889,7 @@ msgstr ""
 "ani katalogi nie są usuwane. Użyj tego, aby zweryfikować zasady przed "
 "uruchomieniem rzeczywistego czyszczenia."
 
-#: src/Core/Assets.php:111
+#: src/Core/Assets.php:114
 msgid "Slot #%d"
 msgstr "Slot #%d"
 
@@ -854,12 +901,12 @@ msgstr "Katalog docelowy:"
 msgid "Template size"
 msgstr "Rozmiar szablonu"
 
-#: src/Admin/OrderItemMetaDisplay.php:126
-#: src/Helpers/PersonalizationSummaryHelper.php:135
+#: src/Admin/OrderItemMetaDisplay.php:153
+#: src/Helpers/PersonalizationSummaryHelper.php:121
 msgid "Text"
 msgstr "Tekst"
 
-#: src/Core/Assets.php:112
+#: src/Core/Assets.php:115
 msgid "Text field #%d"
 msgstr "Pole tekstowe #%d"
 
@@ -883,7 +930,7 @@ msgstr ""
 msgid "This field is required."
 msgstr "To pole jest wymagane."
 
-#: src/Admin/OrderMetaBox.php:77
+#: src/Admin/OrderMetaBox.php:78
 msgid "This order contains personalized products."
 msgstr "To zamówienie zawiera spersonalizowane produkty."
 
@@ -891,7 +938,7 @@ msgstr "To zamówienie zawiera spersonalizowane produkty."
 msgid "Toggle JSON configuration"
 msgstr "Przełącz konfigurację JSON"
 
-#: src/Core/Assets.php:116
+#: src/Core/Assets.php:122
 msgid "Toggle settings"
 msgstr "Przełącz ustawienia"
 
@@ -920,7 +967,7 @@ msgid "Upload image"
 msgstr "Prześlij obraz"
 
 #: src/Frontend/PersonalizerController.php:280
-#: src/Infrastructure/Uploads/UploadsManager.php:144
+#: src/Infrastructure/Uploads/UploadsManager.php:178
 msgid "Upload session is not available."
 msgstr "Sesja przesyłania plików jest niedostępna."
 
@@ -963,7 +1010,7 @@ msgid ""
 msgstr ""
 "Woo Product Personalizer wymaga zainstalowanego i aktywnego WooCommerce."
 
-#: src/Admin/OrderMetaBox.php:133
+#: src/Admin/OrderMetaBox.php:145
 msgid "Yes"
 msgstr "Tak"
 
@@ -971,7 +1018,11 @@ msgstr "Tak"
 msgid "You are not allowed to download this file."
 msgstr "Nie masz uprawnień do pobrania tego pliku."
 
-#: src/Admin/OrderMetaBox.php:86
+#: src/Integrations/WooCommerce/OrderHooks.php:96
+msgid "You are not allowed to perform this action."
+msgstr "Nie masz uprawnień do wykonania tej czynności."
+
+#: src/Admin/OrderItemMetaDisplay.php:245 src/Admin/OrderMetaBox.php:87
 msgid "ZIP download requires the PHP Zip extension."
 msgstr "Pobieranie ZIP wymaga rozszerzenia PHP Zip."
 

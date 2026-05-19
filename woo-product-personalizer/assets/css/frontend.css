@@ -18,6 +18,37 @@
 	margin: 0;
 }
 
+.wpp-open-personalizer .wpp-btn-inner {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.wpp-btn-icon--check {
+	display: inline-flex;
+	flex-shrink: 0;
+	line-height: 0;
+}
+
+.wpp-btn-icon--check svg {
+	display: block;
+}
+
+.wpp-required {
+	color: #e53935;
+	font-weight: 700;
+	margin-left: 2px;
+	line-height: 1;
+}
+
+.wpp-image-field__label,
+.wpp-text-field > label {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 2px;
+}
+
 body.wpp-modal-open {
 	overflow: hidden;
 }
@@ -242,6 +273,36 @@ margin-bottom: 0;
 	position: relative;
 }
 
+.wpp-image-upload-spinner {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	z-index: 2;
+	width: 20px;
+	height: 20px;
+	margin-top: -10px;
+	border: 2px solid rgba(0, 0, 0, 0.12);
+	border-top-color: #000;
+	border-radius: 50%;
+	animation: wpp-spin 0.7s linear infinite;
+	pointer-events: none;
+}
+
+.wpp-image-upload-spinner[hidden] {
+	display: none !important;
+}
+
+.wpp-image-field.is-uploading .wpp-image-upload-btn {
+	opacity: 0.65;
+	pointer-events: none;
+}
+
+@keyframes wpp-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
 .wpp-image-upload {
 	position: absolute;
 	width: 1px;
@@ -296,6 +357,7 @@ margin-bottom: 0;
 	display: flex !important;
 	gap: 8px;
 	align-items: flex-start;
+	align-items: center;
 }
 .wpp-acceptance__label p{
 	font-size: 12px;

@@ -209,7 +209,7 @@
 		initCanvas();
 		bindPreviewResize();
 		moveHiddenFieldsToCartForm();
-		updateAddToCartState();
+		validate();
 
 		wppLog('init:personalizer', {
 			layoutId: wppData.layoutId,
@@ -227,6 +227,7 @@
 		$form.append('<input type="hidden" name="wpp_personalizer_nonce" class="wpp-personalizer-nonce" value="" />');
 		$form.append('<input type="hidden" name="wpp_project_state" class="wpp-project-state" value="" />');
 		$form.append('<input type="hidden" name="wpp_preview_data" class="wpp-preview-data" value="" />');
+		$form.append('<input type="hidden" name="wpp_preview_layers_data" class="wpp-preview-layers-data" value="" />');
 	}
 
 	function bindEvents() {
@@ -293,6 +294,68 @@
 
 	function chooseFileLabel() {
 		return wppData.i18n.chooseFile || wppData.i18n.uploadImage || 'Choose file';
+	}
+
+	function requiredMarkHtml() {
+		return '<span class="wpp-required" aria-hidden="true">*</span>';
+	}
+
+	function getCheckIconHtml() {
+		return (
+			'<span class="wpp-btn-icon wpp-btn-icon--check" aria-hidden="true">' +
+			'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-icon lucide-check">' +
+			'<path d="M20 6 9 17l-5-5"/>' +
+			'</svg></span>'
+		);
+	}
+
+	function getDefaultButtonLabel() {
+		return wppData.buttonLabel || wppData.i18n.openPersonalizer || 'Personalize product';
+	}
+
+	function getCompletedButtonLabel() {
+		return wppData.buttonLabelCompleted || wppData.i18n.personalized || 'Personalized';
+	}
+
+	function updatePersonalizeButtons() {
+		var $buttons = $('.wpp-open-personalizer');
+
+		if (!$buttons.length) {
+			return;
+		}
+
+		var defaultLabel = getDefaultButtonLabel();
+		var completedLabel = getCompletedButtonLabel();
+
+		$buttons.each(function () {
+			var $btn = $(this);
+			var $inner = $('<span class="wpp-btn-inner" />');
+
+			if (!wppData.validationEnabled) {
+				$btn.removeClass('wpp-is-valid wpp-is-required');
+				$inner.append($('<span class="wpp-btn-text" />').text(defaultLabel));
+				$btn.empty().append($inner);
+				return;
+			}
+
+			if (state.valid) {
+				$btn.removeClass('wpp-is-required').addClass('wpp-is-valid');
+				$inner.append($(getCheckIconHtml())).append($('<span class="wpp-btn-text" />').text(completedLabel));
+			} else {
+				$btn.removeClass('wpp-is-valid').addClass('wpp-is-required');
+				$inner.append($('<span class="wpp-btn-text" />').text(defaultLabel)).append($(requiredMarkHtml()));
+			}
+
+			$btn.empty().append($inner);
+		});
+	}
+
+	function setImageUploadLoading(slotId, isLoading) {
+		var $field = $('.wpp-image-field[data-slot-id="' + slotId + '"]');
+
+		$field.toggleClass('is-uploading', !!isLoading);
+		$field.find('.wpp-image-upload-spinner').prop('hidden', !isLoading);
+		$field.find('.wpp-image-upload-btn').prop('disabled', !!isLoading);
 	}
 
 	function updateUploadButton(slotId, fileName) {
@@ -423,8 +486,9 @@
 			var chooseLabel = wppData.i18n.chooseFile || wppData.i18n.uploadImage || 'Choose file';
 			var html =
 				'<div class="wpp-field wpp-image-field" data-slot-id="' + esc(slot.id) + '">' +
-				'<span class="wpp-image-field__label">' + esc(slot.label || slot.id) + '</span>' +
+				'<span class="wpp-image-field__label"><span class="wpp-field-label-text">' + esc(slot.label || slot.id) + '</span>' + (slot.required ? requiredMarkHtml() : '') + '</span>' +
 				'<div class="wpp-image-upload-wrap">' +
+				'<span class="wpp-image-upload-spinner" aria-hidden="true" hidden></span>' +
 				'<input type="file" id="' + esc(inputId) + '" class="wpp-image-upload" accept="' + esc(uploadAccept) + '" data-slot-id="' + esc(slot.id) + '" />' +
 				'<label for="' + esc(inputId) + '" class="button wpp-image-upload-btn">' + esc(chooseLabel) + '</label>' +
 				'</div>' +
@@ -437,9 +501,10 @@
 			syncTextMetaFromField(field);
 			var max = field.max_length || 0;
 			var defaultVal = getFieldDisplayText(field, state.textFields[field.id]);
+			var requiredMark = field.required ? requiredMarkHtml() : '';
 			var html =
 				'<div class="wpp-field wpp-text-field" data-field-id="' + esc(field.id) + '">' +
-				'<label>' + esc(field.label || field.id) + '</label>' +
+				'<label><span class="wpp-field-label-text">' + esc(field.label || field.id) + '</span>' + requiredMark + '</label>' +
 				'<textarea class="wpp-text-input" data-field-id="' + esc(field.id) + '" maxlength="' + (max || 500) + '" placeholder="' + esc(field.placeholder || '') + '">' + esc(defaultVal) + '</textarea>' +
 				(max ? '<div class="wpp-char-counter"><span class="wpp-char-current">' + defaultVal.length + '</span>/' + max + '</div>' : '') +
 				'<p class="wpp-field-error" role="alert" hidden></p>' +
@@ -851,8 +916,11 @@
 
 		wppLog('upload:start', { slotId: slotId, fileName: file.name, fileType: file.type, fileSize: file.size });
 
+		var previousSource = state.imageFields[slotId] && state.imageFields[slotId].source;
+
 		updateUploadButton(slotId, file.name);
 		setActiveImageField(slotId);
+		setImageUploadLoading(slotId, true);
 
 		var formData = new FormData();
 		formData.append('action', 'wpp_upload_temp');
@@ -869,10 +937,15 @@
 			contentType: false
 		})
 			.done(function (res) {
+				setImageUploadLoading(slotId, false);
 				wppLog('upload:response', { slotId: slotId, success: res.success, data: res.data });
 
 				if (!res.success) {
 					wppWarn('upload:rejected', { slotId: slotId, data: res.data });
+					updateUploadButton(
+						slotId,
+						previousSource ? filenameFromPath(previousSource) : ''
+					);
 					alert(res.data && res.data.message ? res.data.message : wppData.i18n.invalidFile);
 					return;
 				}
@@ -880,6 +953,11 @@
 				validate();
 			})
 			.fail(function (jqXhr) {
+				setImageUploadLoading(slotId, false);
+				updateUploadButton(
+					slotId,
+					previousSource ? filenameFromPath(previousSource) : ''
+				);
 				wppError('upload:ajax_fail', {
 					slotId: slotId,
 					status: jqXhr.status,
@@ -1620,6 +1698,8 @@
 	}
 
 	function updateAddToCartState() {
+		updatePersonalizeButtons();
+
 		if (!wppData.validationEnabled) {
 			$('body').removeClass('wpp-block-atc');
 			return;
@@ -1683,12 +1763,39 @@
 		return stage.toDataURL({ pixelRatio: 2 });
 	}
 
+	function exportLayersPreview() {
+		if (!stage) {
+			return '';
+		}
+
+		var hiddenLayers = [];
+
+		[bgLayer, overlayLayer, borderLayer].forEach(function (layer) {
+			if (layer && layer.visible()) {
+				hiddenLayers.push(layer);
+				layer.visible(false);
+			}
+		});
+
+		stage.draw();
+		var dataUrl = stage.toDataURL({ pixelRatio: 2, mimeType: 'image/png' });
+
+		hiddenLayers.forEach(function (layer) {
+			layer.visible(true);
+		});
+		stage.draw();
+
+		return dataUrl;
+	}
+
 	function persistHiddenFields() {
 		var json = JSON.stringify(exportState());
 		var preview = exportPreview();
+		var layersPreview = exportLayersPreview();
 		var nonce = $('.wpp-personalizer input[name="wpp_personalizer_nonce"]').val() || wppData.nonce;
 		$('form.cart .wpp-project-state, .wpp-personalizer .wpp-project-state').val(json);
 		$('form.cart .wpp-preview-data, .wpp-personalizer .wpp-preview-data').val(preview);
+		$('form.cart .wpp-preview-layers-data, .wpp-personalizer .wpp-preview-layers-data').val(layersPreview);
 		$('form.cart .wpp-personalizer-nonce, .wpp-personalizer input[name="wpp_personalizer_nonce"]').val(nonce);
 	}
 

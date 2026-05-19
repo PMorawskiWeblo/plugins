@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin settings repository.
  *
@@ -7,12 +8,13 @@
 
 namespace WooProductPersonalizer\Infrastructure\Repository;
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 /**
  * Class SettingsRepository
  */
-class SettingsRepository {
+class SettingsRepository
+{
 
 	const OPTION_KEY = 'wpp_settings';
 
@@ -28,15 +30,17 @@ class SettingsRepository {
 	 *
 	 * @return array<string, mixed>
 	 */
-	public function defaults() {
+	public function defaults()
+	{
 		return array(
 			'max_upload_mb'          => 10,
-			'allowed_mime_types'     => array( 'image/jpeg', 'image/png', 'image/webp' ),
+			'allowed_mime_types'     => array('image/jpeg', 'image/png', 'image/webp'),
 			'frontend_mode'          => 'modal',
 			'button_position'        => 'after_add_to_cart',
 			'shortcode_only'         => false,
-			'default_button_label'   => __( 'Personalize product', 'woo-product-personalizer' ),
-			'default_accept_text'    => __( 'I accept the preview shown above.', 'woo-product-personalizer' ),
+			'default_button_label'           => __('Personalize product', 'woo-product-personalizer'),
+			'default_button_label_completed' => _x('Personalized', 'completed personalize button', 'woo-product-personalizer'),
+			'default_accept_text'            => __('I accept the preview shown above.', 'woo-product-personalizer'),
 			'debug_enabled'          => false,
 			'cleanup_enabled'        => false,
 			'cleanup_interval'       => 14,
@@ -49,9 +53,10 @@ class SettingsRepository {
 	 *
 	 * @return void
 	 */
-	public function ensure_defaults() {
-		if ( false === get_option( self::OPTION_KEY, false ) ) {
-			add_option( self::OPTION_KEY, $this->defaults() );
+	public function ensure_defaults()
+	{
+		if (false === get_option(self::OPTION_KEY, false)) {
+			add_option(self::OPTION_KEY, $this->defaults());
 		}
 	}
 
@@ -60,13 +65,14 @@ class SettingsRepository {
 	 *
 	 * @return array<string, mixed>
 	 */
-	public function all() {
-		if ( null !== $this->cached ) {
+	public function all()
+	{
+		if (null !== $this->cached) {
 			return $this->cached;
 		}
 
-		$stored       = get_option( self::OPTION_KEY, array() );
-		$this->cached = wp_parse_args( is_array( $stored ) ? $stored : array(), $this->defaults() );
+		$stored       = get_option(self::OPTION_KEY, array());
+		$this->cached = wp_parse_args(is_array($stored) ? $stored : array(), $this->defaults());
 
 		return $this->cached;
 	}
@@ -78,9 +84,10 @@ class SettingsRepository {
 	 * @param mixed  $default Default.
 	 * @return mixed
 	 */
-	public function get( $key, $default = null ) {
+	public function get($key, $default = null)
+	{
 		$all = $this->all();
-		return array_key_exists( $key, $all ) ? $all[ $key ] : $default;
+		return array_key_exists($key, $all) ? $all[$key] : $default;
 	}
 
 	/**
@@ -89,10 +96,11 @@ class SettingsRepository {
 	 * @param array<string, mixed> $settings Settings.
 	 * @return bool
 	 */
-	public function update( array $settings ) {
-		$merged       = wp_parse_args( $settings, $this->defaults() );
+	public function update(array $settings)
+	{
+		$merged       = wp_parse_args($settings, $this->defaults());
 		$this->cached = $merged;
-		return update_option( self::OPTION_KEY, $merged );
+		return update_option(self::OPTION_KEY, $merged);
 	}
 
 	/**
@@ -100,8 +108,9 @@ class SettingsRepository {
 	 *
 	 * @return bool
 	 */
-	public function is_debug_enabled() {
-		return (bool) $this->get( 'debug_enabled', false );
+	public function is_debug_enabled()
+	{
+		return (bool) $this->get('debug_enabled', false);
 	}
 
 	/**
@@ -109,8 +118,9 @@ class SettingsRepository {
 	 *
 	 * @return bool
 	 */
-	public function is_cleanup_enabled() {
-		return (bool) $this->get( 'cleanup_enabled', false );
+	public function is_cleanup_enabled()
+	{
+		return (bool) $this->get('cleanup_enabled', false);
 	}
 
 	/**
@@ -118,9 +128,10 @@ class SettingsRepository {
 	 *
 	 * @return string
 	 */
-	public function get_frontend_mode() {
-		$mode = $this->get( 'frontend_mode', 'modal' );
-		return in_array( $mode, array( 'inline', 'modal' ), true ) ? $mode : 'modal';
+	public function get_frontend_mode()
+	{
+		$mode = $this->get('frontend_mode', 'modal');
+		return in_array($mode, array('inline', 'modal'), true) ? $mode : 'modal';
 	}
 
 	/**
@@ -128,8 +139,9 @@ class SettingsRepository {
 	 *
 	 * @return string
 	 */
-	public function get_button_position() {
-		return (string) $this->get( 'button_position', 'after_add_to_cart' );
+	public function get_button_position()
+	{
+		return (string) $this->get('button_position', 'after_add_to_cart');
 	}
 
 	/**
@@ -137,7 +149,8 @@ class SettingsRepository {
 	 *
 	 * @return bool
 	 */
-	public function is_shortcode_only() {
-		return (bool) $this->get( 'shortcode_only', false );
+	public function is_shortcode_only()
+	{
+		return (bool) $this->get('shortcode_only', false);
 	}
 }

@@ -173,17 +173,19 @@ class CartHooks {
 		$layout  = $this->layouts->find( $config->get_layout_id() );
 		$summary = $layout ? $this->validator->build_summary( $state, $layout ) : array();
 
-		$preview_raw = isset( $_POST['wpp_preview_data'] ) ? $this->sanitize_preview_data( wp_unslash( $_POST['wpp_preview_data'] ) ) : '';
-		$preview     = $this->persist_cart_preview( $preview_raw );
+		$preview_raw        = isset( $_POST['wpp_preview_data'] ) ? $this->sanitize_preview_data( wp_unslash( $_POST['wpp_preview_data'] ) ) : '';
+		$preview_layers_raw = isset( $_POST['wpp_preview_layers_data'] ) ? $this->sanitize_preview_data( wp_unslash( $_POST['wpp_preview_layers_data'] ) ) : '';
+		$preview            = $this->persist_cart_preview( $preview_raw, $preview_layers_raw );
 
 		$cart_item_data[ self::CART_KEY ] = array(
-			'layout_id'         => $config->get_layout_id(),
-			'product_id'        => $product_id,
-			'summary'           => $summary,
-			'project_state'     => $state,
-			'preview_data'      => $preview['thumb_url'] ?? '',
-			'preview_full_url'  => $preview['full_url'] ?? '',
-			'preview_id'        => $preview['id'] ?? '',
+			'layout_id'              => $config->get_layout_id(),
+			'product_id'             => $product_id,
+			'summary'                => $summary,
+			'project_state'          => $state,
+			'preview_data'           => $preview['thumb_url'] ?? '',
+			'preview_full_url'       => $preview['full_url'] ?? '',
+			'preview_layers_full_url' => $preview['layers_full_url'] ?? '',
+			'preview_id'             => $preview['id'] ?? '',
 			'hash'              => md5( wp_json_encode( $state ) . $product_id ),
 			'personalized'      => true,
 		);
@@ -439,10 +441,11 @@ class CartHooks {
 	/**
 	 * Save base64 canvas output to disk; return URLs for session storage.
 	 *
-	 * @param string $data_url Sanitized data URL.
-	 * @return array{thumb_url?: string, full_url?: string, id?: string}
+	 * @param string $data_url        Sanitized full preview data URL.
+	 * @param string $layers_data_url Sanitized layers-only preview data URL.
+	 * @return array{thumb_url?: string, full_url?: string, layers_full_url?: string, id?: string}
 	 */
-	private function persist_cart_preview( $data_url ) {
+	private function persist_cart_preview( $data_url, $layers_data_url = '' ) {
 		if ( '' === $data_url ) {
 			return array();
 		}
@@ -454,11 +457,20 @@ class CartHooks {
 			return array();
 		}
 
-		return array(
+		$result = array(
 			'id'        => $stored['id'],
 			'thumb_url' => $stored['thumb_url'],
 			'full_url'  => $stored['full_url'],
 		);
+
+		if ( '' !== $layers_data_url ) {
+			$layers = $this->cart_previews->store_layers_from_data_url( $stored['id'], $layers_data_url );
+			if ( false !== $layers ) {
+				$result['layers_full_url'] = $layers['url'];
+			}
+		}
+
+		return $result;
 	}
 
 	/**

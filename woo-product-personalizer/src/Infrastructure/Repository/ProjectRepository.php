@@ -60,12 +60,13 @@ class ProjectRepository {
 	 * @param int    $order_id     Order ID.
 	 * @param int    $item_id      Item ID.
 	 * @param array  $state        Project state.
-	 * @param string $preview_data Base64 preview from browser.
-	 * @param int    $product_id   Product ID.
-	 * @param int    $layout_id    Layout ID.
-	 * @return array{json: string, production: string, production_url: string}|false
+	 * @param string $preview_data        Full preview from browser.
+	 * @param int    $product_id          Product ID.
+	 * @param int    $layout_id           Layout ID.
+	 * @param string $layers_preview_data Layers-only preview (optional).
+	 * @return array{json: string, production: string, production_url: string, layers_production?: string, layers_production_url?: string}|false
 	 */
-	public function save_order_project( $order_id, $item_id, array $state, $preview_data, $product_id, $layout_id ) {
+	public function save_order_project( $order_id, $item_id, array $state, $preview_data, $product_id, $layout_id, $layers_preview_data = '' ) {
 		$dir = $this->uploads->create_order_directory( $order_id );
 		if ( ! $dir ) {
 			return false;
@@ -91,13 +92,21 @@ class ProjectRepository {
 		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents
 		file_put_contents( $json_path, wp_json_encode( $project, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) );
 
-		$production = $this->generator->generate( $order_id, $item_id, $preview_data, $dir );
+		$production = $this->generator->generate( $order_id, $item_id, $preview_data, $dir, 'projekt' );
 
-		return array(
-			'json'            => $json_path,
-			'production'      => $production['path'] ?? '',
-			'production_url'    => $production['url'] ?? '',
+		$result = array(
+			'json'             => $json_path,
+			'production'       => $production['path'] ?? '',
+			'production_url'   => $production['url'] ?? '',
 		);
+
+		if ( '' !== trim( (string) $layers_preview_data ) ) {
+			$layers = $this->generator->generate( $order_id, $item_id, $layers_preview_data, $dir, 'warstwy' );
+			$result['layers_production']      = $layers['path'] ?? '';
+			$result['layers_production_url']  = $layers['url'] ?? '';
+		}
+
+		return $result;
 	}
 
 	/**
