@@ -238,6 +238,7 @@
 		$(document).on('change', '.wpp-acceptance-checkbox', onAcceptanceChange);
 		$(document).on('change', '.wpp-image-upload', onImageUpload);
 		$(document).on('click', '.wpp-image-field', onImageFieldActivate);
+		$(document).on('click', '.wpp-image-field__remove', onImageRemove);
 		$(document).on('click', '.wpp-image-upload-btn', function () {
 			setActiveImageField($(this).closest('.wpp-image-field').data('slot-id'));
 		});
@@ -363,6 +364,7 @@
 		var text = fileName ? truncateFilename(fileName) : chooseFileLabel();
 		$field.find('.wpp-image-upload-btn').text(text);
 		$field.toggleClass('has-file', !!fileName);
+		$field.find('.wpp-image-field__remove').prop('hidden', !fileName);
 	}
 
 	function setActiveImageField(slotId) {
@@ -484,9 +486,11 @@
 		(wppData.layout.image_slots || []).forEach(function (slot) {
 			var inputId = 'wpp-file-' + String(slot.id).replace(/[^a-z0-9_-]/gi, '_');
 			var chooseLabel = wppData.i18n.chooseFile || wppData.i18n.uploadImage || 'Choose file';
+			var removeLabel = wppData.i18n.removeImage || 'Remove';
 			var html =
 				'<div class="wpp-field wpp-image-field" data-slot-id="' + esc(slot.id) + '">' +
 				'<span class="wpp-image-field__label"><span class="wpp-field-label-text">' + esc(slot.label || slot.id) + '</span>' + (slot.required ? requiredMarkHtml() : '') + '</span>' +
+				'<button type="button" class="wpp-image-field__remove" hidden>' + esc(removeLabel) + '</button>' +
 				'<div class="wpp-image-upload-wrap">' +
 				'<span class="wpp-image-upload-spinner" aria-hidden="true" hidden></span>' +
 				'<input type="file" id="' + esc(inputId) + '" class="wpp-image-upload" accept="' + esc(uploadAccept) + '" data-slot-id="' + esc(slot.id) + '" />' +
@@ -890,11 +894,56 @@
 	}
 
 	function onImageFieldActivate(e) {
-		if ($(e.target).closest('.wpp-image-upload-btn, .wpp-image-upload').length) {
+		if ($(e.target).closest('.wpp-image-field__remove').length) {
 			return;
 		}
-		var slotId = $(this).data('slot-id');
+
+		var $field = $(this);
+		var slotId = $field.data('slot-id');
+		var hasFile = $field.hasClass('has-file');
+		var clickedUploadWrap = $(e.target).closest('.wpp-image-upload-wrap').length > 0;
+		var clickedUploadControl = $(e.target).closest('.wpp-image-upload-btn, .wpp-image-upload').length > 0;
+
 		setActiveImageField(slotId);
+
+		if (clickedUploadControl) {
+			return;
+		}
+
+		if (!hasFile || clickedUploadWrap) {
+			$field.find('.wpp-image-upload').trigger('click');
+		}
+	}
+
+	function onImageRemove(e) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		var slotId = $(this).closest('.wpp-image-field').data('slot-id');
+		clearSlotImage(slotId);
+		validate();
+	}
+
+	function clearSlotImage(slotId) {
+		var $field = $('.wpp-image-field[data-slot-id="' + slotId + '"]');
+		var node = imageNodes[slotId];
+
+		if (node) {
+			node.destroy();
+			delete imageNodes[slotId];
+		}
+
+		delete state.imageFields[slotId];
+		$field.find('.wpp-image-upload').val('');
+		updateUploadButton(slotId, '');
+		clearFieldError($field);
+
+		if (photoLayer) {
+			photoLayer.batchDraw();
+		}
+		if (borderLayer) {
+			borderLayer.batchDraw();
+		}
 	}
 
 	function onImageUpload() {
@@ -1108,8 +1157,9 @@
 			return null;
 		}
 
-		var fw = Math.max(1, Math.round(ps.frameW));
-		var fh = Math.max(1, Math.round(ps.frameH));
+		var renderScale = Math.max(1, ps.renderScale || 1);
+		var fw = Math.max(1, Math.round(ps.frameW * renderScale));
+		var fh = Math.max(1, Math.round(ps.frameH * renderScale));
 		var canvas = ensureCompositeCanvas(ps);
 
 		if (canvas.width !== fw || canvas.height !== fh) {
@@ -1120,11 +1170,16 @@
 		var ctx = canvas.getContext('2d');
 		ctx.clearRect(0, 0, fw, fh);
 
-		var w = ps.baseDrawW;
-		var h = ps.baseDrawH;
+		if (ps.whiteBg) {
+			ctx.fillStyle = '#ffffff';
+			ctx.fillRect(0, 0, fw, fh);
+		}
+
+		var w = ps.baseDrawW * renderScale;
+		var h = ps.baseDrawH * renderScale;
 
 		ctx.save();
-		ctx.translate(fw / 2 + ps.offsetX, fh / 2 + ps.offsetY);
+		ctx.translate(fw / 2 + ps.offsetX * renderScale, fh / 2 + ps.offsetY * renderScale);
 		ctx.rotate((ps.rotation * Math.PI) / 180);
 		ctx.scale(ps.scale * ps.flipX, ps.scale * ps.flipY);
 		ctx.drawImage(ps.img, -w / 2, -h / 2, w, h);
@@ -1165,6 +1220,7 @@
 			var photoState = {
 				img: img,
 				mask: maskImg,
+				whiteBg: !!slot.white_bg,
 				frameW: fw,
 				frameH: fh,
 				offsetX: 0,
@@ -1219,6 +1275,19 @@
 			name: 'wpp_slot_' + slotId,
 			clip: { x: 0, y: 0, width: fw, height: fh }
 		});
+
+		if (slot.white_bg) {
+			group.add(
+				new Konva.Rect({
+					x: 0,
+					y: 0,
+					width: fw,
+					height: fh,
+					fill: '#ffffff',
+					listening: false
+				})
+			);
+		}
 
 		var konvaImage = new Konva.Image({
 			image: img,
@@ -1760,7 +1829,34 @@
 		if (!stage) {
 			return '';
 		}
-		return stage.toDataURL({ pixelRatio: 2 });
+		var pixelRatio = getEffectiveExportPixelRatio();
+		setMaskedRenderScale(pixelRatio);
+		stage.draw();
+		var dataUrl = stage.toDataURL({ pixelRatio: pixelRatio });
+		setMaskedRenderScale(1);
+		stage.draw();
+		return dataUrl;
+	}
+
+	function setMaskedRenderScale(scale) {
+		Object.keys(imageNodes).forEach(function (slotId) {
+			var node = imageNodes[slotId];
+			if (!node || !node._hasMask || !node._photoState) {
+				return;
+			}
+			node._photoState.renderScale = Math.max(1, scale || 1);
+			refreshSlotNode(node);
+		});
+
+		if (photoLayer) {
+			photoLayer.batchDraw();
+		}
+	}
+
+	function getEffectiveExportPixelRatio() {
+		var exportScale = Math.max(1, Math.min(6, parseInt(wppData.previewExportScale, 10) || 2));
+		var normalized = exportScale / Math.max(0.01, previewScale || 1);
+		return Math.max(1, Math.min(24, normalized));
 	}
 
 	function exportLayersPreview() {
@@ -1777,12 +1873,15 @@
 			}
 		});
 
+		var pixelRatio = getEffectiveExportPixelRatio();
+		setMaskedRenderScale(pixelRatio);
 		stage.draw();
-		var dataUrl = stage.toDataURL({ pixelRatio: 2, mimeType: 'image/png' });
+		var dataUrl = stage.toDataURL({ pixelRatio: pixelRatio, mimeType: 'image/png' });
 
 		hiddenLayers.forEach(function (layer) {
 			layer.visible(true);
 		});
+		setMaskedRenderScale(1);
 		stage.draw();
 
 		return dataUrl;

@@ -227,6 +227,7 @@ class PersonalizerController
 				'buttonLabelCompleted'   => $this->settings->get('default_button_label_completed'),
 				'acceptanceRequired'     => $config->is_acceptance_required(),
 				'maxUploadMb'        => (int) $this->settings->get('max_upload_mb', 10),
+				'previewExportScale' => (int) $this->settings->get('preview_export_scale', 2),
 				'allowedMimeTypes'   => (array) $this->settings->get('allowed_mime_types', array()),
 				'i18n'               => array(
 					'uploadImage'    => __('Upload image', 'woo-product-personalizer'),
@@ -244,6 +245,7 @@ class PersonalizerController
 					'reset'          => __('Reset', 'woo-product-personalizer'),
 					'requiredField'  => __('This field is required.', 'woo-product-personalizer'),
 					'invalidFile'    => __('Invalid file type or size.', 'woo-product-personalizer'),
+					'removeImage'    => __('Remove', 'woo-product-personalizer'),
 					'acceptRequired' => __('Please accept the preview before adding to cart.', 'woo-product-personalizer'),
 					'personalized'   => _x('Personalized', 'completed personalize button', 'woo-product-personalizer'),
 					'close'          => __('Close', 'woo-product-personalizer'),

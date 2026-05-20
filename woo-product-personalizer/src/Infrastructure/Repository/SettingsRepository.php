@@ -34,6 +34,7 @@ class SettingsRepository
 	{
 		return array(
 			'max_upload_mb'          => 10,
+			'preview_export_scale'   => 2,
 			'allowed_mime_types'     => array('image/jpeg', 'image/png', 'image/webp'),
 			'frontend_mode'          => 'modal',
 			'button_position'        => 'after_add_to_cart',

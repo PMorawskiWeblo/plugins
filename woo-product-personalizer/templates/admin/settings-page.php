@@ -32,6 +32,19 @@ $manual_cleanup_days = isset($options['cleanup_interval']) ? (int) $options['cle
                         class="small-text" /></td>
             </tr>
             <tr>
+                <th scope="row"><label
+                        for="wpp_preview_export_scale"><?php esc_html_e('Preview export quality (scale)', 'woo-product-personalizer'); ?></label>
+                </th>
+                <td>
+                    <input type="number" id="wpp_preview_export_scale" name="wpp_settings[preview_export_scale]"
+                        value="<?php echo esc_attr($options['preview_export_scale'] ?? 2); ?>" min="1" max="6"
+                        class="small-text" />
+                    <p class="description">
+                        <?php esc_html_e('Higher value = larger and sharper preview/production PNG (and bigger files). Recommended: 2-3.', 'woo-product-personalizer'); ?>
+                    </p>
+                </td>
+            </tr>
+            <tr>
                 <th scope="row"><?php esc_html_e('Allowed MIME types', 'woo-product-personalizer'); ?></th>
                 <td>
                     <?php foreach (UploadMimeTypes::definitions() as $mime => $definition) : ?>

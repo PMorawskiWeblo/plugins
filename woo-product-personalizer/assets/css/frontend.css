@@ -21,7 +21,7 @@
 .wpp-open-personalizer .wpp-btn-inner {
 	display: inline-flex;
 	align-items: center;
-	gap: 6px;
+	gap: 0px;
 }
 
 .wpp-btn-icon--check {
@@ -235,6 +235,15 @@ margin-bottom: 0;
 	transition: border-color 0.15s ease, background 0.15s ease;
 }
 
+.wpp-image-field {
+	position: relative;
+	cursor: pointer;
+}
+
+.wpp-image-field.has-file {
+	cursor: default;
+}
+
 .wpp-text-field.has-error,
 .wpp-image-field.has-error,
 .wpp-acceptance.has-error {
@@ -265,6 +274,30 @@ margin-bottom: 0;
 	margin-bottom: 8px;
 	color: #1e1e1e;
 	transition: color 0.15s ease;
+}
+
+.wpp-image-field__remove {
+	position: absolute;
+	top: 10px;
+	right: 12px;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	background: transparent;
+	color: #000;
+	text-decoration: underline;
+	font-size: 12px;
+	line-height: 1.2;
+	cursor: pointer;
+	text-transform: uppercase;
+	transition: color 0.15s ease;
+}
+.wpp-image-field__remove:hover {
+	color: red;
+}
+
+.wpp-image-field__remove[hidden] {
+	display: none !important;
 }
 
 

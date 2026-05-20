@@ -51,6 +51,7 @@ class LayoutConfigSanitizer {
 					'id'            => sanitize_key( $slot['id'] ),
 					'label'         => sanitize_text_field( $slot['label'] ?? '' ),
 					'required'      => ! empty( $slot['required'] ),
+					'white_bg'      => ! empty( $slot['white_bg'] ),
 					'max_files'     => absint( $slot['max_files'] ?? 1 ),
 					'allowed_types' => array_map( 'sanitize_text_field', (array) ( $slot['allowed_types'] ?? array( 'image/jpeg', 'image/png', 'image/webp' ) ) ),
 					'mask'          => esc_url_raw( $slot['mask'] ?? '' ),

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Woo Product Personalizer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-18 10:08+0000\n"
-"PO-Revision-Date: 2026-05-19 12:21+0000\n"
+"PO-Revision-Date: 2026-05-20 08:35+0000\n"
 "Last-Translator: \n"
 "Language-Team: Polski\n"
 "Language: pl_PL\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Loco-Version: 2.8.3; wp-6.9.4; php-8.2.29\n"
 "X-Domain: woo-product-personalizer"
 
-#: templates/admin/settings-page.php:189
+#: templates/admin/settings-page.php:202
 msgid ""
 "A debug panel on the product page (state, layout, slots, recent events)."
 msgstr ""
@@ -47,15 +47,15 @@ msgstr "Dodaj nowy układ"
 msgid "Add text field"
 msgstr "Dodaj pole tekstowe"
 
-#: templates/admin/settings-page.php:111
+#: templates/admin/settings-page.php:124
 msgid "After add to cart"
 msgstr "Po przycisku Dodaj do koszyka"
 
-#: templates/admin/settings-page.php:109
+#: templates/admin/settings-page.php:122
 msgid "After price"
 msgstr "Po cenie"
 
-#: templates/admin/settings-page.php:228
+#: templates/admin/settings-page.php:241
 msgid ""
 "After the run finishes, an admin notice shows how many folders were deleted "
 "(or would be deleted in dry run). Folders that are too new (except cancelled "
@@ -70,7 +70,7 @@ msgstr ""
 msgid "Allow customers to personalize this product."
 msgstr "Pozwól klientom personalizować ten produkt."
 
-#: templates/admin/settings-page.php:35
+#: templates/admin/settings-page.php:48
 msgid "Allowed MIME types"
 msgstr "Dozwolone typy MIME"
 
@@ -82,11 +82,11 @@ msgstr "Dowolny wiek (tylko reguły statusu zamówienia)"
 msgid "Assigned layout"
 msgstr "Przypisany układ"
 
-#: templates/admin/settings-page.php:136
+#: templates/admin/settings-page.php:149
 msgid "Auto cleanup"
 msgstr "Automatyczne czyszczenie"
 
-#: src/Frontend/PersonalizerController.php:243
+#: src/Frontend/PersonalizerController.php:244
 #: templates/frontend/partials/transform-toolbar.php:34
 msgid "Auto-fit"
 msgstr "Dopasuj"
@@ -99,7 +99,7 @@ msgstr "Obraz tła"
 msgid "Base template shown behind photos (e.g. letter outlines)."
 msgstr "Szablon bazowy wyświetlany za zdjęciami (np. kontury liter)."
 
-#: templates/admin/settings-page.php:244
+#: templates/admin/settings-page.php:257
 msgid ""
 "Based on the folder’s last modified time on disk. Independent from the "
 "scheduled cleanup interval above."
@@ -107,11 +107,11 @@ msgstr ""
 "Na podstawie czasu ostatniej modyfikacji folderu na dysku. Niezależnie od "
 "ustawionego powyżej harmonogramu czyszczenia."
 
-#: templates/admin/settings-page.php:110
+#: templates/admin/settings-page.php:123
 msgid "Before add to cart"
 msgstr "Przed przyciskiem Dodaj do koszyka"
 
-#: templates/admin/settings-page.php:103
+#: templates/admin/settings-page.php:116
 msgid "Button position"
 msgstr "Pozycja przycisku"
 
@@ -119,26 +119,26 @@ msgstr "Pozycja przycisku"
 msgid "Canvas"
 msgstr "Obszar roboczy"
 
-#: src/Frontend/PersonalizerController.php:233
+#: src/Frontend/PersonalizerController.php:234
 msgid "Choose file"
 msgstr "Wybierz plik"
 
-#: templates/admin/settings-page.php:133
+#: templates/admin/settings-page.php:146
 msgid "Cleanup"
 msgstr "Czyszczenie"
 
 #. 1: age label, 2: number of folders
-#: src/Admin/SettingsPage.php:222
+#: src/Admin/SettingsPage.php:223
 #, php-format
 msgid "Cleanup complete (%1$s): %2$d folder(s) deleted."
 msgstr "Czyszczenie zakończone (%1$s): usunięto %2$d folder(y)."
 
 #. %d: number of folders
-#: src/Admin/SettingsPage.php:224
+#: src/Admin/SettingsPage.php:225
 msgid "Cleanup complete. %d folder(s) deleted."
 msgstr "Czyszczenie zakończone. Usunięto %d folder(y)."
 
-#: templates/admin/settings-page.php:148
+#: templates/admin/settings-page.php:161
 msgid "Cleanup interval"
 msgstr "Interwał czyszczenia"
 
@@ -156,7 +156,7 @@ msgstr "Duplikuj"
 
 #: templates/frontend/personalizer.php:24
 #: templates/frontend/cart-preview-popup.php:13
-#: src/Frontend/PersonalizerController.php:249
+#: src/Frontend/PersonalizerController.php:251
 msgid "Close"
 msgstr "Zamknij"
 
@@ -168,12 +168,12 @@ msgstr "Zwiń wszystko"
 msgid "Collapse settings"
 msgstr "Zwiń ustawienia"
 
-#: templates/admin/settings-page.php:165
+#: templates/admin/settings-page.php:178
 msgid "Completed orders only"
 msgstr "Tylko zakończone zamówienia"
 
-#: src/Frontend/PersonalizerController.php:248
-#: src/Infrastructure/Repository/SettingsRepository.php:42
+#: src/Frontend/PersonalizerController.php:250
+#: src/Infrastructure/Repository/SettingsRepository.php:43
 msgctxt "completed personalize button"
 msgid "Personalized"
 msgstr "Spersonalizowano"
@@ -202,11 +202,11 @@ msgstr "Nie udało się utworzyć archiwum ZIP."
 msgid "Could not create upload directory."
 msgstr "Nie udało się utworzyć katalogu przesyłania plików."
 
-#: templates/admin/settings-page.php:177
+#: templates/admin/settings-page.php:190
 msgid "Debug"
 msgstr "Debugowanie"
 
-#: templates/admin/settings-page.php:180
+#: templates/admin/settings-page.php:193
 msgid "Debug mode"
 msgstr "Tryb debugowania"
 
@@ -214,19 +214,19 @@ msgstr "Tryb debugowania"
 msgid "Decrease font size"
 msgstr "Zmniejsz rozmiar czcionki"
 
-#: templates/admin/settings-page.php:81
+#: templates/admin/settings-page.php:94
 msgid "Default acceptance text"
 msgstr "Domyślna treść zgody"
 
-#: templates/admin/settings-page.php:60
+#: templates/admin/settings-page.php:73
 msgid "Default button label"
 msgstr "Domyślna etykieta przycisku"
 
-#: templates/admin/settings-page.php:67
+#: templates/admin/settings-page.php:80
 msgid "Default completed button label"
 msgstr "Domyślna etykieta po personalizacji"
 
-#: templates/admin/settings-page.php:235
+#: templates/admin/settings-page.php:248
 msgid "Delete folders"
 msgstr "Usuń foldery"
 
@@ -235,7 +235,7 @@ msgid "Disable add to cart until personalization is valid."
 msgstr ""
 "Wyłącz dodawanie do koszyka, dopóki personalizacja nie będzie poprawna."
 
-#: templates/admin/settings-page.php:91
+#: templates/admin/settings-page.php:104
 msgid "Display mode"
 msgstr "Tryb wyświetlania"
 
@@ -255,22 +255,22 @@ msgstr ""
 msgid "Drag to reorder"
 msgstr "Przeciągnij, aby zmienić kolejność"
 
-#: templates/admin/settings-page.php:248
+#: templates/admin/settings-page.php:261
 msgid "Dry run (report only, do not delete)"
 msgstr "Tryb próbny (tylko raport, bez usuwania)"
 
 #. 1: age label, 2: number of folders
-#: src/Admin/SettingsPage.php:216
+#: src/Admin/SettingsPage.php:217
 #, php-format
 msgid "Dry run complete (%1$s): %2$d folder(s) would be deleted."
 msgstr "Tryb próbny zakończony (%1$s): usunięto by %2$d folder(y)."
 
 #. %d: number of folders
-#: src/Admin/SettingsPage.php:218
+#: src/Admin/SettingsPage.php:219
 msgid "Dry run complete. %d folder(s) would be deleted."
 msgstr "Tryb próbny zakończony. Usunięto by %d folder(y)."
 
-#: templates/admin/settings-page.php:225
+#: templates/admin/settings-page.php:238
 msgid ""
 "Each subfolder is named after the WooCommerce order ID and may contain "
 "project.json, preview PNG, ZIP, and customer uploads."
@@ -287,7 +287,7 @@ msgstr "Edytuj układ"
 msgid "Edit layout"
 msgstr "Edytuj układ"
 
-#: templates/admin/settings-page.php:184
+#: templates/admin/settings-page.php:197
 msgid "Enable debug mode"
 msgstr "Włącz tryb debugowania"
 
@@ -295,19 +295,19 @@ msgstr "Włącz tryb debugowania"
 msgid "Enable personalization"
 msgstr "Włącz personalizację"
 
-#: templates/admin/settings-page.php:140
+#: templates/admin/settings-page.php:153
 msgid "Enable scheduled cleanup"
 msgstr "Włącz zaplanowane czyszczenie"
 
-#: templates/admin/settings-page.php:155 src/Core/Cron.php:74
+#: templates/admin/settings-page.php:168 src/Core/Cron.php:74
 msgid "Every 14 days"
 msgstr "Co 14 dni"
 
-#: templates/admin/settings-page.php:157 src/Core/Cron.php:78
+#: templates/admin/settings-page.php:170 src/Core/Cron.php:78
 msgid "Every 30 days"
 msgstr "Co 30 dni"
 
-#: templates/admin/settings-page.php:153 src/Core/Cron.php:70
+#: templates/admin/settings-page.php:166 src/Core/Cron.php:70
 msgid "Every 7 days"
 msgstr "Co 7 dni"
 
@@ -339,7 +339,7 @@ msgstr "Nie udało się zakodować pliku eksportu."
 msgid "Failed to store uploaded file."
 msgstr "Nie udało się zapisać przesłanego pliku."
 
-#: src/Frontend/PersonalizerController.php:289
+#: src/Frontend/PersonalizerController.php:291
 msgid "File too large."
 msgstr "Plik jest za duży."
 
@@ -351,7 +351,7 @@ msgstr "Pliki nie są jeszcze gotowe. Odśwież stronę za chwilę."
 msgid "Flip H"
 msgstr "Odbij poziomo"
 
-#: src/Frontend/PersonalizerController.php:241
+#: src/Frontend/PersonalizerController.php:242
 msgid "Flip horizontal"
 msgstr "Odbij poziomo"
 
@@ -359,11 +359,11 @@ msgstr "Odbij poziomo"
 msgid "Flip V"
 msgstr "Odbij pionowo"
 
-#: src/Frontend/PersonalizerController.php:242
+#: src/Frontend/PersonalizerController.php:243
 msgid "Flip vertical"
 msgstr "Odbij pionowo"
 
-#: src/Frontend/PersonalizerController.php:251
+#: src/Frontend/PersonalizerController.php:253
 msgid "Font"
 msgstr "Czcionka"
 
@@ -378,7 +378,7 @@ msgstr "Rodzina czcionki"
 msgid "Font size"
 msgstr "Rozmiar czcionki"
 
-#: templates/admin/settings-page.php:54
+#: templates/admin/settings-page.php:67
 msgid ""
 "Formats the storefront personalizer can load on the canvas (Konva). GIF/AVIF "
 "support depends on the customer’s browser; BMP is widely supported."
@@ -387,7 +387,7 @@ msgstr ""
 "(Konva). Obsługa GIF/AVIF zależy od przeglądarki klienta; BMP jest szeroko "
 "obsługiwany."
 
-#: templates/admin/settings-page.php:88
+#: templates/admin/settings-page.php:101
 msgid "Frontend"
 msgstr "Frontend"
 
@@ -403,11 +403,19 @@ msgstr "Google Fonts"
 msgid "Height"
 msgstr "Wysokość"
 
-#: templates/admin/settings-page.php:129
+#: templates/admin/settings-page.php:142
 msgid "Hide automatic button placement"
 msgstr "Ukryj automatyczne umieszczanie przycisku"
 
-#: templates/admin/settings-page.php:160
+#: templates/admin/settings-page.php:43
+msgid ""
+"Higher value = larger and sharper preview/production PNG (and bigger files). "
+"Recommended: 2-3."
+msgstr ""
+"Wyższa wartość = większy i ostrzejszy podgląd/produkcja PNG (i większe pliki)"
+". Zalecane: 2-3."
+
+#: templates/admin/settings-page.php:173
 msgid ""
 "How often the scheduled job runs, and the minimum age of an order folder "
 "before it can be deleted (based on the folder’s last modified time). "
@@ -426,7 +434,7 @@ msgstr ""
 msgid "https://weblo.pl/"
 msgstr "https://weblo.pl/"
 
-#: src/Infrastructure/Repository/SettingsRepository.php:43
+#: src/Infrastructure/Repository/SettingsRepository.php:44
 msgid "I accept the preview shown above."
 msgstr "Akceptuję podgląd pokazany powyżej."
 
@@ -450,11 +458,11 @@ msgstr "Zaimportowany układ"
 msgid "Increase font size"
 msgstr "Zwiększ rozmiar czcionki"
 
-#: templates/admin/settings-page.php:98
+#: templates/admin/settings-page.php:111
 msgid "Inline"
 msgstr "W treści"
 
-#: src/Frontend/PersonalizerController.php:246
+#: src/Frontend/PersonalizerController.php:247
 msgid "Invalid file type or size."
 msgstr "Nieprawidłowy typ lub rozmiar pliku."
 
@@ -540,11 +548,11 @@ msgstr "Układy"
 msgid "Live preview"
 msgstr "Podgląd na żywo"
 
-#: templates/admin/settings-page.php:202
+#: templates/admin/settings-page.php:215
 msgid "Log file:"
 msgstr "Plik logu:"
 
-#: templates/admin/settings-page.php:217
+#: templates/admin/settings-page.php:230
 msgid "Manual cleanup"
 msgstr "Ręczne czyszczenie"
 
@@ -556,26 +564,26 @@ msgstr "Maksymalny rozmiar przesyłanego pliku (MB)"
 msgid "Missing layout configuration."
 msgstr "Brak konfiguracji układu."
 
-#: templates/admin/settings-page.php:95
+#: templates/admin/settings-page.php:108
 msgid "Modal"
 msgstr "Modal"
 
-#: src/Core/Assets.php:119 src/Frontend/PersonalizerController.php:237
+#: src/Core/Assets.php:119 src/Frontend/PersonalizerController.php:238
 #: templates/frontend/partials/transform-toolbar.php:20
 msgid "Move down"
 msgstr "Przesuń w dół"
 
-#: src/Frontend/PersonalizerController.php:234
+#: src/Frontend/PersonalizerController.php:235
 #: templates/frontend/partials/transform-toolbar.php:14
 msgid "Move left"
 msgstr "Przesuń w lewo"
 
-#: src/Frontend/PersonalizerController.php:235
+#: src/Frontend/PersonalizerController.php:236
 #: templates/frontend/partials/transform-toolbar.php:16
 msgid "Move right"
 msgstr "Przesuń w prawo"
 
-#: src/Core/Assets.php:118 src/Frontend/PersonalizerController.php:236
+#: src/Core/Assets.php:118 src/Frontend/PersonalizerController.php:237
 #: templates/frontend/partials/transform-toolbar.php:18
 msgid "Move up"
 msgstr "Przesuń w górę"
@@ -584,7 +592,7 @@ msgstr "Przesuń w górę"
 msgid "New Layout"
 msgstr "Nowy układ"
 
-#: templates/admin/settings-page.php:207
+#: templates/admin/settings-page.php:220
 msgid ""
 "New lines are appended with a timestamp, level, and optional JSON context. "
 "The file is created automatically on first write."
@@ -592,7 +600,7 @@ msgstr ""
 "Nowe wpisy są dodawane wraz ze znacznikiem czasu, poziomem i opcjonalnym "
 "kontekstem JSON. Plik jest tworzony automatycznie przy pierwszym zapisie."
 
-#: src/Frontend/PersonalizerController.php:277
+#: src/Frontend/PersonalizerController.php:279
 #: src/Admin/LayoutImportExport.php:187
 msgid "No file uploaded."
 msgstr "Nie przesłano pliku."
@@ -641,7 +649,7 @@ msgstr "Starsze niż 7 dni"
 msgid "Older than 90 days"
 msgstr "Starsze niż 90 dni"
 
-#: templates/admin/settings-page.php:169
+#: templates/admin/settings-page.php:182
 msgid "Only delete folders for completed/cancelled/refunded orders"
 msgstr ""
 "Usuwaj foldery tylko dla zamówień zakończonych, anulowanych lub zwróconych"
@@ -672,7 +680,7 @@ msgstr "Brakuje danych personalizacji."
 msgid "Personalization details"
 msgstr "Szczegóły personalizacji"
 
-#: src/Frontend/PersonalizerController.php:273
+#: src/Frontend/PersonalizerController.php:275
 msgid "Personalization is not available for this product."
 msgstr "Personalizacja nie jest dostępna dla tego produktu."
 
@@ -700,7 +708,7 @@ msgstr ""
 msgid "Personalize button label"
 msgstr "Etykieta przycisku personalizacji"
 
-#: src/Infrastructure/Repository/SettingsRepository.php:41
+#: src/Infrastructure/Repository/SettingsRepository.php:42
 msgid "Personalize product"
 msgstr "Personalizuj produkt"
 
@@ -720,7 +728,7 @@ msgstr "Spersonalizowany"
 msgid "Personalized product"
 msgstr "Spersonalizowany produkt"
 
-#: templates/admin/settings-page.php:195
+#: templates/admin/settings-page.php:208
 msgid ""
 "PHP-side debug/info/warning/error entries from the plugin when logging is "
 "active."
@@ -728,17 +736,21 @@ msgstr ""
 "Wpisy debug/info/warning/error po stronie PHP z wtyczki, gdy logowanie jest "
 "aktywne."
 
-#: src/Frontend/PersonalizerController.php:247
+#: src/Frontend/PersonalizerController.php:249
 msgid "Please accept the preview before adding to cart."
 msgstr "Zaakceptuj podgląd przed dodaniem do koszyka."
 
-#: templates/admin/settings-page.php:191
+#: templates/admin/settings-page.php:204
 msgid "Prefixed [WPP] messages in the browser console."
 msgstr "Komunikaty z prefiksem [WPP] w konsoli przeglądarki."
 
 #: src/Integrations/WooCommerce/PreviewDisplay.php:175
 msgid "Preview"
 msgstr "Podgląd"
+
+#: templates/admin/settings-page.php:36
+msgid "Preview export quality (scale)"
+msgstr "Podgląd jakości eksportu (skala)"
 
 #: src/Integrations/WooCommerce/PreviewDisplay.php:23
 msgid "Preview removed"
@@ -760,7 +772,7 @@ msgstr "Produkcyjny PNG"
 msgid "Regenerate production files"
 msgstr "Regeneruj pliki produkcyjne"
 
-#: src/Core/Assets.php:121
+#: src/Core/Assets.php:121 src/Frontend/PersonalizerController.php:248
 msgid "Remove"
 msgstr "Usuń"
 
@@ -793,21 +805,21 @@ msgstr "Brak wymaganego obrazu: %s"
 msgid "Required text field missing: %s"
 msgstr "Brak wymaganego pola tekstowego: %s"
 
-#: src/Frontend/PersonalizerController.php:244
+#: src/Frontend/PersonalizerController.php:245
 #: templates/frontend/partials/transform-toolbar.php:36
 msgid "Reset"
 msgstr "Resetuj"
 
-#: src/Frontend/PersonalizerController.php:240
+#: src/Frontend/PersonalizerController.php:241
 #: templates/frontend/partials/transform-toolbar.php:28
 msgid "Rotate"
 msgstr "Obróć"
 
-#: templates/admin/settings-page.php:253
+#: templates/admin/settings-page.php:266
 msgid "Run cleanup now"
 msgstr "Uruchom czyszczenie teraz"
 
-#: templates/admin/settings-page.php:142
+#: templates/admin/settings-page.php:155
 msgid ""
 "Runs a background job on the interval selected below. It removes old "
 "personalization project folders from disk (PNG exports, project.json, "
@@ -817,11 +829,11 @@ msgstr ""
 "projektów personalizacji z dysku (eksporty PNG, project.json, przesłane "
 "obrazy) według tych samych zasad co ręczne czyszczenie."
 
-#: src/Frontend/PersonalizerController.php:250
+#: src/Frontend/PersonalizerController.php:252
 msgid "Save personalization"
 msgstr "Zapisz personalizację"
 
-#: templates/admin/settings-page.php:219
+#: templates/admin/settings-page.php:232
 msgid ""
 "Scans order project folders on disk and removes those matching the rules "
 "above and the age threshold you choose below. Cancelled orders are always "
@@ -848,7 +860,7 @@ msgstr "Wybierz obraz"
 msgid "Select mask"
 msgstr "Wybierz maskę"
 
-#: templates/admin/settings-page.php:193
+#: templates/admin/settings-page.php:206
 msgid "Selected client-side events sent to the server log (AJAX)."
 msgstr "Wybrane zdarzenia po stronie klienta wysyłane do logu serwera (AJAX)."
 
@@ -857,11 +869,11 @@ msgstr "Wybrane zdarzenia po stronie klienta wysyłane do logu serwera (AJAX)."
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: templates/admin/settings-page.php:112 templates/admin/settings-page.php:126
+#: templates/admin/settings-page.php:125 templates/admin/settings-page.php:139
 msgid "Shortcode only"
 msgstr "Tylko shortcode"
 
-#: templates/admin/settings-page.php:122
+#: templates/admin/settings-page.php:135
 msgid "Shortcode: [woo_product_personalizer]"
 msgstr "Shortcode: [woo_product_personalizer]"
 
@@ -869,7 +881,7 @@ msgstr "Shortcode: [woo_product_personalizer]"
 msgid "Show personalization"
 msgstr "Pokaż personalizację"
 
-#: templates/admin/settings-page.php:75
+#: templates/admin/settings-page.php:88
 msgid ""
 "Shown on the product page after all required personalization fields are "
 "valid (when add to cart is blocked until personalization is complete)."
@@ -878,7 +890,7 @@ msgstr ""
 "są poprawne (gdy dodawanie do koszyka jest zablokowane do ukończenia "
 "personalizacji)."
 
-#: templates/admin/settings-page.php:251
+#: templates/admin/settings-page.php:264
 msgid ""
 "Simulates cleanup without deleting anything: eligible folders are counted "
 "and listed in the result as “would be deleted”, but no files or directories "
@@ -893,7 +905,7 @@ msgstr ""
 msgid "Slot #%d"
 msgstr "Slot #%d"
 
-#: templates/admin/settings-page.php:222
+#: templates/admin/settings-page.php:235
 msgid "Target directory:"
 msgstr "Katalog docelowy:"
 
@@ -916,7 +928,7 @@ msgstr "Pole tekstowe #%d"
 msgid "Text too long: %s"
 msgstr "Tekst jest za długi: %s"
 
-#: templates/admin/settings-page.php:199
+#: templates/admin/settings-page.php:212
 msgid ""
 "The on-screen panel and console output also appear when WP_DEBUG is true in "
 "wp-config.php, but the log file and server-side AJAX logging require this "
@@ -926,7 +938,7 @@ msgstr ""
 "config.php ustawiono WP_DEBUG na true, ale plik logu i logowanie AJAX po "
 "stronie serwera wymagają włączenia tego ustawienia."
 
-#: src/Frontend/PersonalizerController.php:245
+#: src/Frontend/PersonalizerController.php:246
 msgid "This field is required."
 msgstr "To pole jest wymagane."
 
@@ -946,11 +958,11 @@ msgstr "Przełącz ustawienia"
 msgid "Transfer layouts"
 msgstr "Przenoszenie układów"
 
-#: templates/admin/settings-page.php:186
+#: templates/admin/settings-page.php:199
 msgid "Turns on developer tooling for the storefront personalizer:"
 msgstr "Włącza narzędzia deweloperskie dla personalizatora w sklepie:"
 
-#: src/Admin/SettingsPage.php:152 src/Admin/Ajax/CleanupAjax.php:56
+#: src/Admin/SettingsPage.php:153 src/Admin/Ajax/CleanupAjax.php:56
 msgid "Unauthorized."
 msgstr "Brak autoryzacji."
 
@@ -962,16 +974,16 @@ msgstr "Nierozpoznany format eksportu."
 msgid "Upload error."
 msgstr "Błąd przesyłania pliku."
 
-#: src/Frontend/PersonalizerController.php:232
+#: src/Frontend/PersonalizerController.php:233
 msgid "Upload image"
 msgstr "Prześlij obraz"
 
-#: src/Frontend/PersonalizerController.php:294
+#: src/Frontend/PersonalizerController.php:296
 #: src/Infrastructure/Uploads/UploadsManager.php:178
 msgid "Upload session is not available."
 msgstr "Sesja przesyłania plików jest niedostępna."
 
-#: src/Frontend/PersonalizerController.php:285
+#: src/Frontend/PersonalizerController.php:287
 msgid "Uploads are disabled."
 msgstr "Przesyłanie plików jest wyłączone."
 
@@ -983,7 +995,7 @@ msgstr "Zobacz układ"
 msgid "Weblo"
 msgstr "Weblo"
 
-#: templates/admin/settings-page.php:171
+#: templates/admin/settings-page.php:184
 msgid ""
 "When enabled, folders for orders that are still processing, on-hold, or "
 "pending payment are never removed. Cancelled, completed, and refunded orders "
@@ -1026,12 +1038,12 @@ msgstr "Nie masz uprawnień do wykonania tej czynności."
 msgid "ZIP download requires the PHP Zip extension."
 msgstr "Pobieranie ZIP wymaga rozszerzenia PHP Zip."
 
-#: src/Frontend/PersonalizerController.php:238
+#: src/Frontend/PersonalizerController.php:239
 #: templates/frontend/partials/transform-toolbar.php:24
 msgid "Zoom in"
 msgstr "Powiększ"
 
-#: src/Frontend/PersonalizerController.php:239
+#: src/Frontend/PersonalizerController.php:240
 #: templates/frontend/partials/transform-toolbar.php:26
 msgid "Zoom out"
 msgstr "Pomniejsz"

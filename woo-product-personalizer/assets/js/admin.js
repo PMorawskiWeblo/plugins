@@ -328,6 +328,9 @@
 			'<div class="wpp-canvas-field wpp-canvas-field--checkbox">' +
 			'<label class="wpp-slot-required-row"><input type="checkbox" class="slot-required" ' + (slot.required ? 'checked' : '') + ' /> Wymagane</label>' +
 			'<span class="wpp-canvas-media__hint">Klient musi dodać zdjęcie przed złożeniem zamówienia.</span></div>' +
+			'<div class="wpp-canvas-field wpp-canvas-field--checkbox">' +
+			'<label class="wpp-slot-white-bg-row"><input type="checkbox" class="slot-white-bg" ' + (slot.white_bg ? 'checked' : '') + ' /> Białe tło pod grafiką</label>' +
+			'<span class="wpp-canvas-media__hint">Dla PNG bez tła: doda białe wypełnienie pod zdjęciem w tym slocie.</span></div>' +
 			'</div></div>' +
 			'<div class="wpp-builder-section">' +
 			'<span class="wpp-builder-section__title">Frame</span>' +
@@ -438,6 +441,7 @@
 			id: 'photo_' + (config.image_slots.length + 1),
 			label: 'Upload image',
 			required: false,
+			white_bg: false,
 			frame: { x: 100, y: 100, width: 400, height: 500 },
 			controls: { move: true, scale: true, rotate: true, flip: true, autofit: true, reset: true }
 		});
@@ -790,6 +794,7 @@
 				id: $c.find('.slot-id').val(),
 				label: $c.find('.slot-label').val(),
 				required: $c.find('.slot-required').is(':checked'),
+				white_bg: $c.find('.slot-white-bg').is(':checked'),
 				frame: {
 					x: parseInt($c.find('.slot-x').val(), 10) || 0,
 					y: parseInt($c.find('.slot-y').val(), 10) || 0,
