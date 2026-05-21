@@ -28,6 +28,8 @@ class LayoutRepository {
 	 */
 	public function default_config() {
 		return array(
+			'personalization_mode' => 'layout_2',
+			'crop_mask_shape'      => true,
 			'canvas'      => array(
 				'width'      => 2000,
 				'height'     => 2400,

@@ -124,11 +124,10 @@ class SettingsPage {
 			'max_upload_mb'          => absint( $input['max_upload_mb'] ?? $defaults['max_upload_mb'] ),
 			'preview_export_scale'   => min( 6, max( 1, absint( $input['preview_export_scale'] ?? $defaults['preview_export_scale'] ) ) ),
 			'allowed_mime_types'     => $allowed_mimes,
-			'frontend_mode'          => in_array( $input['frontend_mode'] ?? '', array( 'inline', 'modal' ), true )
-				? $input['frontend_mode']
-				: $defaults['frontend_mode'],
+			'frontend_mode'          => 'modal',
 			'button_position'        => sanitize_text_field( $input['button_position'] ?? $defaults['button_position'] ),
-			'shortcode_only'         => ! empty( $input['shortcode_only'] ),
+			'shortcode_only'              => ! empty( $input['shortcode_only'] ),
+			'replace_add_to_cart_button'  => ! empty( $input['replace_add_to_cart_button'] ),
 			'default_button_label'           => sanitize_text_field( $input['default_button_label'] ?? $defaults['default_button_label'] ),
 			'default_button_label_completed' => sanitize_text_field( $input['default_button_label_completed'] ?? $defaults['default_button_label_completed'] ),
 			'default_accept_text'            => sanitize_textarea_field( $input['default_accept_text'] ?? $defaults['default_accept_text'] ),

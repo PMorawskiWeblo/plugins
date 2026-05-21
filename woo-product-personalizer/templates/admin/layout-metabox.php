@@ -47,6 +47,21 @@ defined('ABSPATH') || exit;
                 </div>
                 <div class="wpp-canvas-panel__body wpp-canvas-panel__body--split">
                     <div class="wpp-canvas-panel__col wpp-canvas-panel__col--meta">
+                        <div class="wpp-canvas-field">
+                            <label class="wpp-canvas-field__label" for="wpp-personalization-mode"><?php esc_html_e('Personalization layout', 'woo-product-personalizer'); ?></label>
+                            <select id="wpp-personalization-mode" class="wpp-canvas-field__input wpp-personalization-mode">
+                                <option value="layout_1"><?php esc_html_e('Layout personalization 1', 'woo-product-personalizer'); ?></option>
+                                <option value="layout_2"><?php esc_html_e('Layout personalization 2 (crop after upload)', 'woo-product-personalizer'); ?></option>
+                            </select>
+                            <p class="wpp-canvas-media__hint"><?php esc_html_e('Mode 2 opens a crop window after the customer uploads a photo (zoom, cancel, select).', 'woo-product-personalizer'); ?></p>
+                        </div>
+                        <div class="wpp-canvas-field wpp-canvas-field--checkbox">
+                            <label class="wpp-crop-mask-shape-row">
+                                <input type="checkbox" class="wpp-crop-mask-shape" value="1" checked="checked" />
+                                <?php esc_html_e('Crop area follows slot mask shape', 'woo-product-personalizer'); ?>
+                            </label>
+                            <p class="wpp-canvas-media__hint"><?php esc_html_e('In layout 2, the crop frame matches the mask image (requires a mask on the slot). Enabled by default.', 'woo-product-personalizer'); ?></p>
+                        </div>
                         <span class="wpp-canvas-media__label"><?php esc_html_e('Background image', 'woo-product-personalizer'); ?></span>
                         <p class="wpp-canvas-media__hint"><?php esc_html_e('Base template shown behind photos (e.g. letter outlines).', 'woo-product-personalizer'); ?></p>
                         <div class="wpp-canvas-panel__grid">

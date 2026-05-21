@@ -410,3 +410,192 @@ body.wpp-block-atc .single_add_to_cart_button {
 	opacity: 0.5;
 	pointer-events: none;
 }
+
+.wpp-save-personalization:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+/* Image crop modal (layout personalization mode 2). */
+body.wpp-crop-modal-open {
+	overflow: hidden;
+}
+
+.wpp-crop-modal {
+	display: none;
+	position: fixed;
+	inset: 0;
+	z-index: 100010;
+}
+
+.wpp-crop-modal.is-open {
+	display: block;
+}
+
+.wpp-crop-modal__backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.72);
+}
+
+.wpp-crop-modal__dialog {
+	position: relative;
+	z-index: 2;
+	box-sizing: border-box;
+	width: min(96vw, 1080px);
+	height: min(92vh, 860px);
+	margin: 4vh auto;
+	padding: 0;
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.wpp-crop-modal__close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 5;
+	width: 36px;
+	height: 36px;
+	border: 0;
+	border-radius: 50%;
+	background: rgba(0, 0, 0, 0.65);
+	color: #fff;
+	font-size: 22px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.wpp-crop-modal__stage {
+	position: relative;
+	flex: 1 1 auto;
+	min-height: 0;
+	height: 100%;
+	overflow: hidden;
+	background: #f0f0f0;
+}
+
+.wpp-crop-modal__crop-area {
+	position: absolute;
+	inset: 0;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.wpp-crop-modal__crop-area .cropper-container {
+	position: absolute !important;
+	inset: 0 !important;
+	width: 100% !important;
+	height: 100% !important;
+	max-width: 100% !important;
+	max-height: 100% !important;
+	overflow: hidden !important;
+}
+
+.wpp-crop-modal__crop-area .cropper-wrap-box,
+.wpp-crop-modal__crop-area .cropper-canvas,
+.wpp-crop-modal__crop-area .cropper-drag-box {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.wpp-crop-modal__image {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+/* Crop frame shaped like slot mask (layout option: crop_mask_shape). */
+.wpp-crop--mask-shape .cropper-view-box {
+	outline: none;
+	box-shadow: none;
+	border: 2px solid rgba(51, 153, 255, 0.85);
+	overflow: hidden;
+}
+
+.wpp-crop--mask-shape .cropper-view-box,
+.wpp-crop--mask-shape .cropper-face {
+	-webkit-mask-image: var(--wpp-crop-mask-url);
+	mask-image: var(--wpp-crop-mask-url);
+	-webkit-mask-size: 100% 100%;
+	mask-size: 100% 100%;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	mask-position: center;
+}
+
+.wpp-crop--mask-shape .cropper-face {
+	background-color: rgba(51, 153, 255, 0.12);
+	opacity: 1;
+}
+
+.wpp-crop--mask-shape .cropper-line,
+.wpp-crop--mask-shape .cropper-point {
+	display: none;
+}
+
+.wpp-crop--mask-shape .cropper-dashed {
+	opacity: 0;
+}
+
+.wpp-crop-modal__footer {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 14px 16px;
+	border-top: 1px solid #e5e5e5;
+	background: #fff;
+}
+
+@media (max-width: 640px) {
+	.wpp-crop-modal__dialog {
+		width: 100vw;
+		height: 100vh;
+		max-height: 100vh;
+		margin: 0;
+		border-radius: 0;
+	}
+}
+
+.wpp-crop-modal__zoom {
+	display: flex;
+	gap: 8px;
+}
+
+.wpp-crop-modal__zoom-btn {
+	width: 40px;
+	height: 40px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background: #fff;
+	font-size: 20px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.wpp-crop-modal__zoom-btn:hover {
+	border-color: #999;
+}
+
+.wpp-crop-modal__actions {
+	display: flex;
+	gap: 10px;
+	margin-left: auto;
+}
+
+.wpp-crop-modal__cancel {
+	min-width: 100px;
+}
+
+.wpp-crop-modal__select {
+	min-width: 120px;
+}

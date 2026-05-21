@@ -38,10 +38,11 @@ class SettingsRepository
 			'allowed_mime_types'     => array('image/jpeg', 'image/png', 'image/webp'),
 			'frontend_mode'          => 'modal',
 			'button_position'        => 'after_add_to_cart',
-			'shortcode_only'         => false,
+			'shortcode_only'              => false,
+			'replace_add_to_cart_button'  => false,
 			'default_button_label'           => __('Personalize product', 'woo-product-personalizer'),
 			'default_button_label_completed' => _x('Personalized', 'completed personalize button', 'woo-product-personalizer'),
-			'default_accept_text'            => __('I accept the preview shown above.', 'woo-product-personalizer'),
+			'default_accept_text'            => __('I accept the project', 'woo-product-personalizer'),
 			'debug_enabled'          => false,
 			'cleanup_enabled'        => false,
 			'cleanup_interval'       => 14,
@@ -131,8 +132,7 @@ class SettingsRepository
 	 */
 	public function get_frontend_mode()
 	{
-		$mode = $this->get('frontend_mode', 'modal');
-		return in_array($mode, array('inline', 'modal'), true) ? $mode : 'modal';
+		return 'modal';
 	}
 
 	/**
@@ -153,5 +153,15 @@ class SettingsRepository
 	public function is_shortcode_only()
 	{
 		return (bool) $this->get('shortcode_only', false);
+	}
+
+	/**
+	 * Replace the single-product add to cart button with the personalize flow.
+	 *
+	 * @return bool
+	 */
+	public function is_replace_add_to_cart_enabled()
+	{
+		return (bool) $this->get('replace_add_to_cart_button', false);
 	}
 }

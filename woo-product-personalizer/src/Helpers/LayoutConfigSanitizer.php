@@ -27,7 +27,18 @@ class LayoutConfigSanitizer {
 		$defaults   = $repository->default_config();
 		$canvas     = wp_parse_args( $config['canvas'] ?? array(), $defaults['canvas'] );
 
+		$personalization_mode = sanitize_key( $config['personalization_mode'] ?? 'layout_2' );
+		if ( ! in_array( $personalization_mode, array( 'layout_1', 'layout_2' ), true ) ) {
+			$personalization_mode = 'layout_2';
+		}
+
+		$crop_mask_shape = array_key_exists( 'crop_mask_shape', $config )
+			? ! empty( $config['crop_mask_shape'] )
+			: true;
+
 		$sanitized = array(
+			'personalization_mode' => $personalization_mode,
+			'crop_mask_shape'      => $crop_mask_shape,
 			'canvas'      => array(
 				'width'      => absint( $canvas['width'] ),
 				'height'     => absint( $canvas['height'] ),

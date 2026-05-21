@@ -133,6 +133,9 @@ class Assets {
 						'removeMask'          => __( 'Remove mask', 'woo-product-personalizer' ),
 						'clickToSelectMask'   => __( 'Click to select mask image', 'woo-product-personalizer' ),
 						'imageUrl'            => __( 'Image URL', 'woo-product-personalizer' ),
+						'customerControls'    => __( 'Customer controls', 'woo-product-personalizer' ),
+						'ctrlMove'            => __( 'Move (arrows in editor)', 'woo-product-personalizer' ),
+						'ctrlFontSize'        => __( 'Font size (+/− in editor)', 'woo-product-personalizer' ),
 						'googleFontsHelpHtml' => wp_kses(
 							sprintf(
 								/* translators: %s: link to Google Fonts */
@@ -226,6 +229,35 @@ class Assets {
 			'wpp-google-fonts',
 			WPP_PLUGIN_URL . 'assets/js/wpp-google-fonts.js',
 			array(),
+			WPP_VERSION,
+			true
+		);
+
+		wp_register_script(
+			'wpp-cropper-lib',
+			WPP_PLUGIN_URL . 'assets/js/vendor/cropper.min.js',
+			array(),
+			'1.6.2',
+			true
+		);
+
+		wp_add_inline_script(
+			'wpp-cropper-lib',
+			'window.WppCropperLib = ( typeof Cropper === "function" && Cropper.prototype && typeof Cropper.prototype.getCroppedCanvas === "function" ) ? Cropper : null;',
+			'after'
+		);
+
+		wp_register_style(
+			'wpp-cropper',
+			WPP_PLUGIN_URL . 'assets/css/cropper.min.css',
+			array(),
+			'1.6.2'
+		);
+
+		wp_register_script(
+			'wpp-image-crop',
+			WPP_PLUGIN_URL . 'assets/js/wpp-image-crop.js',
+			array( 'jquery', 'wpp-cropper-lib' ),
 			WPP_VERSION,
 			true
 		);

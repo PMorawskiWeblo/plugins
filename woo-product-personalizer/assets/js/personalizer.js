@@ -49,11 +49,16 @@
 		if (!current || typeof current === 'string') {
 			state.textFields[fieldId] = {
 				value: typeof current === 'string' ? current : '',
+				touched: typeof current === 'string',
 				offsetX: 0,
 				offsetY: 0,
 				fontSize: null,
 				fontFamily: null
 			};
+		}
+
+		if (current && typeof current === 'object' && current.touched === undefined) {
+			current.touched = String(current.value || '').length > 0;
 		}
 
 		return state.textFields[fieldId];
@@ -136,27 +141,40 @@
 			return '';
 		}
 
-		if (meta && String(meta.value || '').length) {
+		meta = meta || ensureTextFieldState(field.id);
+
+		if (meta.touched) {
+			return String(meta.value ?? '');
+		}
+
+		if (String(meta.value || '').length) {
 			return String(meta.value);
 		}
 
-		if (field.default_value) {
-			return String(field.default_value);
-		}
-
-		return '';
+		return field.default_value ? String(field.default_value) : '';
 	}
 
-	function syncTextMetaFromField(field) {
-		if (!field || !field.id) {
-			return;
+	function getEffectiveTextValue(fieldId) {
+		var field = getTextFieldConfig(fieldId);
+		if (!field) {
+			return '';
 		}
 
+		return getFieldDisplayText(field, ensureTextFieldState(fieldId)).trim();
+	}
+
+	function getTextExportValue(field) {
 		var meta = ensureTextFieldState(field.id);
 
-		if (!String(meta.value || '').length && field.default_value) {
-			meta.value = String(field.default_value);
+		if (meta.touched) {
+			return meta.value || '';
 		}
+
+		if (String(meta.value || '').length) {
+			return meta.value;
+		}
+
+		return field.default_value || '';
 	}
 
 	function getLayerSnapshot() {
@@ -194,8 +212,37 @@
 		};
 	}
 
+	function isCropModeLayout() {
+		return wppData.layout && wppData.layout.personalization_mode === 'layout_2';
+	}
+
+	function initCropModal() {
+		if (!isCropModeLayout() || !window.WppImageCrop) {
+			return;
+		}
+
+		window.WppImageCrop.init({
+			onSelect: function (result) {
+				uploadCroppedBlob(result.slotId, result.blob, result.fileName);
+			},
+			onCancel: function (ctx) {
+				if (!ctx || !ctx.slotId) {
+					return;
+				}
+				var previousSource =
+					state.imageFields[ctx.slotId] && state.imageFields[ctx.slotId].source;
+				$('.wpp-image-field[data-slot-id="' + ctx.slotId + '"] .wpp-image-upload').val('');
+				updateUploadButton(
+					ctx.slotId,
+					previousSource ? filenameFromPath(previousSource) : ''
+				);
+			}
+		});
+	}
+
 	function init() {
 		bindEvents();
+		initCropModal();
 
 		if (!$('#wpp-canvas-container').length) {
 			return;
@@ -209,6 +256,7 @@
 		initCanvas();
 		bindPreviewResize();
 		moveHiddenFieldsToCartForm();
+		initReplaceAddToCart();
 		validate();
 
 		wppLog('init:personalizer', {
@@ -234,6 +282,7 @@
 		$(document).on('click', '.wpp-open-personalizer', openModal);
 		$(document).on('click', '[data-wpp-close]', closeModal);
 		$(document).on('click', '.wpp-save-personalization', saveAndClose);
+		$('form.cart').on('click', '.single_add_to_cart_button.wpp-atc-replaced', onReplacedAddToCartClick);
 		$(document).on('input', '.wpp-text-input', onTextInput);
 		$(document).on('change', '.wpp-acceptance-checkbox', onAcceptanceChange);
 		$(document).on('change', '.wpp-image-upload', onImageUpload);
@@ -249,9 +298,35 @@
 		$('form.cart').on('submit', onCartSubmit);
 	}
 
-	function openModal(e) {
+	function initReplaceAddToCart() {
+		if (!wppData.replaceAddToCart) {
+			return;
+		}
+
+		$('form.cart .single_add_to_cart_button').addClass('wpp-atc-replaced');
+	}
+
+	function onReplacedAddToCartClick(e) {
+		if (!wppData.replaceAddToCart) {
+			return;
+		}
+
+		if (!wppData.validationEnabled || state.valid) {
+			persistHiddenFields();
+			return;
+		}
+
 		e.preventDefault();
-		e.stopPropagation();
+		openModal(e);
+	}
+
+	function openModal(e) {
+		if (e && e.preventDefault) {
+			e.preventDefault();
+		}
+		if (e && e.stopPropagation) {
+			e.stopPropagation();
+		}
 
 		var $modal = $('#wpp-modal');
 		if (!$modal.length) {
@@ -434,6 +509,11 @@
 		}
 
 		if (state.activeSlot && state.imageFields[state.activeSlot] && state.imageFields[state.activeSlot].source) {
+			if (isCropModeLayout()) {
+				$toolbar.prop('hidden', true);
+				return;
+			}
+
 			$toolbar.prop('hidden', false);
 			setToolbarGroupVisible($moveGroup, true);
 			setToolbarGroupVisible($imageGroup, true);
@@ -502,20 +582,18 @@
 		});
 
 		(wppData.layout.text_fields || []).forEach(function (field) {
-			syncTextMetaFromField(field);
+			var meta = ensureTextFieldState(field.id);
 			var max = field.max_length || 0;
-			var defaultVal = getFieldDisplayText(field, state.textFields[field.id]);
+			var inputVal = meta.touched ? meta.value : field.default_value || '';
 			var requiredMark = field.required ? requiredMarkHtml() : '';
 			var html =
 				'<div class="wpp-field wpp-text-field" data-field-id="' + esc(field.id) + '">' +
 				'<label><span class="wpp-field-label-text">' + esc(field.label || field.id) + '</span>' + requiredMark + '</label>' +
-				'<textarea class="wpp-text-input" data-field-id="' + esc(field.id) + '" maxlength="' + (max || 500) + '" placeholder="' + esc(field.placeholder || '') + '">' + esc(defaultVal) + '</textarea>' +
-				(max ? '<div class="wpp-char-counter"><span class="wpp-char-current">' + defaultVal.length + '</span>/' + max + '</div>' : '') +
+				'<textarea class="wpp-text-input" data-field-id="' + esc(field.id) + '" maxlength="' + (max || 500) + '" placeholder="' + esc(field.placeholder || '') + '">' + esc(inputVal) + '</textarea>' +
+				(max ? '<div class="wpp-char-counter"><span class="wpp-char-current">' + String(inputVal).length + '</span>/' + max + '</div>' : '') +
 				'<p class="wpp-field-error" role="alert" hidden></p>' +
 				'</div>';
 			$txtWrap.append(html);
-			var meta = ensureTextFieldState(field.id);
-			meta.value = defaultVal;
 		});
 	}
 
@@ -870,6 +948,7 @@
 		var val = $(this).val();
 		var meta = ensureTextFieldState(id);
 
+		meta.touched = true;
 		meta.value = val;
 		var $field = $(this).closest('.wpp-text-field');
 		$field.find('.wpp-char-current').text(val.length);
@@ -998,6 +1077,13 @@
 					alert(res.data && res.data.message ? res.data.message : wppData.i18n.invalidFile);
 					return;
 				}
+
+				if (isCropModeLayout() && window.WppImageCrop) {
+					setImageUploadLoading(slotId, false);
+					openCropModal(slotId, res.data.url, file);
+					return;
+				}
+
 				setSlotImage(slotId, res.data.url);
 				validate();
 			})
@@ -1012,6 +1098,93 @@
 					status: jqXhr.status,
 					response: jqXhr.responseText
 				});
+			});
+	}
+
+	function openCropModal(slotId, url, file) {
+		var slot = getSlotConfig(slotId);
+		if (!slot || !window.WppImageCrop) {
+			setSlotImage(slotId, url);
+			validate();
+			return;
+		}
+
+		var frame = slot.frame || { width: 1, height: 1 };
+		var aspectRatio = (frame.width || 1) / (frame.height || 1);
+		var canvas = wppData.layout.canvas || {};
+		var useMaskShape =
+			wppData.layout.crop_mask_shape !== false && !!slot.mask;
+		var outputMime =
+			useMaskShape || (file && file.type === 'image/png')
+				? 'image/png'
+				: 'image/jpeg';
+
+		window.WppImageCrop.open({
+			slotId: slotId,
+			url: url,
+			aspectRatio: aspectRatio,
+			frame: frame,
+			maskUrl: slot.mask || '',
+			useMaskShape: useMaskShape,
+			outputMime: outputMime,
+			fileName:
+				file && file.name
+					? file.name.replace(/\.[^.]+$/, '') +
+					  (useMaskShape ? '-cropped.png' : '-cropped.jpg')
+					: useMaskShape
+						? 'cropped.png'
+						: 'cropped.jpg',
+			i18n: {
+				cancel: wppData.i18n.cropCancel,
+				select: wppData.i18n.cropSelect,
+				zoomIn: wppData.i18n.cropZoomIn,
+				zoomOut: wppData.i18n.cropZoomOut
+			},
+			onFallback: function () {
+				setSlotImage(slotId, url);
+				validate();
+			}
+		});
+	}
+
+	function uploadCroppedBlob(slotId, blob, fileName) {
+		if (!blob) {
+			return;
+		}
+
+		setImageUploadLoading(slotId, true);
+		updateUploadButton(slotId, wppData.i18n.cropUploading || fileName);
+
+		var formData = new FormData();
+		formData.append('action', 'wpp_upload_temp');
+		formData.append('nonce', wppData.uploadNonce);
+		formData.append('slot_id', slotId);
+		formData.append('product_id', wppData.productId);
+		formData.append('file', blob, fileName || 'cropped.jpg');
+
+		$.ajax({
+			url: wppData.ajaxUrl,
+			type: 'POST',
+			data: formData,
+			processData: false,
+			contentType: false
+		})
+			.done(function (res) {
+				setImageUploadLoading(slotId, false);
+
+				if (!res.success) {
+					alert(res.data && res.data.message ? res.data.message : wppData.i18n.invalidFile);
+					updateUploadButton(slotId, '');
+					return;
+				}
+
+				setSlotImage(slotId, res.data.url);
+				validate();
+			})
+			.fail(function () {
+				setImageUploadLoading(slotId, false);
+				updateUploadButton(slotId, '');
+				alert(wppData.i18n.invalidFile);
 			});
 	}
 
@@ -1297,7 +1470,7 @@
 			height: drawH,
 			offsetX: drawW / 2,
 			offsetY: drawH / 2,
-			draggable: !!(slot.controls && slot.controls.move)
+			draggable: !isCropModeLayout() && !!(slot.controls && slot.controls.move)
 		});
 
 		group.add(konvaImage);
@@ -1453,7 +1626,6 @@
 		}
 
 		var meta = ensureTextFieldState(fieldId);
-		syncTextMetaFromField(field);
 		var displayText = getFieldDisplayText(field, meta);
 		var style = field.style || {};
 
@@ -1690,7 +1862,7 @@
 		var requiredMessage = getRequiredFieldMessage();
 
 		(wppData.layout.text_fields || []).forEach(function (field) {
-			var val = getTextFieldValue(field.id).trim();
+			var val = getEffectiveTextValue(field.id);
 			var $field = $('.wpp-text-field[data-field-id="' + field.id + '"]');
 
 			if (field.required && !val) {
@@ -1766,8 +1938,31 @@
 		return result.valid;
 	}
 
+	function updateSaveButtonState() {
+		if (!wppData.replaceAddToCart) {
+			return;
+		}
+
+		var $save = $('.wpp-personalizer--modal .wpp-save-personalization');
+		if (!$save.length) {
+			return;
+		}
+
+		var atcText = wppData.addToCartText || '';
+		var canSubmit = !wppData.validationEnabled || state.valid;
+
+		$save.prop('disabled', !canSubmit);
+		$save.text(canSubmit ? atcText : wppData.i18n.save || 'Save personalization');
+	}
+
 	function updateAddToCartState() {
 		updatePersonalizeButtons();
+		updateSaveButtonState();
+
+		if (wppData.replaceAddToCart) {
+			$('body').removeClass('wpp-block-atc');
+			return;
+		}
 
 		if (!wppData.validationEnabled) {
 			$('body').removeClass('wpp-block-atc');
@@ -1786,10 +1981,9 @@
 		(wppData.layout.text_fields || []).forEach(function (field) {
 			var meta = ensureTextFieldState(field.id);
 
-			syncTextMetaFromField(field);
-
 			out[field.id] = {
-				value: getTextFieldValue(field.id),
+				value: getTextExportValue(field),
+				touched: !!meta.touched,
 				offsetX: meta.offsetX || 0,
 				offsetY: meta.offsetY || 0,
 				fontSize: getEffectiveFontSize(field, meta),
@@ -1898,7 +2092,24 @@
 		$('form.cart .wpp-personalizer-nonce, .wpp-personalizer input[name="wpp_personalizer_nonce"]').val(nonce);
 	}
 
-	function saveAndClose() {
+	function saveAndClose(e) {
+		if (e && e.preventDefault) {
+			e.preventDefault();
+		}
+
+		if (wppData.replaceAddToCart) {
+			if (wppData.validationEnabled && !handleValidationFailure()) {
+				return;
+			}
+			persistHiddenFields();
+			closeModal();
+			var $form = $('form.cart');
+			if ($form.length) {
+				$form.trigger('submit');
+			}
+			return;
+		}
+
 		if (wppData.validationEnabled && !handleValidationFailure()) {
 			return;
 		}

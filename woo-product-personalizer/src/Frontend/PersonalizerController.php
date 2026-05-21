@@ -115,7 +115,6 @@ class PersonalizerController
 		$this->enqueue_assets($product_id, $config, $layout);
 
 		ob_start();
-		$mode            = $this->settings->get_frontend_mode();
 		$button_label    = $config->get_button_label() ?: $this->settings->get('default_button_label');
 		$accept_text     = $config->get_acceptance_text() ?: $this->settings->get('default_accept_text');
 		$validation      = $config->is_validation_enabled();
@@ -134,6 +133,10 @@ class PersonalizerController
 	 */
 	public function render_button( $product_id = null )
 	{
+		if ( $this->settings->is_replace_add_to_cart_enabled() ) {
+			return '';
+		}
+
 		$product_id = $product_id ? absint( $product_id ) : get_the_ID();
 		if ( ! $product_id || ! is_product() ) {
 			return '';
@@ -153,22 +156,18 @@ class PersonalizerController
 
 		$label = $config->get_button_label() ?: $this->settings->get('default_button_label');
 
-		if ('modal' === $this->settings->get_frontend_mode()) {
-			$modal_html = $this->render($product_id);
-			if ('' === $modal_html) {
-				return '';
-			}
-
-			$button_html = sprintf(
-				'<p class="wpp-open-personalizer-wrap"><button type="button" class="button alt wpp-open-personalizer" data-product-id="%1$d">%2$s</button></p>',
-				(int) $product_id,
-				esc_html($label)
-			);
-
-			return $modal_html . $button_html;
+		$modal_html = $this->render($product_id);
+		if ('' === $modal_html) {
+			return '';
 		}
 
-		return $this->render($product_id);
+		$button_html = sprintf(
+			'<p class="wpp-open-personalizer-wrap"><button type="button" class="button alt wpp-open-personalizer" data-product-id="%1$d">%2$s</button></p>',
+			(int) $product_id,
+			esc_html($label)
+		);
+
+		return $modal_html . $button_html;
 	}
 
 	/**
@@ -189,11 +188,42 @@ class PersonalizerController
 		UploadSession::get_token();
 
 		$debug_enabled = $this->settings->is_debug_enabled();
+		$layout_config   = $layout->to_array();
+		$is_crop_layout  = ( $layout_config['personalization_mode'] ?? 'layout_2' ) === 'layout_2';
 
 		wp_enqueue_style('wpp-frontend');
 		wp_enqueue_script('konva');
 
 		$personalizer_deps = array('jquery', 'konva', 'wpp-google-fonts', 'wpp-mask-border');
+
+		if ( $is_crop_layout ) {
+			wp_enqueue_style(
+				'wpp-cropper',
+				WPP_PLUGIN_URL . 'assets/css/cropper.min.css',
+				array(),
+				'1.6.2'
+			);
+			wp_enqueue_script(
+				'wpp-cropper-lib',
+				WPP_PLUGIN_URL . 'assets/js/vendor/cropper.min.js',
+				array(),
+				'1.6.2',
+				true
+			);
+			wp_add_inline_script(
+				'wpp-cropper-lib',
+				'window.WppCropperLib = ( typeof Cropper === "function" && Cropper.prototype && typeof Cropper.prototype.getCroppedCanvas === "function" ) ? Cropper : null;',
+				'after'
+			);
+			wp_enqueue_script(
+				'wpp-image-crop',
+				WPP_PLUGIN_URL . 'assets/js/wpp-image-crop.js',
+				array('jquery', 'wpp-cropper-lib'),
+				WPP_VERSION,
+				true
+			);
+			$personalizer_deps[] = 'wpp-image-crop';
+		}
 		if ($debug_enabled) {
 			wp_enqueue_script('wpp-debug');
 			$personalizer_deps[] = 'wpp-debug';
@@ -209,6 +239,9 @@ class PersonalizerController
 		);
 		wp_enqueue_script('wpp-personalizer');
 
+		$product = wc_get_product( $product_id );
+		$add_to_cart_text = $this->get_standard_add_to_cart_text( $product );
+
 		wp_localize_script(
 			'wpp-personalizer',
 			'wppData',
@@ -221,7 +254,9 @@ class PersonalizerController
 				'productId'          => $product_id,
 				'layout'             => LayoutAssetResolver::resolve($layout->to_array()),
 				'layoutId'           => $layout->get_id(),
-				'mode'               => $this->settings->get_frontend_mode(),
+				'mode'               => 'modal',
+				'replaceAddToCart'   => $this->settings->is_replace_add_to_cart_enabled(),
+				'addToCartText'      => $add_to_cart_text,
 				'validationEnabled'      => $config->is_validation_enabled(),
 				'buttonLabel'            => $config->get_button_label() ?: $this->settings->get('default_button_label'),
 				'buttonLabelCompleted'   => $this->settings->get('default_button_label_completed'),
@@ -251,6 +286,11 @@ class PersonalizerController
 					'close'          => __('Close', 'woo-product-personalizer'),
 					'save'           => __('Save personalization', 'woo-product-personalizer'),
 					'selectFont'     => __('Font', 'woo-product-personalizer'),
+					'cropCancel'     => __('Cancel', 'woo-product-personalizer'),
+					'cropSelect'     => __('Select', 'woo-product-personalizer'),
+					'cropZoomIn'     => __('Zoom in', 'woo-product-personalizer'),
+					'cropZoomOut'    => __('Zoom out', 'woo-product-personalizer'),
+					'cropUploading'  => __('Processing image…', 'woo-product-personalizer'),
 				),
 			)
 		);
@@ -366,6 +406,24 @@ class PersonalizerController
 		}
 
 		wp_send_json_success();
+	}
+
+	/**
+	 * Standard WooCommerce single-product add to cart label (unfiltered by this plugin).
+	 *
+	 * @param \WC_Product|null $product Product.
+	 * @return string
+	 */
+	private function get_standard_add_to_cart_text( $product ) {
+		if ( ! $product instanceof \WC_Product ) {
+			return __( 'Add to cart', 'woocommerce' );
+		}
+
+		if ( $product->is_purchasable() && $product->is_in_stock() ) {
+			return __( 'Add to cart', 'woocommerce' );
+		}
+
+		return $product->add_to_cart_text();
 	}
 
 	/**

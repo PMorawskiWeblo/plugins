@@ -52,7 +52,7 @@ class Shortcode {
 	 * @return string
 	 */
 	public function render( $atts = array() ) {
-		if ( ! is_product() ) {
+		if ( ! is_product() || $this->settings->is_replace_add_to_cart_enabled() ) {
 			return '';
 		}
 

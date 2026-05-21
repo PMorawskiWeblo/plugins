@@ -15,7 +15,7 @@
 		try {
 			config = JSON.parse(raw);
 		} catch (e) {
-			config = { canvas: {}, image_slots: [], text_fields: [], limits: {} };
+			config = { personalization_mode: 'layout_2', canvas: {}, image_slots: [], text_fields: [], limits: {} };
 		}
 
 		syncCanvasInputs();
@@ -269,6 +269,10 @@
 	}
 
 	function syncCanvasInputs() {
+		$builder.find('.wpp-personalization-mode').val(config.personalization_mode || 'layout_2');
+		$builder
+			.find('.wpp-crop-mask-shape')
+			.prop('checked', config.crop_mask_shape !== false);
 		$builder.find('.wpp-canvas-width').val(config.canvas.width || 2000);
 		$builder.find('.wpp-canvas-height').val(config.canvas.height || 2400);
 		$builder.find('.wpp-canvas-background').val(config.canvas.background || '');
@@ -426,10 +430,10 @@
 			'</textarea></div>' +
 			'<span class="wpp-canvas-media__hint wpp-google-fonts-help">' + googleFontsHelp + '</span></div>' +
 			'<div class="wpp-builder-section">' +
-			'<span class="wpp-builder-section__title">Customer controls</span>' +
+			'<span class="wpp-builder-section__title">' + esc(layoutI18n('customerControls', 'Customer controls')) + '</span>' +
 			'<div class="wpp-canvas-field wpp-canvas-field--checkbox">' +
-			'<label><input type="checkbox" class="text-ctrl-move" ' + (textControls(field, 'move') ? 'checked' : '') + ' /> Move (arrows in editor)</label> ' +
-			'<label><input type="checkbox" class="text-ctrl-font-size" ' + (textControls(field, 'fontSize') ? 'checked' : '') + ' /> Font size (+/− in editor)</label>' +
+			'<label><input type="checkbox" class="text-ctrl-move" ' + (textControls(field, 'move') ? 'checked' : '') + ' /> ' + esc(layoutI18n('ctrlMove', 'Move (arrows in editor)')) + '</label> ' +
+			'<label><input type="checkbox" class="text-ctrl-font-size" ' + (textControls(field, 'fontSize') ? 'checked' : '') + ' /> ' + esc(layoutI18n('ctrlFontSize', 'Font size (+/− in editor)')) + '</label>' +
 			'</div></div>' +
 			'</div></div>'
 		);
@@ -780,6 +784,12 @@
 	}
 
 	function readFromDom() {
+		config.personalization_mode = $builder.find('.wpp-personalization-mode').val() || 'layout_1';
+		if (config.personalization_mode !== 'layout_2') {
+			config.personalization_mode = 'layout_1';
+		}
+		config.crop_mask_shape = $builder.find('.wpp-crop-mask-shape').is(':checked');
+
 		config.canvas = {
 			width: parseInt($builder.find('.wpp-canvas-width').val(), 10) || 2000,
 			height: parseInt($builder.find('.wpp-canvas-height').val(), 10) || 2400,

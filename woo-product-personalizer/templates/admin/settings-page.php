@@ -101,17 +101,6 @@ $manual_cleanup_days = isset($options['cleanup_interval']) ? (int) $options['cle
         <h2><?php esc_html_e('Frontend', 'woo-product-personalizer'); ?></h2>
         <table class="form-table" role="presentation">
             <tr>
-                <th scope="row"><?php esc_html_e('Display mode', 'woo-product-personalizer'); ?></th>
-                <td>
-                    <label><input type="radio" name="wpp_settings[frontend_mode]" value="modal"
-                            <?php checked($options['frontend_mode'], 'modal'); ?> />
-                        <?php esc_html_e('Modal', 'woo-product-personalizer'); ?></label><br />
-                    <label><input type="radio" name="wpp_settings[frontend_mode]" value="inline"
-                            <?php checked($options['frontend_mode'], 'inline'); ?> />
-                        <?php esc_html_e('Inline', 'woo-product-personalizer'); ?></label>
-                </td>
-            </tr>
-            <tr>
                 <th scope="row"><label
                         for="wpp_button_position"><?php esc_html_e('Button position', 'woo-product-personalizer'); ?></label>
                 </th>
@@ -140,6 +129,17 @@ $manual_cleanup_days = isset($options['cleanup_interval']) ? (int) $options['cle
                 <td><label><input type="checkbox" name="wpp_settings[shortcode_only]" value="1"
                             <?php checked($options['shortcode_only']); ?> />
                         <?php esc_html_e('Hide automatic button placement', 'woo-product-personalizer'); ?></label></td>
+            </tr>
+            <tr>
+                <th scope="row"><?php esc_html_e('Replace add to cart button', 'woo-product-personalizer'); ?></th>
+                <td>
+                    <label><input type="checkbox" name="wpp_settings[replace_add_to_cart_button]" value="1"
+                            <?php checked(! empty($options['replace_add_to_cart_button'])); ?> />
+                        <?php esc_html_e('Use the default personalize button label on the add to cart button and open the modal on click', 'woo-product-personalizer'); ?></label>
+                    <p class="description">
+                        <?php esc_html_e('Hides the separate personalize button (including shortcode). The modal save button becomes active after required fields are filled and then acts as add to cart with the standard WooCommerce label.', 'woo-product-personalizer'); ?>
+                    </p>
+                </td>
             </tr>
         </table>
 
