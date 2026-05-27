@@ -1,0 +1,7 @@
+# Debug logs
+logs/*.log
+
+# Keep directory structure
+!logs/.htaccess
+!logs/index.php
+

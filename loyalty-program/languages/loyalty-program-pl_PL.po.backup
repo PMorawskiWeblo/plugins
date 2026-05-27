@@ -1,0 +1,3333 @@
+# Copyright (C) 2025 Loyalty Program
+# This file is distributed under the same license as the Loyalty Program package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Loyalty Program 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/loyalty-program\n"
+"POT-Creation-Date: 2025-10-13 12:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2025-10-16 09:46+0000\n"
+"Last-Translator: \n"
+"Language-Team: Polski\n"
+"Language: pl_PL\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10 >= 2 && n%10<=4 "
+"&&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.8.3; php-8.2.23"
+
+#: includes/admin/views/shortcodes-old-backup.php:306
+msgid "\"In Cart\" badge when product is in cart"
+msgstr "Odznaka „W koszyku”, gdy produkt znajduje się w koszyku"
+
+#: includes/admin/views/shortcodes-old-backup.php:307
+msgid "\"Used\" badge after order completion"
+msgstr "Odznaka „Używane” po zakończeniu zamówienia"
+
+#: includes/admin/views/settings.php:417 includes/admin/views/rewards.php:79
+#: includes/admin/views/surveys.php:44
+msgid "#"
+msgstr "#"
+
+#: includes/class-loyalty-program-shortcodes.php:1030
+msgid "%d day remaining"
+msgid_plural "%d days remaining"
+msgstr[0] "%d dzień pozostały"
+msgstr[1] "%d dni pozostałe"
+msgstr[2] "%d dni pozostałych"
+
+#: includes/class-loyalty-program-shortcodes.php:1003
+msgid "%d of 3 purchases"
+msgstr "%d z 3 zakupów"
+
+#: includes/admin/class-loyalty-program-ajax.php:1019
+msgid "%d personal coupons updated successfully."
+msgstr "%d osobistych kuponów zostało pomyślnie zaktualizowanych."
+
+#: includes/class-loyalty-program-shortcodes.php:1007
+msgid "%d points"
+msgstr "%d punktów"
+
+#: includes/admin/class-loyalty-program-ajax.php:873
+#, php-format
+msgid "%d points added successfully to %s."
+msgstr "Pomyślnie dodano %d punktów do %s."
+
+#: includes/admin/class-loyalty-program-ajax.php:880
+#, php-format
+msgid "%d points removed successfully from %s."
+msgstr "Pomyślnie usunięto %d punktów z %s."
+
+#: includes/admin/class-loyalty-program-ajax.php:2013
+#, php-format
+msgid "%s - %s"
+msgstr "%s - %s"
+
+#: includes/admin/class-loyalty-program-ajax.php:1584
+#, php-format
+msgid "%s added to cart!"
+msgstr "%s dodano do koszyka!"
+
+#: includes/admin/class-loyalty-program-ajax.php:964
+#, php-format
+msgid "%s has been enrolled in the loyalty program."
+msgstr "%s został(a) zapisany(a) do programu lojalnościowego."
+
+#: includes/admin/class-loyalty-program-ajax.php:957
+#, php-format
+msgid "%s has been removed from the loyalty program."
+msgstr "%s został(a) usunięty(a) z programu lojalnościowego."
+
+#: includes/class-loyalty-program-shortcodes.php:610
+#, php-format
+msgid "%s points"
+msgstr "%s punktów"
+
+#: includes/class-loyalty-program-shortcodes.php:481
+#, php-format
+msgid "%s points required"
+msgstr "Wymagane %s punktów"
+
+#: includes/admin/class-loyalty-program-admin-menu.php:968
+msgid "-- Select Product --"
+msgstr "-- Wybierz produkt --"
+
+#. Description of the plugin
+msgid ""
+"A comprehensive loyalty program plugin with integrations and reward "
+"management"
+msgstr ""
+"Kompleksowa wtyczka do programu lojalnościowego z integracjami i "
+"zarządzaniem nagrodami"
+
+#: includes/admin/views/live-expert.php:146
+msgid "A detailed report will be shown after processing"
+msgstr "Szczegółowy raport zostanie wyświetlony po zakończeniu przetwarzania."
+
+#: includes/class-loyalty-program-shortcodes.php:292
+#: includes/admin/class-loyalty-program-ajax.php:497
+#: includes/admin/views/users-old-backup.php:755
+msgid "Action"
+msgstr "Akcja"
+
+#: includes/admin/views/users-old-backup.php:729
+msgid "Action Description"
+msgstr "Opis akcji"
+
+#: includes/admin/class-loyalty-program-ajax.php:825
+msgid "Action description is required."
+msgstr "Opis działania jest wymagany."
+
+#: includes/admin/views/users.php:180
+msgid "Action Type"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-users-table.php:47
+#: includes/admin/class-loyalty-program-survey-results-table.php:64
+#: includes/admin/views/settings.php:423 includes/admin/views/rewards.php:85
+#: includes/admin/views/surveys.php:51
+msgid "Actions"
+msgstr "Akcje"
+
+#: includes/admin/views/users-old-backup.php:652
+msgid "Active"
+msgstr "Aktywny"
+
+#: includes/admin/views/dashboard.php:92
+msgid "Active Members"
+msgstr "Aktywni członkowie"
+
+#: includes/admin/views/surveys.php:1293
+msgid "Add Answer"
+msgstr ""
+
+#: includes/admin/views/surveys.php:36
+msgid "Add New"
+msgstr ""
+
+#: includes/admin/views/users-old-backup.php:735
+#: includes/admin/views/users.php:186
+msgid "Add Points"
+msgstr "Dodaj punkty"
+
+#: includes/admin/views/settings.php:409
+msgid "Add Prize"
+msgstr "Dodaj nagrodę"
+
+#: includes/admin/views/surveys.php:848
+msgid "Add Question"
+msgstr ""
+
+#: includes/admin/views/rewards.php:71
+msgid "Add Reward"
+msgstr "Dodaj premię"
+
+#: includes/admin/views/surveys.php:791 includes/admin/views/surveys.php:1113
+msgid "Add Survey/Quiz"
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:633
+msgid "Add to Cart"
+msgstr "Dodaj do koszyka"
+
+#: includes/admin/views/shortcodes-old-backup.php:305
+msgid "Add to Cart button (with custom price)"
+msgstr "Przycisk Dodaj do koszyka (z niestandardową ceną)"
+
+#: includes/admin/views/settings.php:139
+msgid "Adding Birthday Date"
+msgstr "Dodawanie daty urodzin"
+
+#: includes/admin/views/shortcodes.php:25
+#: includes/admin/views/shortcodes-new.php:25
+#: includes/admin/views/shortcodes-old-backup.php:46
+msgid "Additional CSS class"
+msgstr ""
+
+#: includes/class-loyalty-program-woocommerce.php:1229
+msgid "Additional Information"
+msgstr ""
+
+#: includes/admin/views/settings.php:508
+msgid "Adds a checkbox for users to consent to receiving newsletter emails."
+msgstr ""
+
+#: includes/admin/views/settings.php:490
+msgid "Adds a checkbox for users to consent to receiving SMS notifications."
+msgstr ""
+
+#: includes/admin/views/settings.php:472
+msgid "Adds a date picker field for users to enter their birth date."
+msgstr ""
+
+#: includes/admin/views/live-expert.php:147
+msgid "All operations are logged in the debug log"
+msgstr "Wszystkie operacje są zapisywane w dzienniku debugowania."
+
+#: includes/admin/views/shortcodes-old-backup.php:478
+msgid ""
+"All shortcodes automatically detect if the user is logged in. Non-logged-in "
+"users will see a message asking them to log in."
+msgstr ""
+"Wszystkie shortcody automatycznie wykrywają, czy użytkownik jest zalogowany. "
+"Niezalogowani użytkownicy zobaczą komunikat z prośbą o zalogowanie się."
+
+#: includes/admin/views/users-old-backup.php:488
+msgid "An error occurred while searching."
+msgstr "Wystąpił błąd podczas wyszukiwania."
+
+#: includes/admin/class-loyalty-program-admin.php:100
+msgid "An error occurred. Please try again."
+msgstr "Wystąpił błąd. Spróbuj ponownie."
+
+#: includes/admin/views/shortcodes-old-backup.php:223
+msgid "Animated canvas wheel with smooth spinning"
+msgstr "Animowane koło na płótnie z płynnym obracaniem."
+
+#: includes/admin/views/shortcodes.php:103
+#: includes/admin/views/shortcodes-new.php:103
+msgid "Animated wheel with prizes and spin button."
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:92
+msgid "Answer required"
+msgstr ""
+
+#: includes/admin/views/surveys.php:1507
+msgid "Answer text"
+msgstr ""
+
+#: includes/admin/views/surveys.php:1272
+msgid "Answer Type"
+msgstr ""
+
+#: includes/admin/views/surveys.php:1287
+msgid "Answers"
+msgstr ""
+
+#: includes/admin/views/live-expert.php:379
+msgid "Are you sure you want to award points to all users in the CSV file?"
+msgstr ""
+"Czy na pewno chcesz przyznać punkty wszystkim użytkownikom z pliku CSV?"
+
+#: includes/admin/views/developer-panel.php:164
+msgid "Are you sure you want to clear the debug log?"
+msgstr "Czy na pewno chcesz wyczyścić dziennik debugowania?"
+
+#: includes/admin/class-loyalty-program-admin.php:99
+msgid "Are you sure you want to delete this item?"
+msgstr "Czy na pewno chcesz usunąć ten element?"
+
+#: includes/admin/views/settings.php:563
+msgid "Are you sure you want to delete this prize?"
+msgstr "Czy na pewno chcesz usunąć tę nagrodę?"
+
+#: includes/admin/views/rewards.php:284
+msgid "Are you sure you want to delete this reward?"
+msgstr "Czy na pewno chcesz usunąć tę premię?"
+
+#: includes/admin/views/surveys.php:1074
+msgid "Are you sure you want to delete this survey/quiz?"
+msgstr ""
+
+#: includes/admin/views/users-old-backup.php:853
+msgid "Are you sure you want to enroll this user in the loyalty program?"
+msgstr ""
+"Czy na pewno chcesz zapisać tego użytkownika do programu lojalnościowego?"
+
+#: includes/admin/views/users-old-backup.php:852
+msgid "Are you sure you want to remove this user from the loyalty program?"
+msgstr ""
+"Czy na pewno chcesz usunąć tego użytkownika z programu lojalnościowego?"
+
+#: includes/admin/views/users-old-backup.php:890
+msgid ""
+"Are you sure you want to reset the wheel for this user? They will be able to "
+"spin again immediately."
+msgstr ""
+"Czy na pewno chcesz zresetować koło dla tego użytkownika? Będzie mógł "
+"ponownie zakręcić natychmiast."
+
+#: includes/admin/views/settings.php:338
+msgid ""
+"Are you sure you want to update all existing personal coupons with current "
+"settings?"
+msgstr ""
+"Czy na pewno chcesz zaktualizować wszystkie istniejące osobiste kupony do "
+"aktualnych ustawień?"
+
+#: includes/admin/views/developer-panel.php:84
+msgid "Asset Versioning"
+msgstr "Wersjonowanie zasobów"
+
+#: includes/class-loyalty-program-points.php:552
+#: includes/admin/views/settings.php:222
+msgid "Attendance Master"
+msgstr "Mistrz obecności"
+
+#: includes/admin/views/shortcodes-old-backup.php:386
+msgid "Auto-checks profile completion"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:345
+msgid "Auto-checks profile completion for points"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:270
+msgid "Auto-deducts points on redemption"
+msgstr "Automatyczne odliczanie punktów przy realizacji"
+
+#: includes/admin/views/shortcodes-old-backup.php:446
+msgid "Auto-detect current product"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:440
+msgid "Auto-detects current product or use product_id parameter"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:316
+msgid "Auto-marked as used after order completion"
+msgstr "Oznaczone automatycznie jako użyte po zakończeniu zamówienia"
+
+#: includes/admin/views/shortcodes-old-backup.php:226
+msgid "Auto-records wins in points history"
+msgstr "Automatycznie zapisuje wygrane w historii punktów"
+
+#: includes/class-loyalty-program-shortcodes.php:454
+msgid "Available Rewards"
+msgstr "Dostępne nagrody"
+
+#: includes/admin/views/survey-results.php:145
+msgid "Average Score"
+msgstr ""
+
+#: includes/admin/views/live-expert.php:31
+msgid ""
+"Award points to users who participated in live sessions with experts by "
+"uploading a CSV file with their email addresses."
+msgstr ""
+"Przyznaj punkty użytkownikom, którzy uczestniczyli w sesjach na żywo z "
+"ekspertami, przesyłając plik CSV z ich adresami e-mail."
+
+#: includes/admin/views/survey-results.php:116
+msgid "Back to Surveys"
+msgstr ""
+
+#: includes/admin/views/surveys.php:802
+msgid "Basic Info"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:390
+msgid "Behavior:"
+msgstr ""
+
+#: includes/class-loyalty-program-woocommerce.php:1237
+#: includes/admin/views/shortcodes-old-backup.php:368
+msgid "Birth Date"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:1731
+msgid "Birth date cannot be in the future."
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:784
+msgid "Birth Date Completed"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:1756
+msgid "Birth date completed"
+msgstr ""
+
+#: includes/admin/views/settings.php:462
+msgid "Birth Date Field"
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:141
+#: includes/admin/views/shortcodes-new.php:141
+msgid "Birth Date Form"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:408
+msgid "Birth Date:"
+msgstr ""
+
+#: includes/admin/views/users-old-backup.php:582
+msgid "Both Consents Given"
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:22
+#: includes/admin/views/shortcodes-new.php:22
+msgid "Button for users to join the loyalty program."
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:1041
+msgid "Buy %d more time"
+msgid_plural "Buy %d more times"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: includes/admin/class-loyalty-program-ajax.php:470
+msgid "Can Spin"
+msgstr ""
+
+#: includes/admin/views/users-old-backup.php:688
+msgid "Can Spin:"
+msgstr "Może zakręcić:"
+
+#: includes/admin/views/surveys.php:943
+msgid "Cancel"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:317
+msgid "Cannot add same reward multiple times"
+msgstr "Nie można dodać tej samej nagrody wielokrotnie"
+
+#: includes/admin/views/shortcodes-old-backup.php:395
+msgid "Cannot be changed after setting"
+msgstr ""
+
+#: includes/admin/views/live-expert.php:41
+msgid "Change Points"
+msgstr "Zmień punkty"
+
+#: includes/admin/views/surveys.php:1275
+msgid "Checkbox (Multiple Choice)"
+msgstr ""
+
+#: includes/admin/views/settings.php:760
+msgid "Choose a color for your reward"
+msgstr "Wybierz kolor swojej nagrody"
+
+#: includes/admin/views/developer-panel.php:166
+msgid "Clear Log"
+msgstr "Wyczyść log"
+
+#: includes/admin/views/settings.php:422
+msgid "Color"
+msgstr "Kolor"
+
+#: includes/admin/class-loyalty-program-ajax.php:534
+#: includes/admin/class-loyalty-program-survey-results-table.php:55
+msgid "Completed"
+msgstr ""
+
+#: includes/admin/views/settings.php:155
+msgid "Completing Profile"
+msgstr "Uzupełnianie profilu"
+
+#: includes/admin/class-loyalty-program-ajax.php:2006
+msgid "Completion: %d pts"
+msgstr ""
+
+#: includes/admin/views/surveys.php:48
+msgid "Completions"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:225
+msgid "Configurable cooldown period between spins"
+msgstr "Konfigurowalny czas oczekiwania pomiędzy obrotami"
+
+#: includes/admin/views/shortcodes-old-backup.php:239
+msgid "Configuration:"
+msgstr "Konfiguracja:"
+
+#: includes/admin/views/settings.php:83
+msgid ""
+"Configure how many points customers receive for specific actions in your "
+"loyalty program."
+msgstr ""
+"Skonfiguruj, ile punktów klienci otrzymują za określone działania w Twoim "
+"programie lojalnościowym."
+
+#: includes/admin/views/settings.php:375
+msgid ""
+"Configure prize options for the wheel of fortune. Users will be able to spin "
+"the wheel to win points."
+msgstr ""
+"Skonfiguruj opcje nagród dla koła fortuny. Użytkownicy będą mogli zakręcić "
+"kołem, aby wygrać punkty."
+
+#: includes/admin/views/rewards.php:51
+msgid "Configure rewards that customers can redeem with their loyalty points."
+msgstr ""
+"Skonfiguruj nagrody, które klienci mogą odebrać za swoje punkty "
+"lojalnościowe."
+
+#: includes/admin/views/integrations.php:22
+msgid ""
+"Configure third-party integrations to extend your loyalty program "
+"functionality."
+msgstr ""
+"Skonfiguruj integracje zewnętrzne, aby rozszerzyć funkcjonalność programu "
+"lojalnościowego."
+
+#: includes/admin/views/settings.php:449
+msgid ""
+"Configure which additional fields should be displayed in the user account "
+"edit form. Selected fields will be added to WooCommerce \"My Account\" page."
+msgstr ""
+
+#: includes/admin/views/settings.php:276
+msgid "Configure WooCommerce-specific loyalty program features."
+msgstr ""
+"Skonfiguruj funkcje programu lojalnościowego specyficzne dla WooCommerce."
+
+#: includes/admin/class-loyalty-program-ajax.php:1235
+#, php-format
+msgid "Congratulations! You won %d points: %s"
+msgstr "Gratulacje! Wygrałeś(aś) %d punktów: %s"
+
+#: includes/admin/views/users-old-backup.php:494
+#: includes/admin/views/users-old-backup.php:879
+#: includes/admin/views/users-old-backup.php:911
+msgid "Connection error. Please try again."
+msgstr "Błąd połączenia. Spróbuj ponownie."
+
+#: includes/class-loyalty-program-shortcodes.php:685
+#: includes/admin/views/shortcodes-old-backup.php:327
+msgid "Consent Preferences"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:441
+msgid "Consents"
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:130
+#: includes/admin/views/shortcodes-new.php:130
+#, fuzzy
+#| msgid "Consents found:"
+msgid "Consents Form"
+msgstr "Znaleziono zgody:"
+
+#: includes/admin/views/developer-panel.php:87
+msgid ""
+"Control version numbers for CSS and JavaScript files to manage browser "
+"caching."
+msgstr ""
+"Kontroluj numery wersji plików CSS i JavaScript, aby zarządzać pamięcią "
+"podręczną przeglądarki."
+
+#: includes/admin/views/shortcodes.php:530
+#: includes/admin/views/shortcodes-new.php:530
+msgid "Copied!"
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:131
+#: includes/admin/views/shortcodes.php:204
+#: includes/admin/views/shortcodes-new.php:204
+msgid "Copy"
+msgstr "Kopiuj"
+
+#: includes/admin/views/surveys.php:165 includes/admin/views/surveys.php:1716
+msgid "Copy Shortcode"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:467
+msgid "Copy the shortcode by clicking the copy button"
+msgstr "Skopiuj shortcode, klikając przycisk kopiowania."
+
+#: includes/admin/views/surveys.php:1511
+msgid "Correct"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-survey-results-table.php:60
+msgid "Correct Answers"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:1569
+msgid "Could not add product to cart."
+msgstr "Nie można dodać produktu do koszyka."
+
+#: includes/admin/views/shortcodes-old-backup.php:439
+msgid "Counter resets after 3rd purchase - can earn reward multiple times!"
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:44
+#: includes/admin/views/shortcodes-new.php:44
+msgid "Coupon box with code and copy button."
+msgstr ""
+
+#: includes/admin/views/settings.php:300
+msgid "Coupon Minimum Order Amount"
+msgstr "Minimalna wartość zamówienia dla kuponu"
+
+#: includes/admin/views/live-expert.php:80
+msgid "CSV File"
+msgstr "Plik CSV"
+
+#: includes/admin/views/live-expert.php:107
+msgid "CSV File Format"
+msgstr "Format pliku CSV"
+
+#: includes/admin/views/developer-panel.php:75
+msgid "Current log file size:"
+msgstr "Aktualny rozmiar pliku logu:"
+
+#: includes/class-loyalty-program-shortcodes.php:169
+#: includes/admin/class-loyalty-program-users-table.php:45
+#: includes/admin/class-loyalty-program-ajax.php:425
+#: includes/admin/views/shortcodes.php:49
+#: includes/admin/views/users-old-backup.php:591
+#: includes/admin/views/users-old-backup.php:706
+#: includes/admin/views/dashboard.php:126
+#: includes/admin/views/shortcodes-new.php:49
+#: includes/admin/views/shortcodes-old-backup.php:88
+#: includes/admin/views/shortcodes-old-backup.php:103
+msgid "Current Points"
+msgstr "Aktualna liczba punktów"
+
+#: includes/admin/views/live-expert.php:38
+msgid "Current Setting:"
+msgstr "Aktualne ustawienie:"
+
+#: includes/admin/views/shortcodes.php:24
+#: includes/admin/views/shortcodes-new.php:24
+#: includes/admin/views/shortcodes-old-backup.php:45
+msgid "Custom button text"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-admin-menu.php:50
+#: includes/admin/class-loyalty-program-admin-menu.php:51
+msgid "Dashboard"
+msgstr "Panel główny"
+
+#: includes/class-loyalty-program-shortcodes.php:291
+#: includes/admin/class-loyalty-program-ajax.php:496
+#: includes/admin/views/users-old-backup.php:752
+msgid "Date"
+msgstr "Data"
+
+#: includes/admin/views/shortcodes.php:147
+#: includes/admin/views/shortcodes-new.php:147
+msgid "Date input form with save button."
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:383
+msgid "Date picker input with validation"
+msgstr ""
+
+#: includes/admin/views/settings.php:395
+msgid "days"
+msgstr "dni"
+
+#: includes/admin/views/settings.php:388
+msgid "Days Between Spins"
+msgstr "Dni pomiędzy obrotami"
+
+#: includes/admin/views/shortcodes-old-backup.php:428
+msgid "Days remaining until deadline"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-admin-menu.php:756
+msgid "Debug log cleared successfully."
+msgstr "Log debugowania został pomyślnie wyczyszczony."
+
+#: includes/admin/views/developer-panel.php:152
+msgid "Debug Log Viewer"
+msgstr "Podgląd logu debugowania"
+
+#: includes/admin/views/developer-panel.php:43
+msgid "Debug Settings"
+msgstr "Ustawienia debugowania"
+
+#: includes/admin/views/users-old-backup.php:768
+msgid "Decrease"
+msgstr "Zmniejsz"
+
+#: includes/admin/views/shortcodes.php:567
+#: includes/admin/views/shortcodes-new.php:567
+msgid "Default"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:45
+msgid "default: \"Join Loyalty Program\""
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:47
+msgid "default: yes"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-admin-menu.php:1011
+#: includes/admin/views/settings.php:772 includes/admin/views/surveys.php:173
+#: includes/admin/views/surveys.php:1724
+msgid "Delete"
+msgstr "Usuń"
+
+#: includes/admin/views/surveys.php:1480
+msgid "Delete this question?"
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:558
+#: includes/admin/views/shortcodes.php:567
+#: includes/admin/views/shortcodes-new.php:558
+#: includes/admin/views/shortcodes-new.php:567
+#: includes/admin/views/users.php:175 includes/admin/views/surveys.php:834
+msgid "Description"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-users-table.php:337
+msgid "Details"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-admin-menu.php:140
+#: includes/admin/class-loyalty-program-admin-menu.php:141
+msgid "Developer Panel"
+msgstr "Panel dewelopera"
+
+#: includes/admin/class-loyalty-program-admin-menu.php:727
+msgid "Developer settings saved successfully."
+msgstr "Ustawienia dewelopera zostały pomyślnie zapisane."
+
+#: includes/admin/views/developer-panel.php:38
+msgid "Developer tools and debugging options for Loyalty Program plugin."
+msgstr ""
+"Narzędzia deweloperskie i opcje debugowania dla wtyczki Programu "
+"Lojalnościowego."
+
+#: includes/admin/views/shortcodes.php:152
+#: includes/admin/views/shortcodes-new.php:152
+msgid "Discipline Progress"
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:136
+#, php-format
+msgid "Discount: %s | Minimum order: %s"
+msgstr "Zniżka: %s | Minimalne zamówienie: %s"
+
+#: includes/admin/views/settings.php:469
+msgid "Display birth date field in user account"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:434
+msgid "Display Logic:"
+msgstr ""
+
+#: includes/admin/views/settings.php:505
+msgid "Display newsletter consent checkbox in user account"
+msgstr ""
+
+#: includes/admin/views/settings.php:487
+msgid "Display SMS consent checkbox in user account"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:40
+msgid ""
+"Displays a button for users to join the loyalty program. Shows success "
+"message if already enrolled."
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:337
+msgid ""
+"Displays a form for users to manage their SMS and newsletter consent "
+"preferences."
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:378
+msgid ""
+"Displays a form for users to set their birth date and earn points (one-time "
+"reward)."
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:165
+#: includes/admin/views/shortcodes-new.php:165
+msgid "Displays a specific survey or quiz."
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:261
+msgid "Displays all available rewards that users can redeem with their points."
+msgstr ""
+"Wyświetla wszystkie dostępne nagrody, które użytkownicy mogą wymienić na "
+"swoje punkty."
+
+#: includes/admin/views/shortcodes-old-backup.php:218
+msgid ""
+"Displays an interactive spinning wheel where users can win random point "
+"prizes."
+msgstr ""
+"Wyświetla interaktywne koło fortuny, w którym użytkownicy mogą wygrać losowe "
+"nagrody punktowe."
+
+#: includes/admin/views/shortcodes.php:110
+#: includes/admin/views/shortcodes-new.php:110
+msgid "Displays available rewards catalog."
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:51
+#: includes/admin/views/shortcodes-new.php:51
+msgid "Displays current available points balance."
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:422
+msgid ""
+"Displays progress towards earning Supplementation Discipline points (3 "
+"purchases of same product in 3 months)."
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:123
+msgid "Displays the total lifetime points earned by the user."
+msgstr "Wyświetla całkowitą liczbę punktów zdobytych przez użytkownika."
+
+#: includes/admin/views/shortcodes-old-backup.php:98
+msgid "Displays the user's current available points balance."
+msgstr "Wyświetla aktualne saldo dostępnych punktów użytkownika."
+
+#: includes/admin/views/shortcodes-old-backup.php:73
+msgid "Displays the user's personal discount coupon code with copy button."
+msgstr ""
+"Wyświetla osobisty kod kuponu rabatowego użytkownika z przyciskiem "
+"kopiowania."
+
+#: includes/admin/views/shortcodes.php:40
+#: includes/admin/views/shortcodes-new.php:40
+msgid "Displays the user's personal discount coupon."
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:175
+msgid "Displays the user's points transaction history."
+msgstr "Wyświetla historię transakcji punktowych użytkownika."
+
+#: includes/admin/views/shortcodes.php:62
+#: includes/admin/views/shortcodes-new.php:62
+msgid "Displays total lifetime points earned."
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:298
+msgid "Displays user's redeemed rewards with option to add them to cart."
+msgstr ""
+"Wyświetla zrealizowane przez użytkownika nagrody i umożliwia dodanie ich do "
+"koszyka."
+
+#: includes/admin/views/developer-panel.php:158
+msgid "Download Log"
+msgstr "Pobierz log"
+
+#: includes/admin/views/live-expert.php:126
+msgid "Download Sample CSV"
+msgstr "Pobierz przykładowy plik CSV"
+
+#: includes/admin/views/settings.php:744
+msgid "e.g., 50 Points"
+msgstr "np. 50 punktów"
+
+#: includes/admin/class-loyalty-program-admin-menu.php:962
+msgid "e.g., Free Product Reward"
+msgstr "np. Nagroda – darmowy produkt"
+
+#: includes/admin/views/users-old-backup.php:731
+#: includes/admin/views/users.php:176
+msgid "e.g., Manual adjustment"
+msgstr "np. Ręczna korekta"
+
+#: includes/admin/views/live-expert.php:70
+msgid "e.g., Product Training Session - October 2025"
+msgstr "np. Szkolenie produktowe – październik 2025"
+
+#: includes/admin/views/live-expert.php:143
+msgid "Each email must match a registered WordPress user"
+msgstr ""
+"Każdy adres e-mail musi odpowiadać zarejestrowanemu użytkownikowi WordPress."
+
+#: includes/admin/views/live-expert.php:39
+msgid "Each user will receive %d points per live session."
+msgstr "Każdy użytkownik otrzyma %d punktów za sesję nażywo."
+
+#: includes/class-loyalty-program-shortcodes.php:773
+msgid "Earn %d points by completing your birth date!"
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:238
+msgid "Earn points with every purchase and get exclusive rewards!"
+msgstr "Zdobywaj punkty za każde zakupy i odbieraj ekskluzywne nagrody!"
+
+#: includes/admin/views/surveys.php:153 includes/admin/views/surveys.php:1704
+msgid "Edit"
+msgstr ""
+
+#: includes/admin/views/surveys.php:1116
+msgid "Edit Survey/Quiz"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-users-table.php:41
+#: includes/admin/class-loyalty-program-survey-results-table.php:54
+msgid "Email"
+msgstr ""
+
+#: includes/admin/views/users-old-backup.php:531
+msgid "Email Address"
+msgstr "Adres e-mail"
+
+#: includes/class-loyalty-program-shortcodes.php:712
+#: includes/admin/class-loyalty-program-users-table.php:44
+#: includes/admin/class-loyalty-program-ajax.php:451
+msgid "Email Newsletter"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:399
+msgid "Email:"
+msgstr ""
+
+#: includes/admin/views/developer-panel.php:59
+msgid "Enable custom debug logging for this plugin"
+msgstr "Włącz niestandardowe logowanie debugowania dla tej wtyczki"
+
+#: includes/admin/views/developer-panel.php:52
+msgid "Enable Debug Log"
+msgstr "Włącz log debugowania"
+
+#: includes/admin/views/settings.php:48
+msgid "Enable Loyalty Program"
+msgstr "Włącz program lojalnościowy"
+
+#: includes/admin/views/settings.php:55
+msgid "Enable the loyalty program for your store"
+msgstr "Włącz program lojalnościowy dla swojego sklepu"
+
+#: includes/class-loyalty-program-woocommerce.php:1017
+msgid "Enable this to mark coupon as Flash Hunter promotion."
+msgstr ""
+"Wyświetla zrealizowane przez użytkownika nagrody i umożliwia dodanie ich do "
+"koszyka."
+
+#: includes/admin/views/surveys.php:879
+msgid "Enable Time Limit"
+msgstr ""
+
+#: includes/admin/views/surveys.php:168 includes/admin/views/surveys.php:1719
+msgid "Enable/Disable"
+msgstr ""
+
+#: includes/class-loyalty-program-woocommerce.php:1039
+msgid "End date and time for Flash Hunter validity (format: 2024-12-31 23:59)."
+msgstr ""
+"Data i godzina zakończenia ważności programu Flash Hunter (format: 2024-12-"
+"31 23:59)."
+
+#: includes/admin/views/users-old-backup.php:669
+msgid "Enroll in Program"
+msgstr "Dołącz do programu"
+
+#: includes/class-loyalty-program-shortcodes.php:1249
+msgid "Enter a number"
+msgstr ""
+
+#: includes/admin/views/surveys.php:836
+msgid "Enter description (optional)"
+msgstr ""
+
+#: includes/admin/views/surveys.php:830
+msgid "Enter survey/quiz name"
+msgstr ""
+
+#: includes/admin/views/users-old-backup.php:31
+msgid "Enter username or email address..."
+msgstr "Wpisz nazwę użytkownika lub adres e-mail..."
+
+#: includes/admin/views/users-old-backup.php:873
+msgid "Error changing membership status."
+msgstr "Błąd podczas zmiany statusu członkostwa."
+
+#: includes/admin/views/users-old-backup.php:621
+#: includes/admin/views/users.php:447
+msgid "Error loading user details."
+msgstr "Błąd podczas wczytywania danych użytkownika."
+
+#: includes/admin/views/users-old-backup.php:838
+msgid "Error modifying points."
+msgstr "Błąd podczas modyfikacji punktów."
+
+#: includes/admin/views/users.php:519
+msgid "Error occurred. Please try again."
+msgstr ""
+
+#: includes/admin/views/users-old-backup.php:907
+msgid "Error resetting wheel."
+msgstr "Błąd podczas resetowania koła."
+
+#: includes/admin/class-loyalty-program-admin-menu.php:843
+msgid "Error saving surveys. Invalid data format."
+msgstr ""
+
+#: includes/admin/views/settings.php:359
+msgid "Error updating coupons."
+msgstr "Błąd podczas aktualizacji kuponów."
+
+#: includes/admin/views/live-expert.php:176
+msgid "Errors:"
+msgstr "Błędy:"
+
+#: includes/admin/views/live-expert.php:113
+msgid "Example CSV:"
+msgstr "Przykładowy plik CSV:"
+
+#: includes/admin/views/shortcodes-old-backup.php:151
+msgid "Example output (not a member):"
+msgstr "Przykładowy wynik (nieuczestnik):"
+
+#: includes/admin/views/shortcodes-old-backup.php:76
+#: includes/admin/views/shortcodes-old-backup.php:101
+#: includes/admin/views/shortcodes-old-backup.php:126
+#: includes/admin/views/shortcodes-old-backup.php:185
+msgid "Example output:"
+msgstr "Przykładowy wynik:"
+
+#: includes/admin/views/shortcodes.php:583
+#: includes/admin/views/shortcodes-new.php:583
+msgid "Examples"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:49
+msgid "Examples:"
+msgstr ""
+
+#: includes/admin/views/settings.php:629
+msgid "exceeds 100%"
+msgstr "przekracza 100%"
+
+#: includes/admin/class-loyalty-program-users-table.php:70
+msgid "Export Selected"
+msgstr ""
+
+#: includes/admin/views/survey-results.php:121
+msgid "Export to CSV"
+msgstr ""
+
+#: includes/admin/views/live-expert.php:165
+msgid "Failed"
+msgstr "Niepowodzenie"
+
+#: includes/admin/class-loyalty-program-ajax.php:1074
+msgid "Failed to enroll in the program. Please try again."
+msgstr "Nie udało się dołączyć do programu. Spróbuj ponownie."
+
+#: includes/admin/class-loyalty-program-ajax.php:903
+msgid "Failed to modify points."
+msgstr "Nie udało się zmodyfikować punktów."
+
+#: includes/admin/views/shortcodes-old-backup.php:221
+#: includes/admin/views/shortcodes-old-backup.php:264
+#: includes/admin/views/shortcodes-old-backup.php:301
+#: includes/admin/views/shortcodes-old-backup.php:340
+#: includes/admin/views/shortcodes-old-backup.php:381
+#: includes/admin/views/shortcodes-old-backup.php:425
+msgid "Features:"
+msgstr "Funkcje:"
+
+#: includes/admin/class-loyalty-program-admin-menu.php:340
+msgid "File upload failed. Please try again."
+msgstr "Przesyłanie pliku nie powiodło się. Spróbuj ponownie."
+
+#: includes/admin/views/users-old-backup.php:536
+msgid "First Name"
+msgstr "Imię"
+
+#: includes/admin/views/settings.php:239
+msgid "Flash Hunter"
+msgstr "Flash Hunter"
+
+#: includes/class-loyalty-program-woocommerce.php:1016
+msgid "Flash Hunter Coupon"
+msgstr "Flash Hunter Coupon"
+
+#: includes/class-loyalty-program-woocommerce.php:1167
+#, php-format
+msgid "Flash Hunter coupon \"%s\" used in order #%s"
+msgstr "Kupon Flash Hunter \"%s\" wykorzystany w zamówieniu #%s"
+
+#: includes/class-loyalty-program-woocommerce.php:1025
+msgid "Flash Hunter Valid From"
+msgstr "Flash Hunter ważny od"
+
+#: includes/class-loyalty-program-woocommerce.php:1037
+msgid "Flash Hunter Valid To"
+msgstr "Flash Hunter ważny do"
+
+#: includes/class-loyalty-program-woocommerce.php:1182
+#, php-format
+msgid ""
+"Flash Hunter! Customer used coupon \"%s\" within validity period. %d loyalty "
+"points awarded."
+msgstr ""
+"Flash Hunter! Klient wykorzystał kupon „%s” w terminie ważności. Przyznano "
+"%d punktów lojalnościowych."
+
+#: includes/admin/views/shortcodes.php:143
+#: includes/admin/views/shortcodes-new.php:143
+msgid "Form for collecting user birth date."
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:132
+#: includes/admin/views/shortcodes-new.php:132
+msgid "Form for SMS and email newsletter consents."
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:136
+#: includes/admin/views/shortcodes-new.php:136
+msgid "Form with checkboxes for consents."
+msgstr ""
+
+#: includes/admin/views/settings.php:42
+msgid "General Settings"
+msgstr "Ustawienia ogólne"
+
+#: includes/admin/views/developer-panel.php:124
+msgid "Generate random version on each page load"
+msgstr "Generuj losową wersję przy każdym załadowaniu strony"
+
+#: includes/class-loyalty-program-woocommerce.php:817
+msgid "Gift from Loyalty Program"
+msgstr "Prezent z programu lojalnościowego"
+
+#: includes/admin/views/shortcodes-old-backup.php:241
+msgid ""
+"Go to Settings > Wheel of Fortune Configuration to add prizes and set spin "
+"cooldown."
+msgstr ""
+"Przejdź do Ustawienia > Konfiguracja Koła Fortuny, aby dodać nagrody i "
+"ustawić czas oczekiwania między obrotami."
+
+#: includes/admin/views/shortcodes.php:114
+#: includes/admin/views/shortcodes-new.php:114
+msgid "Grid of rewards with redeem buttons."
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:437
+msgid "Hides if never purchased (0 times)"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:438
+msgid "Hides temporarily after earning reward (counter resets)"
+msgstr ""
+
+#: includes/admin/views/settings.php:72
+msgid ""
+"How many loyalty points customers earn per currency unit spent (e.g., 1 "
+"point per 1 PLN)."
+msgstr ""
+"Ile punktów lojalnościowych klienci otrzymują za każdą wydaną jednostkę "
+"waluty (np. 1 punkt za 1 zł)."
+
+#: includes/admin/views/shortcodes-old-backup.php:465
+msgid "How to Use Shortcodes"
+msgstr "Jak używać shortcode’ów"
+
+#. Author URI of the plugin
+msgid "https://weblo.pl/"
+msgstr "https://weblo.pl/"
+
+#. URI of the plugin
+msgid "https://weblo.pl/loyalty-program"
+msgstr "https://weblo.pl/loyalty-program"
+
+#: includes/class-loyalty-program-shortcodes.php:714
+msgid ""
+"I consent to receiving email newsletters with exclusive content and offers."
+msgstr ""
+
+#: includes/class-loyalty-program-woocommerce.php:1270
+msgid "I consent to receiving newsletter emails"
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:701
+msgid "I consent to receiving promotional SMS messages and special offers."
+msgstr ""
+
+#: includes/class-loyalty-program-woocommerce.php:1255
+msgid "I consent to receiving SMS notifications"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:401
+msgid "ID:"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:393
+msgid "If birth date already set: shows completion message"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:392
+msgid "If birth date not set: displays input form"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-admin-menu.php:496
+msgid "Import complete! Successfully awarded points to %d users. %d failed."
+msgstr ""
+"Import zakończony! Pomyślnie przyznano punkty %d użytkownikom. %d nie "
+"powiodło się."
+
+#: includes/admin/views/live-expert.php:155
+msgid "Import Results"
+msgstr "Wyniki importu"
+
+#: includes/admin/views/live-expert.php:141
+msgid "Important Notes:"
+msgstr "Ważne uwagi:"
+
+#: includes/class-loyalty-program-shortcodes.php:628
+msgid "In Cart"
+msgstr "W koszyku"
+
+#: includes/admin/views/users-old-backup.php:765
+msgid "Increase"
+msgstr "Zwiększ"
+
+#: includes/admin/views/shortcodes-old-backup.php:356
+msgid "Integration Ready:"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-admin-menu.php:564
+msgid "Integration settings saved successfully."
+msgstr "Ustawienia integracji zostały zapisane."
+
+#: includes/admin/class-loyalty-program-admin-menu.php:60
+#: includes/admin/class-loyalty-program-admin-menu.php:61
+msgid "Integrations"
+msgstr "Integracje"
+
+#: includes/admin/views/shortcodes.php:99
+#: includes/admin/views/shortcodes-new.php:99
+msgid "Interactive wheel of fortune game."
+msgstr ""
+
+#: includes/admin/views/live-expert.php:145
+msgid "Invalid emails or non-existent users will be skipped"
+msgstr ""
+"Nieprawidłowe adresy e-mail lub nieistniejący użytkownicy zostaną pominięci."
+
+#: includes/admin/class-loyalty-program-admin-menu.php:354
+msgid "Invalid file type. Please upload a CSV file."
+msgstr "Nieprawidłowy typ pliku. Prześlij plik CSV."
+
+#: includes/admin/class-loyalty-program-ajax.php:1513
+msgid "Invalid product."
+msgstr "Nieprawidłowy produkt."
+
+#: includes/admin/class-loyalty-program-ajax.php:1451
+msgid "Invalid reward ID."
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:1339
+msgid "Invalid reward."
+msgstr "Nieprawidłowa nagroda."
+
+#: includes/admin/class-loyalty-program-ajax.php:1480
+msgid "Invalid reward. This reward does not exist."
+msgstr "Nieprawidłowa nagroda. Ta nagroda nie istnieje."
+
+#: includes/admin/class-loyalty-program-ajax.php:831
+msgid "Invalid transaction type."
+msgstr "Nieprawidłowy typ transakcji."
+
+#: includes/admin/class-loyalty-program-ajax.php:240
+#: includes/admin/class-loyalty-program-ajax.php:813
+#: includes/admin/class-loyalty-program-ajax.php:934
+#: includes/admin/class-loyalty-program-ajax.php:1268
+msgid "Invalid user ID."
+msgstr "Nieprawidłowy identyfikator użytkownika."
+
+#: includes/admin/class-loyalty-program-users-table.php:42
+#: includes/admin/views/users-old-backup.php:572
+#: includes/admin/views/dashboard.php:128
+msgid "Join Date"
+msgstr "Data dołączenia"
+
+#: includes/admin/class-loyalty-program-ajax.php:405
+msgid "Join Date:"
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:1359
+msgid "Join Loyalty Program"
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:20
+#: includes/admin/views/shortcodes-new.php:20
+#: includes/admin/views/shortcodes-old-backup.php:30
+msgid "Join Loyalty Program Button"
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:240
+#: includes/admin/views/shortcodes-old-backup.php:154
+msgid "Join Now"
+msgstr "Dołącz teraz"
+
+#: includes/class-loyalty-program-shortcodes.php:237
+#: includes/admin/views/shortcodes-old-backup.php:153
+msgid "Join our Loyalty Program"
+msgstr "Dołącz do naszego programu lojalnościowego"
+
+#: includes/class-loyalty-program-points.php:343
+msgid "Joined loyalty program"
+msgstr "Dołączył(a) do programu lojalnościowego"
+
+#: includes/admin/views/shortcodes-old-backup.php:195
+msgid "Joined program"
+msgstr "Dołączył(a) do programu"
+
+#: includes/admin/views/settings.php:91
+msgid "Joining the Loyalty Program"
+msgstr "Dołączenie do programu lojalnościowego"
+
+#: includes/admin/views/users-old-backup.php:542
+msgid "Last Name"
+msgstr "Nazwisko"
+
+#: includes/admin/class-loyalty-program-ajax.php:466
+msgid "Last Spin"
+msgstr ""
+
+#: includes/admin/views/users-old-backup.php:680
+msgid "Last Spin:"
+msgstr "Ostatni obrót:"
+
+#: includes/admin/views/surveys.php:924
+msgid "Leave empty to show thank you message instead."
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:125
+#: includes/admin/views/shortcodes-new.php:125
+msgid "List of redeemed rewards with codes."
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:303
+msgid "Lists all redeemed rewards with dates"
+msgstr "Wyświetla listę wszystkich zrealizowanych nagród wraz z datami"
+
+#: includes/admin/views/live-expert.php:59
+msgid "Live Session Title"
+msgstr "Tytuł sesji na żywo"
+
+#: includes/admin/class-loyalty-program-admin-menu.php:120
+#: includes/admin/class-loyalty-program-admin-menu.php:121
+#: includes/admin/views/settings.php:205
+msgid "Live with Expert"
+msgstr "Sesja na żywo z ekspertem"
+
+#: includes/admin/class-loyalty-program-admin-menu.php:454
+#, php-format
+msgid "Live with Expert: %s"
+msgstr "Sesja na żywo z ekspertem: %s"
+
+#: includes/admin/views/developer-panel.php:231
+#: includes/admin/views/users.php:153 includes/admin/views/users.php:428
+msgid "Loading..."
+msgstr "Ładowanie..."
+
+#: includes/admin/views/shortcodes-old-backup.php:268
+msgid "Locked badge showing points needed"
+msgstr "Zablokowana odznaka pokazująca liczbę potrzebnych punktów"
+
+#: includes/class-loyalty-program-logger.php:291
+msgid "Log file does not exist."
+msgstr "Plik logu nie istnieje."
+
+#: includes/class-loyalty-program-logger.php:262
+msgid "Log file is empty or does not exist."
+msgstr "Plik logu jest pusty lub nie istnieje."
+
+#: includes/admin/views/developer-panel.php:70
+msgid "Log File Location"
+msgstr "Lokalizacja pliku logu"
+
+#: includes/admin/views/users-old-backup.php:640
+msgid "Loyalty Points"
+msgstr "Punkty lojalnościowe"
+
+#: includes/class-loyalty-program-woocommerce.php:582
+#, php-format
+msgid "Loyalty points awarded to %s (ID: %d) for coupon usage: %d points"
+msgstr ""
+"Punkty lojalnościowe przyznane użytkownikowi %s (ID: %d) za użycie kuponu: "
+"%d punktów"
+
+#: includes/class-loyalty-program-woocommerce.php:242
+msgid "Loyalty points awarded: %d points"
+msgstr "Przyznano punkty lojalnościowe: %d punktów"
+
+#: includes/class-loyalty-program-woocommerce.php:204
+msgid "Loyalty points not awarded - user is not enrolled in loyalty program"
+msgstr ""
+"Nie przyznano punktów lojalnościowych – użytkownik nie jest zapisany do "
+"programu lojalnościowego"
+
+#: includes/class-loyalty-program-woocommerce.php:451
+msgid "Loyalty points removed: %d points (order refunded/cancelled)"
+msgstr ""
+"Punkty lojalnościowe usunięte: %d punktów (zamówienie zwrócone/anulowane)"
+
+#. Name of the plugin
+#: includes/admin/class-loyalty-program-admin-menu.php:38
+#: includes/admin/class-loyalty-program-admin-menu.php:39
+msgid "Loyalty Program"
+msgstr "Program lojalnościowy"
+
+#: includes/class-loyalty-program-woocommerce.php:816
+msgid "Loyalty Reward"
+msgstr "Nagroda za lojalność"
+
+#: includes/admin/views/dashboard.php:186
+msgid "Manage Integrations"
+msgstr "Zarządzaj integracjami"
+
+#: includes/admin/views/users.php:163 includes/admin/views/users.php:464
+msgid "Manage Points"
+msgstr ""
+
+#: includes/admin/views/surveys.php:25
+msgid ""
+"Manage surveys and quizzes for your loyalty program. Configure point rewards "
+"and track user participation."
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:687
+msgid ""
+"Manage your communication preferences. Completing both consents may unlock "
+"additional loyalty program benefits."
+msgstr ""
+
+#: includes/admin/views/dashboard.php:81
+msgid ""
+"Manage your loyalty program, track points, and configure integrations all in "
+"one place."
+msgstr ""
+"Zarządzaj swoim programem lojalnościowym, śledź punkty i konfiguruj "
+"integracje w jednym miejscu."
+
+#: includes/admin/views/shortcodes-old-backup.php:315
+msgid "Marked as loyalty gift in cart"
+msgstr "Oznaczono jako prezent lojalnościowy w koszyku"
+
+#: includes/class-loyalty-program-shortcodes.php:232
+#, php-format
+msgid "Member since: %s"
+msgstr "Członek od: %s"
+
+#: includes/admin/views/shortcodes.php:77
+#: includes/admin/views/shortcodes-new.php:77
+msgid "Membership box with status and join button if needed."
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:71
+#: includes/admin/views/shortcodes-new.php:71
+#: includes/admin/views/shortcodes-old-backup.php:138
+msgid "Membership Status"
+msgstr "Status członkostwa"
+
+#: includes/admin/views/settings.php:308
+msgid ""
+"Minimum order amount required to use the personal coupon (default: 150 PLN)."
+msgstr ""
+"Minimalna wartość zamówienia wymagana do użycia osobistego kuponu (domyślnie:"
+" 150 PLN)."
+
+#: includes/admin/views/surveys.php:906
+msgid ""
+"Minimum percentage of correct answers required to earn points (0-100%). Set "
+"to 0 to award points regardless of score."
+msgstr ""
+
+#: includes/admin/views/surveys.php:903
+msgid "Minimum Score Percentage"
+msgstr ""
+
+#: includes/admin/views/users-old-backup.php:584
+msgid "Missing Consent(s)"
+msgstr ""
+
+#: includes/admin/views/users-old-backup.php:720
+msgid "Modify Points"
+msgstr "Modyfikuj punkty"
+
+#: includes/admin/views/shortcodes.php:196
+#: includes/admin/views/shortcodes-new.php:196
+msgid "More Info"
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:545
+#: includes/admin/views/shortcodes-old-backup.php:288
+msgid "My Redeemed Rewards"
+msgstr "Moje zrealizowane nagrody"
+
+#: includes/admin/views/shortcodes.php:119
+#: includes/admin/views/shortcodes-new.php:119
+msgid "My Rewards"
+msgstr ""
+
+#: includes/admin/views/developer-panel.php:210
+msgid "MySQL Version"
+msgstr "Wersja MySQL"
+
+#: includes/admin/views/dashboard.php:166
+msgid "N/A"
+msgstr "Nie dotyczy"
+
+#: includes/admin/class-loyalty-program-ajax.php:532
+#: includes/admin/views/surveys.php:46 includes/admin/views/surveys.php:828
+msgid "Name"
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:492
+#, php-format
+msgid "Need %s more points"
+msgstr "Potrzebuję %s więcej punktów"
+
+#: includes/admin/class-loyalty-program-ajax.php:323
+msgid "Never"
+msgstr "Nigdy"
+
+#: includes/admin/class-loyalty-program-ajax.php:303
+msgid "Never spun"
+msgstr "Nigdy nie kręcono"
+
+#: includes/admin/views/surveys.php:1240
+msgid "New Question"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:343
+msgid "Newsletter consent checkbox"
+msgstr ""
+
+#: includes/admin/views/settings.php:498
+msgid "Newsletter Consent Field"
+msgstr ""
+
+#: includes/admin/views/users-old-backup.php:684
+msgid "Next Available Spin:"
+msgstr "Następny dostępny obrót:"
+
+#: includes/admin/class-loyalty-program-ajax.php:477
+#: includes/admin/views/users-old-backup.php:565
+#: includes/admin/views/users-old-backup.php:692
+msgid "No"
+msgstr "Nie"
+
+#: includes/admin/views/integrations.php:26
+msgid "No integrations configured yet."
+msgstr ""
+
+#: includes/admin/views/dashboard.php:176
+msgid ""
+"No members yet. Users will appear here once they join the loyalty program "
+"and earn points."
+msgstr ""
+"Brak członków. Użytkownicy pojawią się tutaj po dołączeniu do programu "
+"lojalnościowego i zdobyciu punktów."
+
+#: includes/class-loyalty-program-shortcodes.php:119
+msgid ""
+"No personal coupon available. Join the loyalty program to get your coupon!"
+msgstr ""
+"Brak osobistego kuponu. Dołącz do programu lojalnościowego, aby otrzymać "
+"swój kupon!"
+
+#: includes/class-loyalty-program-woocommerce.php:726
+msgid "No personal coupons found to update."
+msgstr "Nie znaleziono osobistych kuponów do zaktualizowania."
+
+#: includes/class-loyalty-program-shortcodes.php:310
+#: includes/admin/class-loyalty-program-ajax.php:519
+#: includes/admin/views/users-old-backup.php:782
+msgid "No points history yet."
+msgstr "Brak historii punktów."
+
+#: includes/class-loyalty-program-shortcodes.php:356
+msgid "No prizes available at the moment. Please check back later!"
+msgstr "Brak nagród w tej chwili. Spróbuj ponownie później!"
+
+#: includes/admin/class-loyalty-program-ajax.php:1125
+msgid "No prizes available."
+msgstr "Brak dostępnych nagród."
+
+#: includes/admin/views/surveys.php:1179 includes/admin/views/surveys.php:1487
+msgid "No questions yet."
+msgstr ""
+
+#: includes/admin/views/surveys.php:854 includes/admin/views/surveys.php:1137
+msgid ""
+"No questions yet. Click \"Add Question\" to start building your survey/quiz."
+msgstr ""
+
+#: includes/admin/class-loyalty-program-survey-results-table.php:286
+msgid "No results found."
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:436
+#: includes/class-loyalty-program-shortcodes.php:445
+msgid "No rewards available at the moment."
+msgstr "W tej chwili nie ma żadnych nagród."
+
+#: includes/admin/views/rewards.php:104 includes/admin/views/rewards.php:289
+msgid ""
+"No rewards configured yet. Click \"Add Reward\" to create your first reward."
+msgstr ""
+"Nie skonfigurowano jeszcze nagród. Kliknij „Dodaj premię”, aby utworzyć "
+"pierwszą nagrodę."
+
+#: includes/admin/class-loyalty-program-ajax.php:1460
+msgid "No rewards found."
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:573
+msgid "No surveys or quizzes completed yet."
+msgstr ""
+
+#: includes/admin/views/surveys.php:65 includes/admin/views/surveys.php:1089
+msgid "No surveys or quizzes yet. Click \"Add New\" to create your first one."
+msgstr ""
+
+#: includes/admin/views/users-old-backup.php:483
+msgid "No users found"
+msgstr "Nie znaleziono użytkowników"
+
+#: includes/admin/class-loyalty-program-users-table.php:349
+msgid "No users found."
+msgstr ""
+
+#: includes/admin/views/settings.php:435 includes/admin/views/settings.php:570
+msgid ""
+"No wheel prizes configured yet. Click \"Add Prize\" to create your first "
+"prize."
+msgstr ""
+"Nie skonfigurowano jeszcze nagród na kole. Kliknij „Dodaj nagrodę”, aby "
+"utworzyć pierwszą nagrodę."
+
+#: includes/admin/views/users-old-backup.php:659
+msgid "Not a member"
+msgstr "Nie jest członkiem"
+
+#: includes/admin/class-loyalty-program-ajax.php:406
+msgid "Not available"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:409
+#: includes/admin/class-loyalty-program-ajax.php:412
+msgid "Not provided"
+msgstr ""
+
+#: includes/admin/views/users-old-backup.php:538
+#: includes/admin/views/users-old-backup.php:544
+msgid "Not set"
+msgstr "Nie ustawiono"
+
+#: includes/admin/views/shortcodes-old-backup.php:477
+msgid "Note:"
+msgstr "Uwaga:"
+
+#: includes/admin/views/shortcodes.php:55
+#: includes/admin/views/shortcodes.php:66
+#: includes/admin/views/shortcodes-new.php:55
+#: includes/admin/views/shortcodes-new.php:66
+msgid "Number display with label."
+msgstr ""
+
+#: includes/admin/views/surveys.php:1277
+msgid "Number Input"
+msgstr ""
+
+#: includes/admin/views/settings.php:397
+msgid "Number of days a user must wait between wheel spins (default: 7 days)."
+msgstr ""
+"Liczba dni oczekiwania użytkownika między obrotami kołem (domyślnie: 7 dni)."
+
+#: includes/admin/views/shortcodes.php:86
+#: includes/admin/views/shortcodes-new.php:86
+msgid "Number of transactions to show"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:181
+msgid "Number of transactions to show (default: 10)"
+msgstr "Liczba wyświetlanych transakcji (domyślnie: 10)"
+
+#: includes/admin/views/shortcodes-old-backup.php:384
+msgid "One-time points reward for completing"
+msgstr ""
+
+#: includes/admin/views/live-expert.php:130
+msgid "Or without header:"
+msgstr "Lub bez nagłówka:"
+
+#: includes/class-loyalty-program-woocommerce.php:222
+#, php-format
+#| msgid "Order #%s completed (%s)"
+msgid "Order #%s completed (%s %s)"
+msgstr "Zamówienie #%s zrealizowane (%s %s)"
+
+#: includes/class-loyalty-program-woocommerce.php:435
+#, php-format
+msgid "Order #%s refunded/cancelled"
+msgstr "Zamówienie #%s zwrócone/anulowane"
+
+#: includes/admin/views/shortcodes-old-backup.php:190
+msgid "Order completed"
+msgstr "Zamówienie zrealizowane"
+
+#: includes/admin/views/shortcodes.php:603
+#: includes/admin/views/shortcodes-new.php:603
+msgid "Output"
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:567
+#: includes/admin/views/shortcodes-new.php:567
+msgid "Parameter"
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:565
+#: includes/admin/views/shortcodes-new.php:565
+msgid "Parameters"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:43
+#: includes/admin/views/shortcodes-old-backup.php:178
+msgid "Parameters:"
+msgstr "Parametry:"
+
+#: includes/admin/views/shortcodes-old-backup.php:468
+msgid "Paste it into any page or post editor"
+msgstr "Wklej to do edytora dowolnej strony lub wpisu"
+
+#: includes/class-loyalty-program-woocommerce.php:564
+#, php-format
+msgid "Personal coupon \"%s\" used in order #%s"
+msgstr "Osobisty kupon „%s” użyty w zamówieniu #%s"
+
+#: includes/admin/views/settings.php:284
+msgid "Personal Coupon Value"
+msgstr "Wartość osobistego kuponu"
+
+#: includes/class-loyalty-program-woocommerce.php:647
+#, php-format
+msgid "Personal loyalty coupon for %s"
+msgstr "Osobisty kupon lojalnościowy dla %s"
+
+#: includes/admin/class-loyalty-program-ajax.php:411
+msgid "Phone:"
+msgstr ""
+
+#: includes/admin/views/developer-panel.php:206
+msgid "PHP Version"
+msgstr "Wersja PHP"
+
+#: includes/admin/views/live-expert.php:367
+msgid "Please enter a live session title."
+msgstr "Wprowadź tytuł sesji na żywo."
+
+#: includes/admin/views/developer-panel.php:268
+msgid "Please enter a plugin version number."
+msgstr "Wprowadź numer wersji wtyczki."
+
+#: includes/admin/views/users-old-backup.php:811
+msgid "Please enter a valid points amount."
+msgstr "Wprowadź poprawną liczbę punktów."
+
+#: includes/admin/views/users-old-backup.php:816
+msgid "Please enter an action description."
+msgstr "Wprowadź opis akcji."
+
+#: includes/admin/views/users-old-backup.php:451
+msgid "Please enter at least 3 characters to search."
+msgstr "Wprowadź co najmniej 3 znaki, aby wyszukać."
+
+#: includes/admin/views/surveys.php:1470
+msgid "Please enter question text"
+msgstr ""
+
+#: includes/admin/views/surveys.php:1561
+msgid "Please enter survey name"
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:1069
+msgid "Please log in to access this survey/quiz."
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:213
+msgid "Please log in to check your membership status."
+msgstr "Zaloguj się, aby sprawdzić status członkostwa."
+
+#: includes/class-loyalty-program-shortcodes.php:1335
+msgid "Please log in to join the loyalty program."
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:745
+msgid "Please log in to manage your birth date."
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:662
+msgid "Please log in to manage your consent preferences."
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:327
+msgid "Please log in to spin the wheel."
+msgstr "Zaloguj się, aby zakręcić kołem."
+
+#: includes/class-loyalty-program-shortcodes.php:417
+msgid "Please log in to view rewards."
+msgstr "Zaloguj się, aby zobaczyć nagrody."
+
+#: includes/class-loyalty-program-shortcodes.php:106
+msgid "Please log in to view your coupon code."
+msgstr "Zaloguj się, aby zobaczyć swój kod kuponu."
+
+#: includes/class-loyalty-program-shortcodes.php:260
+msgid "Please log in to view your points history."
+msgstr "Zaloguj się, aby zobaczyć historię swoich punktów."
+
+#: includes/class-loyalty-program-shortcodes.php:155
+#: includes/class-loyalty-program-shortcodes.php:184
+msgid "Please log in to view your points."
+msgstr "Zaloguj się, aby zobaczyć swoje punkty."
+
+#: includes/class-loyalty-program-shortcodes.php:516
+msgid "Please log in to view your rewards."
+msgstr "Zaloguj się, aby zobaczyć swoje nagrody."
+
+#: includes/admin/class-loyalty-program-ajax.php:1722
+msgid "Please provide a valid birth date."
+msgstr ""
+
+#: includes/admin/views/live-expert.php:373
+msgid "Please select a CSV file."
+msgstr "Proszę wybrać plik CSV."
+
+#: includes/admin/views/settings.php:346
+msgid "Please wait..."
+msgstr "Proszę czekać..."
+
+#: includes/admin/views/developer-panel.php:99
+#: includes/admin/views/developer-panel.php:198
+msgid "Plugin Version"
+msgstr "Wersja wtyczki"
+
+#: includes/class-loyalty-program-points.php:292
+msgid "point"
+msgid_plural "points"
+msgstr[0] "punkt"
+msgstr[1] "punkty"
+msgstr[2] "punktów"
+
+#: includes/class-loyalty-program-shortcodes.php:293
+#: includes/admin/class-loyalty-program-users-table.php:340
+#: includes/admin/class-loyalty-program-ajax.php:422
+#: includes/admin/class-loyalty-program-ajax.php:498
+#: includes/admin/class-loyalty-program-ajax.php:536
+#: includes/admin/views/users-old-backup.php:754
+#: includes/admin/views/settings.php:420 includes/admin/views/surveys.php:1513
+msgid "Points"
+msgstr "Punkty"
+
+#: includes/admin/views/settings.php:97 includes/admin/views/settings.php:113
+#: includes/admin/views/settings.php:129 includes/admin/views/settings.php:145
+#: includes/admin/views/settings.php:162 includes/admin/views/settings.php:178
+#: includes/admin/views/settings.php:195 includes/admin/views/settings.php:212
+#: includes/admin/views/settings.php:229 includes/admin/views/settings.php:245
+#: includes/admin/views/settings.php:261
+msgid "points"
+msgstr "punkty"
+
+#: includes/admin/views/users-old-backup.php:724
+#: includes/admin/views/users.php:170
+msgid "Points Amount"
+msgstr "Ilość punktów"
+
+#: includes/admin/class-loyalty-program-ajax.php:819
+msgid "Points amount must be greater than 0."
+msgstr "Ilość punktów musi być większa niż 0."
+
+#: includes/admin/views/settings.php:231
+msgid ""
+"Points awarded for completing attendance-based challenges (default: 50 "
+"points)."
+msgstr ""
+"Punkty przyznawane za ukończenie wyzwań opartych na obecności (domyślnie: 50 "
+"punktów)."
+
+#: includes/admin/views/surveys.php:893
+msgid "Points awarded for completing the survey/quiz (regardless of score)."
+msgstr ""
+
+#: includes/admin/views/settings.php:180
+msgid "Points awarded for consenting to notifications (default: 20 points)."
+msgstr ""
+"Punkty przyznawane za wyrażenie zgody na powiadomienia (domyślnie: 20 "
+"punktów)."
+
+#: includes/admin/views/settings.php:115
+msgid "Points awarded for each approved product review."
+msgstr "Punkty przyznawane za każdą zatwierdzoną opinię o produkcie."
+
+#: includes/admin/views/settings.php:263
+msgid ""
+"Points awarded for purchasing the same product 3 times within 3 months "
+"(default: 50 points)."
+msgstr ""
+
+#: includes/admin/views/settings.php:247
+msgid ""
+"Points awarded for using a Flash Hunter coupon within its validity period "
+"(default: 20 points)."
+msgstr ""
+"Punkty przyznawane za wykorzystanie kuponu Flash Hunter w okresie jego "
+"ważności (domyślnie: 20 punktów)."
+
+#: includes/admin/views/shortcodes-old-backup.php:394
+msgid "Points awarded only once (configured in Settings)"
+msgstr ""
+
+#: includes/admin/views/settings.php:214
+msgid ""
+"Points awarded to users who watched a live session with an expert (default: "
+"30 points)."
+msgstr ""
+"Punkty przyznawane użytkownikom, którzy oglądali sesję na żywo z ekspertem "
+"(domyślnie: 30 punktów)."
+
+#: includes/admin/views/settings.php:147
+msgid "Points awarded when a customer adds their birthday to their profile."
+msgstr "Punkty przyznawane, gdy klient dodaje datę urodzin do swojego profilu."
+
+#: includes/admin/views/settings.php:164
+msgid "Points awarded when a customer completes their profile information."
+msgstr "Punkty przyznawane, gdy klient uzupełni informacje w swoim profilu."
+
+#: includes/admin/views/settings.php:99
+msgid "Points awarded when a customer joins the loyalty program."
+msgstr "Punkty przyznawane, gdy klient dołącza do programu lojalnościowego."
+
+#: includes/admin/views/settings.php:197
+msgid ""
+"Points awarded when a customer purchases the same product again within 30 "
+"days (default: 50 points)."
+msgstr ""
+"Punkty przyznawane, gdy klient kupi ten sam produkt ponownie w ciągu 30 dni "
+"(domyślnie: 50 punktów)."
+
+#: includes/admin/views/settings.php:131
+msgid "Points awarded when a customer uses a coupon code during checkout."
+msgstr ""
+"Punkty przyznawane, gdy klient użyje kodu kuponu podczas realizacji "
+"zamówienia."
+
+#: includes/admin/class-loyalty-program-survey-results-table.php:63
+msgid "Points Earned"
+msgstr ""
+
+#: includes/admin/views/surveys.php:890
+msgid "Points for Completion"
+msgstr ""
+
+#: includes/admin/views/settings.php:80
+msgid "Points for Customer Actions"
+msgstr "Punkty za działania klienta"
+
+#: includes/class-loyalty-program-shortcodes.php:285
+#: includes/admin/views/shortcodes.php:82
+#: includes/admin/views/users-old-backup.php:747
+#: includes/admin/views/shortcodes-new.php:82
+#: includes/admin/views/shortcodes-old-backup.php:164
+msgid "Points History"
+msgstr "Historia punktów"
+
+#: includes/admin/class-loyalty-program-ajax.php:490
+msgid "Points History (Last 50)"
+msgstr ""
+
+#: includes/admin/views/rewards.php:328
+msgid "Points must be greater than 0"
+msgstr "Punkty muszą być większe niż 0"
+
+#: includes/admin/views/settings.php:64
+msgid "Points per Currency Unit"
+msgstr "Punkty za jednostkę waluty"
+
+#: includes/admin/views/rewards.php:83
+msgid "Points Required"
+msgstr "Wymagana liczba punktów"
+
+#: includes/admin/views/shortcodes-old-backup.php:430
+msgid "Points reward display"
+msgstr ""
+
+#: includes/class-loyalty-program-points.php:503
+msgid "Posting a review of a product"
+msgstr "Publikowanie recenzji produktu"
+
+#: includes/admin/views/shortcodes-old-backup.php:308
+msgid "Prevents duplicate additions to cart"
+msgstr "Zapobiega duplikowaniu dodanych elementów do koszyka"
+
+#: includes/admin/views/surveys.php:1299
+msgid "Preview:"
+msgstr ""
+
+#: includes/admin/views/rewards.php:84
+msgid "Price"
+msgstr "Cena"
+
+#: includes/admin/views/rewards.php:333
+msgid "Price must be 0 or greater"
+msgstr "Cena musi być równa lub większa od 0"
+
+#: includes/admin/views/settings.php:419
+msgid "Prize Name"
+msgstr "Nazwa nagrody"
+
+#: includes/admin/views/settings.php:421
+msgid "Probability (%)"
+msgstr "Prawdopodobieństwo (%)"
+
+#: includes/admin/views/shortcodes-old-backup.php:224
+msgid "Probability-based prize selection"
+msgstr "Wybór nagrody na podstawie prawdopodobieństwa"
+
+#: includes/admin/views/live-expert.php:386
+msgid "Processing..."
+msgstr "Przetwarzanie..."
+
+#: includes/admin/views/rewards.php:82
+msgid "Product"
+msgstr "Produkt"
+
+#: includes/admin/views/shortcodes-old-backup.php:314
+msgid "Product added with reward price from configuration"
+msgstr "Produkt dodany z ceną nagrody z konfiguracji"
+
+#: includes/admin/views/shortcodes-old-backup.php:455
+msgid "Product must be purchased 1-2 times in last 90 days"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:1523
+msgid "Product not found."
+msgstr "Produkt nie został znaleziony."
+
+#: includes/class-loyalty-program-woocommerce.php:1552
+msgid ""
+"Profile completed (Birth Date, SMS Consent, Newsletter Consent, Phone Number)"
+msgstr ""
+
+#: includes/admin/views/users-old-backup.php:558
+msgid "Program Member"
+msgstr "Uczestnik programu"
+
+#: includes/admin/views/users-old-backup.php:649
+msgid "Program Membership:"
+msgstr "Członkostwo w programie:"
+
+#: includes/admin/views/dashboard.php:190
+msgid "Program Settings"
+msgstr "Ustawienia programu"
+
+#: includes/admin/views/shortcodes-old-backup.php:427
+msgid "Progress bar showing 1/3, 2/3 completion"
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:158
+#: includes/admin/views/shortcodes-new.php:158
+msgid "Progress bar with discipline status."
+msgstr ""
+
+#: includes/admin/views/dashboard.php:157
+#: includes/admin/views/dashboard.php:162
+msgid "pts"
+msgstr "pkt"
+
+#: includes/class-loyalty-program-shortcodes.php:991
+msgid ""
+"Purchase this product %d more time(s) within %d days to earn %d loyalty "
+"points!"
+msgstr ""
+
+#: includes/admin/views/surveys.php:1259
+msgid "Question Description (optional)"
+msgstr ""
+
+#: includes/admin/views/surveys.php:1254
+msgid "Question Text"
+msgstr ""
+
+#: includes/admin/views/surveys.php:806 includes/admin/views/surveys.php:845
+msgid "Questions"
+msgstr ""
+
+#: includes/admin/views/dashboard.php:181
+msgid "Quick Links"
+msgstr "Szybkie linki"
+
+#: includes/admin/class-loyalty-program-ajax.php:546
+#: includes/admin/views/surveys.php:139 includes/admin/views/surveys.php:820
+#: includes/admin/views/surveys.php:1658 includes/admin/views/surveys.php:1691
+msgid "Quiz"
+msgstr ""
+
+#: includes/admin/views/surveys.php:823
+msgid ""
+"Quiz allows scoring and correct answers, Survey is for gathering opinions."
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:2051
+msgid "Quiz completed!"
+msgstr ""
+
+#: includes/admin/views/survey-results.php:111
+msgid "Quiz Results"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:2010
+msgid "Quiz score: %d pts"
+msgstr ""
+
+#: includes/admin/views/surveys.php:899
+msgid "Quiz-Only Settings"
+msgstr ""
+
+#: includes/admin/views/surveys.php:1274
+msgid "Radio (Single Choice)"
+msgstr ""
+
+#: includes/admin/views/surveys.php:874
+msgid "Random Question Order"
+msgstr ""
+
+#: includes/admin/views/developer-panel.php:117
+msgid "Random Version (Cache Busting)"
+msgstr "Losowa wersja (odświeżanie pamięci podręcznej)"
+
+#: includes/admin/views/dashboard.php:124
+msgid "Rank"
+msgstr "Pozycja"
+
+#: includes/admin/views/shortcodes-old-backup.php:344
+msgid "Real-time saving via AJAX"
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:487
+msgid "Redeem"
+msgstr "Wymień"
+
+#: includes/admin/views/shortcodes-old-backup.php:267
+msgid "Redeem button (only if user has enough points)"
+msgstr ""
+"Przycisk „Wymień” (tylko jeśli użytkownik ma wystarczającą liczbę punktów)"
+
+#: includes/admin/class-loyalty-program-ajax.php:1370
+#, php-format
+msgid "Redeemed reward: %s"
+msgstr "Zrealizowana nagroda: %s"
+
+#: includes/admin/views/surveys.php:921
+msgid "Redirect URL After Completion"
+msgstr ""
+
+#: includes/admin/views/developer-panel.php:173
+msgid "Refresh"
+msgstr "Odśwież"
+
+#: includes/admin/views/users-old-backup.php:553
+msgid "Registration Date"
+msgstr "Data rejestracji"
+
+#: includes/admin/views/users-old-backup.php:666
+msgid "Remove from Program"
+msgstr "Usuń z programu"
+
+#: includes/admin/views/users-old-backup.php:739
+msgid "Remove Points"
+msgstr "Usuń punkty"
+
+#: includes/admin/views/live-expert.php:110
+msgid "Required Format:"
+msgstr "Wymagany format:"
+
+#: includes/admin/views/surveys.php:1266
+msgid "Required Question"
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:595
+#: includes/admin/views/shortcodes-new.php:595
+msgid "Requirements"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:231
+#: includes/admin/views/shortcodes-old-backup.php:274
+#: includes/admin/views/shortcodes-old-backup.php:349
+#: includes/admin/views/shortcodes-old-backup.php:399
+#: includes/admin/views/shortcodes-old-backup.php:451
+msgid "Requirements:"
+msgstr "Wymagania:"
+
+#: includes/admin/views/users-old-backup.php:696
+#: includes/admin/views/users-old-backup.php:908
+#: includes/admin/views/users-old-backup.php:912
+msgid "Reset Wheel"
+msgstr "Resetuj koło"
+
+#: includes/admin/views/users-old-backup.php:894
+msgid "Resetting..."
+msgstr "Resetowanie..."
+
+#: includes/admin/class-loyalty-program-survey-results-table.php:41
+msgid "Result"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-survey-results-table.php:42
+msgid "Results"
+msgstr ""
+
+#: includes/admin/views/settings.php:188
+msgid "Return for More"
+msgstr "Powrót po więcej"
+
+#: includes/class-loyalty-program-woocommerce.php:364
+msgid "Return for More bonus: %d points for 1 repeat purchase"
+msgid_plural "Return for More bonus: %d points for %d repeat purchases"
+msgstr[0] "Bonus Powrót po więcej: %d punkt za 1 powtórny zakup"
+msgstr[1] "Bonus Powrót po więcej: %d punkty za %d powtórne zakupy"
+msgstr[2] "Bonus Powrót po więcej: %d punktów za %d powtórnych zakupów"
+
+#: includes/class-loyalty-program-woocommerce.php:342
+#, php-format
+msgid "Return for More: %s (purchased again after %d days)"
+msgstr "Powrót po więcej: %s (zakup ponownie po %d dniach)"
+
+#: includes/admin/views/rewards.php:81
+msgid "Reward Name"
+msgstr "Nazwa nagrody"
+
+#: includes/admin/views/rewards.php:323
+msgid "Reward name is required"
+msgstr "Nazwa nagrody jest wymagana"
+
+#: includes/admin/class-loyalty-program-ajax.php:1408
+#, php-format
+msgid "Reward redeemed successfully! %s points deducted."
+msgstr "Nagroda zrealizowana pomyślnie! %s punktów odjęto."
+
+#: includes/admin/class-loyalty-program-admin-menu.php:80
+#: includes/admin/class-loyalty-program-admin-menu.php:81
+msgid "Rewards"
+msgstr "Nagrody"
+
+#: includes/admin/views/rewards.php:68
+msgid "Rewards Configuration"
+msgstr "Konfiguracja nagród"
+
+#: includes/admin/views/dashboard.php:112
+msgid "Rewards Distributed"
+msgstr "Przyznane nagrody"
+
+#: includes/admin/views/shortcodes.php:108
+#: includes/admin/views/shortcodes-new.php:108
+#: includes/admin/views/shortcodes-old-backup.php:251
+msgid "Rewards List"
+msgstr "Lista nagród"
+
+#: includes/admin/views/shortcodes-old-backup.php:278
+msgid "Rewards must be configured in Rewards tab"
+msgstr "Nagrody muszą zostać skonfigurowane w zakładce Nagrody"
+
+#: includes/admin/class-loyalty-program-admin-menu.php:804
+msgid "Rewards saved successfully."
+msgstr "Nagrody zostały pomyślnie zapisane."
+
+#: includes/admin/views/rewards.php:323 includes/admin/views/rewards.php:328
+#: includes/admin/views/rewards.php:333
+msgid "Row"
+msgstr "Wiersz"
+
+#: includes/admin/class-loyalty-program-admin-menu.php:417
+#, php-format
+msgid "Row %d: Invalid email: %s"
+msgstr "Wiersz %d: Nieprawidłowy email: %s"
+
+#: includes/admin/class-loyalty-program-admin-menu.php:442
+#, php-format
+msgid "Row %d: User not enrolled in loyalty program: %s"
+msgstr "Wiersz %d: Użytkownik nie zapisany do programu lojalnościowego: %s"
+
+#: includes/admin/class-loyalty-program-admin-menu.php:430
+#, php-format
+msgid "Row %d: User not found: %s"
+msgstr "Wiersz %d: Nie znaleziono użytkownika: %s"
+
+#: includes/class-loyalty-program-shortcodes.php:824
+msgid "Save Birth Date"
+msgstr ""
+
+#: includes/admin/views/users.php:202 includes/admin/views/users.php:515
+#: includes/admin/views/users.php:520 includes/admin/views/surveys.php:78
+msgid "Save Changes"
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:722
+msgid "Save Preferences"
+msgstr ""
+
+#: includes/admin/views/surveys.php:1305
+msgid "Save Question"
+msgstr ""
+
+#: includes/admin/views/rewards.php:115
+msgid "Save Rewards"
+msgstr "Zapisz nagrody"
+
+#: includes/admin/views/developer-panel.php:143
+#: includes/admin/views/settings.php:518
+msgid "Save Settings"
+msgstr "Zapisz ustawienia"
+
+#: includes/admin/views/surveys.php:945
+msgid "Save Survey/Quiz"
+msgstr ""
+
+#: includes/admin/views/users.php:495
+msgid "Saving..."
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:535
+#: includes/admin/class-loyalty-program-survey-results-table.php:59
+msgid "Score"
+msgstr ""
+
+#: includes/admin/views/users-old-backup.php:38
+msgid "Search"
+msgstr "Szukaj"
+
+#: includes/admin/views/users.php:111
+msgid ""
+"Search and manage loyalty program members. Optimized for large databases."
+msgstr ""
+
+#: includes/admin/views/users-old-backup.php:20
+msgid "Search and manage loyalty program users."
+msgstr "Wyszukuj i zarządzaj użytkownikami programu lojalnościowego."
+
+#: includes/admin/views/users-old-backup.php:33
+msgid "Search by username or email address"
+msgstr "Szukaj po nazwie użytkownika lub adresie e-mail"
+
+#: includes/admin/views/users-old-backup.php:472
+msgid "Search Results"
+msgstr "Wyniki wyszukiwania"
+
+#: includes/admin/class-loyalty-program-ajax.php:141
+msgid "Search term must be at least 3 characters long."
+msgstr "Fraza wyszukiwania musi mieć co najmniej 3 znaki."
+
+#: includes/admin/views/users-old-backup.php:26
+msgid "Search Users"
+msgstr "Szukaj użytkowników"
+
+#: includes/admin/views/survey-results.php:165
+#: includes/admin/views/users.php:141
+msgid "Search users"
+msgstr ""
+
+#: includes/admin/views/users-old-backup.php:459
+msgid "Searching users..."
+msgstr "Wyszukiwanie użytkowników..."
+
+#: includes/admin/class-loyalty-program-ajax.php:92
+#: includes/admin/class-loyalty-program-ajax.php:125
+#: includes/admin/class-loyalty-program-ajax.php:224
+#: includes/admin/class-loyalty-program-ajax.php:793
+#: includes/admin/class-loyalty-program-ajax.php:918
+#: includes/admin/class-loyalty-program-ajax.php:985
+#: includes/admin/class-loyalty-program-ajax.php:1035
+#: includes/admin/class-loyalty-program-ajax.php:1089
+#: includes/admin/class-loyalty-program-ajax.php:1252
+#: includes/admin/class-loyalty-program-ajax.php:1314
+#: includes/admin/class-loyalty-program-ajax.php:1428
+#: includes/admin/class-loyalty-program-ajax.php:2092
+#: includes/admin/class-loyalty-program-admin-menu.php:329
+msgid "Security check failed."
+msgstr "Weryfikacja bezpieczeństwa nie powiodła się."
+
+#: includes/admin/class-loyalty-program-ajax.php:1605
+#: includes/admin/class-loyalty-program-ajax.php:1683
+#: includes/admin/class-loyalty-program-ajax.php:1842
+msgid "Security check failed. Please refresh the page and try again."
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:312
+msgid "Security:"
+msgstr "Bezpieczeństwo:"
+
+#: includes/class-loyalty-program-shortcodes.php:815
+msgid "Select Your Birth Date"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:269
+msgid "Server-side validation for security"
+msgstr "Walidacja po stronie serwera w celu zapewnienia bezpieczeństwa"
+
+#: includes/admin/class-loyalty-program-admin-menu.php:130
+#: includes/admin/class-loyalty-program-admin-menu.php:131
+#: includes/admin/views/surveys.php:810
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: includes/admin/class-loyalty-program-admin.php:101
+#: includes/admin/class-loyalty-program-admin-menu.php:685
+msgid "Settings saved successfully."
+msgstr "Ustawienia zostały pomyślnie zapisane."
+
+#: includes/class-loyalty-program-shortcodes.php:806
+msgid ""
+"Share your birth date with us to unlock special birthday rewards and earn "
+"loyalty points!"
+msgstr ""
+
+#: includes/admin/views/surveys.php:50
+msgid "Shortcode"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-admin-menu.php:110
+#: includes/admin/class-loyalty-program-admin-menu.php:111
+msgid "Shortcodes"
+msgstr "Shortcode’y"
+
+#: includes/admin/views/settings.php:635
+msgid "should be 100%"
+msgstr "powinno wynosić 100%"
+
+#: includes/admin/views/shortcodes.php:26
+#: includes/admin/views/shortcodes-new.php:26
+#: includes/admin/views/shortcodes-old-backup.php:47
+msgid "Show message when already enrolled"
+msgstr ""
+
+#: includes/admin/views/surveys.php:914
+msgid "Show Result to User"
+msgstr ""
+
+#: includes/admin/views/surveys.php:868
+msgid "Show Start Button"
+msgstr ""
+
+#: includes/admin/views/developer-panel.php:186
+msgid ""
+"Showing last 100 log entries. Download the full log file for complete "
+"history."
+msgstr ""
+"Wyświetlono ostatnie 100 wpisów logu. Pobierz pełny plik logu, aby zobaczyć "
+"całą historię."
+
+#: includes/admin/views/shortcodes-old-backup.php:385
+msgid "Shows completion status after saving"
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:73
+#: includes/admin/views/shortcodes-new.php:73
+msgid "Shows if user is enrolled with join button."
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:227
+msgid "Shows locked state with next available spin date"
+msgstr "Wyświetla stan zablokowany z datą następnego dostępnego obrotu"
+
+#: includes/admin/views/shortcodes-old-backup.php:148
+msgid "Shows membership status with \"Join Now\" button for non-members."
+msgstr ""
+"Wyświetla status członkostwa z przyciskiem „Dołącz teraz” dla niezapisanych "
+"użytkowników."
+
+#: includes/admin/views/shortcodes-old-backup.php:436
+msgid "Shows ONLY if product purchased 1-2 times in last 3 months"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:304
+msgid "Shows original price vs. reward price"
+msgstr "Pokazuje cenę oryginalną w porównaniu z ceną nagrody"
+
+#: includes/admin/views/shortcodes-old-backup.php:266
+msgid "Shows reward name, product, and points required"
+msgstr "Pokazuje nazwę nagrody, produkt i wymagane punkty"
+
+#: includes/admin/views/shortcodes.php:84
+#: includes/admin/views/shortcodes-new.php:84
+msgid "Shows user's points transaction history."
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:154
+#: includes/admin/views/shortcodes-new.php:154
+msgid "Shows user's purchase discipline progress."
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:121
+#: includes/admin/views/shortcodes-new.php:121
+msgid "Shows user's redeemed rewards."
+msgstr ""
+
+#: includes/class-loyalty-program-points.php:447
+#: includes/admin/views/settings.php:172
+msgid "Sign up for notifications"
+msgstr "Zarejestruj się, aby otrzymywać powiadomienia"
+
+#: includes/admin/views/users-old-backup.php:654
+msgid "since"
+msgstr "od"
+
+#: includes/admin/views/users-old-backup.php:579
+msgid "SMS & Newsletter Consent"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:342
+msgid "SMS consent checkbox"
+msgstr ""
+
+#: includes/admin/views/settings.php:480
+msgid "SMS Consent Field"
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:699
+#: includes/admin/class-loyalty-program-users-table.php:43
+#: includes/admin/class-loyalty-program-ajax.php:445
+msgid "SMS Notifications"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:447
+msgid "Specific product"
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:387
+msgid "Spin the Wheel!"
+msgstr "Zakreć kołem!"
+
+#: includes/admin/views/surveys.php:1279
+msgid "Star Rating (1-5)"
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:1161
+msgid "Start"
+msgstr ""
+
+#: includes/class-loyalty-program-woocommerce.php:1027
+msgid ""
+"Start date and time for Flash Hunter validity (format: 2024-12-31 10:00)."
+msgstr ""
+"Data i godzina rozpoczęcia ważności programu Flash Hunter (format: 2024-12-"
+"31 10:00)."
+
+#: includes/class-loyalty-program-shortcodes.php:1281
+msgid "Submit Quiz"
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:1281
+msgid "Submit Survey"
+msgstr ""
+
+#: includes/admin/views/users.php:193
+msgid "Subtract Points"
+msgstr ""
+
+#: includes/admin/views/live-expert.php:160
+msgid "Success"
+msgstr "Sukces"
+
+#: includes/admin/views/settings.php:255
+msgid "Supplementation Discipline"
+msgstr ""
+
+#: includes/class-loyalty-program-woocommerce.php:1474
+#, php-format
+msgid ""
+"Supplementation Discipline bonus: %d points for purchasing \"%s\" 3 times in "
+"3 months! Counter reset."
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:988
+msgid "Supplementation Discipline Challenge"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:412
+msgid "Supplementation Discipline Progress"
+msgstr ""
+
+#: includes/class-loyalty-program-woocommerce.php:1452
+#, php-format
+msgid "Supplementation Discipline: %s (3 purchases in 3 months)"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:546
+#: includes/admin/views/surveys.php:139 includes/admin/views/surveys.php:1659
+#: includes/admin/views/surveys.php:1691
+msgid "Survey"
+msgstr ""
+
+#: includes/admin/views/surveys.php:819
+msgid "Survey (Ankieta)"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:1834
+msgid "Survey ID is missing."
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:1092
+#: includes/admin/class-loyalty-program-ajax.php:2101
+#: includes/admin/views/survey-results.php:18
+msgid "Survey ID is required."
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:1108
+#: includes/admin/class-loyalty-program-ajax.php:1859
+#: includes/admin/class-loyalty-program-ajax.php:2116
+#: includes/admin/views/survey-results.php:33
+msgid "Survey not found."
+msgstr ""
+
+#. Hidden from menu
+#: includes/admin/class-loyalty-program-admin-menu.php:100
+#: includes/admin/class-loyalty-program-admin-menu.php:101
+#: includes/admin/views/survey-results.php:111
+msgid "Survey Results"
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:163
+#: includes/admin/views/shortcodes-new.php:163
+msgid "Survey/Quiz"
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:171
+#: includes/admin/views/shortcodes-new.php:171
+msgid "Survey/quiz form with questions and submit button."
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:167
+#: includes/admin/views/shortcodes-new.php:167
+msgid "Survey/Quiz ID (required)"
+msgstr ""
+
+#: includes/admin/views/surveys.php:862
+msgid "Survey/Quiz Settings"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-admin-menu.php:90
+#: includes/admin/class-loyalty-program-admin-menu.php:91
+#: includes/admin/views/surveys.php:33
+msgid "Surveys & Quizzes"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:527
+#: includes/admin/class-loyalty-program-ajax.php:571
+msgid "Surveys & Quizzes Participation"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-admin-menu.php:831
+#: includes/admin/class-loyalty-program-admin-menu.php:930
+msgid "Surveys saved successfully."
+msgstr ""
+
+#: includes/admin/views/developer-panel.php:193
+msgid "System Information"
+msgstr "Informacje o systemie"
+
+#: includes/admin/views/surveys.php:1278
+msgid "Text Area"
+msgstr ""
+
+#: includes/admin/views/surveys.php:1276
+msgid "Text Input"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:2052
+msgid "Thank you for completing the survey!"
+msgstr ""
+
+#: includes/admin/views/surveys.php:936
+msgid "Thank you for completing this survey!"
+msgstr ""
+
+#: includes/admin/views/surveys.php:934
+msgid "Thank You Message Text"
+msgstr ""
+
+#: includes/admin/views/surveys.php:928
+msgid "Thank You Message Title"
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:1310
+#: includes/admin/views/surveys.php:930
+msgid "Thank you!"
+msgstr ""
+
+#: includes/admin/views/live-expert.php:111
+msgid ""
+"The CSV file should contain one email address per line. The first row can "
+"optionally be a header."
+msgstr ""
+"Plik CSV powinien zawierać jeden adres e-mail w każdym wierszu. Pierwszy "
+"wiersz może być nagłówkiem."
+
+#: includes/admin/views/shortcodes-old-backup.php:469
+msgid ""
+"The shortcode will be replaced with the actual content when the page is "
+"viewed"
+msgstr ""
+"Shortcode zostanie zastąpiony rzeczywistą zawartością podczas wyświetlania "
+"strony."
+
+#: includes/class-loyalty-program-shortcodes.php:347
+msgid "The wheel of fortune is not configured yet. Please check back later!"
+msgstr "Koło fortuny nie jest jeszcze skonfigurowane. Sprawdź później!"
+
+#: includes/class-loyalty-program-woocommerce.php:929
+msgid "This loyalty reward is already in your cart."
+msgstr "Ta nagroda za lojalność jest już w Twoim koszyku."
+
+#: includes/admin/class-loyalty-program-ajax.php:1495
+msgid "This reward has already been used."
+msgstr "Ta nagroda została już wykorzystana."
+
+#: includes/admin/class-loyalty-program-ajax.php:1543
+msgid "This reward is already in your cart."
+msgstr "Ta nagroda jest już w Twoim koszyku."
+
+#: includes/admin/class-loyalty-program-ajax.php:1346
+msgid "This reward is not available."
+msgstr "Ta nagroda jest niedostępna."
+
+#: includes/admin/views/shortcodes-old-backup.php:358
+msgid ""
+"This shortcode is prepared for future SalesManago integration. Consents are "
+"stored in user meta and can be synced with external systems."
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:1113
+msgid "This survey is currently not available."
+msgstr ""
+
+#: includes/admin/views/live-expert.php:72
+msgid "This title will appear in the user's points history."
+msgstr "Ten tytuł pojawi się w historii punktów użytkownika."
+
+#: includes/admin/views/surveys.php:884
+msgid "Time Limit (minutes)"
+msgstr ""
+
+#: includes/admin/views/dashboard.php:118
+msgid "Top 20 Users by Points"
+msgstr "Top 20 użytkowników wg punktów"
+
+#: includes/admin/views/survey-results.php:134
+msgid "Total Completions"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-users-table.php:46
+#: includes/admin/class-loyalty-program-ajax.php:429
+#: includes/admin/views/users-old-backup.php:710
+#: includes/admin/views/dashboard.php:127
+msgid "Total Earned"
+msgstr "Łącznie zdobyto"
+
+#: includes/admin/views/users.php:122
+msgid "Total Members"
+msgstr ""
+
+#: includes/admin/views/dashboard.php:102
+#: includes/admin/views/survey-results.php:155
+msgid "Total Points Awarded"
+msgstr "Łączna liczba przyznanych punktów"
+
+#: includes/class-loyalty-program-shortcodes.php:198
+#: includes/admin/views/shortcodes.php:60
+#: includes/admin/views/shortcodes-new.php:60
+#: includes/admin/views/shortcodes-old-backup.php:113
+#: includes/admin/views/shortcodes-old-backup.php:128
+msgid "Total Points Earned"
+msgstr "Łączna liczba zdobytych punktów"
+
+#: includes/admin/views/users.php:132
+msgid "Total Points in Circulation"
+msgstr ""
+
+#: includes/admin/views/settings.php:623 includes/admin/views/settings.php:627
+#: includes/admin/views/settings.php:633
+msgid "Total probability:"
+msgstr "Łączne prawdopodobieństwo:"
+
+#: includes/admin/views/live-expert.php:170
+msgid "Total Processed"
+msgstr "Łącznie przetworzono"
+
+#: includes/admin/class-loyalty-program-ajax.php:433
+#: includes/admin/views/users-old-backup.php:714
+msgid "Total Spent"
+msgstr "Łącznie wydano"
+
+#: includes/admin/views/users-old-backup.php:483
+msgid "Try a different search term."
+msgstr "Spróbuj innej frazy wyszukiwania."
+
+#: includes/admin/class-loyalty-program-ajax.php:533
+#: includes/admin/views/users-old-backup.php:753
+#: includes/admin/views/surveys.php:47 includes/admin/views/surveys.php:817
+msgid "Type"
+msgstr "Typ"
+
+#: includes/admin/class-loyalty-program-admin-menu.php:387
+msgid "Unable to read CSV file."
+msgstr "Nie można odczytać pliku CSV."
+
+#: includes/admin/views/surveys.php:134
+msgid "Untitled"
+msgstr ""
+
+#: includes/admin/views/settings.php:322
+msgid ""
+"Update all existing personal coupons with new settings (value and minimum "
+"amount). Use this after changing coupon settings."
+msgstr ""
+"Zaktualizuj wszystkie istniejące osobiste kupony do nowych ustawień (wartość "
+"i minimalna kwota). Użyj tego po zmianie ustawień kuponów."
+
+#: includes/admin/views/settings.php:319 includes/admin/views/settings.php:364
+msgid "Update All Personal Coupons"
+msgstr "Zaktualizuj wszystkie osobiste kupony"
+
+#: includes/admin/views/settings.php:315
+msgid "Update Existing Coupons"
+msgstr "Aktualizuj istniejące kupony"
+
+#: includes/admin/views/settings.php:344
+msgid "Updating..."
+msgstr "Aktualizowanie..."
+
+#: includes/admin/views/live-expert.php:92
+msgid "Upload a CSV file containing user email addresses (one per line)."
+msgstr ""
+"Prześlij plik CSV zawierający adresy e-mail użytkowników (jeden w każdym "
+"wierszu)."
+
+#: includes/admin/views/live-expert.php:100
+msgid "Upload and Award Points"
+msgstr "Prześlij i przyznaj punkty"
+
+#: includes/admin/views/live-expert.php:48
+msgid "Upload CSV File"
+msgstr "Prześlij plik CSV"
+
+#: includes/admin/views/shortcodes-old-backup.php:444
+msgid "Usage Examples:"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:20
+msgid ""
+"Use these shortcodes to display loyalty program information on your pages "
+"and posts."
+msgstr ""
+"Użyj tych shortcode’ów, aby wyświetlić informacje o programie lojalnościowym "
+"na swoich stronach i wpisach."
+
+#: includes/admin/views/shortcodes.php:181
+#: includes/admin/views/shortcodes-new.php:181
+msgid ""
+"Use these shortcodes to display loyalty program information on your pages "
+"and posts. Click \"More Info\" for detailed documentation."
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:614
+msgid "Used"
+msgstr "Użyty"
+
+#: includes/admin/views/developer-panel.php:127
+msgid ""
+"Useful for development to bypass browser cache. Overrides the custom version "
+"above."
+msgstr ""
+"Przydatne do rozwoju, aby ominąć pamięć podręczną przeglądarki. Nadpisuje "
+"powyższą niestandardową wersję."
+
+#: includes/admin/class-loyalty-program-users-table.php:27
+#: includes/admin/class-loyalty-program-users-table.php:40
+#: includes/admin/class-loyalty-program-survey-results-table.php:53
+#: includes/admin/views/dashboard.php:125
+msgid "User"
+msgstr "Użytkownik"
+
+#: includes/admin/views/settings.php:446
+msgid "User Account Fields"
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:38
+#: includes/admin/views/shortcodes-new.php:38
+#: includes/admin/views/shortcodes-old-backup.php:63
+msgid "User Coupon Code"
+msgstr "Kod kuponu użytkownika"
+
+#: includes/admin/views/users-old-backup.php:548
+msgid "User ID"
+msgstr "ID użytkownika"
+
+#: includes/admin/views/surveys.php:1268
+msgid "User must answer this question to submit the survey/quiz."
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:234
+#: includes/admin/views/shortcodes-old-backup.php:277
+#: includes/admin/views/shortcodes-old-backup.php:352
+#: includes/admin/views/shortcodes-old-backup.php:402
+#: includes/admin/views/shortcodes-old-backup.php:454
+msgid "User must be enrolled in loyalty program"
+msgstr "Użytkownik musi być zapisany do programu lojalnościowego"
+
+#: includes/admin/views/shortcodes-old-backup.php:233
+#: includes/admin/views/shortcodes-old-backup.php:276
+#: includes/admin/views/shortcodes-old-backup.php:351
+#: includes/admin/views/shortcodes-old-backup.php:401
+#: includes/admin/views/shortcodes-old-backup.php:453
+msgid "User must be logged in"
+msgstr "Użytkownik musi być zalogowany"
+
+#: includes/admin/views/shortcodes.php:43
+#: includes/admin/views/shortcodes-new.php:43
+msgid "User must be logged in and a loyalty program member."
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:92
+#: includes/admin/views/shortcodes.php:113
+#: includes/admin/views/shortcodes.php:124
+#: includes/admin/views/shortcodes.php:135
+#: includes/admin/views/shortcodes.php:146
+#: includes/admin/views/shortcodes-new.php:92
+#: includes/admin/views/shortcodes-new.php:113
+#: includes/admin/views/shortcodes-new.php:124
+#: includes/admin/views/shortcodes-new.php:135
+#: includes/admin/views/shortcodes-new.php:146
+msgid "User must be logged in and a member."
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:102
+#: includes/admin/views/shortcodes-new.php:102
+msgid "User must be logged in and a member. Configured in Settings."
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:157
+#: includes/admin/views/shortcodes-new.php:157
+msgid "User must be logged in and a member. Purchase history tracked."
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:170
+#: includes/admin/views/shortcodes-new.php:170
+msgid "User must be logged in and a member. Survey must be enabled."
+msgstr ""
+
+#: includes/admin/views/shortcodes.php:33
+#: includes/admin/views/shortcodes.php:54
+#: includes/admin/views/shortcodes.php:65
+#: includes/admin/views/shortcodes.php:76
+#: includes/admin/views/shortcodes-new.php:33
+#: includes/admin/views/shortcodes-new.php:54
+#: includes/admin/views/shortcodes-new.php:65
+#: includes/admin/views/shortcodes-new.php:76
+msgid "User must be logged in."
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:247
+#: includes/admin/class-loyalty-program-ajax.php:839
+#: includes/admin/class-loyalty-program-ajax.php:941
+#: includes/admin/class-loyalty-program-ajax.php:1275
+msgid "User not found."
+msgstr "Nie znaleziono użytkownika."
+
+#: includes/admin/views/surveys.php:1379 includes/admin/views/surveys.php:1438
+msgid "User will enter a number..."
+msgstr ""
+
+#: includes/admin/views/surveys.php:1383 includes/admin/views/surveys.php:1442
+msgid "User will type a longer answer here..."
+msgstr ""
+
+#: includes/admin/views/surveys.php:1375 includes/admin/views/surveys.php:1434
+msgid "User will type here..."
+msgstr ""
+
+#: includes/admin/views/users-old-backup.php:526
+msgid "Username"
+msgstr "Nazwa użytkownika"
+
+#: includes/admin/class-loyalty-program-ajax.php:403
+msgid "Username:"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-users-table.php:28
+#: includes/admin/class-loyalty-program-admin-menu.php:70
+#: includes/admin/class-loyalty-program-admin-menu.php:71
+msgid "Users"
+msgstr "Użytkownicy"
+
+#: includes/admin/views/surveys.php:960
+msgid "Users can select MULTIPLE answers"
+msgstr ""
+
+#: includes/admin/views/live-expert.php:144
+msgid "Users must be enrolled in the loyalty program to receive points"
+msgstr ""
+"Użytkownicy muszą być zapisani do programu lojalnościowego, aby otrzymywać "
+"punkty"
+
+#: includes/admin/views/shortcodes-old-backup.php:471
+msgid "Users must be logged in to see their personal data"
+msgstr "Użytkownicy muszą być zalogowani, aby zobaczyć swoje dane osobowe"
+
+#: includes/admin/views/surveys.php:1392 includes/admin/views/surveys.php:1451
+msgid "Users will click stars to rate 1-5"
+msgstr ""
+
+#: includes/admin/views/surveys.php:963
+msgid "Users will enter a LONG text answer"
+msgstr ""
+
+#: includes/admin/views/surveys.php:962
+msgid "Users will enter a NUMERIC value"
+msgstr ""
+
+#: includes/admin/views/surveys.php:961
+msgid "Users will enter a SHORT text answer"
+msgstr ""
+
+#: includes/admin/views/surveys.php:964
+msgid "Users will rate from 1 to 5 stars"
+msgstr ""
+
+#: includes/admin/views/surveys.php:959
+msgid "Users will select ONE answer from multiple options"
+msgstr ""
+
+#: includes/admin/views/settings.php:123
+msgid "Using a Coupon Code"
+msgstr "Używanie kodu kuponu"
+
+#: includes/admin/views/settings.php:292
+msgid ""
+"Value of the personal discount coupon generated for each user when they join "
+"the loyalty program."
+msgstr ""
+"Wartość osobistego kuponu rabatowego generowanego dla każdego użytkownika po "
+"dołączeniu do programu lojalnościowego."
+
+#: includes/admin/views/developer-panel.php:109
+msgid "Version number used for CSS and JS file URLs. Default:"
+msgstr "Numer wersji używany w adresach URL plików CSS i JS. Domyślnie:"
+
+#: includes/admin/class-loyalty-program-survey-results-table.php:277
+msgid "View Answers"
+msgstr ""
+
+#: includes/admin/views/users-old-backup.php:518
+#: includes/admin/views/users-old-backup.php:626
+msgid "View Details"
+msgstr "Pokaż szczegóły"
+
+#: includes/admin/views/surveys.php:160 includes/admin/views/surveys.php:1711
+msgid "View Results"
+msgstr ""
+
+#: includes/admin/views/shortcodes-old-backup.php:429
+msgid "Visual step indicators"
+msgstr ""
+
+#: includes/admin/views/developer-panel.php:131
+msgid "Warning: Random versioning is enabled. This may impact performance."
+msgstr ""
+"Ostrzeżenie: Włączono losowe wersjonowanie. Może to wpłynąć na wydajność."
+
+#. Author of the plugin
+msgid "Weblo"
+msgstr "Weblo"
+
+#: includes/admin/views/dashboard.php:80
+msgid "Welcome to Loyalty Program"
+msgstr "Witamy w programie lojalnościowym"
+
+#: includes/admin/class-loyalty-program-ajax.php:1068
+msgid "Welcome to the loyalty program! You have been awarded %d points!"
+msgstr "Witamy w programie lojalnościowym! Otrzymałeś(aś) %d punktów!"
+
+#: includes/class-loyalty-program-shortcodes.php:392
+msgid "Wheel Locked"
+msgstr "Koło zablokowane"
+
+#: includes/admin/class-loyalty-program-ajax.php:463
+#: includes/admin/views/shortcodes.php:97
+#: includes/admin/views/users-old-backup.php:677
+#: includes/admin/views/shortcodes-new.php:97
+#: includes/admin/views/shortcodes-old-backup.php:208
+msgid "Wheel of Fortune"
+msgstr "Koło Fortuny"
+
+#: includes/admin/views/settings.php:372
+msgid "Wheel of Fortune Configuration"
+msgstr "Konfiguracja Koła Fortuny"
+
+#: includes/admin/views/settings.php:406
+msgid "Wheel Prizes"
+msgstr "Nagrody na kole"
+
+#: includes/admin/views/shortcodes-old-backup.php:235
+msgid "Wheel prizes must be configured in Settings"
+msgstr "Nagrody na kole muszą być skonfigurowane w ustawieniach"
+
+#: includes/admin/class-loyalty-program-ajax.php:1299
+#, php-format
+msgid "Wheel reset successfully for %s. They can now spin again."
+msgstr "Koła %s zostały pomyślnie zresetowane. Teraz mogą się znowu kręcić."
+
+#: includes/admin/views/developer-panel.php:62
+msgid ""
+"When enabled, the plugin will log debug information to a custom log file. "
+"Maximum file size: 5 MB."
+msgstr ""
+"Po włączeniu wtyczka będzie rejestrować informacje debugowania w "
+"niestandardowym pliku dziennika. Maksymalny rozmiar pliku: 5 MB."
+
+#: includes/admin/class-loyalty-program-ajax.php:1190
+#, php-format
+msgid "Won %d points from Wheel of Fortune: %s"
+msgstr "Zdobył %d punktów w Kole Fortuny: %s"
+
+#: includes/admin/views/settings.php:273
+msgid "WooCommerce Integration"
+msgstr "Integracja WooCommerce"
+
+#: includes/class-loyalty-program-woocommerce.php:705
+#: includes/admin/class-loyalty-program-ajax.php:999
+#: includes/admin/class-loyalty-program-ajax.php:1438
+msgid "WooCommerce is not active."
+msgstr "WooCommerce nie jest aktywny."
+
+#: includes/admin/views/rewards.php:58
+msgid ""
+"WooCommerce must be installed and activated to use product-based rewards."
+msgstr ""
+"Aby korzystać z nagród opartych na produktach, należy zainstalować i "
+"aktywować aplikację WooCommerce."
+
+#: includes/admin/class-loyalty-program-admin-menu.php:978
+msgid "WooCommerce not active"
+msgstr "WooCommerce nie jest aktywny"
+
+#: includes/admin/views/rewards.php:57
+msgid "WooCommerce not detected!"
+msgstr "WooCommerce nie zostało wykryte!"
+
+#: includes/admin/views/developer-panel.php:202
+msgid "WordPress Version"
+msgstr "Wersja WordPressa"
+
+#: includes/admin/views/developer-panel.php:215
+msgid "WP Debug Mode"
+msgstr "Tryb debugowania WP"
+
+#: includes/admin/views/settings.php:107
+msgid "Writing a Product Review"
+msgstr "Pisanie recenzji produktu"
+
+#: includes/admin/class-loyalty-program-ajax.php:474
+#: includes/admin/views/users-old-backup.php:562
+#: includes/admin/views/users-old-backup.php:690
+msgid "Yes"
+msgstr "Tak"
+
+#: includes/class-loyalty-program-shortcodes.php:1352
+msgid "You are already enrolled in the loyalty program!"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:1056
+msgid "You are already enrolled in the loyalty program."
+msgstr "Jesteś już zapisany do programu lojalnościowego."
+
+#: includes/class-loyalty-program-shortcodes.php:230
+msgid "You are enrolled in the Loyalty Program!"
+msgstr "Zostałeś zapisany do Programu Lojalnościowego!"
+
+#: includes/admin/class-loyalty-program-ajax.php:1140
+#, php-format
+msgid "You can spin again on: %s"
+msgstr "Możesz ponownie zakręcić na: %s"
+
+#: includes/class-loyalty-program-shortcodes.php:393
+#, php-format
+msgid "You can spin the wheel again on: %s"
+msgstr "Możesz ponownie zakręcić kołem na: %s"
+
+#: includes/admin/class-loyalty-program-ajax.php:1354
+msgid "You do not have enough points to redeem this reward."
+msgstr "Nie masz wystarczającej liczby punktów, aby odebrać tę nagrodę."
+
+#: includes/admin/class-loyalty-program-ajax.php:2097
+msgid "You do not have permission to export survey results."
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:99
+#: includes/admin/class-loyalty-program-ajax.php:132
+#: includes/admin/class-loyalty-program-ajax.php:231
+#: includes/admin/class-loyalty-program-ajax.php:800
+#: includes/admin/class-loyalty-program-ajax.php:925
+#: includes/admin/class-loyalty-program-ajax.php:992
+#: includes/admin/class-loyalty-program-ajax.php:1259
+msgid "You do not have permission to perform this action."
+msgstr "Nie masz uprawnień do wykonania tej czynności."
+
+#: includes/admin/class-loyalty-program-admin-menu.php:156
+#: includes/admin/class-loyalty-program-admin-menu.php:170
+#: includes/admin/class-loyalty-program-admin-menu.php:189
+#: includes/admin/class-loyalty-program-admin-menu.php:203
+#: includes/admin/class-loyalty-program-admin-menu.php:222
+#: includes/admin/class-loyalty-program-admin-menu.php:241
+#: includes/admin/class-loyalty-program-admin-menu.php:255
+#: includes/admin/class-loyalty-program-admin-menu.php:269
+#: includes/admin/class-loyalty-program-admin-menu.php:512
+#: includes/admin/class-loyalty-program-admin-menu.php:531
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Nie masz wystarczających uprawnień, aby uzyskać dostęp do tej strony."
+
+#: includes/admin/class-loyalty-program-ajax.php:1871
+msgid "You have already completed this survey."
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:1317
+msgid ""
+"You have already completed this survey. Thank you for your participation!"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:1712
+msgid "You have already set your birth date."
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:535
+msgid "You have not redeemed any rewards yet."
+msgstr "Nie odebrałeś jeszcze żadnej nagrody."
+
+#: includes/class-loyalty-program-shortcodes.php:339
+msgid ""
+"You must be a member of the loyalty program to spin the wheel. Please join "
+"first!"
+msgstr ""
+"Aby zakręcić kołem, musisz być członkiem programu lojalnościowego. "
+"Zarejestruj się najpierw!"
+
+#: includes/class-loyalty-program-shortcodes.php:429
+msgid "You must be a member of the loyalty program to view rewards."
+msgstr "Aby zobaczyć nagrody, musisz być członkiem programu lojalnościowego."
+
+#: includes/class-loyalty-program-shortcodes.php:528
+#: includes/admin/class-loyalty-program-ajax.php:1332
+msgid "You must be a member of the loyalty program."
+msgstr "Musisz być członkiem programu lojalnościowego."
+
+#: includes/admin/class-loyalty-program-ajax.php:1110
+msgid "You must be a member to spin the wheel."
+msgstr "Aby zakręcić kołem, musisz być członkiem."
+
+#: includes/admin/class-loyalty-program-ajax.php:1042
+msgid "You must be logged in to join the program."
+msgstr "Aby dołączyć do programu musisz się zalogować."
+
+#: includes/admin/class-loyalty-program-ajax.php:1319
+msgid "You must be logged in to redeem rewards."
+msgstr "Aby odebrać nagrody, musisz się zalogować."
+
+#: includes/admin/class-loyalty-program-ajax.php:1096
+msgid "You must be logged in to spin the wheel."
+msgstr "Aby zakręcić kołem, musisz się zalogować."
+
+#: includes/admin/class-loyalty-program-ajax.php:1812
+msgid "You must be logged in to submit this survey."
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:1612
+msgid "You must be logged in to update consent preferences."
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:1690
+msgid "You must be logged in to update your birth date."
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:1433
+msgid "You must be logged in."
+msgstr "Musisz być zalogowany."
+
+#: includes/class-loyalty-program-shortcodes.php:674
+#: includes/class-loyalty-program-shortcodes.php:757
+#: includes/class-loyalty-program-shortcodes.php:1081
+#: includes/admin/class-loyalty-program-ajax.php:1626
+#: includes/admin/class-loyalty-program-ajax.php:1704
+#: includes/admin/class-loyalty-program-ajax.php:1826
+msgid "You need to join the loyalty program first."
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:798
+msgid "You've already received %d points for this!"
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:1242
+#: includes/class-loyalty-program-shortcodes.php:1256
+msgid "Your answer..."
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:769
+msgid "Your Birth Date"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:1787
+msgid "Your birth date has been saved successfully!"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:1786
+msgid ""
+"Your birth date has been saved successfully! You earned %d loyalty points!"
+msgstr ""
+
+#: includes/admin/class-loyalty-program-ajax.php:1661
+msgid "Your consent preferences have been saved successfully!"
+msgstr ""
+
+#: includes/class-loyalty-program-shortcodes.php:126
+msgid "Your Personal Coupon"
+msgstr "Twój osobisty kupon"
+
+#: includes/admin/views/shortcodes-old-backup.php:78
+msgid "Your Personal Coupon: LOYALTY-ABC12345"
+msgstr "Twój osobisty kupon: LOYALTY-ABC12345"
+
+#: includes/class-loyalty-program-shortcodes.php:455
+#, php-format
+msgid "Your Points: %s"
+msgstr "Twoje punkty: %s"
