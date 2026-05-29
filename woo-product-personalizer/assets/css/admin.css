@@ -818,3 +818,8 @@
 	flex-wrap: wrap;
 	gap: 6px;
 }
+#wpp_layout_builder .dashicons,
+#wpp_layout_builder .dashicons-before:before {
+    display: flex;
+    align-items: center;
+}

@@ -43,6 +43,57 @@
 	var maskCache = {};
 	var previewResizeObserver = null;
 
+	function getLivePreviewRenderScale() {
+		var dpr = window.devicePixelRatio || 1;
+		var exportRatio = 2;
+
+		try {
+			exportRatio = getEffectiveExportPixelRatio();
+		} catch (e) {
+			exportRatio = parseInt(wppData.previewExportScale, 10) || 2;
+		}
+
+		// Keep live preview close to cart-preview quality while limiting GPU cost.
+		return Math.max(1, Math.min(8, Math.max(dpr, exportRatio)));
+	}
+
+	function tuneLayerCanvasQuality(layer) {
+		if (!layer || typeof layer.getCanvas !== 'function') {
+			return;
+		}
+
+		var sceneCanvas = layer.getCanvas();
+		if (!sceneCanvas || typeof sceneCanvas.getContext !== 'function') {
+			return;
+		}
+
+		if (typeof sceneCanvas.setPixelRatio === 'function') {
+			sceneCanvas.setPixelRatio(getLivePreviewRenderScale());
+		}
+
+		if (typeof layer.getHitCanvas === 'function') {
+			var hitCanvas = layer.getHitCanvas();
+			if (hitCanvas && typeof hitCanvas.setPixelRatio === 'function') {
+				hitCanvas.setPixelRatio(getLivePreviewRenderScale());
+			}
+		}
+
+		var ctx = sceneCanvas.getContext();
+		if (!ctx) {
+			return;
+		}
+
+		ctx.imageSmoothingEnabled = true;
+		ctx.imageSmoothingQuality = 'high';
+		if (sceneCanvas._canvas && sceneCanvas._canvas.style) {
+			sceneCanvas._canvas.style.imageRendering = 'auto';
+		}
+	}
+
+	function tunePreviewQuality() {
+		[bgLayer, photoLayer, borderLayer, overlayLayer, textLayer].forEach(tuneLayerCanvasQuality);
+	}
+
 	function ensureTextFieldState(fieldId) {
 		var current = state.textFields[fieldId];
 
@@ -84,6 +135,21 @@
 		});
 	}
 
+	function stripEmojiChars(value) {
+		var text = String(value || '');
+
+		try {
+			return text
+				.replace(/\p{Extended_Pictographic}/gu, '')
+				.replace(/[\u200D\uFE0F]/g, '');
+		} catch (e) {
+			return text.replace(
+				/[\u{1F1E6}-\u{1F1FF}\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{200D}\u{FE0F}]/gu,
+				''
+			);
+		}
+	}
+
 	function getBaseFontSize(field) {
 		return (field.style && field.style.fontSize) || 48;
 	}
@@ -102,6 +168,10 @@
 		}
 
 		return (field && field.style && field.style.fontFamily) || 'Arial';
+	}
+
+	function isTextShadowEnabled(field) {
+		return !!(field && field.style && field.style.textShadow);
 	}
 
 	function loadLayoutGoogleFonts(callback) {
@@ -144,14 +214,14 @@
 		meta = meta || ensureTextFieldState(field.id);
 
 		if (meta.touched) {
-			return String(meta.value ?? '');
+			return stripEmojiChars(String(meta.value ?? ''));
 		}
 
 		if (String(meta.value || '').length) {
-			return String(meta.value);
+			return stripEmojiChars(String(meta.value));
 		}
 
-		return field.default_value ? String(field.default_value) : '';
+		return field.default_value ? stripEmojiChars(String(field.default_value)) : '';
 	}
 
 	function getEffectiveTextValue(fieldId) {
@@ -167,14 +237,14 @@
 		var meta = ensureTextFieldState(field.id);
 
 		if (meta.touched) {
-			return meta.value || '';
+			return stripEmojiChars(meta.value || '');
 		}
 
 		if (String(meta.value || '').length) {
-			return meta.value;
+			return stripEmojiChars(meta.value);
 		}
 
-		return field.default_value || '';
+		return stripEmojiChars(field.default_value || '');
 	}
 
 	function getLayerSnapshot() {
@@ -276,6 +346,7 @@
 		$form.append('<input type="hidden" name="wpp_project_state" class="wpp-project-state" value="" />');
 		$form.append('<input type="hidden" name="wpp_preview_data" class="wpp-preview-data" value="" />');
 		$form.append('<input type="hidden" name="wpp_preview_layers_data" class="wpp-preview-layers-data" value="" />');
+		$form.append('<input type="hidden" name="wpp_text_svg_data" class="wpp-text-svg-data" value="" />');
 	}
 
 	function bindEvents() {
@@ -670,6 +741,7 @@
 		previewScale = newScale;
 		stage.width(width * previewScale);
 		stage.height(height * previewScale);
+		tunePreviewQuality();
 		resizeLayerBackgrounds();
 
 		Object.keys(imageNodes).forEach(function (slotId) {
@@ -686,6 +758,7 @@
 			if (node._hasMask && node._photoState) {
 				var ps = node._photoState;
 
+				ps.renderScale = getLivePreviewRenderScale();
 				ps.frameW = fw;
 				ps.frameH = fh;
 				ps.offsetX *= scaleRatio;
@@ -788,6 +861,7 @@
 		stage.add(borderLayer);
 		stage.add(overlayLayer);
 		stage.add(textLayer);
+		tunePreviewQuality();
 		borderLayer.zIndex(2);
 		overlayLayer.zIndex(3);
 		textLayer.zIndex(4);
@@ -945,8 +1019,13 @@
 
 	function onTextInput() {
 		var id = $(this).data('field-id');
-		var val = $(this).val();
+		var rawVal = $(this).val();
+		var val = stripEmojiChars(rawVal);
 		var meta = ensureTextFieldState(id);
+
+		if (val !== rawVal) {
+			$(this).val(val);
+		}
 
 		meta.touched = true;
 		meta.value = val;
@@ -1341,6 +1420,8 @@
 		}
 
 		var ctx = canvas.getContext('2d');
+		ctx.imageSmoothingEnabled = true;
+		ctx.imageSmoothingQuality = 'high';
 		ctx.clearRect(0, 0, fw, fh);
 
 		if (ps.whiteBg) {
@@ -1404,7 +1485,8 @@
 				flipY: 1,
 				baseDrawW: drawW,
 				baseDrawH: drawH,
-				compositeCanvas: null
+				compositeCanvas: null,
+				renderScale: getLivePreviewRenderScale()
 			};
 
 			paintSlotComposite(photoState);
@@ -1635,7 +1717,7 @@
 		}
 
 		var fontSize = Math.max(8, getEffectiveFontSize(field, meta) * previewScale);
-		var textNode = new Konva.Text({
+		var textProps = {
 			name: key,
 			text: displayText,
 			x: (style.x || 0) * previewScale + (meta.offsetX || 0) * previewScale,
@@ -1647,12 +1729,17 @@
 			fill: style.color || '#ffffff',
 			align: style.align || 'center',
 			verticalAlign: 'middle',
-			listening: true,
-			shadowColor: 'rgba(0,0,0,0.35)',
-			shadowBlur: 2,
-			shadowOffset: { x: 1, y: 1 },
-			shadowOpacity: 0.8
-		});
+			listening: true
+		};
+
+		if (isTextShadowEnabled(field)) {
+			textProps.shadowColor = 'rgba(0,0,0,0.35)';
+			textProps.shadowBlur = 2;
+			textProps.shadowOffset = { x: 1, y: 1 };
+			textProps.shadowOpacity = 0.8;
+		}
+
+		var textNode = new Konva.Text(textProps);
 
 		textNode._fieldId = fieldId;
 		textNode.on('mousedown touchstart', function () {
@@ -2027,7 +2114,7 @@
 		setMaskedRenderScale(pixelRatio);
 		stage.draw();
 		var dataUrl = stage.toDataURL({ pixelRatio: pixelRatio });
-		setMaskedRenderScale(1);
+		setMaskedRenderScale(getLivePreviewRenderScale());
 		stage.draw();
 		return dataUrl;
 	}
@@ -2053,6 +2140,244 @@
 		return Math.max(1, Math.min(24, normalized));
 	}
 
+	function escapeSvgText(value) {
+		return String(value)
+			.replace(/&/g, '&amp;')
+			.replace(/</g, '&lt;')
+			.replace(/>/g, '&gt;')
+			.replace(/"/g, '&quot;')
+			.replace(/'/g, '&#39;');
+	}
+
+	function formatSvgNumber(num) {
+		var n = parseFloat(num);
+
+		if (!isFinite(n)) {
+			return '0';
+		}
+
+		return String(Math.round(n * 100) / 100);
+	}
+
+	function buildSvgTextLines(text, maxWidth, fontSize) {
+		var charWidth = Math.max(4, fontSize * 0.52);
+		var lines = [];
+		var paragraphs = String(text).split(/\r\n|\r|\n/);
+
+		paragraphs.forEach(function (paragraph) {
+			if (!String(paragraph).trim()) {
+				lines.push('');
+				return;
+			}
+
+			var words = paragraph.split(/\s+/);
+			var current = '';
+
+			words.forEach(function (word) {
+				if (!word) {
+					return;
+				}
+
+				var candidate = current ? current + ' ' + word : word;
+
+				if (candidate.length * charWidth <= maxWidth || !current) {
+					current = candidate;
+					return;
+				}
+
+				lines.push(current);
+				current = word;
+			});
+
+			if (current) {
+				lines.push(current);
+			}
+		});
+
+		return lines.length ? lines : [''];
+	}
+
+	function buildSvgTextShadowFilterDef() {
+		return (
+			'<defs><filter id="wpp-text-shadow" x="-30%" y="-30%" width="160%" height="160%">' +
+			'<feOffset dx="1" dy="1" result="off"/>' +
+			'<feGaussianBlur in="off" stdDeviation="1" result="blur"/>' +
+			'<feFlood flood-color="#000000" flood-opacity="0.35"/>' +
+			'<feComposite in2="blur" operator="in" result="shadow"/>' +
+			'<feMerge><feMergeNode in="shadow"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>'
+		);
+	}
+
+	function buildSvgTextElement(text, boxX, boxY, boxW, boxH, fontSize, fontFamily, fill, align, linesOverride, useShadow) {
+		var lines = linesOverride && linesOverride.length ? linesOverride : buildSvgTextLines(text, boxW, fontSize);
+		var lineHeight = fontSize * 1.2;
+		var blockHeight = lines.length * lineHeight;
+		var startY = boxY + Math.max(0, (boxH - blockHeight) / 2) + fontSize;
+		var anchor = 'middle';
+		var anchorX = boxX + boxW / 2;
+
+		if (align === 'left') {
+			anchor = 'start';
+			anchorX = boxX;
+		} else if (align === 'right') {
+			anchor = 'end';
+			anchorX = boxX + boxW;
+		}
+
+		var tspans = '';
+		var currentY = startY;
+
+		lines.forEach(function (line) {
+			tspans +=
+				'<tspan x="' +
+				formatSvgNumber(anchorX) +
+				'" y="' +
+				formatSvgNumber(currentY) +
+				'">' +
+				escapeSvgText(line) +
+				'</tspan>';
+			currentY += lineHeight;
+		});
+
+		var filterAttr = useShadow ? ' filter="url(#wpp-text-shadow)"' : '';
+
+		return (
+			'<text font-family="' +
+			escapeSvgText(fontFamily) +
+			'" font-size="' +
+			Math.round(fontSize) +
+			'" fill="' +
+			escapeSvgText(fill) +
+			'" text-anchor="' +
+			anchor +
+			'" dominant-baseline="alphabetic"' +
+			filterAttr +
+			'>' +
+			tspans +
+			'</text>'
+		);
+	}
+
+	function getKonvaTextLines(node) {
+		if (!node || !node.textArr || !node.textArr.length) {
+			return null;
+		}
+
+		return node.textArr.map(function (row) {
+			return row && row.text !== undefined ? String(row.text) : '';
+		});
+	}
+
+	function buildSvgTextFromKonvaNode(node, scale, useShadow) {
+		scale = Math.max(0.01, scale || 1);
+
+		return buildSvgTextElement(
+			node.text(),
+			node.x() / scale,
+			node.y() / scale,
+			node.width() / scale,
+			node.height() / scale,
+			node.fontSize() / scale,
+			node.fontFamily(),
+			node.fill(),
+			node.align(),
+			getKonvaTextLines(node),
+			useShadow
+		);
+	}
+
+	function exportTextSvg() {
+		if (!wppData.layout || !Array.isArray(wppData.layout.text_fields)) {
+			return '';
+		}
+
+		var canvas = wppData.layout.canvas || {};
+		var cw = canvas.width || 800;
+		var ch = canvas.height || 1000;
+		var scale = Math.max(0.01, previewScale || 1);
+		var elements = [];
+		var hasText = false;
+		var needsShadowFilter = false;
+
+		(wppData.layout.text_fields || []).forEach(function (field) {
+			var fieldId = field.id;
+
+			if (!fieldId) {
+				return;
+			}
+
+			var meta = ensureTextFieldState(fieldId);
+			var displayText = getFieldDisplayText(field, meta);
+
+			if (!String(displayText).trim()) {
+				return;
+			}
+
+			hasText = true;
+			var style = field.style || {};
+			var useShadow = isTextShadowEnabled(field);
+			var node = textNodes[fieldId];
+
+			if (useShadow) {
+				needsShadowFilter = true;
+			}
+
+			if (node) {
+				elements.push(buildSvgTextFromKonvaNode(node, scale, useShadow));
+				return;
+			}
+
+			elements.push(
+				buildSvgTextElement(
+					displayText,
+					(style.x || 0) + (meta.offsetX || 0),
+					(style.y || 0) + (meta.offsetY || 0),
+					Math.max(20, style.width || 400),
+					Math.max(20, style.height || 80),
+					Math.max(8, getEffectiveFontSize(field, meta)),
+					getEffectiveFontFamily(field, meta),
+					style.color || '#ffffff',
+					style.align || 'center',
+					null,
+					useShadow
+				)
+			);
+		});
+
+		if (!hasText) {
+			return '';
+		}
+
+		var fontStyleBlock = '';
+		if (window.WppGoogleFonts && typeof window.WppGoogleFonts.collectUsedFieldUrls === 'function') {
+			var fontUrls = window.WppGoogleFonts.collectUsedFieldUrls(wppData.layout, state.text_fields, function (field) {
+				var meta = ensureTextFieldState(field.id);
+				return !!String(getFieldDisplayText(field, meta)).trim();
+			});
+			if (fontUrls.length && typeof window.WppGoogleFonts.buildSvgFontStyleBlock === 'function') {
+				fontStyleBlock = window.WppGoogleFonts.buildSvgFontStyleBlock(fontUrls);
+			}
+		}
+
+		var defs = fontStyleBlock + (needsShadowFilter ? buildSvgTextShadowFilterDef() + '\n' : '');
+
+		return (
+			'<?xml version="1.0" encoding="UTF-8"?>\n' +
+			'<svg xmlns="http://www.w3.org/2000/svg" width="' +
+			cw +
+			'" height="' +
+			ch +
+			'" viewBox="0 0 ' +
+			cw +
+			' ' +
+			ch +
+			'">\n' +
+			defs +
+			elements.join('\n') +
+			'\n</svg>'
+		);
+	}
+
 	function exportLayersPreview() {
 		if (!stage) {
 			return '';
@@ -2075,7 +2400,7 @@
 		hiddenLayers.forEach(function (layer) {
 			layer.visible(true);
 		});
-		setMaskedRenderScale(1);
+		setMaskedRenderScale(getLivePreviewRenderScale());
 		stage.draw();
 
 		return dataUrl;
@@ -2085,10 +2410,12 @@
 		var json = JSON.stringify(exportState());
 		var preview = exportPreview();
 		var layersPreview = exportLayersPreview();
+		var textSvg = exportTextSvg();
 		var nonce = $('.wpp-personalizer input[name="wpp_personalizer_nonce"]').val() || wppData.nonce;
 		$('form.cart .wpp-project-state, .wpp-personalizer .wpp-project-state').val(json);
 		$('form.cart .wpp-preview-data, .wpp-personalizer .wpp-preview-data').val(preview);
 		$('form.cart .wpp-preview-layers-data, .wpp-personalizer .wpp-preview-layers-data').val(layersPreview);
+		$('form.cart .wpp-text-svg-data, .wpp-personalizer .wpp-text-svg-data').val(textSvg);
 		$('form.cart .wpp-personalizer-nonce, .wpp-personalizer input[name="wpp_personalizer_nonce"]').val(nonce);
 	}
 

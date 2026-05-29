@@ -8,6 +8,8 @@
 	padding: 0;
 	height: 0;
 	overflow: visible;
+	z-index: 999999999 !important; 
+	position: relative; 
 }
 
 .wpp-open-personalizer-wrap {
@@ -107,23 +109,26 @@ body.wpp-modal-open {
 .wpp-modal__footer {
 	padding: 16px 24px;
 	border-top: 1px solid #e5e5e5;
-	display: grid;
-	grid-template-columns: 1fr auto;
-	align-items: center;
+	display: flex;
+    justify-content: flex-end;
 	gap: 12px;
 }
 
 .wpp-modal__footer .wpp-transform-toolbar {
-	grid-column: 1;
-	justify-self: start;
 	margin: 0;
+	margin-right: auto;
 	min-width: 0;
 }
 
 .wpp-modal__footer .wpp-save-personalization {
-	grid-column: 2;
-	justify-self: end;
+	margin-left: auto;
 	flex-shrink: 0;
+	padding: .618em 1.5em;
+}
+@media (min-width: 992px) {
+	.wpp-modal__footer .wpp-save-personalization {
+		min-width: 320px;
+	}
 }
 
 .wpp-editor__preview {
@@ -156,6 +161,7 @@ body.wpp-modal-open {
 
 .wpp-canvas-container canvas {
 	display: block;
+	image-rendering: auto;
 }
 
 .wpp-field {
@@ -261,6 +267,12 @@ margin-bottom: 0;
 
 .wpp-personalizer--modal .wpp-editor__controls .wpp-transform-toolbar {
 	display: none;
+	z-index: 999999999 !important; 
+	position: relative;
+}
+.wpp-crop-modal__dialog{
+	position: absolute;
+	bottom: 0;
 }
 
 .wpp-image-field.is-active {
@@ -598,4 +610,22 @@ body.wpp-crop-modal-open {
 
 .wpp-crop-modal__select {
 	min-width: 120px;
+}
+@media (max-width: 374px) {
+    .wpp-crop-modal__footer .wpp-crop-modal__actions .btn {
+        font-size: 13px;
+        min-width: auto;
+    }
+}
+.wpp-modal__footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+@media (max-width: 992px) {
+.wpp-save-personalization{
+min-width: 100%;
+	
+}
+	.wpp-modal__footer{display: flex; flex-direction: row; flex-wrap: wrap;}
 }

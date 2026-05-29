@@ -118,6 +118,7 @@ class LayoutConfigSanitizer {
 						'align'      => in_array( $field['style']['align'] ?? 'center', array( 'left', 'center', 'right' ), true )
 							? $field['style']['align']
 							: 'center',
+						'textShadow' => ! empty( $field['style']['textShadow'] ),
 					),
 				);
 			}

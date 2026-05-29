@@ -213,6 +213,41 @@
 		return urls;
 	}
 
+	function collectUsedFieldUrls(layout, textState, hasTextFn) {
+		var urls = [];
+		var checkText = typeof hasTextFn === 'function' ? hasTextFn : function () {
+			return true;
+		};
+
+		(layout && layout.text_fields ? layout.text_fields : []).forEach(function (field) {
+			if (!field || !field.id || !checkText(field, textState)) {
+				return;
+			}
+
+			resolveFieldFonts(field).links.forEach(function (url) {
+				if (urls.indexOf(url) === -1) {
+					urls.push(url);
+				}
+			});
+		});
+
+		return urls;
+	}
+
+	function buildSvgFontStyleBlock(urls) {
+		if (!urls || !urls.length) {
+			return '';
+		}
+
+		var imports = urls
+			.map(function (url) {
+				return '@import url("' + String(url).replace(/\\/g, '\\\\').replace(/"/g, '\\"') + '");';
+			})
+			.join('\n');
+
+		return '<defs><style type="text/css"><![CDATA[\n' + imports + '\n]]></style></defs>\n';
+	}
+
 	global.WppGoogleFonts = {
 		isGoogleFontsCssUrl: isGoogleFontsCssUrl,
 		parseLines: parseLines,
@@ -222,6 +257,8 @@
 		getDefaultFontFamily: getDefaultFontFamily,
 		getEffectiveFontFamily: getEffectiveFontFamily,
 		loadUrls: loadUrls,
-		collectLayoutUrls: collectLayoutUrls
+		collectLayoutUrls: collectLayoutUrls,
+		collectUsedFieldUrls: collectUsedFieldUrls,
+		buildSvgFontStyleBlock: buildSvgFontStyleBlock
 	};
 })(typeof window !== 'undefined' ? window : this);

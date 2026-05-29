@@ -38,6 +38,9 @@ class OrderItemMetaDisplay {
 		'_wpp_preview_layers_full_url',
 		'_wpp_layers_production_file',
 		'_wpp_layers_production_url',
+		'_wpp_preview_text_svg_full_url',
+		'_wpp_text_svg_file',
+		'_wpp_text_svg_url',
 	);
 
 	/**
@@ -123,9 +126,11 @@ class OrderItemMetaDisplay {
 		}
 
 		PreviewDisplay::render_admin_layers_preview( $item );
+		PreviewDisplay::render_admin_text_svg_preview( $item );
 
 		$this->render_item_production_link( $item );
 		$this->render_item_layers_production_link( $item );
+		$this->render_item_text_svg_link( $item );
 
 		if ( $order_id ) {
 			$this->render_order_files( $order_id );
@@ -232,6 +237,26 @@ class OrderItemMetaDisplay {
 			'<p class="wpp-order-item-meta__production"><a href="%1$s" class="button button-small" target="_blank" rel="noopener noreferrer">%2$s</a></p>',
 			esc_url( $layers_url ),
 			esc_html__( 'Layers PNG (no background)', 'woo-product-personalizer' )
+		);
+	}
+
+	/**
+	 * Link to the text-only production SVG when available.
+	 *
+	 * @param \WC_Order_Item $item Order item.
+	 * @return void
+	 */
+	private function render_item_text_svg_link( $item ) {
+		$text_url = (string) $item->get_meta( '_wpp_text_svg_url' );
+
+		if ( '' === $text_url || ! PreviewDisplay::is_svg_preview_available( $text_url ) ) {
+			return;
+		}
+
+		printf(
+			'<p class="wpp-order-item-meta__production"><a href="%1$s" class="button button-small" target="_blank" rel="noopener noreferrer" download>%2$s</a></p>',
+			esc_url( $text_url ),
+			esc_html__( 'Text SVG (no background)', 'woo-product-personalizer' )
 		);
 	}
 

@@ -397,6 +397,10 @@ msgstr "Schriftgröße"
 msgid "Font size (+/− in editor)"
 msgstr "Schriftgröße (+/− im Editor)"
 
+#: src/Core/Assets.php
+msgid "Text shadow (preview & SVG export)"
+msgstr "Textschatten (Vorschau & SVG-Export)"
+
 #: templates/admin/settings-page.php:67
 msgid ""
 "Formats the storefront personalizer can load on the canvas (Konva). GIF/AVIF "
@@ -537,6 +541,18 @@ msgstr "Bezeichnung"
 #: src/Admin/OrderItemMetaDisplay.php:234
 msgid "Layers PNG (no background)"
 msgstr "Ebenen-PNG (ohne Hintergrund)"
+
+#: src/Admin/OrderItemMetaDisplay.php
+msgid "Text SVG (no background)"
+msgstr "Text-SVG (ohne Hintergrund)"
+
+#: src/Integrations/WooCommerce/PreviewDisplay.php
+msgid "Text preview (SVG)"
+msgstr "Textvorschau (SVG)"
+
+#: src/Integrations/WooCommerce/PreviewDisplay.php
+msgid "Personalization text SVG preview"
+msgstr "Personalisierte Textvorschau (SVG)"
 
 #: src/Integrations/WooCommerce/PreviewDisplay.php:207
 msgid "Layers preview (no background)"

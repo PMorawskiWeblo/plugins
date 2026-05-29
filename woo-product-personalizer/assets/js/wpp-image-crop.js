@@ -122,7 +122,7 @@
 
 	function exportCanvas(canvas) {
 		var mime = pending.outputMime || 'image/jpeg';
-		var quality = mime === 'image/png' ? undefined : 0.92;
+		var quality = mime === 'image/png' ? undefined : 1;
 		var fileName =
 			pending.fileName ||
 			(mime === 'image/png' ? 'cropped.png' : 'cropped.jpg');
@@ -165,11 +165,17 @@
 			return;
 		}
 
-		var frame = pending.frame || { width: 1, height: 1 };
-		var maxEdge = Math.max(frame.width || 1, frame.height || 1, 1);
-		var exportScale = Math.min(4, Math.max(1, 2048 / maxEdge));
-		var outW = Math.max(1, Math.round((frame.width || 1) * exportScale));
-		var outH = Math.max(1, Math.round((frame.height || 1) * exportScale));
+		var cropData = cropper.getData(true) || {};
+		var outW = Math.max(1, Math.round(cropData.width || 0));
+		var outH = Math.max(1, Math.round(cropData.height || 0));
+
+		if (!outW || !outH) {
+			var frame = pending.frame || { width: 1, height: 1 };
+			var maxEdge = Math.max(frame.width || 1, frame.height || 1, 1);
+			var exportScale = Math.min(4, Math.max(1, 2048 / maxEdge));
+			outW = Math.max(1, Math.round((frame.width || 1) * exportScale));
+			outH = Math.max(1, Math.round((frame.height || 1) * exportScale));
+		}
 
 		var canvas = cropper.getCroppedCanvas({
 			width: outW,
@@ -253,15 +259,21 @@
 			toggleDragModeOnDblclick: false,
 			checkOrientation: true,
 			ready: function () {
-				var self = this;
-				self.crop();
-				fitImageToModal(self, aspectRatio);
+				if (!cropper) {
+					return;
+				}
+
+				cropper.crop();
+				fitImageToModal(cropper, aspectRatio);
 				if (pending && pending.useMaskShape && pending.maskUrl) {
-					$(self.cropper).addClass('wpp-crop--mask-shape');
+					$(cropper.cropper).addClass('wpp-crop--mask-shape');
 				}
 				window.requestAnimationFrame(function () {
-					self.resize();
-					fitImageToModal(self, aspectRatio);
+					if (!cropper) {
+						return;
+					}
+					cropper.resize();
+					fitImageToModal(cropper, aspectRatio);
 				});
 			}
 		});

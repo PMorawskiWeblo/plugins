@@ -433,23 +433,26 @@
 			})
 		);
 
-		group.add(
-			new Konva.Text({
-				name: 'wpp-text-content',
-				width: w,
-				height: h,
-				text: textValue,
-				fontSize: fontSize,
-				fontFamily: fontFamily,
-				fill: style.color || '#ffffff',
-				align: style.align || 'center',
-				verticalAlign: 'middle',
-				shadowColor: 'rgba(0,0,0,0.35)',
-				shadowBlur: 2,
-				shadowOffset: { x: 1, y: 1 },
-				shadowOpacity: 0.8
-			})
-		);
+		var textProps = {
+			name: 'wpp-text-content',
+			width: w,
+			height: h,
+			text: textValue,
+			fontSize: fontSize,
+			fontFamily: fontFamily,
+			fill: style.color || '#ffffff',
+			align: style.align || 'center',
+			verticalAlign: 'middle'
+		};
+
+		if (style.textShadow) {
+			textProps.shadowColor = 'rgba(0,0,0,0.35)';
+			textProps.shadowBlur = 2;
+			textProps.shadowOffset = { x: 1, y: 1 };
+			textProps.shadowOpacity = 0.8;
+		}
+
+		group.add(new Konva.Text(textProps));
 
 		group.on('mousedown touchstart', function (e) {
 			e.cancelBubble = true;

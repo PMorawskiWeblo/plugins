@@ -73,6 +73,14 @@ class ValidationService {
 					$field['label'] ?? $id
 				);
 			}
+
+			if ( $this->contains_emoji( $value ) ) {
+				$errors[] = sprintf(
+					/* translators: %s: field label */
+					__( 'Emojis are not allowed: %s', 'woo-product-personalizer' ),
+					$field['label'] ?? $id
+				);
+			}
 		}
 
 		$upload_token = UploadSession::get_token();
@@ -119,5 +127,21 @@ class ValidationService {
 	 */
 	public function build_summary( array $state, Layout $layout ) {
 		return PersonalizationSummaryHelper::build_summary( $state, $layout );
+	}
+
+	/**
+	 * Detect emoji / pictographic symbols in text.
+	 *
+	 * @param string $value Text value.
+	 * @return bool
+	 */
+	private function contains_emoji( $value ) {
+		$value = (string) $value;
+
+		if ( '' === $value ) {
+			return false;
+		}
+
+		return (bool) preg_match( '/[\x{1F1E6}-\x{1F1FF}\x{1F300}-\x{1FAFF}\x{2600}-\x{27BF}\x{200D}\x{FE0F}]/u', $value );
 	}
 }

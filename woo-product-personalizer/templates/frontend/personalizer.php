@@ -44,6 +44,7 @@ $toolbar_partial = WPP_PLUGIN_PATH . 'templates/frontend/partials/transform-tool
 				<input type="hidden" name="wpp_project_state" class="wpp-project-state" value="" />
 				<input type="hidden" name="wpp_preview_data" class="wpp-preview-data" value="" />
 				<input type="hidden" name="wpp_preview_layers_data" class="wpp-preview-layers-data" value="" />
+				<input type="hidden" name="wpp_text_svg_data" class="wpp-text-svg-data" value="" />
 			</div>
 			<div class="wpp-modal__footer">
 				<?php if ( file_exists( $toolbar_partial ) ) : ?>

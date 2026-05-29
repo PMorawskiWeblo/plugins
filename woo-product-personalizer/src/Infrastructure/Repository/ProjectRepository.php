@@ -9,6 +9,7 @@ namespace WooProductPersonalizer\Infrastructure\Repository;
 
 use WooProductPersonalizer\Core\Logger;
 use WooProductPersonalizer\Infrastructure\Generator\GeneratorManager;
+use WooProductPersonalizer\Infrastructure\Generator\TextSvgGenerator;
 use WooProductPersonalizer\Helpers\PersonalizationSummaryHelper;
 use WooProductPersonalizer\Infrastructure\Repository\LayoutRepository;
 use WooProductPersonalizer\Helpers\UploadUrlValidator;
@@ -64,9 +65,10 @@ class ProjectRepository {
 	 * @param int    $product_id          Product ID.
 	 * @param int    $layout_id           Layout ID.
 	 * @param string $layers_preview_data Layers-only preview (optional).
-	 * @return array{json: string, production: string, production_url: string, layers_production?: string, layers_production_url?: string}|false
+	 * @param string $text_svg_source     Text-only SVG from browser or path (optional).
+	 * @return array{json: string, production: string, production_url: string, layers_production?: string, layers_production_url?: string, text_svg?: string, text_svg_url?: string}|false
 	 */
-	public function save_order_project( $order_id, $item_id, array $state, $preview_data, $product_id, $layout_id, $layers_preview_data = '' ) {
+	public function save_order_project( $order_id, $item_id, array $state, $preview_data, $product_id, $layout_id, $layers_preview_data = '', $text_svg_source = '' ) {
 		$dir = $this->uploads->create_order_directory( $order_id );
 		if ( ! $dir ) {
 			return false;
@@ -106,7 +108,58 @@ class ProjectRepository {
 			$result['layers_production_url']  = $layers['url'] ?? '';
 		}
 
+		$text_svg = $this->save_text_svg( $order_id, $item_id, $state, $layout_id, $dir, $text_svg_source );
+		if ( ! empty( $text_svg['path'] ) ) {
+			$result['text_svg']     = $text_svg['path'];
+			$result['text_svg_url'] = $text_svg['url'];
+		}
+
 		return $result;
+	}
+
+	/**
+	 * Persist text layers as SVG when the layout has text fields.
+	 *
+	 * @param int    $order_id        Order ID.
+	 * @param int    $item_id         Item ID.
+	 * @param array  $state           Project state.
+	 * @param int    $layout_id       Layout ID.
+	 * @param string $dir             Order directory.
+	 * @param string $text_svg_source Browser SVG, file path, or empty for server build.
+	 * @return array{path: string, url: string}
+	 */
+	private function save_text_svg( $order_id, $item_id, array $state, $layout_id, $dir, $text_svg_source ) {
+		if ( empty( $state['text_fields'] ) || ! is_array( $state['text_fields'] ) ) {
+			return array(
+				'path' => '',
+				'url'  => '',
+			);
+		}
+
+		$has_content = false;
+		foreach ( $state['text_fields'] as $raw ) {
+			$value = is_array( $raw ) ? (string) ( $raw['value'] ?? '' ) : (string) $raw;
+			if ( '' !== trim( $value ) ) {
+				$has_content = true;
+				break;
+			}
+		}
+
+		if ( ! $has_content ) {
+			return array(
+				'path' => '',
+				'url'  => '',
+			);
+		}
+
+		$generator = new TextSvgGenerator( $this->uploads, $this->logger );
+		$source    = trim( (string) $text_svg_source );
+
+		if ( '' !== $source ) {
+			return $generator->save( $order_id, $item_id, $source, $dir, 'tekst', $layout_id, $state );
+		}
+
+		return $generator->generate_from_state( $order_id, $item_id, $state, $layout_id, $dir );
 	}
 
 	/**

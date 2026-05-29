@@ -21,6 +21,7 @@ class CartPreviewStorage {
 	const THUMB_QUALITY    = 82;
 	const FULL_FILENAME    = 'full.png';
 	const LAYERS_FILENAME  = 'layers.png';
+	const TEXT_FILENAME    = 'text.svg';
 	const THUMB_FILENAME   = 'preview.jpg';
 
 	/**
@@ -124,6 +125,97 @@ class CartPreviewStorage {
 			'path' => $path,
 			'url'  => $this->preview_file_url( $id, self::LAYERS_FILENAME ),
 		);
+	}
+
+	/**
+	 * Store text-only SVG in an existing preview folder.
+	 *
+	 * @param string $id  Preview ID from store_from_data_url().
+	 * @param string $svg Raw SVG document.
+	 * @return array{path: string, url: string}|false
+	 */
+	public function store_text_svg( $id, $svg ) {
+		$svg = is_string( $svg ) ? trim( $svg ) : '';
+
+		if ( '' === $svg || ! preg_match( '#^\s*<\?xml#i', $svg ) && ! preg_match( '#^\s*<svg#i', $svg ) ) {
+			return false;
+		}
+
+		$dir = $this->find_preview_dir( $id );
+
+		if ( ! $dir ) {
+			return false;
+		}
+
+		$path = trailingslashit( $dir ) . self::TEXT_FILENAME;
+
+		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents
+		if ( false === file_put_contents( $path, $svg ) ) {
+			$this->logger->error( 'Failed to write cart text SVG file.', array( 'id' => $id ) );
+			return false;
+		}
+
+		return array(
+			'path' => $path,
+			'url'  => $this->preview_file_url( $id, self::TEXT_FILENAME ),
+		);
+	}
+
+	/**
+	 * Absolute path to the text SVG preview file.
+	 *
+	 * @param string $id Preview ID.
+	 * @return string|false
+	 */
+	public function get_text_path( $id ) {
+		$dir = $this->find_preview_dir( $id );
+
+		if ( ! $dir ) {
+			return false;
+		}
+
+		$path = trailingslashit( $dir ) . self::TEXT_FILENAME;
+
+		return is_readable( $path ) ? $path : false;
+	}
+
+	/**
+	 * Resolve text SVG file for order production.
+	 *
+	 * @param string $preview_id  Stored preview ID.
+	 * @param string $preview_url Text SVG URL from order meta.
+	 * @return string|false
+	 */
+	public function resolve_text_production_path( $preview_id, $preview_url = '' ) {
+		$path = $this->get_text_path( $preview_id );
+
+		if ( false !== $path ) {
+			return $path;
+		}
+
+		return $this->text_path_from_preview_url( $preview_url );
+	}
+
+	/**
+	 * Map a text SVG preview URL to text.svg in the cart preview folder.
+	 *
+	 * @param string $url Preview URL.
+	 * @return string|false
+	 */
+	public function text_path_from_preview_url( $url ) {
+		$local = $this->uploads->url_to_local_path( $url );
+
+		if ( false === $local || is_dir( $local ) ) {
+			return false;
+		}
+
+		if ( self::TEXT_FILENAME === basename( $local ) ) {
+			return $local;
+		}
+
+		$text = trailingslashit( dirname( $local ) ) . self::TEXT_FILENAME;
+
+		return is_readable( $text ) ? $text : false;
 	}
 
 	/**

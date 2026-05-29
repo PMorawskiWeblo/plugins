@@ -175,7 +175,8 @@ class CartHooks {
 
 		$preview_raw        = isset( $_POST['wpp_preview_data'] ) ? $this->sanitize_preview_data( wp_unslash( $_POST['wpp_preview_data'] ) ) : '';
 		$preview_layers_raw = isset( $_POST['wpp_preview_layers_data'] ) ? $this->sanitize_preview_data( wp_unslash( $_POST['wpp_preview_layers_data'] ) ) : '';
-		$preview            = $this->persist_cart_preview( $preview_raw, $preview_layers_raw );
+		$preview_text_svg   = isset( $_POST['wpp_text_svg_data'] ) ? $this->sanitize_text_svg_data( wp_unslash( $_POST['wpp_text_svg_data'] ) ) : '';
+		$preview            = $this->persist_cart_preview( $preview_raw, $preview_layers_raw, $preview_text_svg );
 
 		$cart_item_data[ self::CART_KEY ] = array(
 			'layout_id'              => $config->get_layout_id(),
@@ -185,6 +186,7 @@ class CartHooks {
 			'preview_data'           => $preview['thumb_url'] ?? '',
 			'preview_full_url'       => $preview['full_url'] ?? '',
 			'preview_layers_full_url' => $preview['layers_full_url'] ?? '',
+			'preview_text_svg_full_url' => $preview['text_svg_full_url'] ?? '',
 			'preview_id'             => $preview['id'] ?? '',
 			'hash'              => md5( wp_json_encode( $state ) . $product_id ),
 			'personalized'      => true,
@@ -443,9 +445,9 @@ class CartHooks {
 	 *
 	 * @param string $data_url        Sanitized full preview data URL.
 	 * @param string $layers_data_url Sanitized layers-only preview data URL.
-	 * @return array{thumb_url?: string, full_url?: string, layers_full_url?: string, id?: string}
+	 * @return array{thumb_url?: string, full_url?: string, layers_full_url?: string, text_svg_full_url?: string, id?: string}
 	 */
-	private function persist_cart_preview( $data_url, $layers_data_url = '' ) {
+	private function persist_cart_preview( $data_url, $layers_data_url = '', $text_svg = '' ) {
 		if ( '' === $data_url ) {
 			return array();
 		}
@@ -467,6 +469,13 @@ class CartHooks {
 			$layers = $this->cart_previews->store_layers_from_data_url( $stored['id'], $layers_data_url );
 			if ( false !== $layers ) {
 				$result['layers_full_url'] = $layers['url'];
+			}
+		}
+
+		if ( '' !== $text_svg ) {
+			$text_file = $this->cart_previews->store_text_svg( $stored['id'], $text_svg );
+			if ( false !== $text_file ) {
+				$result['text_svg_full_url'] = $text_file['url'];
 			}
 		}
 
@@ -521,6 +530,33 @@ class CartHooks {
 		}
 
 		return '';
+	}
+
+	/**
+	 * Sanitize submitted text SVG document.
+	 *
+	 * @param string $raw Raw SVG.
+	 * @return string
+	 */
+	private function sanitize_text_svg_data( $raw ) {
+		$raw = is_string( $raw ) ? trim( $raw ) : '';
+
+		if ( '' === $raw ) {
+			return '';
+		}
+
+		if ( strlen( $raw ) > 500000 ) {
+			return '';
+		}
+
+		if ( ! preg_match( '#^\s*<\?xml#i', $raw ) && ! preg_match( '#^\s*<svg#i', $raw ) ) {
+			return '';
+		}
+
+		$raw = preg_replace( '/<script\b[^>]*>.*?<\/script>/is', '', $raw );
+		$raw = preg_replace( '/\s+on\w+\s*=\s*("[^"]*"|\'[^\']*\'|[^\s>]+)/i', '', $raw );
+
+		return is_string( $raw ) ? trim( $raw ) : '';
 	}
 
 	/**

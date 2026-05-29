@@ -422,6 +422,9 @@
 			'<div class="wpp-canvas-panel__grid wpp-canvas-panel__grid--border">' +
 			'<div class="wpp-canvas-field"><label class="wpp-canvas-field__label">Font size</label><input type="number" class="wpp-canvas-field__input text-size" min="8" value="' + (style.fontSize || 48) + '" /></div>' +
 			'<div class="wpp-canvas-field wpp-canvas-field--color"><label class="wpp-canvas-field__label">Color</label><input type="color" class="wpp-color-input text-color" value="' + esc(style.color || '#ffffff') + '" /></div>' +
+			'<div class="wpp-canvas-field wpp-canvas-field--checkbox">' +
+			'<label><input type="checkbox" class="text-shadow" ' + (style.textShadow ? 'checked' : '') + ' /> ' + esc(layoutI18n('textShadow', 'Text shadow (preview & SVG export)')) + '</label>' +
+			'</div>' +
 			'</div></div>' +
 			'<div class="wpp-builder-section">' +
 			'<span class="wpp-builder-section__title">Google Fonts</span>' +
@@ -839,7 +842,8 @@
 					fontSize: parseInt($c.find('.text-size').val(), 10) || 48,
 					color: $c.find('.text-color').val() || '#ffffff',
 					align: 'center',
-					fontFamily: 'Arial'
+					fontFamily: 'Arial',
+					textShadow: $c.find('.text-shadow').is(':checked')
 				},
 				controls: {
 					move: $c.find('.text-ctrl-move').is(':checked'),

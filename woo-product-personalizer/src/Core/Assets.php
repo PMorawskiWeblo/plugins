@@ -136,6 +136,7 @@ class Assets {
 						'customerControls'    => __( 'Customer controls', 'woo-product-personalizer' ),
 						'ctrlMove'            => __( 'Move (arrows in editor)', 'woo-product-personalizer' ),
 						'ctrlFontSize'        => __( 'Font size (+/− in editor)', 'woo-product-personalizer' ),
+						'textShadow'          => __( 'Text shadow (preview & SVG export)', 'woo-product-personalizer' ),
 						'googleFontsHelpHtml' => wp_kses(
 							sprintf(
 								/* translators: %s: link to Google Fonts */

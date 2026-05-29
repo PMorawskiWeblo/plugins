@@ -227,6 +227,65 @@ class PreviewDisplay {
 	}
 
 	/**
+	 * Admin order item preview: text layers as SVG (transparent background).
+	 *
+	 * @param \WC_Order_Item $item Order item.
+	 * @return void
+	 */
+	public static function render_admin_text_svg_preview( $item ) {
+		if ( ! $item instanceof \WC_Order_Item || 'yes' !== $item->get_meta( '_wpp_personalized' ) ) {
+			return;
+		}
+
+		$source = (string) $item->get_meta( '_wpp_text_svg_url' );
+
+		if ( '' === $source && '' === (string) $item->get_meta( '_wpp_text_svg_file' ) ) {
+			return;
+		}
+
+		echo '<p class="wpp-order-item-meta__preview-label"><strong>' . esc_html__( 'Text preview (SVG)', 'woo-product-personalizer' ) . '</strong></p>';
+
+		if ( self::is_svg_preview_available( $source ) ) {
+			$box_style = 'display:block;max-width:220px;max-height:220px;border:1px solid #ddd;border-radius:4px;overflow:hidden;'
+				. 'background:repeating-conic-gradient(#e8e8e8 0 25%, #fff 0 50%) 50% / 16px 16px;';
+			printf(
+				'<p class="wpp-order-item-meta__preview wpp-order-item-meta__preview--text-svg"><a href="%1$s" target="_blank" rel="noopener noreferrer"><object data="%1$s" type="image/svg+xml" aria-label="%2$s" style="%3$s"></object></a></p>',
+				esc_url( $source ),
+				esc_attr__( 'Personalization text SVG preview', 'woo-product-personalizer' ),
+				esc_attr( $box_style )
+			);
+			return;
+		}
+
+		printf(
+			'<p class="wpp-order-item-meta__preview wpp-order-item-meta__preview--unavailable"><em>%s</em></p>',
+			esc_html( self::get_unavailable_message() )
+		);
+	}
+
+	/**
+	 * Whether an SVG preview URL points to a readable file.
+	 *
+	 * @param string $url SVG URL.
+	 * @return bool
+	 */
+	public static function is_svg_preview_available( $url ) {
+		$url = is_string( $url ) ? trim( $url ) : '';
+
+		if ( '' === $url || ! preg_match( '#^https?://#i', $url ) ) {
+			return false;
+		}
+
+		$path = self::url_to_local_path( $url );
+
+		if ( false !== $path ) {
+			return is_readable( $path );
+		}
+
+		return true;
+	}
+
+	/**
 	 * Resolve a public asset URL to a local path when possible.
 	 *
 	 * @param string $url URL.
