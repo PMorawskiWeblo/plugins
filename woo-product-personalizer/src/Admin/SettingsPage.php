@@ -123,6 +123,7 @@ class SettingsPage {
 		$sanitized = array(
 			'max_upload_mb'          => absint( $input['max_upload_mb'] ?? $defaults['max_upload_mb'] ),
 			'preview_export_scale'   => min( 6, max( 1, absint( $input['preview_export_scale'] ?? $defaults['preview_export_scale'] ) ) ),
+			'production_export_dpi'  => min( 1200, max( 72, absint( $input['production_export_dpi'] ?? $defaults['production_export_dpi'] ) ) ),
 			'allowed_mime_types'     => $allowed_mimes,
 			'frontend_mode'          => 'modal',
 			'button_position'        => sanitize_text_field( $input['button_position'] ?? $defaults['button_position'] ),

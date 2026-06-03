@@ -22,6 +22,13 @@ defined('ABSPATH') || exit;
                 <circle cx="9" cy="9" r="2" />
                 <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
             </svg> <?php esc_html_e('Add image slot', 'woo-product-personalizer'); ?></button>
+        <button type="button" class="button wpp-add-export-area"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3v18" />
+                <path d="M3 12h18" />
+                <rect width="14" height="14" x="5" y="5" rx="1" opacity="0.35" />
+            </svg> <?php esc_html_e('Add export area', 'woo-product-personalizer'); ?></button>
         <button type="button" class="button wpp-add-text-field"><svg xmlns="http://www.w3.org/2000/svg" width="24"
                 height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-type-icon lucide-type">
@@ -74,6 +81,18 @@ defined('ABSPATH') || exit;
                                 <input id="wpp-canvas-height" type="number" class="wpp-canvas-field__input wpp-canvas-height" min="100" step="1" />
                             </div>
                         </div>
+                        <span class="wpp-canvas-media__label"><?php esc_html_e('Project PDF size', 'woo-product-personalizer'); ?></span>
+                        <p class="wpp-canvas-media__hint"><?php esc_html_e('Physical page size for the production PDF (centimeters). Leave 0 to derive size from the export image and DPI.', 'woo-product-personalizer'); ?></p>
+                        <div class="wpp-canvas-panel__grid">
+                            <div class="wpp-canvas-field">
+                                <label class="wpp-canvas-field__label" for="wpp-pdf-width-cm"><?php esc_html_e('Width (cm)', 'woo-product-personalizer'); ?></label>
+                                <input id="wpp-pdf-width-cm" type="number" class="wpp-canvas-field__input wpp-pdf-width-cm" min="0" max="200" step="0.01" />
+                            </div>
+                            <div class="wpp-canvas-field">
+                                <label class="wpp-canvas-field__label" for="wpp-pdf-height-cm"><?php esc_html_e('Height (cm)', 'woo-product-personalizer'); ?></label>
+                                <input id="wpp-pdf-height-cm" type="number" class="wpp-canvas-field__input wpp-pdf-height-cm" min="0" max="200" step="0.01" />
+                            </div>
+                        </div>
                         <div class="wpp-canvas-field">
                             <label class="wpp-canvas-field__label" for="wpp-canvas-background"><?php esc_html_e('Image URL', 'woo-product-personalizer'); ?></label>
                             <input id="wpp-canvas-background" type="text" class="wpp-canvas-field__input wpp-canvas-background" placeholder="https://…" />
@@ -101,6 +120,7 @@ defined('ABSPATH') || exit;
                 </div>
             </div>
             <div class="wpp-layout-builder__slots wpp-slots-stack"></div>
+            <div class="wpp-layout-builder__export-areas wpp-export-areas-stack"></div>
             <div class="wpp-layout-builder__text-fields wpp-text-fields-stack"></div>
         </div>
 

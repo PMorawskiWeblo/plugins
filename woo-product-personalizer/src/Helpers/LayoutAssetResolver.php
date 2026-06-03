@@ -31,6 +31,17 @@ class LayoutAssetResolver {
 				if ( ! empty( $slot['mask'] ) ) {
 					$config['image_slots'][ $i ]['mask'] = self::resolve_url( $slot['mask'] );
 				}
+				if ( empty( $slot['customer_editable'] ) && ! empty( $slot['fixed_source'] ) ) {
+					$config['image_slots'][ $i ]['fixed_source'] = self::resolve_url( $slot['fixed_source'] );
+				}
+			}
+		}
+
+		if ( ! empty( $config['export_areas'] ) && is_array( $config['export_areas'] ) ) {
+			foreach ( $config['export_areas'] as $i => $area ) {
+				if ( ! empty( $area['mask'] ) ) {
+					$config['export_areas'][ $i ]['mask'] = self::resolve_url( $area['mask'] );
+				}
 			}
 		}
 

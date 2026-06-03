@@ -45,6 +45,19 @@ $manual_cleanup_days = isset($options['cleanup_interval']) ? (int) $options['cle
                 </td>
             </tr>
             <tr>
+                <th scope="row"><label
+                        for="wpp_production_export_dpi"><?php esc_html_e('Production export DPI (layers PNG + text SVG)', 'woo-product-personalizer'); ?></label>
+                </th>
+                <td>
+                    <input type="number" id="wpp_production_export_dpi" name="wpp_settings[production_export_dpi]"
+                        value="<?php echo esc_attr($options['production_export_dpi'] ?? 300); ?>" min="72" max="1200"
+                        class="small-text" />
+                    <p class="description">
+                        <?php esc_html_e('Used for “Layers PNG (no background)”, “Text SVG”, and Project PDF: when the layout defines Project PDF width/height (cm), the PDF image is scaled to exactly cm × DPI pixels (e.g. 15×21 cm at 300 DPI → 1772×2480 px). Preview export scale above still controls browser canvas resolution only.', 'woo-product-personalizer'); ?>
+                    </p>
+                </td>
+            </tr>
+            <tr>
                 <th scope="row"><?php esc_html_e('Allowed MIME types', 'woo-product-personalizer'); ?></th>
                 <td>
                     <?php foreach (UploadMimeTypes::definitions() as $mime => $definition) : ?>
@@ -206,6 +219,8 @@ $manual_cleanup_days = isset($options['cleanup_interval']) ? (int) $options['cle
                         <li><?php esc_html_e('Selected client-side events sent to the server log (AJAX).', 'woo-product-personalizer'); ?>
                         </li>
                         <li><?php esc_html_e('PHP-side debug/info/warning/error entries from the plugin when logging is active.', 'woo-product-personalizer'); ?>
+                        </li>
+                        <li><?php esc_html_e('Production PDF pipeline: [production] steps in the log plus debug-pdf-*.png snapshots in the order folder (materialized, clipped, resized).', 'woo-product-personalizer'); ?>
                         </li>
                     </ul>
                     <p class="description">

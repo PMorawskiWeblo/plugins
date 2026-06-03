@@ -15,22 +15,25 @@
 		try {
 			config = JSON.parse(raw);
 		} catch (e) {
-			config = { personalization_mode: 'layout_2', canvas: {}, image_slots: [], text_fields: [], limits: {} };
+			config = { personalization_mode: 'layout_2', canvas: {}, image_slots: [], export_areas: [], text_fields: [], limits: {} };
 		}
 
 		syncCanvasInputs();
 		renderSlots();
+		renderExportAreas();
 		renderTextFields();
 		syncJson();
 		updateToggleAllButton();
 		initLayoutPreview();
 
 		$builder.on('click', '.wpp-add-image-slot', addImageSlot);
+		$builder.on('click', '.wpp-add-export-area', addExportArea);
 		$builder.on('click', '.wpp-add-text-field', addTextField);
 		$builder.on('click', '.wpp-select-media', selectMedia);
 		$builder.on('click', '.wpp-remove-media', removeMedia);
 		$builder.on('input change', 'input, textarea, select', onFieldChange);
 		$builder.on('click', '.wpp-remove-slot', removeSlot);
+		$builder.on('click', '.wpp-remove-export-area', removeExportArea);
 		$builder.on('click', '.wpp-clone-slot', cloneSlot);
 		$builder.on('click', '.wpp-move-slot-up, .wpp-move-slot-down', moveSlotByArrow);
 		$builder.on('click', '.wpp-remove-text', removeText);
@@ -64,6 +67,12 @@
 
 	function formatTextFieldTitle(index) {
 		var template = layoutI18n('textFieldTitle', 'Text field #%d');
+
+		return template.replace('%d', String(index + 1));
+	}
+
+	function formatExportAreaTitle(index) {
+		var template = layoutI18n('exportAreaTitle', 'Export area #%d');
 
 		return template.replace('%d', String(index + 1));
 	}
@@ -275,6 +284,9 @@
 			.prop('checked', config.crop_mask_shape !== false);
 		$builder.find('.wpp-canvas-width').val(config.canvas.width || 2000);
 		$builder.find('.wpp-canvas-height').val(config.canvas.height || 2400);
+		var pdfSize = config.project_pdf || {};
+		$builder.find('.wpp-pdf-width-cm').val(pdfSize.width_cm > 0 ? pdfSize.width_cm : '');
+		$builder.find('.wpp-pdf-height-cm').val(pdfSize.height_cm > 0 ? pdfSize.height_cm : '');
 		$builder.find('.wpp-canvas-background').val(config.canvas.background || '');
 		updatePreview('.wpp-bg-preview', config.canvas.background);
 	}
@@ -286,6 +298,8 @@
 		(config.image_slots || []).forEach(function (slot, index) {
 			var $card = $(slotCardHtml(slot, index));
 			updateSlotMaskPreview($card, slot.mask || '');
+			updateSlotFixedSourcePreview($card, slot.fixed_source || '');
+			toggleSlotStaticUi($card);
 			$wrap.append($card);
 		});
 
@@ -294,6 +308,73 @@
 		initSlotsSortable();
 		updateToggleAllButton();
 		refreshLayoutPreview();
+	}
+
+	function renderExportAreas() {
+		captureCollapseState();
+
+		var $wrap = $builder.find('.wpp-layout-builder__export-areas').empty();
+		(config.export_areas || []).forEach(function (area, index) {
+			var $card = $(exportAreaCardHtml(area, index));
+			updateExportAreaMaskPreview($card, area.mask || '');
+			$wrap.append($card);
+		});
+
+		applyCollapseState();
+		updateToggleAllButton();
+		refreshLayoutPreview();
+	}
+
+	function exportAreaCardHtml(area, index) {
+		var cardId = esc(area.id || '');
+
+		return (
+			'<div class="wpp-export-area-card wpp-builder-card is-collapsed" data-index="' + index + '" data-card-id="' + cardId + '">' +
+			builderCardHeader({
+				title: formatExportAreaTitle(index),
+				labelValue: area.label || '',
+				labelClass: 'export-area-label',
+				cloneClass: '',
+				removeClass: 'wpp-remove-export-area',
+				showReorder: false,
+				moveUpClass: '',
+				moveDownClass: '',
+				collapsed: true
+			}) +
+			'<div class="wpp-builder-card__body wpp-export-area-card__body">' +
+			'<div class="wpp-builder-section">' +
+			'<p class="wpp-canvas-media__hint">' + esc(layoutI18n('exportAreaHelp', 'Rectangle on the canvas (frame) saved to layers PNG, text SVG, and project PDF. Mask image is optional. Not shown to customers.')) + '</p>' +
+			'<div class="wpp-builder-section__grid wpp-builder-section__grid--id">' +
+			'<div class="wpp-canvas-field"><label class="wpp-canvas-field__label">ID</label><input type="text" class="wpp-canvas-field__input export-area-id" value="' + cardId + '" /></div>' +
+			'</div></div>' +
+			'<div class="wpp-builder-section">' +
+			'<span class="wpp-builder-section__title">Frame</span>' +
+			'<div class="wpp-canvas-panel__grid wpp-canvas-panel__grid--frame">' +
+			'<div class="wpp-canvas-field"><label class="wpp-canvas-field__label">X</label><input type="number" class="wpp-canvas-field__input export-area-x" value="' + (area.frame && area.frame.x) + '" /></div>' +
+			'<div class="wpp-canvas-field"><label class="wpp-canvas-field__label">Y</label><input type="number" class="wpp-canvas-field__input export-area-y" value="' + (area.frame && area.frame.y) + '" /></div>' +
+			'<div class="wpp-canvas-field"><label class="wpp-canvas-field__label">W</label><input type="number" class="wpp-canvas-field__input export-area-w" value="' + (area.frame && area.frame.width) + '" /></div>' +
+			'<div class="wpp-canvas-field"><label class="wpp-canvas-field__label">H</label><input type="number" class="wpp-canvas-field__input export-area-h" value="' + (area.frame && area.frame.height) + '" /></div>' +
+			'</div></div>' +
+			'<div class="wpp-builder-section">' +
+			'<div class="wpp-canvas-panel__body wpp-canvas-panel__body--split wpp-canvas-panel__body--compact">' +
+			'<div class="wpp-canvas-panel__col wpp-canvas-panel__col--meta">' +
+			'<span class="wpp-canvas-media__label">' + esc(layoutI18n('exportAreaMaskOptional', 'Mask image (optional)')) + '</span>' +
+			'<p class="wpp-canvas-media__hint">' + esc(layoutI18n('exportAreaMaskHelp', 'Leave empty to export the full frame rectangle. Add a PNG mask only when you need a non-rectangular clip.')) + '</p>' +
+			'<div class="wpp-canvas-field">' +
+			'<label class="wpp-canvas-field__label">' + esc(layoutI18n('imageUrl', 'Image URL')) + '</label>' +
+			'<input type="text" class="wpp-canvas-field__input export-area-mask" value="' + esc(area.mask || '') + '" placeholder="https://…" />' +
+			'</div></div>' +
+			'<div class="wpp-canvas-panel__col wpp-canvas-panel__col--media">' +
+			mediaPickerHtml({
+				target: 'export_mask',
+				previewClass: 'wpp-media-preview export-area-mask-preview',
+				emptyLabel: layoutI18n('clickToSelectMask', 'Click to select mask image'),
+				selectLabel: layoutI18n('selectMask', 'Select mask'),
+				removeLabel: layoutI18n('removeMask', 'Remove mask')
+			}) +
+			'</div></div></div>' +
+			'</div></div>'
+		);
 	}
 
 	function renderTextFields() {
@@ -311,6 +392,7 @@
 
 	function slotCardHtml(slot, index) {
 		var cardId = esc(slot.id || '');
+		var isStatic = slot.customer_editable === false;
 
 		return (
 			'<div class="wpp-slot-card wpp-builder-card is-collapsed" data-index="' + index + '" data-card-id="' + cardId + '">' +
@@ -329,12 +411,15 @@
 			'<div class="wpp-builder-section">' +
 			'<div class="wpp-builder-section__grid wpp-builder-section__grid--id">' +
 			'<div class="wpp-canvas-field"><label class="wpp-canvas-field__label">ID</label><input type="text" class="wpp-canvas-field__input slot-id" value="' + cardId + '" /></div>' +
-			'<div class="wpp-canvas-field wpp-canvas-field--checkbox">' +
+			'<div class="wpp-canvas-field wpp-canvas-field--checkbox wpp-slot-customer-required"' + (isStatic ? ' hidden' : '') + '>' +
 			'<label class="wpp-slot-required-row"><input type="checkbox" class="slot-required" ' + (slot.required ? 'checked' : '') + ' /> Wymagane</label>' +
 			'<span class="wpp-canvas-media__hint">Klient musi dodać zdjęcie przed złożeniem zamówienia.</span></div>' +
 			'<div class="wpp-canvas-field wpp-canvas-field--checkbox">' +
 			'<label class="wpp-slot-white-bg-row"><input type="checkbox" class="slot-white-bg" ' + (slot.white_bg ? 'checked' : '') + ' /> Białe tło pod grafiką</label>' +
 			'<span class="wpp-canvas-media__hint">Dla PNG bez tła: doda białe wypełnienie pod zdjęciem w tym slocie.</span></div>' +
+			'<div class="wpp-canvas-field wpp-canvas-field--checkbox">' +
+			'<label><input type="checkbox" class="slot-static-layer" ' + (isStatic ? 'checked' : '') + ' /> ' + esc(layoutI18n('staticLayer', 'Static layer (no customer upload)')) + '</label>' +
+			'<span class="wpp-canvas-media__hint">' + esc(layoutI18n('staticLayerHelp', 'Fixed graphic clipped by the mask. Shown in production files only — hidden from the personalization modal.')) + '</span></div>' +
 			'</div></div>' +
 			'<div class="wpp-builder-section">' +
 			'<span class="wpp-builder-section__title">Frame</span>' +
@@ -361,6 +446,24 @@
 				emptyLabel: layoutI18n('clickToSelectMask', 'Click to select mask image'),
 				selectLabel: layoutI18n('selectMask', 'Select mask'),
 				removeLabel: layoutI18n('removeMask', 'Remove mask')
+			}) +
+			'</div></div></div>' +
+			'<div class="wpp-builder-section wpp-slot-static-source-section"' + (isStatic ? '' : ' hidden') + '>' +
+			'<div class="wpp-canvas-panel__body wpp-canvas-panel__body--split wpp-canvas-panel__body--compact">' +
+			'<div class="wpp-canvas-panel__col wpp-canvas-panel__col--meta">' +
+			'<span class="wpp-canvas-media__label">' + esc(layoutI18n('staticLayerImage', 'Layer image')) + '</span>' +
+			'<p class="wpp-canvas-media__hint">Grafika widoczna w plikach produkcyjnych (PNG warstw).</p>' +
+			'<div class="wpp-canvas-field">' +
+			'<label class="wpp-canvas-field__label">' + esc(layoutI18n('imageUrl', 'Image URL')) + '</label>' +
+			'<input type="text" class="wpp-canvas-field__input slot-fixed-source" value="' + esc(slot.fixed_source || '') + '" placeholder="https://…" />' +
+			'</div></div>' +
+			'<div class="wpp-canvas-panel__col wpp-canvas-panel__col--media">' +
+			mediaPickerHtml({
+				target: 'fixed_source',
+				previewClass: 'wpp-media-preview slot-fixed-source-preview',
+				emptyLabel: layoutI18n('clickToSelectLayer', 'Click to select layer image'),
+				selectLabel: layoutI18n('selectLayerImage', 'Select layer image'),
+				removeLabel: layoutI18n('removeLayerImage', 'Remove layer image')
 			}) +
 			'</div></div></div>' +
 			'<div class="wpp-builder-section">' +
@@ -453,6 +556,31 @@
 			controls: { move: true, scale: true, rotate: true, flip: true, autofit: true, reset: true }
 		});
 		renderSlots();
+		syncJson();
+		refreshLayoutPreview();
+	}
+
+	function addExportArea(e) {
+		e.preventDefault();
+		config.export_areas = config.export_areas || [];
+		config.export_areas.push({
+			id: 'export_' + (config.export_areas.length + 1),
+			label: layoutI18n('exportAreaDefaultLabel', 'Production export area'),
+			mask: '',
+			frame: { x: 200, y: 200, width: 600, height: 800 }
+		});
+		renderExportAreas();
+		syncJson();
+		refreshLayoutPreview();
+	}
+
+	function removeExportArea(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		readFromDom();
+		var index = $(this).closest('.wpp-export-area-card').data('index');
+		config.export_areas.splice(index, 1);
+		renderExportAreas();
 		syncJson();
 		refreshLayoutPreview();
 	}
@@ -711,8 +839,9 @@
 		var $btn = $(this);
 		var target = $btn.data('target');
 		var $slotCard = $btn.closest('.wpp-slot-card');
+		var $exportCard = $btn.closest('.wpp-export-area-card');
 		var frame = wp.media({
-			title: target === 'mask' ? 'Select mask image' : 'Select image',
+			title: target === 'mask' || target === 'export_mask' ? 'Select mask image' : 'Select image',
 			multiple: false,
 			library: { type: 'image' }
 		});
@@ -722,6 +851,16 @@
 
 			if (target === 'mask' && $slotCard.length) {
 				setSlotMask($slotCard, attachment.url);
+				return;
+			}
+
+			if (target === 'fixed_source' && $slotCard.length) {
+				setSlotFixedSource($slotCard, attachment.url);
+				return;
+			}
+
+			if (target === 'export_mask' && $exportCard.length) {
+				setExportAreaMask($exportCard, attachment.url);
 				return;
 			}
 
@@ -735,13 +874,50 @@
 		var $btn = $(this);
 		var target = $btn.data('target');
 		var $slotCard = $btn.closest('.wpp-slot-card');
+		var $exportCard = $btn.closest('.wpp-export-area-card');
 
 		if (target === 'mask' && $slotCard.length) {
 			setSlotMask($slotCard, '');
 			return;
 		}
 
+		if (target === 'export_mask' && $exportCard.length) {
+			setExportAreaMask($exportCard, '');
+			return;
+		}
+
+		if (target === 'fixed_source' && $slotCard.length) {
+			setSlotFixedSource($slotCard, '');
+			return;
+		}
+
 		setCanvasMedia(target, '');
+	}
+
+	function toggleSlotStaticUi($card) {
+		var isStatic = $card.find('.slot-static-layer').is(':checked');
+
+		$card.find('.wpp-slot-static-source-section').toggleClass('hidden', !isStatic);
+		$card.find('.wpp-slot-customer-required').toggleClass('hidden', isStatic);
+
+		if (isStatic) {
+			$card.find('.slot-required').prop('checked', false);
+		}
+	}
+
+	function setSlotFixedSource($card, url) {
+		$card.find('.slot-fixed-source').val(url || '');
+		updateSlotFixedSourcePreview($card, url || '');
+		readFromDom();
+		syncJson();
+	}
+
+	function setExportAreaMask($card, url) {
+		$card.find('.export-area-mask').val(url || '');
+		updateExportAreaMaskPreview($card, url || '');
+		readFromDom();
+		syncJson();
+		refreshLayoutPreview();
 	}
 
 	function setSlotMask($card, url) {
@@ -769,12 +945,28 @@
 				updateSlotMaskPreview($target.closest('.wpp-slot-card'), $target.val());
 			}
 
+			if ($target.hasClass('export-area-mask')) {
+				updateExportAreaMaskPreview($target.closest('.wpp-export-area-card'), $target.val());
+			}
+
+			if ($target.hasClass('slot-fixed-source')) {
+				updateSlotFixedSourcePreview($target.closest('.wpp-slot-card'), $target.val());
+			}
+
+			if ($target.hasClass('slot-static-layer')) {
+				toggleSlotStaticUi($target.closest('.wpp-slot-card'));
+			}
+
 			if ($target.hasClass('wpp-canvas-background')) {
 				updatePreview('.wpp-bg-preview', $target.val());
 			}
 
 			if ($target.hasClass('slot-id')) {
 				$target.closest('.wpp-slot-card').attr('data-card-id', $target.val());
+			}
+
+			if ($target.hasClass('export-area-id')) {
+				$target.closest('.wpp-export-area-card').attr('data-card-id', $target.val());
 			}
 
 			if ($target.hasClass('text-id')) {
@@ -800,13 +992,22 @@
 			overlay: config.canvas && config.canvas.overlay ? config.canvas.overlay : ''
 		};
 
+		config.project_pdf = {
+			width_cm: parseFloat($builder.find('.wpp-pdf-width-cm').val()) || 0,
+			height_cm: parseFloat($builder.find('.wpp-pdf-height-cm').val()) || 0
+		};
+
 		config.image_slots = [];
 		$builder.find('.wpp-slot-card').each(function () {
 			var $c = $(this);
+			var isStatic = $c.find('.slot-static-layer').is(':checked');
+
 			config.image_slots.push({
 				id: $c.find('.slot-id').val(),
 				label: $c.find('.slot-label').val(),
-				required: $c.find('.slot-required').is(':checked'),
+				customer_editable: !isStatic,
+				fixed_source: isStatic ? $c.find('.slot-fixed-source').val() : '',
+				required: isStatic ? false : $c.find('.slot-required').is(':checked'),
 				white_bg: $c.find('.slot-white-bg').is(':checked'),
 				frame: {
 					x: parseInt($c.find('.slot-x').val(), 10) || 0,
@@ -820,6 +1021,22 @@
 					color: $c.find('.slot-border-color').val() || '#ffffff'
 				},
 				controls: { move: true, scale: true, rotate: true, flip: true, autofit: true, reset: true }
+			});
+		});
+
+		config.export_areas = [];
+		$builder.find('.wpp-export-area-card').each(function () {
+			var $c = $(this);
+			config.export_areas.push({
+				id: $c.find('.export-area-id').val(),
+				label: $c.find('.export-area-label').val(),
+				mask: $c.find('.export-area-mask').val(),
+				frame: {
+					x: parseInt($c.find('.export-area-x').val(), 10) || 0,
+					y: parseInt($c.find('.export-area-y').val(), 10) || 0,
+					width: parseInt($c.find('.export-area-w').val(), 10) || 100,
+					height: parseInt($c.find('.export-area-h').val(), 10) || 100
+				}
 			});
 		});
 
@@ -873,6 +1090,26 @@
 			$p.html('<img src="' + esc(url) + '" alt="" />');
 		} else {
 			$p.empty();
+		}
+	}
+
+	function updateExportAreaMaskPreview($card, url) {
+		var $p = $card.find('.export-area-mask-preview');
+
+		if (url) {
+			$p.html('<img src="' + esc(url) + '" alt="" />').addClass('has-image');
+		} else {
+			$p.empty().removeClass('has-image');
+		}
+	}
+
+	function updateSlotFixedSourcePreview($card, url) {
+		var $p = $card.find('.slot-fixed-source-preview');
+
+		if (url) {
+			$p.html('<img src="' + esc(url) + '" alt="" />').addClass('has-image');
+		} else {
+			$p.empty().removeClass('has-image');
 		}
 	}
 
@@ -959,6 +1196,15 @@
 				$card.find('.text-y').val(y);
 				$card.find('.text-width').val(w);
 				$card.find('.text-height').val(h);
+				readFromDom();
+				syncJson();
+			},
+			onExportAreaUpdate: function (index, x, y, w, h) {
+				var $card = $builder.find('.wpp-export-area-card').eq(index);
+				$card.find('.export-area-x').val(x);
+				$card.find('.export-area-y').val(y);
+				$card.find('.export-area-w').val(w);
+				$card.find('.export-area-h').val(h);
 				readFromDom();
 				syncJson();
 			}

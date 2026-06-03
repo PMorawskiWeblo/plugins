@@ -20,8 +20,9 @@ class CartPreviewStorage {
 	const THUMB_MAX_WIDTH  = 480;
 	const THUMB_QUALITY    = 82;
 	const FULL_FILENAME    = 'full.png';
-	const LAYERS_FILENAME  = 'layers.png';
-	const TEXT_FILENAME    = 'text.svg';
+	const LAYERS_FILENAME      = 'layers.png';
+	const TEXT_FILENAME        = 'text.svg';
+	const PROJECT_PDF_FILENAME = 'projekt-pdf.png';
 	const THUMB_FILENAME   = 'preview.jpg';
 
 	/**
@@ -159,6 +160,75 @@ class CartPreviewStorage {
 			'path' => $path,
 			'url'  => $this->preview_file_url( $id, self::TEXT_FILENAME ),
 		);
+	}
+
+	/**
+	 * Store composite PNG used to build the project PDF.
+	 *
+	 * @param string $id       Preview ID.
+	 * @param string $data_url Canvas data URL.
+	 * @return array{path: string, url: string}|false
+	 */
+	public function store_project_pdf_from_data_url( $id, $data_url ) {
+		$binary = $this->decode_data_url( $data_url );
+
+		if ( false === $binary ) {
+			return false;
+		}
+
+		$dir = $this->find_preview_dir( $id );
+
+		if ( ! $dir ) {
+			return false;
+		}
+
+		$path = trailingslashit( $dir ) . self::PROJECT_PDF_FILENAME;
+
+		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents
+		if ( false === file_put_contents( $path, $binary ) ) {
+			$this->logger->error( 'Failed to write cart project PDF source file.', array( 'id' => $id ) );
+			return false;
+		}
+
+		return array(
+			'path' => $path,
+			'url'  => $this->preview_file_url( $id, self::PROJECT_PDF_FILENAME ),
+		);
+	}
+
+	/**
+	 * Resolve project PDF source PNG for order generation.
+	 *
+	 * @param string $preview_id  Preview ID.
+	 * @param string $preview_url URL from order meta.
+	 * @return string|false
+	 */
+	public function resolve_project_pdf_path( $preview_id, $preview_url = '' ) {
+		$dir = $this->find_preview_dir( $preview_id );
+
+		if ( $dir ) {
+			$path = trailingslashit( $dir ) . self::PROJECT_PDF_FILENAME;
+			if ( is_readable( $path ) ) {
+				return $path;
+			}
+		}
+
+		$local = $this->uploads->url_to_local_path( $preview_url );
+		if ( false !== $local && is_readable( $local ) ) {
+			return $local;
+		}
+
+		if ( false !== $local && is_dir( $local ) ) {
+			$path = trailingslashit( $local ) . self::PROJECT_PDF_FILENAME;
+			return is_readable( $path ) ? $path : false;
+		}
+
+		if ( $local && self::PROJECT_PDF_FILENAME !== basename( $local ) ) {
+			$path = trailingslashit( dirname( $local ) ) . self::PROJECT_PDF_FILENAME;
+			return is_readable( $path ) ? $path : false;
+		}
+
+		return false;
 	}
 
 	/**

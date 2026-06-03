@@ -86,6 +86,10 @@ class ValidationService {
 		$upload_token = UploadSession::get_token();
 
 		foreach ( $layout->get_image_slots() as $slot ) {
+			if ( empty( $slot['customer_editable'] ) ) {
+				continue;
+			}
+
 			$id = $slot['id'];
 			$source = $state['image_fields'][ $id ]['source'] ?? '';
 

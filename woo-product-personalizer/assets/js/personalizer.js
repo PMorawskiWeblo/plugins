@@ -174,6 +174,47 @@
 		return !!(field && field.style && field.style.textShadow);
 	}
 
+	function isSlotCustomerEditable(slot) {
+		return !slot || slot.customer_editable !== false;
+	}
+
+	function getStaticSlotSource(slot) {
+		if (!slot || isSlotCustomerEditable(slot)) {
+			return '';
+		}
+
+		return slot.fixed_source || slot.mask || '';
+	}
+
+	function withStaticLayersVisible(callback) {
+		var nodes = [];
+
+		Object.keys(imageNodes).forEach(function (slotId) {
+			var node = imageNodes[slotId];
+
+			if (node && node._isStaticSlot) {
+				nodes.push(node);
+				node.visible(true);
+			}
+		});
+
+		if (photoLayer) {
+			photoLayer.batchDraw();
+		}
+
+		var result = callback();
+
+		nodes.forEach(function (node) {
+			node.visible(false);
+		});
+
+		if (photoLayer) {
+			photoLayer.batchDraw();
+		}
+
+		return result;
+	}
+
 	function loadLayoutGoogleFonts(callback) {
 		if (!window.WppGoogleFonts || typeof window.WppGoogleFonts.loadUrls !== 'function') {
 			if (typeof callback === 'function') {
@@ -346,6 +387,7 @@
 		$form.append('<input type="hidden" name="wpp_project_state" class="wpp-project-state" value="" />');
 		$form.append('<input type="hidden" name="wpp_preview_data" class="wpp-preview-data" value="" />');
 		$form.append('<input type="hidden" name="wpp_preview_layers_data" class="wpp-preview-layers-data" value="" />');
+		$form.append('<input type="hidden" name="wpp_project_pdf_data" class="wpp-project-pdf-data" value="" />');
 		$form.append('<input type="hidden" name="wpp_text_svg_data" class="wpp-text-svg-data" value="" />');
 	}
 
@@ -518,6 +560,12 @@
 			return;
 		}
 
+		var slot = getSlotConfig(slotId);
+
+		if (slot && !isSlotCustomerEditable(slot)) {
+			return;
+		}
+
 		state.activeSlot = slotId;
 		state.activeTextField = null;
 		$('.wpp-image-field').removeClass('is-active');
@@ -635,6 +683,10 @@
 		}
 
 		(wppData.layout.image_slots || []).forEach(function (slot) {
+			if (!isSlotCustomerEditable(slot)) {
+				return;
+			}
+
 			var inputId = 'wpp-file-' + String(slot.id).replace(/[^a-z0-9_-]/gi, '_');
 			var chooseLabel = wppData.i18n.chooseFile || wppData.i18n.uploadImage || 'Choose file';
 			var removeLabel = wppData.i18n.removeImage || 'Remove';
@@ -862,6 +914,7 @@
 		stage.add(overlayLayer);
 		stage.add(textLayer);
 		tunePreviewQuality();
+		preloadExportAreaMasks();
 		borderLayer.zIndex(2);
 		overlayLayer.zIndex(3);
 		textLayer.zIndex(4);
@@ -920,8 +973,13 @@
 			return !!slot.mask;
 		});
 
-		if (!slots.length) {
+		function finishMaskPreload() {
 			renderAllSlotBorders();
+			renderAllStaticSlots();
+		}
+
+		if (!slots.length) {
+			finishMaskPreload();
 			return;
 		}
 
@@ -935,13 +993,85 @@
 					renderSlotBorder(slot.id);
 					wppLog('preloadMask:ok', { slotId: slot.id, mask: slot.mask });
 					pending -= 1;
-					if (pending <= 0 && borderLayer) {
-						borderLayer.batchDraw();
+					if (pending <= 0) {
+						if (borderLayer) {
+							borderLayer.batchDraw();
+						}
+						finishMaskPreload();
 					}
 				},
 				'preload-mask:' + slot.id
 			);
 		});
+	}
+
+	function renderAllStaticSlots() {
+		(wppData.layout.image_slots || []).forEach(function (slot) {
+			if (!slot || !slot.id || isSlotCustomerEditable(slot)) {
+				return;
+			}
+
+			var source = getStaticSlotSource(slot);
+
+			if (!source) {
+				wppWarn('staticSlot:no_source', { slotId: slot.id });
+				return;
+			}
+
+			mountStaticSlot(slot.id, slot, source);
+		});
+	}
+
+	function mountStaticSlot(slotId, slot, url) {
+		if (imageNodes[slotId]) {
+			imageNodes[slotId].destroy();
+			delete imageNodes[slotId];
+		}
+
+		state.imageFields[slotId] = {
+			source: url,
+			transform: defaultTransform(slot),
+			static: true
+		};
+
+		loadImage(
+			url,
+			function (img) {
+				var maskImg = slot.mask ? maskCache[slotId] : null;
+
+				function placeNode(resolvedMask) {
+					var node = createSlotGroup(slotId, slot, img, resolvedMask, { static: true });
+
+					if (!node || !photoLayer) {
+						return;
+					}
+
+					node.visible(false);
+					node.listening(false);
+					node._isStaticSlot = true;
+					photoLayer.add(node);
+					imageNodes[slotId] = node;
+					autofitSlot(slotId);
+					photoLayer.batchDraw();
+					wppLog('staticSlot:mounted', { slotId: slotId, url: url });
+				}
+
+				if (slot.mask && !maskImg) {
+					loadImage(
+						slot.mask,
+						function (loadedMask) {
+							maskCache[slotId] = loadedMask;
+							placeNode(loadedMask);
+						},
+						'static-mask:' + slotId
+					);
+					return;
+				}
+
+				placeNode(maskImg);
+			},
+			'static:' + slotId
+		);
 	}
 
 	function loadImage(url, cb, label) {
@@ -1462,7 +1592,9 @@
 	/**
 	 * Masked slot: offscreen canvas composite + Konva.Image (isolated per letter).
 	 */
-	function createSlotGroup(slotId, slot, img, maskImg) {
+	function createSlotGroup(slotId, slot, img, maskImg, options) {
+		options = options || {};
+		var isStatic = !!options.static;
 		var frame = slot.frame || { x: 0, y: 0, width: 200, height: 200 };
 		var fw = frame.width * previewScale;
 		var fh = frame.height * previewScale;
@@ -1499,17 +1631,20 @@
 				height: fh,
 				image: photoState.compositeCanvas,
 				name: 'wpp_slot_' + slotId,
-				listening: true
+				listening: !isStatic
 			});
 
 			node._photoState = photoState;
 			node._hasMask = true;
 			node._frame = frame;
 			node._slotId = slotId;
+			node._isStaticSlot = isStatic;
 
-			node.on('mousedown touchstart', function () {
-				setActiveImageField(slotId);
-			});
+			if (!isStatic) {
+				node.on('mousedown touchstart', function () {
+					setActiveImageField(slotId);
+				});
+			}
 
 			wppLog('createSlotGroup:masked', {
 				slotId: slotId,
@@ -1552,7 +1687,7 @@
 			height: drawH,
 			offsetX: drawW / 2,
 			offsetY: drawH / 2,
-			draggable: !isCropModeLayout() && !!(slot.controls && slot.controls.move)
+			draggable: !isStatic && !isCropModeLayout() && !!(slot.controls && slot.controls.move)
 		});
 
 		group.add(konvaImage);
@@ -1570,16 +1705,20 @@
 		group._hasMask = false;
 		group._frame = frame;
 		group._slotId = slotId;
+		group._isStaticSlot = isStatic;
+		group.listening(!isStatic);
 
-		konvaImage.on('dragend', function () {
-			readPhotoStateFromImage(group);
-			syncTransform(slotId, group);
-			validate();
-		});
+		if (!isStatic) {
+			konvaImage.on('dragend', function () {
+				readPhotoStateFromImage(group);
+				syncTransform(slotId, group);
+				validate();
+			});
 
-		group.on('mousedown touchstart', function () {
-			setActiveImageField(slotId);
-		});
+			group.on('mousedown touchstart', function () {
+				setActiveImageField(slotId);
+			});
+		}
 
 		return group;
 	}
@@ -1970,6 +2109,10 @@
 		});
 
 		(wppData.layout.image_slots || []).forEach(function (slot) {
+			if (!isSlotCustomerEditable(slot)) {
+				return;
+			}
+
 			var $field = $('.wpp-image-field[data-slot-id="' + slot.id + '"]');
 
 			if (slot.required && !(state.imageFields[slot.id] && state.imageFields[slot.id].source)) {
@@ -2110,13 +2253,16 @@
 		if (!stage) {
 			return '';
 		}
-		var pixelRatio = getEffectiveExportPixelRatio();
-		setMaskedRenderScale(pixelRatio);
-		stage.draw();
-		var dataUrl = stage.toDataURL({ pixelRatio: pixelRatio });
-		setMaskedRenderScale(getLivePreviewRenderScale());
-		stage.draw();
-		return dataUrl;
+
+		return withStaticLayersVisible(function () {
+			var pixelRatio = getEffectiveExportPixelRatio();
+			setMaskedRenderScale(pixelRatio);
+			stage.draw();
+			var dataUrl = stage.toDataURL({ pixelRatio: pixelRatio });
+			setMaskedRenderScale(getLivePreviewRenderScale());
+			stage.draw();
+			return dataUrl;
+		});
 	}
 
 	function setMaskedRenderScale(scale) {
@@ -2286,20 +2432,184 @@
 		);
 	}
 
+	var exportAreaMaskCache = {};
+
+	function getLayoutExportAreas() {
+		return wppData.layout && Array.isArray(wppData.layout.export_areas) ? wppData.layout.export_areas : [];
+	}
+
+	function getPrimaryExportArea() {
+		var areas = getLayoutExportAreas();
+
+		for (var i = 0; i < areas.length; i++) {
+			var area = areas[i];
+			var frame = area && area.frame ? area.frame : null;
+
+			if (frame && frame.width > 0 && frame.height > 0) {
+				return area;
+			}
+		}
+
+		return null;
+	}
+
+	function getStageExportDataUrlOptions() {
+		var opts = {
+			pixelRatio: getEffectiveExportPixelRatio(),
+			mimeType: 'image/png'
+		};
+		var area = getPrimaryExportArea();
+
+		if (!area || !area.frame || !stage) {
+			return opts;
+		}
+
+		var ps = Math.max(0.01, previewScale || 1);
+
+		opts.x = (area.frame.x || 0) * ps;
+		opts.y = (area.frame.y || 0) * ps;
+		opts.width = (area.frame.width || 0) * ps;
+		opts.height = (area.frame.height || 0) * ps;
+
+		return opts;
+	}
+
+	function applyOptionalMaskToCroppedDataUrl(dataUrl, area, pixelRatio) {
+		if (!dataUrl || !area || !String(area.mask || '').trim()) {
+			return dataUrl;
+		}
+
+		return clipDataUrlToExportArea(dataUrl, area, pixelRatio, true);
+	}
+
+	function preloadExportAreaMasks() {
+		exportAreaMaskCache = {};
+		getLayoutExportAreas().forEach(function (area) {
+			if (!area || !area.id || !area.mask) {
+				return;
+			}
+
+			var img = new Image();
+			img.crossOrigin = 'anonymous';
+			img.src = area.mask;
+			exportAreaMaskCache[area.id] = img;
+		});
+	}
+
+	function textFieldInExportArea(field, area) {
+		var style = field.style || {};
+		var frame = area.frame || {};
+		var tx = style.x || 0;
+		var ty = style.y || 0;
+		var tw = Math.max(1, style.width || 400);
+		var th = Math.max(1, style.height || 80);
+		var fx = frame.x || 0;
+		var fy = frame.y || 0;
+		var fw = frame.width || 0;
+		var fh = frame.height || 0;
+
+		if (fw < 1 || fh < 1) {
+			return true;
+		}
+
+		return !(tx + tw < fx || tx > fx + fw || ty + th < fy || ty > fy + fh);
+	}
+
+	function clipDataUrlToExportArea(dataUrl, area, pixelRatio, alreadyCropped) {
+		if (!dataUrl || !area || !area.frame) {
+			return dataUrl;
+		}
+
+		var frame = area.frame;
+		var pr = Math.max(0.01, pixelRatio || 1);
+		var fw = Math.round(frame.width * pr);
+		var fh = Math.round(frame.height * pr);
+		var fx = alreadyCropped ? 0 : Math.round(frame.x * pr);
+		var fy = alreadyCropped ? 0 : Math.round(frame.y * pr);
+		var source = new Image();
+		source.src = dataUrl;
+
+		if (!source.complete || !source.naturalWidth) {
+			return dataUrl;
+		}
+
+		var canvasEl = document.createElement('canvas');
+		canvasEl.width = fw;
+		canvasEl.height = fh;
+		var ctx = canvasEl.getContext('2d');
+
+		if (!ctx) {
+			return dataUrl;
+		}
+
+		if (alreadyCropped) {
+			ctx.drawImage(source, 0, 0, fw, fh);
+		} else {
+			ctx.drawImage(source, fx, fy, fw, fh, 0, 0, fw, fh);
+		}
+
+		var maskImg = exportAreaMaskCache[area.id];
+		if (maskImg && maskImg.complete && maskImg.naturalWidth) {
+			ctx.globalCompositeOperation = 'destination-in';
+			ctx.drawImage(maskImg, 0, 0, fw, fh);
+		}
+
+		try {
+			return canvasEl.toDataURL('image/png');
+		} catch (err) {
+			wppWarn('exportArea:clip_failed', { message: err && err.message ? err.message : String(err) });
+			return dataUrl;
+		}
+	}
+
 	function exportTextSvg() {
 		if (!wppData.layout || !Array.isArray(wppData.layout.text_fields)) {
 			return '';
 		}
 
 		var canvas = wppData.layout.canvas || {};
+		var exportArea = getPrimaryExportArea();
 		var cw = canvas.width || 800;
 		var ch = canvas.height || 1000;
+		var offsetX = 0;
+		var offsetY = 0;
+		var clipDef = '';
+
+		if (exportArea && exportArea.frame) {
+			offsetX = exportArea.frame.x || 0;
+			offsetY = exportArea.frame.y || 0;
+			cw = exportArea.frame.width || cw;
+			ch = exportArea.frame.height || ch;
+
+			if (exportArea.mask) {
+				clipDef =
+					'<defs><clipPath id="wpp-export-area-clip" clipPathUnits="userSpaceOnUse">' +
+					'<image href="' +
+					escapeSvgText(exportArea.mask) +
+					'" x="0" y="0" width="' +
+					cw +
+					'" height="' +
+					ch +
+					'" preserveAspectRatio="none" /></clipPath></defs>\n';
+			} else {
+				clipDef =
+					'<defs><clipPath id="wpp-export-area-clip"><rect x="0" y="0" width="' +
+					cw +
+					'" height="' +
+					ch +
+					'" /></clipPath></defs>\n';
+			}
+		}
+
 		var scale = Math.max(0.01, previewScale || 1);
 		var elements = [];
 		var hasText = false;
 		var needsShadowFilter = false;
 
 		(wppData.layout.text_fields || []).forEach(function (field) {
+			if (exportArea && !textFieldInExportArea(field, exportArea)) {
+				return;
+			}
 			var fieldId = field.id;
 
 			if (!fieldId) {
@@ -2323,15 +2633,22 @@
 			}
 
 			if (node) {
-				elements.push(buildSvgTextFromKonvaNode(node, scale, useShadow));
+				var nodeSvg = buildSvgTextFromKonvaNode(node, scale, useShadow);
+				if (exportArea) {
+					nodeSvg = nodeSvg.replace(
+						/(<text[^>]*)(>)/,
+						'$1 transform="translate(' + -offsetX + ',' + -offsetY + ')"$2'
+					);
+				}
+				elements.push(nodeSvg);
 				return;
 			}
 
 			elements.push(
 				buildSvgTextElement(
 					displayText,
-					(style.x || 0) + (meta.offsetX || 0),
-					(style.y || 0) + (meta.offsetY || 0),
+					(style.x || 0) + (meta.offsetX || 0) - offsetX,
+					(style.y || 0) + (meta.offsetY || 0) - offsetY,
 					Math.max(20, style.width || 400),
 					Math.max(20, style.height || 80),
 					Math.max(8, getEffectiveFontSize(field, meta)),
@@ -2359,11 +2676,13 @@
 			}
 		}
 
-		var defs = fontStyleBlock + (needsShadowFilter ? buildSvgTextShadowFilterDef() + '\n' : '');
+		var defs = clipDef + fontStyleBlock + (needsShadowFilter ? buildSvgTextShadowFilterDef() + '\n' : '');
+		var clipOpen = exportArea ? '<g clip-path="url(#wpp-export-area-clip)">\n' : '';
+		var clipClose = exportArea ? '\n</g>' : '';
 
 		return (
 			'<?xml version="1.0" encoding="UTF-8"?>\n' +
-			'<svg xmlns="http://www.w3.org/2000/svg" width="' +
+			'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="' +
 			cw +
 			'" height="' +
 			ch +
@@ -2373,7 +2692,9 @@
 			ch +
 			'">\n' +
 			defs +
+			clipOpen +
 			elements.join('\n') +
+			clipClose +
 			'\n</svg>'
 		);
 	}
@@ -2383,27 +2704,81 @@
 			return '';
 		}
 
-		var hiddenLayers = [];
+		return withStaticLayersVisible(function () {
+			var hiddenLayers = [];
 
-		[bgLayer, overlayLayer, borderLayer].forEach(function (layer) {
-			if (layer && layer.visible()) {
-				hiddenLayers.push(layer);
-				layer.visible(false);
+			// Photos + mask borders only; text is exported separately as SVG.
+			[bgLayer, overlayLayer, textLayer].forEach(function (layer) {
+				if (layer && layer.visible()) {
+					hiddenLayers.push(layer);
+					layer.visible(false);
+				}
+			});
+
+			var exportOpts = getStageExportDataUrlOptions();
+			var pixelRatio = exportOpts.pixelRatio;
+
+			setMaskedRenderScale(pixelRatio);
+			stage.draw();
+			var dataUrl = stage.toDataURL(exportOpts);
+
+			hiddenLayers.forEach(function (layer) {
+				layer.visible(true);
+			});
+			setMaskedRenderScale(getLivePreviewRenderScale());
+			stage.draw();
+
+			return applyOptionalMaskToCroppedDataUrl(dataUrl, getPrimaryExportArea(), pixelRatio);
+		});
+	}
+
+	function exportProjectPdfPreview() {
+		if (!stage) {
+			return '';
+		}
+
+		return withStaticLayersVisible(function () {
+			var hiddenLayers = [];
+
+			[bgLayer, overlayLayer].forEach(function (layer) {
+				if (layer && layer.visible()) {
+					hiddenLayers.push(layer);
+					layer.visible(false);
+				}
+			});
+
+			var exportOpts = getStageExportDataUrlOptions();
+			var pixelRatio = exportOpts.pixelRatio;
+
+			setMaskedRenderScale(pixelRatio);
+			stage.draw();
+			var dataUrl = stage.toDataURL(exportOpts);
+
+			hiddenLayers.forEach(function (layer) {
+				layer.visible(true);
+			});
+			setMaskedRenderScale(getLivePreviewRenderScale());
+			stage.draw();
+
+			var result = applyOptionalMaskToCroppedDataUrl(dataUrl, getPrimaryExportArea(), pixelRatio);
+
+			if (window.WppDebug && window.WppDebug.isEnabled()) {
+				window.WppDebug.log('export.pdf_preview', {
+					crop: {
+						x: exportOpts.x,
+						y: exportOpts.y,
+						width: exportOpts.width,
+						height: exportOpts.height,
+						pixelRatio: pixelRatio
+					},
+					dataUrlChars: result ? result.length : 0,
+					hasExportArea: !!getPrimaryExportArea(),
+					projectPdfCm: (wppData.layout && wppData.layout.project_pdf) || null
+				});
 			}
+
+			return result;
 		});
-
-		var pixelRatio = getEffectiveExportPixelRatio();
-		setMaskedRenderScale(pixelRatio);
-		stage.draw();
-		var dataUrl = stage.toDataURL({ pixelRatio: pixelRatio, mimeType: 'image/png' });
-
-		hiddenLayers.forEach(function (layer) {
-			layer.visible(true);
-		});
-		setMaskedRenderScale(getLivePreviewRenderScale());
-		stage.draw();
-
-		return dataUrl;
 	}
 
 	function persistHiddenFields() {
@@ -2411,11 +2786,22 @@
 		var preview = exportPreview();
 		var layersPreview = exportLayersPreview();
 		var textSvg = exportTextSvg();
+		var projectPdf = exportProjectPdfPreview();
+
+		if (window.WppDebug && window.WppDebug.isEnabled()) {
+			window.WppDebug.log('export.persist', {
+				previewChars: preview ? preview.length : 0,
+				layersChars: layersPreview ? layersPreview.length : 0,
+				textSvgChars: textSvg ? textSvg.length : 0,
+				pdfChars: projectPdf ? projectPdf.length : 0
+			});
+		}
 		var nonce = $('.wpp-personalizer input[name="wpp_personalizer_nonce"]').val() || wppData.nonce;
 		$('form.cart .wpp-project-state, .wpp-personalizer .wpp-project-state').val(json);
 		$('form.cart .wpp-preview-data, .wpp-personalizer .wpp-preview-data').val(preview);
 		$('form.cart .wpp-preview-layers-data, .wpp-personalizer .wpp-preview-layers-data').val(layersPreview);
 		$('form.cart .wpp-text-svg-data, .wpp-personalizer .wpp-text-svg-data').val(textSvg);
+		$('form.cart .wpp-project-pdf-data, .wpp-personalizer .wpp-project-pdf-data').val(projectPdf);
 		$('form.cart .wpp-personalizer-nonce, .wpp-personalizer input[name="wpp_personalizer_nonce"]').val(nonce);
 	}
 

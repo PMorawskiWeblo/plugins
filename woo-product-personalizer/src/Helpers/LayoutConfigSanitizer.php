@@ -36,17 +36,24 @@ class LayoutConfigSanitizer {
 			? ! empty( $config['crop_mask_shape'] )
 			: true;
 
+		$project_pdf = $config['project_pdf'] ?? array();
+
 		$sanitized = array(
 			'personalization_mode' => $personalization_mode,
 			'crop_mask_shape'      => $crop_mask_shape,
+			'project_pdf'          => array(
+				'width_cm'  => self::sanitize_cm( $project_pdf['width_cm'] ?? 0 ),
+				'height_cm' => self::sanitize_cm( $project_pdf['height_cm'] ?? 0 ),
+			),
 			'canvas'      => array(
 				'width'      => absint( $canvas['width'] ),
 				'height'     => absint( $canvas['height'] ),
 				'background' => esc_url_raw( $canvas['background'] ?? '' ),
 				'overlay'    => esc_url_raw( $canvas['overlay'] ?? '' ),
 			),
-			'image_slots' => array(),
-			'text_fields' => array(),
+			'image_slots'  => array(),
+			'export_areas' => array(),
+			'text_fields'  => array(),
 			'limits'      => array(
 				'max_total_images' => absint( $config['limits']['max_total_images'] ?? 4 ),
 				'max_upload_mb'    => absint( $config['limits']['max_upload_mb'] ?? 10 ),
@@ -58,11 +65,15 @@ class LayoutConfigSanitizer {
 				if ( empty( $slot['id'] ) ) {
 					continue;
 				}
+				$customer_editable = ! isset( $slot['customer_editable'] ) || ! empty( $slot['customer_editable'] );
+
 				$sanitized['image_slots'][] = array(
-					'id'            => sanitize_key( $slot['id'] ),
-					'label'         => sanitize_text_field( $slot['label'] ?? '' ),
-					'required'      => ! empty( $slot['required'] ),
-					'white_bg'      => ! empty( $slot['white_bg'] ),
+					'id'                => sanitize_key( $slot['id'] ),
+					'label'             => sanitize_text_field( $slot['label'] ?? '' ),
+					'customer_editable' => $customer_editable,
+					'fixed_source'      => $customer_editable ? '' : esc_url_raw( $slot['fixed_source'] ?? '' ),
+					'required'          => $customer_editable && ! empty( $slot['required'] ),
+					'white_bg'          => ! empty( $slot['white_bg'] ),
 					'max_files'     => absint( $slot['max_files'] ?? 1 ),
 					'allowed_types' => array_map( 'sanitize_text_field', (array) ( $slot['allowed_types'] ?? array( 'image/jpeg', 'image/png', 'image/webp' ) ) ),
 					'mask'          => esc_url_raw( $slot['mask'] ?? '' ),
@@ -83,6 +94,26 @@ class LayoutConfigSanitizer {
 						'flip'    => ! isset( $slot['controls']['flip'] ) || ! empty( $slot['controls']['flip'] ),
 						'autofit' => ! isset( $slot['controls']['autofit'] ) || ! empty( $slot['controls']['autofit'] ),
 						'reset'   => ! isset( $slot['controls']['reset'] ) || ! empty( $slot['controls']['reset'] ),
+					),
+				);
+			}
+		}
+
+		if ( ! empty( $config['export_areas'] ) && is_array( $config['export_areas'] ) ) {
+			foreach ( $config['export_areas'] as $area ) {
+				if ( empty( $area['id'] ) ) {
+					continue;
+				}
+
+				$sanitized['export_areas'][] = array(
+					'id'    => sanitize_key( $area['id'] ),
+					'label' => sanitize_text_field( $area['label'] ?? '' ),
+					'mask'  => esc_url_raw( $area['mask'] ?? '' ),
+					'frame' => array(
+						'x'      => absint( $area['frame']['x'] ?? 0 ),
+						'y'      => absint( $area['frame']['y'] ?? 0 ),
+						'width'  => absint( $area['frame']['width'] ?? 100 ),
+						'height' => absint( $area['frame']['height'] ?? 100 ),
 					),
 				);
 			}
@@ -130,6 +161,22 @@ class LayoutConfigSanitizer {
 	/**
 	 * Keep only valid Google Fonts CSS URLs (one family per link in UI).
 	 *
+	 * @param array $urls Raw URLs.
+	 * @return array
+	 */
+	/**
+	 * Sanitize PDF dimension in centimeters (0 = auto).
+	 *
+	 * @param mixed $value Raw value.
+	 * @return float
+	 */
+	private static function sanitize_cm( $value ) {
+		$cm = round( (float) $value, 2 );
+
+		return max( 0, min( 200, $cm ) );
+	}
+
+	/**
 	 * @param array $urls Raw URLs.
 	 * @return array
 	 */

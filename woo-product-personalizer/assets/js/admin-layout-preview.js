@@ -6,13 +6,14 @@
 		getConfig: null,
 		onSlotUpdate: null,
 		onTextUpdate: null,
+		onExportAreaUpdate: null,
 		stage: null,
 		previewScale: 1,
 		layers: {},
 		selected: null,
 		resizeObserver: null,
 		transformer: null,
-		previewNodes: { slots: [], texts: [] },
+		previewNodes: { slots: [], texts: [], exportAreas: [] },
 		maskCache: {},
 		zoomMode: false
 	};
@@ -124,6 +125,10 @@
 			return api.previewNodes.slots[api.selected.index] || null;
 		}
 
+		if (api.selected.type === 'export') {
+			return api.previewNodes.exportAreas[api.selected.index] || null;
+		}
+
 		return api.previewNodes.texts[api.selected.index] || null;
 	}
 
@@ -195,15 +200,27 @@
 		api.onTextUpdate(index, data.x, data.y, data.width, data.height);
 	}
 
+	function emitExportAreaUpdate(index, group) {
+		var data = normalizeGroupBox(group);
+
+		if (!data || typeof api.onExportAreaUpdate !== 'function') {
+			return;
+		}
+
+		api.onExportAreaUpdate(index, data.x, data.y, data.width, data.height);
+	}
+
 	function selectPreviewItem(type, index) {
 		api.selected = { type: type, index: index };
 
-		api.$builder.find('.wpp-slot-card, .wpp-text-card').removeClass('is-preview-active');
+		api.$builder.find('.wpp-slot-card, .wpp-text-card, .wpp-export-area-card').removeClass('is-preview-active');
 
 		if (type === 'slot') {
 			api.$builder.find('.wpp-slot-card[data-index="' + index + '"]').addClass('is-preview-active');
 		} else if (type === 'text') {
 			api.$builder.find('.wpp-text-card[data-index="' + index + '"]').addClass('is-preview-active');
+		} else if (type === 'export') {
+			api.$builder.find('.wpp-export-area-card[data-index="' + index + '"]').addClass('is-preview-active');
 		}
 
 		attachTransformer(getSelectedNode());
@@ -225,6 +242,14 @@
 
 			selectPreviewItem('text', $(this).data('index'));
 		});
+
+		api.$builder.on('click.wppPreview', '.wpp-export-area-card', function (e) {
+			if ($(e.target).closest('.wpp-builder-card__header').length) {
+				return;
+			}
+
+			selectPreviewItem('export', $(this).data('index'));
+		});
 	}
 
 	function bindStageDeselect() {
@@ -232,7 +257,7 @@
 			if (e.target === api.stage) {
 				api.selected = null;
 				detachTransformer();
-				api.$builder.find('.wpp-slot-card, .wpp-text-card').removeClass('is-preview-active');
+				api.$builder.find('.wpp-slot-card, .wpp-text-card, .wpp-export-area-card').removeClass('is-preview-active');
 			}
 		});
 	}
@@ -398,6 +423,77 @@
 		return group;
 	}
 
+	function createExportAreaGroup(area, index) {
+		var frame = area.frame || { x: 0, y: 0, width: 100, height: 100 };
+		var w = (frame.width || 100) * api.previewScale;
+		var h = (frame.height || 100) * api.previewScale;
+
+		var group = new Konva.Group({
+			x: (frame.x || 0) * api.previewScale,
+			y: (frame.y || 0) * api.previewScale,
+			draggable: true,
+			name: 'export_' + index
+		});
+
+		group.add(
+			new Konva.Rect({
+				name: 'wpp-box',
+				width: w,
+				height: h,
+				fill: 'rgba(46, 125, 50, 0.18)',
+				stroke: '#2e7d32',
+				strokeWidth: 2,
+				dash: [8, 4]
+			})
+		);
+
+		group.add(
+			new Konva.Text({
+				text: area.label || area.id || 'Export',
+				fontSize: Math.max(10, 12 * api.previewScale),
+				fill: '#1b5e20',
+				padding: 4,
+				width: w,
+				ellipsis: true,
+				listening: false
+			})
+		);
+
+		loadSlotMask(area.mask, function (maskImg) {
+			if (!maskImg || !group.getParent()) {
+				return;
+			}
+
+			group.add(
+				new Konva.Image({
+					width: w,
+					height: h,
+					image: maskImg,
+					opacity: 0.35,
+					listening: false
+				})
+			);
+			api.layers.ui.batchDraw();
+		});
+
+		group.on('mousedown touchstart', function (e) {
+			e.cancelBubble = true;
+			selectPreviewItem('export', index);
+		});
+
+		group.on('dragend', function () {
+			emitExportAreaUpdate(index, group);
+			selectPreviewItem('export', index);
+		});
+
+		group.on('transformend', function () {
+			emitExportAreaUpdate(index, group);
+			selectPreviewItem('export', index);
+		});
+
+		return group;
+	}
+
 	function createTextGroup(field, index) {
 		var style = field.style || {};
 		var textValue = String(field.default_value || field.label || field.id || 'Text').trim();
@@ -503,8 +599,10 @@
 		clearLayer(api.layers.slots);
 		clearLayer(api.layers.text);
 		clearLayer(api.layers.overlay);
+		clearLayer(api.layers.ui);
+		api.transformer = null;
 
-		api.previewNodes = { slots: [], texts: [] };
+		api.previewNodes = { slots: [], texts: [], exportAreas: [] };
 
 		var stageW = api.stage.width();
 		var stageH = api.stage.height();
@@ -537,6 +635,12 @@
 				var group = createSlotGroup(slot, index);
 				api.previewNodes.slots[index] = group;
 				api.layers.slots.add(group);
+			});
+
+			(cfg.export_areas || []).forEach(function (area, index) {
+				var exportGroup = createExportAreaGroup(area, index);
+				api.previewNodes.exportAreas[index] = exportGroup;
+				api.layers.ui.add(exportGroup);
 			});
 
 			(cfg.text_fields || []).forEach(function (field, index) {
@@ -587,6 +691,7 @@
 		api.getConfig = options.getConfig;
 		api.onSlotUpdate = options.onSlotUpdate;
 		api.onTextUpdate = options.onTextUpdate;
+		api.onExportAreaUpdate = options.onExportAreaUpdate;
 
 		if (!api.$builder || !api.$builder.length) {
 			return;

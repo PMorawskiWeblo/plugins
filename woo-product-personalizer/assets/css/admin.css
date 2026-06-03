@@ -36,6 +36,11 @@
 	min-width: 0;
 }
 
+.wpp-slot-static-source-section.hidden,
+.wpp-slot-customer-required.hidden {
+	display: none !important;
+}
+
 .konvajs-content{
 	margin: 0 auto;
 }

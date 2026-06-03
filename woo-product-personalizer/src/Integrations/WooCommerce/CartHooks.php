@@ -8,6 +8,7 @@
 namespace WooProductPersonalizer\Integrations\WooCommerce;
 
 use WooProductPersonalizer\Core\Logger;
+use WooProductPersonalizer\Domain\Layout\Layout;
 use WooProductPersonalizer\Domain\Project\ValidationService;
 use WooProductPersonalizer\Helpers\UploadSession;
 use WooProductPersonalizer\Helpers\UploadUrlValidator;
@@ -170,13 +171,18 @@ class CartHooks {
 			return $cart_item_data;
 		}
 
-		$layout  = $this->layouts->find( $config->get_layout_id() );
+		$layout = $this->layouts->find( $config->get_layout_id() );
+		if ( $layout ) {
+			$state = $this->merge_static_image_fields_into_state( $state, $layout );
+		}
+
 		$summary = $layout ? $this->validator->build_summary( $state, $layout ) : array();
 
 		$preview_raw        = isset( $_POST['wpp_preview_data'] ) ? $this->sanitize_preview_data( wp_unslash( $_POST['wpp_preview_data'] ) ) : '';
 		$preview_layers_raw = isset( $_POST['wpp_preview_layers_data'] ) ? $this->sanitize_preview_data( wp_unslash( $_POST['wpp_preview_layers_data'] ) ) : '';
 		$preview_text_svg   = isset( $_POST['wpp_text_svg_data'] ) ? $this->sanitize_text_svg_data( wp_unslash( $_POST['wpp_text_svg_data'] ) ) : '';
-		$preview            = $this->persist_cart_preview( $preview_raw, $preview_layers_raw, $preview_text_svg );
+		$preview_pdf_raw    = isset( $_POST['wpp_project_pdf_data'] ) ? $this->sanitize_preview_data( wp_unslash( $_POST['wpp_project_pdf_data'] ) ) : '';
+		$preview            = $this->persist_cart_preview( $preview_raw, $preview_layers_raw, $preview_text_svg, $preview_pdf_raw );
 
 		$cart_item_data[ self::CART_KEY ] = array(
 			'layout_id'              => $config->get_layout_id(),
@@ -187,6 +193,7 @@ class CartHooks {
 			'preview_full_url'       => $preview['full_url'] ?? '',
 			'preview_layers_full_url' => $preview['layers_full_url'] ?? '',
 			'preview_text_svg_full_url' => $preview['text_svg_full_url'] ?? '',
+			'preview_project_pdf_full_url' => $preview['project_pdf_full_url'] ?? '',
 			'preview_id'             => $preview['id'] ?? '',
 			'hash'              => md5( wp_json_encode( $state ) . $product_id ),
 			'personalized'      => true,
@@ -445,9 +452,11 @@ class CartHooks {
 	 *
 	 * @param string $data_url        Sanitized full preview data URL.
 	 * @param string $layers_data_url Sanitized layers-only preview data URL.
-	 * @return array{thumb_url?: string, full_url?: string, layers_full_url?: string, text_svg_full_url?: string, id?: string}
+	 * @param string $text_svg        Sanitized text SVG.
+	 * @param string $project_pdf_data Sanitized composite PNG for PDF.
+	 * @return array{thumb_url?: string, full_url?: string, layers_full_url?: string, text_svg_full_url?: string, project_pdf_full_url?: string, id?: string}
 	 */
-	private function persist_cart_preview( $data_url, $layers_data_url = '', $text_svg = '' ) {
+	private function persist_cart_preview( $data_url, $layers_data_url = '', $text_svg = '', $project_pdf_data = '' ) {
 		if ( '' === $data_url ) {
 			return array();
 		}
@@ -476,6 +485,13 @@ class CartHooks {
 			$text_file = $this->cart_previews->store_text_svg( $stored['id'], $text_svg );
 			if ( false !== $text_file ) {
 				$result['text_svg_full_url'] = $text_file['url'];
+			}
+		}
+
+		if ( '' !== $project_pdf_data ) {
+			$pdf_file = $this->cart_previews->store_project_pdf_from_data_url( $stored['id'], $project_pdf_data );
+			if ( false !== $pdf_file ) {
+				$result['project_pdf_full_url'] = $pdf_file['url'];
 			}
 		}
 
@@ -580,5 +596,46 @@ class CartHooks {
 	 */
 	public function maybe_disable_add_to_cart_script() {
 		// Handled on frontend via wpp-personalizer.js.
+	}
+
+	/**
+	 * Inject layout-defined static slot images into project state (not customer-editable).
+	 *
+	 * @param array  $state  Project state.
+	 * @param Layout $layout Layout.
+	 * @return array
+	 */
+	private function merge_static_image_fields_into_state( array $state, Layout $layout ) {
+		if ( ! isset( $state['image_fields'] ) || ! is_array( $state['image_fields'] ) ) {
+			$state['image_fields'] = array();
+		}
+
+		foreach ( $layout->get_image_slots() as $slot ) {
+			$id = $slot['id'] ?? '';
+
+			if ( '' === $id || ! empty( $slot['customer_editable'] ) ) {
+				continue;
+			}
+
+			$source = ! empty( $slot['fixed_source'] ) ? (string) $slot['fixed_source'] : (string) ( $slot['mask'] ?? '' );
+			$source = esc_url_raw( $source );
+
+			if ( '' === $source ) {
+				continue;
+			}
+
+			$existing_transform = array();
+			if ( ! empty( $state['image_fields'][ $id ]['transform'] ) && is_array( $state['image_fields'][ $id ]['transform'] ) ) {
+				$existing_transform = $state['image_fields'][ $id ]['transform'];
+			}
+
+			$state['image_fields'][ $id ] = array(
+				'source'    => $source,
+				'transform' => $existing_transform,
+				'static'    => true,
+			);
+		}
+
+		return $state;
 	}
 }

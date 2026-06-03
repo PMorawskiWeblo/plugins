@@ -291,6 +291,21 @@ class LayoutImportExport {
 					$replace( $mask );
 					$config_copy['image_slots'][ $i ]['mask'] = $mask;
 				}
+				if ( empty( $slot['customer_editable'] ) && ! empty( $slot['fixed_source'] ) ) {
+					$fixed = $slot['fixed_source'];
+					$replace( $fixed );
+					$config_copy['image_slots'][ $i ]['fixed_source'] = $fixed;
+				}
+			}
+		}
+
+		if ( ! empty( $config_copy['export_areas'] ) && is_array( $config_copy['export_areas'] ) ) {
+			foreach ( $config_copy['export_areas'] as $i => $area ) {
+				if ( ! empty( $area['mask'] ) ) {
+					$mask = $area['mask'];
+					$replace( $mask );
+					$config_copy['export_areas'][ $i ]['mask'] = $mask;
+				}
 			}
 		}
 
@@ -404,6 +419,11 @@ class LayoutImportExport {
 					$mask = $slot['mask'];
 					$replace( $mask );
 					$config['image_slots'][ $i ]['mask'] = $mask;
+				}
+				if ( empty( $slot['customer_editable'] ) && isset( $slot['fixed_source'] ) ) {
+					$fixed = $slot['fixed_source'];
+					$replace( $fixed );
+					$config['image_slots'][ $i ]['fixed_source'] = $fixed;
 				}
 			}
 		}

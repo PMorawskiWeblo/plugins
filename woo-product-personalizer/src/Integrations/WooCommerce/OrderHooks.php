@@ -160,6 +160,10 @@ class OrderHooks {
 		if ( ! empty( $wpp['preview_text_svg_full_url'] ) ) {
 			$item->add_meta_data( '_wpp_preview_text_svg_full_url', (string) $wpp['preview_text_svg_full_url'], true );
 		}
+
+		if ( ! empty( $wpp['preview_project_pdf_full_url'] ) ) {
+			$item->add_meta_data( '_wpp_preview_project_pdf_full_url', (string) $wpp['preview_project_pdf_full_url'], true );
+		}
 	}
 
 	/**
@@ -188,6 +192,7 @@ class OrderHooks {
 				$preview_source    = $this->resolve_production_preview_source( $item );
 				$layers_source     = $this->resolve_layers_production_preview_source( $item );
 				$text_svg_source   = $this->resolve_text_svg_production_source( $item );
+				$project_pdf_source = $this->resolve_project_pdf_preview_source( $item );
 
 				if ( ! is_array( $state ) ) {
 					continue;
@@ -203,7 +208,8 @@ class OrderHooks {
 					$product_id,
 					(int) $item->get_meta( '_wpp_layout_id' ),
 					$layers_source,
-					$text_svg_source
+					$text_svg_source,
+					$project_pdf_source
 				);
 
 				if ( $paths ) {
@@ -223,6 +229,12 @@ class OrderHooks {
 					}
 					if ( ! empty( $paths['text_svg_url'] ) ) {
 						$item->update_meta_data( '_wpp_text_svg_url', $paths['text_svg_url'] );
+					}
+					if ( ! empty( $paths['project_pdf'] ) ) {
+						$item->update_meta_data( '_wpp_project_pdf_file', $paths['project_pdf'] );
+					}
+					if ( ! empty( $paths['project_pdf_url'] ) ) {
+						$item->update_meta_data( '_wpp_project_pdf_url', $paths['project_pdf_url'] );
 					}
 					$item->delete_meta_data( '_wpp_preview_id' );
 					$item->save();
@@ -306,6 +318,21 @@ class OrderHooks {
 		$text_url   = (string) $item->get_meta( '_wpp_preview_text_svg_full_url' );
 
 		$path = $this->cart_previews->resolve_text_production_path( $preview_id, $text_url );
+
+		return false !== $path ? $path : '';
+	}
+
+	/**
+	 * Resolve project PDF composite PNG (path or data URL).
+	 *
+	 * @param \WC_Order_Item_Product $item Order item.
+	 * @return string
+	 */
+	private function resolve_project_pdf_preview_source( $item ) {
+		$preview_id = (string) $item->get_meta( '_wpp_preview_id' );
+		$pdf_url    = (string) $item->get_meta( '_wpp_preview_project_pdf_full_url' );
+
+		$path = $this->cart_previews->resolve_project_pdf_path( $preview_id, $pdf_url );
 
 		return false !== $path ? $path : '';
 	}

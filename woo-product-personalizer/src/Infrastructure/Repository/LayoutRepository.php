@@ -36,8 +36,13 @@ class LayoutRepository {
 				'background' => '',
 				'overlay'    => '',
 			),
-			'image_slots' => array(),
-			'text_fields' => array(),
+			'image_slots'  => array(),
+			'export_areas' => array(),
+			'project_pdf'  => array(
+				'width_cm'  => 0,
+				'height_cm' => 0,
+			),
+			'text_fields'  => array(),
 			'limits'      => array(
 				'max_total_images' => 4,
 				'max_upload_mb'    => 10,

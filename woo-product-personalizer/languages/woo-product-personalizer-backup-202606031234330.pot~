@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Woo Product Personalizer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-19 12:19+0000\n"
+"POT-Creation-Date: 2026-05-29 07:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,12 +16,12 @@ msgstr ""
 "X-Loco-Version: 2.8.3; wp-6.9.4; php-8.2.29\n"
 "X-Domain: woo-product-personalizer"
 
-#: templates/admin/settings-page.php:189
+#: templates/admin/settings-page.php:202
 msgid ""
 "A debug panel on the product page (state, layout, slots, recent events)."
 msgstr ""
 
-#: src/Domain/Project/ValidationService.php:103
+#: src/Domain/Project/ValidationService.php:111
 msgid "Acceptance checkbox is required."
 msgstr ""
 
@@ -45,15 +45,15 @@ msgstr ""
 msgid "Add text field"
 msgstr ""
 
-#: templates/admin/settings-page.php:111
+#: templates/admin/settings-page.php:113
 msgid "After add to cart"
 msgstr ""
 
-#: templates/admin/settings-page.php:109
+#: templates/admin/settings-page.php:111
 msgid "After price"
 msgstr ""
 
-#: templates/admin/settings-page.php:228
+#: templates/admin/settings-page.php:241
 msgid ""
 "After the run finishes, an admin notice shows how many folders were deleted "
 "(or would be deleted in dry run). Folders that are too new (except cancelled "
@@ -64,7 +64,7 @@ msgstr ""
 msgid "Allow customers to personalize this product."
 msgstr ""
 
-#: templates/admin/settings-page.php:35
+#: templates/admin/settings-page.php:48
 msgid "Allowed MIME types"
 msgstr ""
 
@@ -76,46 +76,51 @@ msgstr ""
 msgid "Assigned layout"
 msgstr ""
 
-#: templates/admin/settings-page.php:136
+#: templates/admin/settings-page.php:149
 msgid "Auto cleanup"
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:243
+#: src/Frontend/PersonalizerController.php:279
 #: templates/frontend/partials/transform-toolbar.php:34
 msgid "Auto-fit"
 msgstr ""
 
-#: templates/admin/layout-metabox.php:50
+#: templates/admin/layout-metabox.php:65
 msgid "Background image"
 msgstr ""
 
-#: templates/admin/layout-metabox.php:51
+#: templates/admin/layout-metabox.php:66
 msgid "Base template shown behind photos (e.g. letter outlines)."
 msgstr ""
 
-#: templates/admin/settings-page.php:244
+#: templates/admin/settings-page.php:257
 msgid ""
 "Based on the folder’s last modified time on disk. Independent from the "
 "scheduled cleanup interval above."
 msgstr ""
 
-#: templates/admin/settings-page.php:110
+#: templates/admin/settings-page.php:112
 msgid "Before add to cart"
 msgstr ""
 
-#: templates/admin/settings-page.php:103
+#: templates/admin/settings-page.php:105
 msgid "Button position"
+msgstr ""
+
+#: src/Frontend/PersonalizerController.php:289
+#: templates/frontend/partials/crop-modal.php:29
+msgid "Cancel"
 msgstr ""
 
 #: templates/admin/layout-metabox.php:44
 msgid "Canvas"
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:233
+#: src/Frontend/PersonalizerController.php:269
 msgid "Choose file"
 msgstr ""
 
-#: templates/admin/settings-page.php:133
+#: templates/admin/settings-page.php:146
 msgid "Cleanup"
 msgstr ""
 
@@ -130,11 +135,11 @@ msgstr ""
 msgid "Cleanup complete. %d folder(s) deleted."
 msgstr ""
 
-#: templates/admin/settings-page.php:148
+#: templates/admin/settings-page.php:161
 msgid "Cleanup interval"
 msgstr ""
 
-#: templates/admin/layout-metabox.php:83
+#: templates/admin/layout-metabox.php:98
 msgid "Click to select background image"
 msgstr ""
 
@@ -146,9 +151,10 @@ msgstr ""
 msgid "Clone"
 msgstr ""
 
-#: templates/frontend/personalizer.php:24
+#: templates/frontend/personalizer.php:20
 #: templates/frontend/cart-preview-popup.php:13
-#: src/Frontend/PersonalizerController.php:249
+#: src/Frontend/PersonalizerController.php:286
+#: templates/frontend/partials/crop-modal.php:13
 msgid "Close"
 msgstr ""
 
@@ -160,12 +166,12 @@ msgstr ""
 msgid "Collapse settings"
 msgstr ""
 
-#: templates/admin/settings-page.php:165
+#: templates/admin/settings-page.php:178
 msgid "Completed orders only"
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:248
-#: src/Infrastructure/Repository/SettingsRepository.php:42
+#: src/Frontend/PersonalizerController.php:285
+#: src/Infrastructure/Repository/SettingsRepository.php:44
 msgctxt "completed personalize button"
 msgid "Personalized"
 msgstr ""
@@ -176,11 +182,11 @@ msgid ""
 "edit JSON directly."
 msgstr ""
 
-#: templates/admin/layout-metabox.php:118 src/Core/Assets.php:125
+#: templates/admin/layout-metabox.php:133 src/Core/Assets.php:125
 msgid "Copy JSON"
 msgstr ""
 
-#: templates/admin/layout-metabox.php:117
+#: templates/admin/layout-metabox.php:132
 msgid "Copy JSON to clipboard"
 msgstr ""
 
@@ -192,11 +198,19 @@ msgstr ""
 msgid "Could not create upload directory."
 msgstr ""
 
-#: templates/admin/settings-page.php:177
+#: templates/admin/layout-metabox.php:61
+msgid "Crop area follows slot mask shape"
+msgstr ""
+
+#: src/Core/Assets.php:136
+msgid "Customer controls"
+msgstr ""
+
+#: templates/admin/settings-page.php:190
 msgid "Debug"
 msgstr ""
 
-#: templates/admin/settings-page.php:180
+#: templates/admin/settings-page.php:193
 msgid "Debug mode"
 msgstr ""
 
@@ -204,19 +218,19 @@ msgstr ""
 msgid "Decrease font size"
 msgstr ""
 
-#: templates/admin/settings-page.php:81
+#: templates/admin/settings-page.php:94
 msgid "Default acceptance text"
 msgstr ""
 
-#: templates/admin/settings-page.php:60
+#: templates/admin/settings-page.php:73
 msgid "Default button label"
 msgstr ""
 
-#: templates/admin/settings-page.php:67
+#: templates/admin/settings-page.php:80
 msgid "Default completed button label"
 msgstr ""
 
-#: templates/admin/settings-page.php:235
+#: templates/admin/settings-page.php:248
 msgid "Delete folders"
 msgstr ""
 
@@ -224,15 +238,11 @@ msgstr ""
 msgid "Disable add to cart until personalization is valid."
 msgstr ""
 
-#: templates/admin/settings-page.php:91
-msgid "Display mode"
-msgstr ""
-
-#: src/Admin/OrderItemMetaDisplay.php:268 src/Admin/OrderMetaBox.php:84
+#: src/Admin/OrderItemMetaDisplay.php:293 src/Admin/OrderMetaBox.php:84
 msgid "Download all files (ZIP)"
 msgstr ""
 
-#: templates/admin/layout-metabox.php:102
+#: templates/admin/layout-metabox.php:117
 msgid ""
 "Drag to move. Use corner handles to resize width and height. Click an "
 "element to edit its settings."
@@ -242,7 +252,7 @@ msgstr ""
 msgid "Drag to reorder"
 msgstr ""
 
-#: templates/admin/settings-page.php:248
+#: templates/admin/settings-page.php:261
 msgid "Dry run (report only, do not delete)"
 msgstr ""
 
@@ -257,7 +267,7 @@ msgstr ""
 msgid "Dry run complete. %d folder(s) would be deleted."
 msgstr ""
 
-#: templates/admin/settings-page.php:225
+#: templates/admin/settings-page.php:238
 msgid ""
 "Each subfolder is named after the WooCommerce order ID and may contain "
 "project.json, preview PNG, ZIP, and customer uploads."
@@ -271,7 +281,13 @@ msgstr ""
 msgid "Edit layout"
 msgstr ""
 
-#: templates/admin/settings-page.php:184
+#. %s: field label
+#: src/Domain/Project/ValidationService.php:80
+#, php-format
+msgid "Emojis are not allowed: %s"
+msgstr ""
+
+#: templates/admin/settings-page.php:197
 msgid "Enable debug mode"
 msgstr ""
 
@@ -279,19 +295,19 @@ msgstr ""
 msgid "Enable personalization"
 msgstr ""
 
-#: templates/admin/settings-page.php:140
+#: templates/admin/settings-page.php:153
 msgid "Enable scheduled cleanup"
 msgstr ""
 
-#: templates/admin/settings-page.php:155 src/Core/Cron.php:74
+#: templates/admin/settings-page.php:168 src/Core/Cron.php:74
 msgid "Every 14 days"
 msgstr ""
 
-#: templates/admin/settings-page.php:157 src/Core/Cron.php:78
+#: templates/admin/settings-page.php:170 src/Core/Cron.php:78
 msgid "Every 30 days"
 msgstr ""
 
-#: templates/admin/settings-page.php:153 src/Core/Cron.php:70
+#: templates/admin/settings-page.php:166 src/Core/Cron.php:70
 msgid "Every 7 days"
 msgstr ""
 
@@ -321,11 +337,11 @@ msgstr ""
 msgid "Failed to store uploaded file."
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:289
+#: src/Frontend/PersonalizerController.php:331
 msgid "File too large."
 msgstr ""
 
-#: src/Admin/OrderItemMetaDisplay.php:258
+#: src/Admin/OrderItemMetaDisplay.php:283
 msgid "Files are not ready yet. Refresh the page in a moment."
 msgstr ""
 
@@ -333,7 +349,7 @@ msgstr ""
 msgid "Flip H"
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:241
+#: src/Frontend/PersonalizerController.php:277
 msgid "Flip horizontal"
 msgstr ""
 
@@ -341,32 +357,36 @@ msgstr ""
 msgid "Flip V"
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:242
+#: src/Frontend/PersonalizerController.php:278
 msgid "Flip vertical"
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:251
+#: src/Frontend/PersonalizerController.php:288
 msgid "Font"
 msgstr ""
 
-#: src/Admin/OrderItemMetaDisplay.php:162
+#: src/Admin/OrderItemMetaDisplay.php:167
 #: src/Helpers/PersonalizationSummaryHelper.php:132
 #: templates/frontend/partials/transform-toolbar.php:45
 msgid "Font family"
 msgstr ""
 
-#: src/Admin/OrderItemMetaDisplay.php:161
+#: src/Admin/OrderItemMetaDisplay.php:166
 #: src/Helpers/PersonalizationSummaryHelper.php:128
 msgid "Font size"
 msgstr ""
 
-#: templates/admin/settings-page.php:54
+#: src/Core/Assets.php:138
+msgid "Font size (+/− in editor)"
+msgstr ""
+
+#: templates/admin/settings-page.php:67
 msgid ""
 "Formats the storefront personalizer can load on the canvas (Konva). GIF/AVIF "
 "support depends on the customer’s browser; BMP is widely supported."
 msgstr ""
 
-#: templates/admin/settings-page.php:88
+#: templates/admin/settings-page.php:101
 msgid "Frontend"
 msgstr ""
 
@@ -374,19 +394,32 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: src/Core/Assets.php:140
+#: src/Core/Assets.php:144
 msgid "Google Fonts"
 msgstr ""
 
-#: templates/admin/layout-metabox.php:58
+#: templates/admin/layout-metabox.php:73
 msgid "Height"
 msgstr ""
 
-#: templates/admin/settings-page.php:129
+#: templates/admin/settings-page.php:131
 msgid "Hide automatic button placement"
 msgstr ""
 
-#: templates/admin/settings-page.php:160
+#: templates/admin/settings-page.php:140
+msgid ""
+"Hides the separate personalize button (including shortcode). The modal save "
+"button becomes active after required fields are filled and then acts as add "
+"to cart with the standard WooCommerce label."
+msgstr ""
+
+#: templates/admin/settings-page.php:43
+msgid ""
+"Higher value = larger and sharper preview/production PNG (and bigger files). "
+"Recommended: 2-3."
+msgstr ""
+
+#: templates/admin/settings-page.php:173
 msgid ""
 "How often the scheduled job runs, and the minimum age of an order folder "
 "before it can be deleted (based on the folder’s last modified time). "
@@ -399,11 +432,11 @@ msgstr ""
 msgid "https://weblo.pl/"
 msgstr ""
 
-#: src/Infrastructure/Repository/SettingsRepository.php:43
-msgid "I accept the preview shown above."
+#: src/Infrastructure/Repository/SettingsRepository.php:45
+msgid "I accept the project"
 msgstr ""
 
-#: templates/admin/layout-metabox.php:63 src/Core/Assets.php:135
+#: templates/admin/layout-metabox.php:78 src/Core/Assets.php:135
 msgid "Image URL"
 msgstr ""
 
@@ -419,15 +452,17 @@ msgstr ""
 msgid "Imported layout"
 msgstr ""
 
+#: templates/admin/layout-metabox.php:63
+msgid ""
+"In layout 2, the crop frame matches the mask image (requires a mask on the "
+"slot). Enabled by default."
+msgstr ""
+
 #: templates/frontend/partials/transform-toolbar.php:40
 msgid "Increase font size"
 msgstr ""
 
-#: templates/admin/settings-page.php:98
-msgid "Inline"
-msgstr ""
-
-#: src/Frontend/PersonalizerController.php:246
+#: src/Frontend/PersonalizerController.php:282
 msgid "Invalid file type or size."
 msgstr ""
 
@@ -440,7 +475,7 @@ msgid "Invalid file type. Upload a .json export file."
 msgstr ""
 
 #. %s: slot label
-#: src/Domain/Project/ValidationService.php:96
+#: src/Domain/Project/ValidationService.php:104
 #, php-format
 msgid "Invalid image source: %s"
 msgstr ""
@@ -449,7 +484,7 @@ msgstr ""
 msgid "Invalid JSON file."
 msgstr ""
 
-#: templates/admin/layout-metabox.php:112
+#: templates/admin/layout-metabox.php:127
 msgid "JSON configuration"
 msgstr ""
 
@@ -461,7 +496,7 @@ msgstr ""
 msgid "Label"
 msgstr ""
 
-#: src/Admin/OrderItemMetaDisplay.php:234
+#: src/Admin/OrderItemMetaDisplay.php:239
 msgid "Layers PNG (no background)"
 msgstr ""
 
@@ -501,7 +536,15 @@ msgstr ""
 msgid "Layout not found."
 msgstr ""
 
-#: src/Admin/OrderItemMetaDisplay.php:109
+#: templates/admin/layout-metabox.php:53
+msgid "Layout personalization 1"
+msgstr ""
+
+#: templates/admin/layout-metabox.php:54
+msgid "Layout personalization 2 (crop after upload)"
+msgstr ""
+
+#: src/Admin/OrderItemMetaDisplay.php:112
 msgid "Layout:"
 msgstr ""
 
@@ -509,15 +552,15 @@ msgstr ""
 msgid "Layouts"
 msgstr ""
 
-#: templates/admin/layout-metabox.php:94
+#: templates/admin/layout-metabox.php:109
 msgid "Live preview"
 msgstr ""
 
-#: templates/admin/settings-page.php:202
+#: templates/admin/settings-page.php:215
 msgid "Log file:"
 msgstr ""
 
-#: templates/admin/settings-page.php:217
+#: templates/admin/settings-page.php:230
 msgid "Manual cleanup"
 msgstr ""
 
@@ -529,26 +572,32 @@ msgstr ""
 msgid "Missing layout configuration."
 msgstr ""
 
-#: templates/admin/settings-page.php:95
-msgid "Modal"
+#: templates/admin/layout-metabox.php:56
+msgid ""
+"Mode 2 opens a crop window after the customer uploads a photo (zoom, cancel, "
+"select)."
 msgstr ""
 
-#: src/Core/Assets.php:119 src/Frontend/PersonalizerController.php:237
+#: src/Core/Assets.php:137
+msgid "Move (arrows in editor)"
+msgstr ""
+
+#: src/Core/Assets.php:119 src/Frontend/PersonalizerController.php:273
 #: templates/frontend/partials/transform-toolbar.php:20
 msgid "Move down"
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:234
+#: src/Frontend/PersonalizerController.php:270
 #: templates/frontend/partials/transform-toolbar.php:14
 msgid "Move left"
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:235
+#: src/Frontend/PersonalizerController.php:271
 #: templates/frontend/partials/transform-toolbar.php:16
 msgid "Move right"
 msgstr ""
 
-#: src/Core/Assets.php:118 src/Frontend/PersonalizerController.php:236
+#: src/Core/Assets.php:118 src/Frontend/PersonalizerController.php:272
 #: templates/frontend/partials/transform-toolbar.php:18
 msgid "Move up"
 msgstr ""
@@ -557,13 +606,13 @@ msgstr ""
 msgid "New Layout"
 msgstr ""
 
-#: templates/admin/settings-page.php:207
+#: templates/admin/settings-page.php:220
 msgid ""
 "New lines are appended with a timestamp, level, and optional JSON context. "
 "The file is created automatically on first write."
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:277
+#: src/Frontend/PersonalizerController.php:319
 #: src/Admin/LayoutImportExport.php:187
 msgid "No file uploaded."
 msgstr ""
@@ -612,16 +661,16 @@ msgstr ""
 msgid "Older than 90 days"
 msgstr ""
 
-#: templates/admin/settings-page.php:169
+#: templates/admin/settings-page.php:182
 msgid "Only delete folders for completed/cancelled/refunded orders"
 msgstr ""
 
-#: templates/admin/layout-metabox.php:82 src/Core/Assets.php:131
+#: templates/admin/layout-metabox.php:97 src/Core/Assets.php:131
 msgid "Open media library"
 msgstr ""
 
 #. %s: link to Google Fonts
-#: src/Core/Assets.php:139
+#: src/Core/Assets.php:143
 #, php-format
 msgid ""
 "Paste one CSS embed link per line from %s. One link applies the font "
@@ -636,16 +685,20 @@ msgstr ""
 msgid "Personalization data is missing."
 msgstr ""
 
-#: src/Admin/OrderItemMetaDisplay.php:115
+#: src/Admin/OrderItemMetaDisplay.php:118
 msgid "Personalization details"
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:273
+#: src/Frontend/PersonalizerController.php:315
 msgid "Personalization is not available for this product."
 msgstr ""
 
 #: src/Integrations/WooCommerce/PreviewDisplay.php:215
 msgid "Personalization layers preview"
+msgstr ""
+
+#: templates/admin/layout-metabox.php:51
+msgid "Personalization layout"
 msgstr ""
 
 #: src/Integrations/WooCommerce/CartHooks.php:140
@@ -662,11 +715,15 @@ msgid ""
 "Personalization security check failed. Please refresh the page and try again."
 msgstr ""
 
+#: src/Integrations/WooCommerce/PreviewDisplay.php:254
+msgid "Personalization text SVG preview"
+msgstr ""
+
 #: templates/admin/product-panel.php:65
 msgid "Personalize button label"
 msgstr ""
 
-#: src/Infrastructure/Repository/SettingsRepository.php:41
+#: src/Infrastructure/Repository/SettingsRepository.php:43
 msgid "Personalize product"
 msgstr ""
 
@@ -680,21 +737,21 @@ msgstr ""
 msgid "Personalized"
 msgstr ""
 
-#: src/Admin/OrderItemMetaDisplay.php:104
+#: src/Admin/OrderItemMetaDisplay.php:107
 msgid "Personalized product"
 msgstr ""
 
-#: templates/admin/settings-page.php:195
+#: templates/admin/settings-page.php:208
 msgid ""
 "PHP-side debug/info/warning/error entries from the plugin when logging is "
 "active."
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:247
+#: src/Frontend/PersonalizerController.php:284
 msgid "Please accept the preview before adding to cart."
 msgstr ""
 
-#: templates/admin/settings-page.php:191
+#: templates/admin/settings-page.php:204
 msgid "Prefixed [WPP] messages in the browser console."
 msgstr ""
 
@@ -702,37 +759,49 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
+#: templates/admin/settings-page.php:36
+msgid "Preview export quality (scale)"
+msgstr ""
+
 #: src/Integrations/WooCommerce/PreviewDisplay.php:23
 msgid "Preview removed"
+msgstr ""
+
+#: src/Frontend/PersonalizerController.php:293
+msgid "Processing image…"
 msgstr ""
 
 #: src/Admin/SettingsPage.php:67 src/Admin/SettingsPage.php:68
 msgid "Product Personalizer"
 msgstr ""
 
-#: src/Admin/OrderItemMetaDisplay.php:255
+#: src/Admin/OrderItemMetaDisplay.php:280
 msgid "Production package"
 msgstr ""
 
-#: src/Admin/OrderItemMetaDisplay.php:214 src/Admin/OrderMetaBox.php:110
+#: src/Admin/OrderItemMetaDisplay.php:219 src/Admin/OrderMetaBox.php:110
 msgid "Production PNG"
 msgstr ""
 
-#: src/Admin/OrderItemMetaDisplay.php:277 src/Admin/OrderMetaBox.php:93
+#: src/Admin/OrderItemMetaDisplay.php:302 src/Admin/OrderMetaBox.php:93
 msgid "Regenerate production files"
 msgstr ""
 
-#: src/Core/Assets.php:121
+#: src/Core/Assets.php:121 src/Frontend/PersonalizerController.php:283
 msgid "Remove"
 msgstr ""
 
-#: templates/admin/layout-metabox.php:76 templates/admin/layout-metabox.php:77
+#: templates/admin/layout-metabox.php:91 templates/admin/layout-metabox.php:92
 #: src/Core/Assets.php:130
 msgid "Remove image"
 msgstr ""
 
 #: src/Core/Assets.php:133
 msgid "Remove mask"
+msgstr ""
+
+#: templates/admin/settings-page.php:134
+msgid "Replace add to cart button"
 msgstr ""
 
 #: templates/admin/product-panel.php:48
@@ -744,7 +813,7 @@ msgid "Require validation before add to cart"
 msgstr ""
 
 #. %s: slot label
-#: src/Domain/Project/ValidationService.php:87
+#: src/Domain/Project/ValidationService.php:95
 #, php-format
 msgid "Required image missing: %s"
 msgstr ""
@@ -755,32 +824,32 @@ msgstr ""
 msgid "Required text field missing: %s"
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:244
+#: src/Frontend/PersonalizerController.php:280
 #: templates/frontend/partials/transform-toolbar.php:36
 msgid "Reset"
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:240
+#: src/Frontend/PersonalizerController.php:276
 #: templates/frontend/partials/transform-toolbar.php:28
 msgid "Rotate"
 msgstr ""
 
-#: templates/admin/settings-page.php:253
+#: templates/admin/settings-page.php:266
 msgid "Run cleanup now"
 msgstr ""
 
-#: templates/admin/settings-page.php:142
+#: templates/admin/settings-page.php:155
 msgid ""
 "Runs a background job on the interval selected below. It removes old "
 "personalization project folders from disk (PNG exports, project.json, "
 "uploaded images) using the same rules as manual cleanup."
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:250
+#: src/Frontend/PersonalizerController.php:287
 msgid "Save personalization"
 msgstr ""
 
-#: templates/admin/settings-page.php:219
+#: templates/admin/settings-page.php:232
 msgid ""
 "Scans order project folders on disk and removes those matching the rules "
 "above and the age threshold you choose below. Cancelled orders are always "
@@ -795,7 +864,12 @@ msgstr ""
 msgid "See line items below for preview thumbnails and details."
 msgstr ""
 
-#: templates/admin/layout-metabox.php:71 templates/admin/layout-metabox.php:72
+#: src/Frontend/PersonalizerController.php:290
+#: templates/frontend/partials/crop-modal.php:30
+msgid "Select"
+msgstr ""
+
+#: templates/admin/layout-metabox.php:86 templates/admin/layout-metabox.php:87
 #: src/Core/Assets.php:129
 msgid "Select image"
 msgstr ""
@@ -804,7 +878,7 @@ msgstr ""
 msgid "Select mask"
 msgstr ""
 
-#: templates/admin/settings-page.php:193
+#: templates/admin/settings-page.php:206
 msgid "Selected client-side events sent to the server log (AJAX)."
 msgstr ""
 
@@ -813,11 +887,11 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: templates/admin/settings-page.php:112 templates/admin/settings-page.php:126
+#: templates/admin/settings-page.php:114 templates/admin/settings-page.php:128
 msgid "Shortcode only"
 msgstr ""
 
-#: templates/admin/settings-page.php:122
+#: templates/admin/settings-page.php:124
 msgid "Shortcode: [woo_product_personalizer]"
 msgstr ""
 
@@ -825,13 +899,13 @@ msgstr ""
 msgid "Show personalization"
 msgstr ""
 
-#: templates/admin/settings-page.php:75
+#: templates/admin/settings-page.php:88
 msgid ""
 "Shown on the product page after all required personalization fields are "
 "valid (when add to cart is blocked until personalization is complete)."
 msgstr ""
 
-#: templates/admin/settings-page.php:251
+#: templates/admin/settings-page.php:264
 msgid ""
 "Simulates cleanup without deleting anything: eligible folders are counted "
 "and listed in the result as “would be deleted”, but no files or directories "
@@ -842,7 +916,7 @@ msgstr ""
 msgid "Slot #%d"
 msgstr ""
 
-#: templates/admin/settings-page.php:222
+#: templates/admin/settings-page.php:235
 msgid "Target directory:"
 msgstr ""
 
@@ -850,7 +924,7 @@ msgstr ""
 msgid "Template size"
 msgstr ""
 
-#: src/Admin/OrderItemMetaDisplay.php:159
+#: src/Admin/OrderItemMetaDisplay.php:164
 #: src/Helpers/PersonalizationSummaryHelper.php:121
 msgid "Text"
 msgstr ""
@@ -859,20 +933,32 @@ msgstr ""
 msgid "Text field #%d"
 msgstr ""
 
+#: src/Integrations/WooCommerce/PreviewDisplay.php:246
+msgid "Text preview (SVG)"
+msgstr ""
+
+#: src/Core/Assets.php:139
+msgid "Text shadow (preview & SVG export)"
+msgstr ""
+
+#: src/Admin/OrderItemMetaDisplay.php:259
+msgid "Text SVG (no background)"
+msgstr ""
+
 #. %s: field label
 #: src/Domain/Project/ValidationService.php:72
 #, php-format
 msgid "Text too long: %s"
 msgstr ""
 
-#: templates/admin/settings-page.php:199
+#: templates/admin/settings-page.php:212
 msgid ""
 "The on-screen panel and console output also appear when WP_DEBUG is true in "
 "wp-config.php, but the log file and server-side AJAX logging require this "
 "setting to be enabled."
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:245
+#: src/Frontend/PersonalizerController.php:281
 msgid "This field is required."
 msgstr ""
 
@@ -880,7 +966,7 @@ msgstr ""
 msgid "This order contains personalized products."
 msgstr ""
 
-#: templates/admin/layout-metabox.php:111
+#: templates/admin/layout-metabox.php:126
 msgid "Toggle JSON configuration"
 msgstr ""
 
@@ -892,7 +978,7 @@ msgstr ""
 msgid "Transfer layouts"
 msgstr ""
 
-#: templates/admin/settings-page.php:186
+#: templates/admin/settings-page.php:199
 msgid "Turns on developer tooling for the storefront personalizer:"
 msgstr ""
 
@@ -908,17 +994,23 @@ msgstr ""
 msgid "Upload error."
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:232
+#: src/Frontend/PersonalizerController.php:268
 msgid "Upload image"
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:294
+#: src/Frontend/PersonalizerController.php:336
 #: src/Infrastructure/Uploads/UploadsManager.php:178
 msgid "Upload session is not available."
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:285
+#: src/Frontend/PersonalizerController.php:327
 msgid "Uploads are disabled."
+msgstr ""
+
+#: templates/admin/settings-page.php:138
+msgid ""
+"Use the default personalize button label on the add to cart button and open "
+"the modal on click"
 msgstr ""
 
 #: src/Admin/LayoutPostType.php:42
@@ -929,7 +1021,7 @@ msgstr ""
 msgid "Weblo"
 msgstr ""
 
-#: templates/admin/settings-page.php:171
+#: templates/admin/settings-page.php:184
 msgid ""
 "When enabled, folders for orders that are still processing, on-hold, or "
 "pending payment are never removed. Cancelled, completed, and refunded orders "
@@ -937,7 +1029,7 @@ msgid ""
 "order status changes to cancelled)."
 msgstr ""
 
-#: templates/admin/layout-metabox.php:54
+#: templates/admin/layout-metabox.php:69
 msgid "Width"
 msgstr ""
 
@@ -962,25 +1054,33 @@ msgstr ""
 msgid "You are not allowed to perform this action."
 msgstr ""
 
-#: src/Admin/OrderItemMetaDisplay.php:271 src/Admin/OrderMetaBox.php:87
+#: src/Admin/OrderItemMetaDisplay.php:296 src/Admin/OrderMetaBox.php:87
 msgid "ZIP download requires the PHP Zip extension."
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:238
+#: templates/frontend/partials/crop-modal.php:20
+msgid "Zoom"
+msgstr ""
+
+#: src/Frontend/PersonalizerController.php:274
+#: src/Frontend/PersonalizerController.php:291
 #: templates/frontend/partials/transform-toolbar.php:24
+#: templates/frontend/partials/crop-modal.php:24
 msgid "Zoom in"
 msgstr ""
 
-#: src/Frontend/PersonalizerController.php:239
+#: src/Frontend/PersonalizerController.php:275
+#: src/Frontend/PersonalizerController.php:292
 #: templates/frontend/partials/transform-toolbar.php:26
+#: templates/frontend/partials/crop-modal.php:21
 msgid "Zoom out"
 msgstr ""
 
-#: templates/admin/layout-metabox.php:96
+#: templates/admin/layout-metabox.php:111
 msgid "Zoom preview to 100%"
 msgstr ""
 
-#: templates/admin/layout-metabox.php:97
+#: templates/admin/layout-metabox.php:112
 msgid "Zoom to 100%"
 msgstr ""
 

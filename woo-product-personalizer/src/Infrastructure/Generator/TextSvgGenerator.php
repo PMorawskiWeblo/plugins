@@ -8,6 +8,7 @@
 namespace WooProductPersonalizer\Infrastructure\Generator;
 
 use WooProductPersonalizer\Core\Logger;
+use WooProductPersonalizer\Helpers\LayoutConfigLoader;
 use WooProductPersonalizer\Helpers\PersonalizationSummaryHelper;
 use WooProductPersonalizer\Infrastructure\Repository\LayoutRepository;
 use WooProductPersonalizer\Infrastructure\Uploads\UploadsManager;
@@ -54,7 +55,7 @@ class TextSvgGenerator {
 	 * @param string $filename_tag Filename tag (default tekst).
 	 * @return array{path: string, url: string}
 	 */
-	public function save( $order_id, $item_id, $svg_source, $directory, $filename_tag = 'tekst', $layout_id = 0, array $state = array() ) {
+	public function save( $order_id, $item_id, $svg_source, $directory, $filename_tag = 'tekst', $layout_id = 0, array $state = array(), $dpi = 300 ) {
 		$svg = $this->read_svg_content( $svg_source );
 
 		if ( '' === $svg ) {
@@ -66,6 +67,7 @@ class TextSvgGenerator {
 
 		if ( $layout_id ) {
 			$svg = $this->inject_google_fonts_into_svg( $svg, $layout_id, $state );
+			$svg = $this->inject_output_dpi_into_svg( $svg, $layout_id, $dpi );
 		}
 
 		return $this->write_svg( $order_id, $item_id, $svg, $directory, $filename_tag );
@@ -81,8 +83,8 @@ class TextSvgGenerator {
 	 * @param string $directory Target directory.
 	 * @return array{path: string, url: string}
 	 */
-	public function generate_from_state( $order_id, $item_id, array $state, $layout_id, $directory ) {
-		$config = $this->load_layout_config( $layout_id );
+	public function generate_from_state( $order_id, $item_id, array $state, $layout_id, $directory, $dpi = 300 ) {
+		$config = LayoutConfigLoader::load( $layout_id );
 
 		if ( empty( $config['text_fields'] ) || empty( $state['text_fields'] ) ) {
 			return array(
@@ -160,7 +162,7 @@ class TextSvgGenerator {
 		$font_urls   = $this->collect_google_font_urls( $field_map, $state['text_fields'] );
 		$style_block = $this->build_google_font_style_block( $font_urls );
 		$defs        = $needs_shadow ? $this->build_text_shadow_filter_def() : '';
-		$svg         = $this->wrap_document( $width, $height, $style_block . $defs . $elements );
+		$svg         = $this->wrap_document( $width, $height, $style_block . $defs . $elements, $dpi );
 
 		return $this->write_svg( $order_id, $item_id, $svg, $directory, 'tekst' );
 	}
@@ -171,11 +173,101 @@ class TextSvgGenerator {
 	 * @param int    $height  Canvas height.
 	 * @return string
 	 */
-	private function wrap_document( $width, $height, $content ) {
+	private function wrap_document( $width, $height, $content, $dpi = 300 ) {
+		$dpi = max( 1, absint( $dpi ) );
+		$width_in  = $width / $dpi;
+		$height_in = $height / $dpi;
 		return '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
-			. '<svg xmlns="http://www.w3.org/2000/svg" width="' . (int) $width . '" height="' . (int) $height . '" viewBox="0 0 ' . (int) $width . ' ' . (int) $height . '">' . "\n"
+			. '<svg xmlns="http://www.w3.org/2000/svg" width="' . $this->format_dimension_in( $width_in ) . '" height="' . $this->format_dimension_in( $height_in ) . '" viewBox="0 0 ' . (int) $width . ' ' . (int) $height . '">' . "\n"
+			. '<metadata>dpi=' . (int) $dpi . '</metadata>' . "\n"
 			. $content
 			. "\n</svg>";
+	}
+
+	/**
+	 * Inject DPI-related dimensions into an existing SVG root element.
+	 *
+	 * @param string $svg       SVG.
+	 * @param int    $layout_id Layout ID.
+	 * @param int    $dpi       DPI.
+	 * @return string
+	 */
+	private function inject_output_dpi_into_svg( $svg, $layout_id, $dpi ) {
+		$config = LayoutConfigLoader::load( $layout_id );
+		$canvas = is_array( $config['canvas'] ?? null ) ? $config['canvas'] : array();
+		$width  = max( 1, absint( $canvas['width'] ?? 0 ) );
+		$height = max( 1, absint( $canvas['height'] ?? 0 ) );
+		$dpi    = max( 1, absint( $dpi ) );
+
+		// Fallback for layouts that do not expose canvas dimensions consistently.
+		// In such case use existing SVG viewBox so the exported file remains visible.
+		if ( $width <= 1 || $height <= 1 ) {
+			$view_box_size = $this->extract_viewbox_size( $svg );
+			if ( ! empty( $view_box_size['width'] ) && ! empty( $view_box_size['height'] ) ) {
+				$width  = (int) $view_box_size['width'];
+				$height = (int) $view_box_size['height'];
+			}
+		}
+
+		if ( ! $width || ! $height ) {
+			return $svg;
+		}
+
+		$width_in  = $this->format_dimension_in( $width / $dpi );
+		$height_in = $this->format_dimension_in( $height / $dpi );
+
+		$svg = preg_replace( '/\swidth="[^"]*"/i', '', $svg, 1 );
+		$svg = preg_replace( '/\sheight="[^"]*"/i', '', $svg, 1 );
+
+		$svg = preg_replace(
+			'/<svg\b([^>]*)>/i',
+			'<svg$1 width="' . $width_in . '" height="' . $height_in . '">',
+			$svg,
+			1
+		);
+
+		if ( false === strpos( $svg, '<metadata>' ) ) {
+			$svg = $this->insert_after_svg_open( $svg, '<metadata>dpi=' . (int) $dpi . '</metadata>' . "\n" );
+		}
+
+		return is_string( $svg ) ? $svg : '';
+	}
+
+	/**
+	 * Format dimension in inches for SVG root attributes.
+	 *
+	 * @param float $value Inches value.
+	 * @return string
+	 */
+	private function format_dimension_in( $value ) {
+		return rtrim( rtrim( sprintf( '%.4F', (float) $value ), '0' ), '.' ) . 'in';
+	}
+
+	/**
+	 * Extract width/height from SVG viewBox.
+	 *
+	 * @param string $svg SVG markup.
+	 * @return array{width:int,height:int}
+	 */
+	private function extract_viewbox_size( $svg ) {
+		$size = array(
+			'width'  => 0,
+			'height' => 0,
+		);
+
+		if ( ! is_string( $svg ) || '' === $svg ) {
+			return $size;
+		}
+
+		if ( preg_match( '/viewBox\s*=\s*"([^"]+)"/i', $svg, $match ) ) {
+			$parts = preg_split( '/\s+/', trim( (string) $match[1] ) );
+			if ( is_array( $parts ) && count( $parts ) >= 4 ) {
+				$size['width']  = max( 0, (int) round( (float) $parts[2] ) );
+				$size['height'] = max( 0, (int) round( (float) $parts[3] ) );
+			}
+		}
+
+		return $size;
 	}
 
 	/**
@@ -187,7 +279,7 @@ class TextSvgGenerator {
 	 * @return string
 	 */
 	private function inject_google_fonts_into_svg( $svg, $layout_id, array $state ) {
-		$config = $this->load_layout_config( $layout_id );
+		$config = LayoutConfigLoader::load( $layout_id );
 
 		if ( empty( $config['text_fields'] ) || empty( $state['text_fields'] ) ) {
 			return $svg;
@@ -491,25 +583,6 @@ class TextSvgGenerator {
 		$svg = preg_replace( '/<!ENTITY.+?>/is', '', $svg );
 
 		return is_string( $svg ) ? trim( $svg ) : '';
-	}
-
-	/**
-	 * @param int $layout_id Layout ID.
-	 * @return array
-	 */
-	private function load_layout_config( $layout_id ) {
-		if ( ! $layout_id ) {
-			return array();
-		}
-
-		$raw = get_post_meta( (int) $layout_id, LayoutRepository::META_CONFIG, true );
-		if ( ! is_string( $raw ) || '' === $raw ) {
-			return array();
-		}
-
-		$config = json_decode( $raw, true );
-
-		return is_array( $config ) ? $config : array();
 	}
 
 	/**

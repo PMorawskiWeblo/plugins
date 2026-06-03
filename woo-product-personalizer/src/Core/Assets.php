@@ -137,6 +137,21 @@ class Assets {
 						'ctrlMove'            => __( 'Move (arrows in editor)', 'woo-product-personalizer' ),
 						'ctrlFontSize'        => __( 'Font size (+/− in editor)', 'woo-product-personalizer' ),
 						'textShadow'          => __( 'Text shadow (preview & SVG export)', 'woo-product-personalizer' ),
+						'staticLayer'         => __( 'Static layer (no customer upload)', 'woo-product-personalizer' ),
+						'staticLayerHelp'     => __( 'Fixed graphic clipped by the mask. Shown in production files only — hidden from the personalization modal.', 'woo-product-personalizer' ),
+						'staticLayerImage'    => __( 'Layer image', 'woo-product-personalizer' ),
+						'clickToSelectLayer'  => __( 'Click to select layer image', 'woo-product-personalizer' ),
+						'selectLayerImage'    => __( 'Select layer image', 'woo-product-personalizer' ),
+						'removeLayerImage'    => __( 'Remove layer image', 'woo-product-personalizer' ),
+						'exportAreaTitle'     => __( 'Export area #%d', 'woo-product-personalizer' ),
+						'exportAreaHelp'      => __( 'Rectangle on the canvas (frame) saved to layers PNG, text SVG, and project PDF. Mask image is optional. Not shown to customers.', 'woo-product-personalizer' ),
+						'exportAreaMaskOptional' => __( 'Mask image (optional)', 'woo-product-personalizer' ),
+						'exportAreaMaskHelp'  => __( 'Leave empty to export the full frame rectangle. Add a PNG mask only when you need a non-rectangular clip.', 'woo-product-personalizer' ),
+						'exportAreaDefaultLabel' => __( 'Production export area', 'woo-product-personalizer' ),
+						'pdfWidthCm'          => __( 'Width (cm)', 'woo-product-personalizer' ),
+						'pdfHeightCm'         => __( 'Height (cm)', 'woo-product-personalizer' ),
+						'projectPdfSize'      => __( 'Project PDF size', 'woo-product-personalizer' ),
+						'projectPdfSizeHelp'  => __( 'Physical page size for the production PDF (centimeters). Leave 0 to derive size from the export image and DPI.', 'woo-product-personalizer' ),
 						'googleFontsHelpHtml' => wp_kses(
 							sprintf(
 								/* translators: %s: link to Google Fonts */
