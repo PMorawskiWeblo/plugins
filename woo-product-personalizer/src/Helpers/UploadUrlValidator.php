@@ -85,7 +85,12 @@ class UploadUrlValidator {
 				return false;
 			}
 
-			return 0 === strpos( $url, $temp_root . $token . '/' );
+			if ( 0 === strpos( $url, $temp_root . $token . '/' ) ) {
+				return true;
+			}
+
+			// Session token may differ from the one used during AJAX upload (e.g. new WC session).
+			return self::temp_url_has_valid_token_segment( $url, $temp_root );
 		}
 
 		return self::temp_url_has_valid_token_segment( $url, $temp_root );

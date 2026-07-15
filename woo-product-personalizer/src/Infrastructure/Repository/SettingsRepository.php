@@ -8,6 +8,8 @@
 
 namespace WooProductPersonalizer\Infrastructure\Repository;
 
+use WooProductPersonalizer\Helpers\UploadMimeTypes;
+
 defined('ABSPATH') || exit;
 
 /**
@@ -37,6 +39,7 @@ class SettingsRepository
 			'preview_export_scale'   => 2,
 			'production_export_dpi'  => 300,
 			'allowed_mime_types'     => array('image/jpeg', 'image/png', 'image/webp'),
+			'allowed_mime_custom'    => '',
 			'frontend_mode'          => 'modal',
 			'button_position'        => 'after_add_to_cart',
 			'shortcode_only'              => false,
@@ -48,6 +51,7 @@ class SettingsRepository
 			'cleanup_enabled'        => false,
 			'cleanup_interval'       => 14,
 			'cleanup_only_completed' => true,
+			'lazy_load_personalizer' => false,
 		);
 	}
 
@@ -164,5 +168,28 @@ class SettingsRepository
 	public function is_replace_add_to_cart_enabled()
 	{
 		return (bool) $this->get('replace_add_to_cart_button', false);
+	}
+
+	/**
+	 * Effective upload MIME types (built-in checkboxes + custom comma-separated field).
+	 *
+	 * @return string[]
+	 */
+	public function get_allowed_mime_types()
+	{
+		return UploadMimeTypes::merge_allowed_types(
+			(array) $this->get('allowed_mime_types', array()),
+			(string) $this->get('allowed_mime_custom', '')
+		);
+	}
+
+	/**
+	 * Defer Konva/personalizer scripts until the shopper opens the modal.
+	 *
+	 * @return bool
+	 */
+	public function is_lazy_load_personalizer_enabled()
+	{
+		return (bool) $this->get('lazy_load_personalizer', false);
 	}
 }

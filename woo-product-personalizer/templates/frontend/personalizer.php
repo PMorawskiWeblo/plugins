@@ -14,6 +14,12 @@ defined( 'ABSPATH' ) || exit;
 $toolbar_partial = WPP_PLUGIN_PATH . 'templates/frontend/partials/transform-toolbar.php';
 ?>
 <div class="wpp-personalizer wpp-personalizer--modal" data-validation="<?php echo esc_attr( $validation ? '1' : '0' ); ?>">
+	<div id="wpp-lazy-loader" class="wpp-lazy-loader" aria-hidden="true" aria-live="polite">
+		<div class="wpp-lazy-loader__panel">
+			<span class="wpp-lazy-loader__spinner" aria-hidden="true"></span>
+			<p class="wpp-lazy-loader__text"><?php esc_html_e( 'Loading personalization…', 'woo-product-personalizer' ); ?></p>
+		</div>
+	</div>
 	<div class="wpp-modal" id="wpp-modal" aria-hidden="true" role="dialog" aria-modal="true">
 		<div class="wpp-modal__backdrop" data-wpp-close></div>
 		<div class="wpp-modal__dialog">

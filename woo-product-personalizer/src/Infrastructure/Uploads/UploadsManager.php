@@ -8,6 +8,7 @@
 namespace WooProductPersonalizer\Infrastructure\Uploads;
 
 use WooProductPersonalizer\Core\Logger;
+use WooProductPersonalizer\Helpers\ImagePreviewConverter;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -183,8 +184,11 @@ class UploadsManager {
 			return new \WP_Error( 'wpp_upload_dir', __( 'Could not create upload directory.', 'woo-product-personalizer' ) );
 		}
 
-		$checked = wp_check_filetype_and_ext( $file['tmp_name'], $file['name'] );
-		if ( empty( $checked['type'] ) || ! in_array( $checked['type'], $allowed_mimes, true ) ) {
+		$mime_map = \WooProductPersonalizer\Helpers\UploadMimeTypes::wp_upload_map( $allowed_mimes );
+		$checked  = wp_check_filetype_and_ext( $file['tmp_name'], $file['name'], $mime_map );
+		$allowed  = \WooProductPersonalizer\Helpers\UploadMimeTypes::expand_allowed( $allowed_mimes );
+
+		if ( empty( $checked['type'] ) || ! in_array( $checked['type'], $allowed, true ) ) {
 			return new \WP_Error( 'wpp_upload_type', __( 'Invalid file type.', 'woo-product-personalizer' ) );
 		}
 
@@ -199,6 +203,32 @@ class UploadsManager {
 		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_is_uploaded_file
 		if ( ! is_uploaded_file( $file['tmp_name'] ) || ! @move_uploaded_file( $file['tmp_name'], $dest ) ) {
 			return new \WP_Error( 'wpp_upload_move', __( 'Failed to store uploaded file.', 'woo-product-personalizer' ) );
+		}
+
+		$converted = ImagePreviewConverter::convert_for_browser_preview( $dest, $checked['type'], $dir );
+		if ( is_wp_error( $converted ) ) {
+			wp_delete_file( $dest );
+			$this->logger->error(
+				'Preview conversion failed.',
+				array(
+					'type'  => $checked['type'],
+					'error' => $converted->get_error_message(),
+				)
+			);
+			return $converted;
+		}
+
+		if ( is_array( $converted ) ) {
+			$dest           = $converted['path'];
+			$checked['type'] = $converted['type'];
+			$filename       = basename( $dest );
+			$this->logger->debug(
+				'Preview conversion success.',
+				array(
+					'file' => $filename,
+					'type' => $checked['type'],
+				)
+			);
 		}
 
 		$url = trailingslashit( $this->base_url() ) . 'temp/' . $token . '/' . $filename;

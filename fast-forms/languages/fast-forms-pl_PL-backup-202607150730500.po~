@@ -1,0 +1,1646 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Fast Forms 1.6.2\n"
+"Report-Msgid-Bugs-To: https://weblo.pl/\n"
+"POT-Creation-Date: 2026-07-15T09:30:03+02:00\n"
+"PO-Revision-Date: 2026-07-15 09:30+0200\n"
+"Last-Translator: Weblo <info@weblo.pl>\n"
+"Language-Team: Polish\n"
+"Language: pl_PL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Domain: fast-forms\n"
+
+#. Plugin Name of the plugin
+msgid "Fast Forms"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://weblo.pl/"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Buduj formularze drag & drop, zbieraj zgłoszenia i zarządzaj nimi w panelu W"
+"ordPress."
+msgstr ""
+"Buduj formularze drag & drop, zbieraj zgłoszenia i zarządzaj nimi w panelu W"
+"ordPress."
+
+#. Author of the plugin
+msgid "Weblo"
+msgstr ""
+
+#: src/Admin/EntryAdmin.php:45 src/PostTypes/EntryPostType.php:47
+msgid "Submission"
+msgstr "Zgłoszenie"
+
+#: src/Admin/EntryAdmin.php:50 src/Admin/EntryListFilters.php:53
+#: src/Admin/EntryPresenter.php:145 src/FormBuilder/BuilderI18n.php:110
+#: src/PostTypes/FormPostType.php:43 templates/admin/manager.php:34
+msgid "Form"
+msgstr "Formularz"
+
+#: src/Admin/EntryAdmin.php:51 src/Admin/EntryPresenter.php:164
+#: src/Export/CsvExporter.php:107
+msgid "Submitted at"
+msgstr "Data wysłania"
+
+#: src/Admin/EntryAdmin.php:52 src/Admin/EntryListFilters.php:79
+#: src/Admin/EntryPresenter.php:165 src/Export/CsvExporter.php:108
+msgid "Status"
+msgstr "Status"
+
+#: src/Admin/EntryAdmin.php:187 src/Admin/EntryAdmin.php:202
+#: src/Admin/EntryListFilters.php:74 src/Admin/EntryPresenter.php:179
+msgid "New"
+msgstr "Nowe"
+
+#: src/Admin/EntryAdmin.php:188 src/Admin/EntryAdmin.php:203
+#: src/Admin/EntryListFilters.php:75 src/Admin/EntryPresenter.php:180
+msgid "Read"
+msgstr "Odczytane"
+
+#: src/Admin/EntryAdmin.php:189 src/Admin/EntryAdmin.php:204
+#: src/Admin/EntryListFilters.php:76 src/Admin/EntryPresenter.php:181
+msgid "Archived"
+msgstr "Zarchiwizowane"
+
+#: src/Admin/EntryFileDownload.php:148 src/Admin/ManagerAdmin.php:55
+#: src/Admin/SettingsAdmin.php:41
+msgid "You do not have permission."
+msgstr "Brak uprawnień."
+
+#: src/Admin/EntryFileDownload.php:148
+msgid "Access denied"
+msgstr "Brak dostępu"
+
+#: src/Admin/EntryFileDownload.php:156
+msgid "Invalid request."
+msgstr "Nieprawidłowe żądanie."
+
+#: src/Admin/EntryFileDownload.php:156
+msgid "Error"
+msgstr "Błąd"
+
+#: src/Admin/EntryFileDownload.php:164
+msgid "The file does not exist."
+msgstr "Plik nie istnieje."
+
+#: src/Admin/EntryFileDownload.php:164 src/Admin/EntryFileDownload.php:170
+msgid "Not found"
+msgstr "Nie znaleziono"
+
+#: src/Admin/EntryFileDownload.php:170
+msgid "The file is not available."
+msgstr "Plik nie jest dostępny."
+
+#: src/Admin/EntryListFilters.php:55 src/PostTypes/FormPostType.php:53
+msgid "All forms"
+msgstr "Wszystkie formularze"
+
+#: src/Admin/EntryListFilters.php:73
+msgid "All statuses"
+msgstr "Wszystkie statusy"
+
+#: src/Admin/EntryListFilters.php:95 templates/admin/manager.php:45
+msgid "Date from"
+msgstr "Data od"
+
+#: src/Admin/EntryListFilters.php:97
+msgid "From"
+msgstr "Od"
+
+#: src/Admin/EntryListFilters.php:102 templates/admin/manager.php:49
+msgid "Date to"
+msgstr "Data do"
+
+#: src/Admin/EntryListFilters.php:104
+msgid "To"
+msgstr "Do"
+
+#: src/Admin/EntryListFilters.php:111
+msgid "Search"
+msgstr "Szukaj"
+
+#: src/Admin/EntryListFilters.php:113
+msgid "Search submissions…"
+msgstr "Szukaj zgłoszeń…"
+
+#: src/Admin/EntryPresenter.php:116 src/Submission/MergeTagParser.php:172
+msgid "Yes"
+msgstr "Tak"
+
+#: src/Admin/EntryPresenter.php:116 src/Submission/MergeTagParser.php:172
+msgid "No"
+msgstr "Nie"
+
+#: src/Admin/EntryPresenter.php:146
+msgid "Form ID"
+msgstr "ID formularza"
+
+#: src/Admin/EntryPresenter.php:151
+msgid "Name"
+msgstr "Imię / nazwa"
+
+#: src/Admin/EntryPresenter.php:156 src/FormBuilder/BuilderI18n.php:111
+#: src/FormBuilder/BuilderI18n.php:170
+msgid "Email"
+msgstr "E-mail"
+
+#: src/Admin/EntryPresenter.php:161 src/FormBuilder/BuilderI18n.php:171
+msgid "Phone"
+msgstr "Telefon"
+
+#: src/Admin/EntryPresenter.php:169 src/Export/CsvExporter.php:109
+msgid "reCAPTCHA score"
+msgstr "Score reCAPTCHA"
+
+#: src/Admin/EntryPresenter.php:172
+msgid "Schema version"
+msgstr "Wersja schemy"
+
+#: src/Admin/Menu.php:55 src/Admin/Menu.php:56
+#: src/PostTypes/FormPostType.php:42 src/PostTypes/FormPostType.php:44
+msgid "Forms"
+msgstr "Formularze"
+
+#: src/Admin/Menu.php:66 src/Admin/Menu.php:67
+#: src/PostTypes/FormPostType.php:46
+msgid "Add new form"
+msgstr "Dodaj nowy formularz"
+
+#: src/Admin/Menu.php:74 src/Admin/Menu.php:75
+#: src/PostTypes/EntryPostType.php:46 src/PostTypes/EntryPostType.php:48
+msgid "Form submissions"
+msgstr "Przesłane formularze"
+
+#: src/Admin/Menu.php:82 src/Admin/Menu.php:83 src/Admin/Menu.php:136
+msgid "Global settings"
+msgstr "Ustawienia globalne"
+
+#: src/Admin/Menu.php:91 src/Admin/Menu.php:92 src/Admin/Menu.php:153
+msgid "Form manager"
+msgstr "Manager formularzy"
+
+#: src/Admin/Menu.php:130 src/Admin/Menu.php:147
+msgid "You do not have permission to view this page."
+msgstr "Nie masz uprawnień do wyświetlenia tej strony."
+
+#: src/Admin/PluginLinks.php:36 src/FormBuilder/BuilderI18n.php:114
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: src/Export/CsvExporter.php:36
+msgid "Invalid form."
+msgstr "Nieprawidłowy formularz."
+
+#: src/Export/CsvExporter.php:51
+msgid "Could not generate the CSV file."
+msgstr "Nie udało się wygenerować pliku CSV."
+
+#: src/Export/CsvExporter.php:106
+msgid "Entry ID"
+msgstr "ID zgłoszenia"
+
+#: src/FormBuilder/BuilderI18n.php:23
+msgid "Send"
+msgstr "Wyślij"
+
+#: src/FormBuilder/BuilderI18n.php:30
+msgid "Sending..."
+msgstr "Wysyłanie..."
+
+#: src/FormBuilder/BuilderI18n.php:40
+msgid "Add row"
+msgstr "Dodaj wiersz"
+
+#: src/FormBuilder/BuilderI18n.php:41
+msgid "Row"
+msgstr "Wiersz"
+
+#: src/FormBuilder/BuilderI18n.php:42
+msgid "Move row up"
+msgstr "Przesuń wiersz w górę"
+
+#: src/FormBuilder/BuilderI18n.php:43
+msgid "Move row down"
+msgstr "Przesuń wiersz w dół"
+
+#: src/FormBuilder/BuilderI18n.php:44
+msgid "Add column"
+msgstr "Dodaj kolumnę"
+
+#: src/FormBuilder/BuilderI18n.php:45
+msgid "Delete row"
+msgstr "Usuń wiersz"
+
+#: src/FormBuilder/BuilderI18n.php:46
+msgid "Delete column"
+msgstr "Usuń kolumnę"
+
+#: src/FormBuilder/BuilderI18n.php:47
+msgid "Delete field"
+msgstr "Usuń pole"
+
+#: src/FormBuilder/BuilderI18n.php:48
+msgid "Save form"
+msgstr "Zapisz formularz"
+
+#: src/FormBuilder/BuilderI18n.php:49
+msgid "Saving..."
+msgstr "Zapisywanie..."
+
+#: src/FormBuilder/BuilderI18n.php:50
+msgid "Saved."
+msgstr "Zapisano."
+
+#: src/FormBuilder/BuilderI18n.php:51
+msgid "Save failed. Please try again."
+msgstr "Zapis nie powiódł się. Spróbuj ponownie."
+
+#: src/FormBuilder/BuilderI18n.php:52 templates/admin/form-builder.php:21
+msgid "Loading form…"
+msgstr "Ładowanie formularza…"
+
+#: src/FormBuilder/BuilderI18n.php:53
+msgid "Could not load the form. Refresh the page and try again."
+msgstr "Nie udało się wczytać formularza. Odśwież stronę i spróbuj ponownie."
+
+#: src/FormBuilder/BuilderI18n.php:54
+msgid "Fields"
+msgstr "Pola"
+
+#: src/FormBuilder/BuilderI18n.php:55
+msgid "Field settings"
+msgstr "Ustawienia pola"
+
+#: src/FormBuilder/BuilderI18n.php:56
+msgid "Form preview"
+msgstr "Podgląd formularza"
+
+#: src/FormBuilder/BuilderI18n.php:57
+msgid "Select a field to edit its settings."
+msgstr "Wybierz pole, aby edytować jego ustawienia."
+
+#: src/FormBuilder/BuilderI18n.php:58
+msgid "Drag a field here"
+msgstr "Przeciągnij pole tutaj"
+
+#: src/FormBuilder/BuilderI18n.php:59
+msgid "Add a row to start building your form."
+msgstr "Dodaj wiersz, aby rozpocząć budowę formularza."
+
+#: src/FormBuilder/BuilderI18n.php:60
+msgid "Label"
+msgstr "Etykieta"
+
+#: src/FormBuilder/BuilderI18n.php:61
+msgid "Name attribute"
+msgstr "Atrybut name"
+
+#: src/FormBuilder/BuilderI18n.php:62
+msgid "Required"
+msgstr "Wymagane"
+
+#: src/FormBuilder/BuilderI18n.php:63
+msgid "Placeholder"
+msgstr "Placeholder"
+
+#: src/FormBuilder/BuilderI18n.php:64
+msgid "Default value"
+msgstr "Wartość domyślna"
+
+#: src/FormBuilder/BuilderI18n.php:65
+msgid "CSS class"
+msgstr "Klasa CSS"
+
+#: src/FormBuilder/BuilderI18n.php:66
+msgid "HTML ID"
+msgstr "ID HTML"
+
+#: src/FormBuilder/BuilderI18n.php:67
+msgid "Min. length"
+msgstr "Min. długość"
+
+#: src/FormBuilder/BuilderI18n.php:68
+msgid "Max. length"
+msgstr "Maks. długość"
+
+#: src/FormBuilder/BuilderI18n.php:69
+msgid "Rows (textarea)"
+msgstr "Wiersze (textarea)"
+
+#: src/FormBuilder/BuilderI18n.php:70
+msgid "Min. value"
+msgstr "Min. wartość"
+
+#: src/FormBuilder/BuilderI18n.php:71
+msgid "Max. value"
+msgstr "Maks. wartość"
+
+#: src/FormBuilder/BuilderI18n.php:72
+msgid "Min. stars"
+msgstr "Min. gwiazdek"
+
+#: src/FormBuilder/BuilderI18n.php:73
+msgid "Max. stars"
+msgstr "Maks. gwiazdek"
+
+#: src/FormBuilder/BuilderI18n.php:74
+msgid "Step"
+msgstr "Krok"
+
+#: src/FormBuilder/BuilderI18n.php:75
+msgid "Options"
+msgstr "Opcje"
+
+#: src/FormBuilder/BuilderI18n.php:76
+msgid "Option label"
+msgstr "Etykieta opcji"
+
+#: src/FormBuilder/BuilderI18n.php:77
+msgid "Option value"
+msgstr "Wartość opcji"
+
+#: src/FormBuilder/BuilderI18n.php:78
+msgid "Default"
+msgstr "Domyślna"
+
+#: src/FormBuilder/BuilderI18n.php:79
+msgid "Add option"
+msgstr "Dodaj opcję"
+
+#: src/FormBuilder/BuilderI18n.php:80
+msgid "Remove option"
+msgstr "Usuń opcję"
+
+#: src/FormBuilder/BuilderI18n.php:81
+msgid "Drag to reorder"
+msgstr "Przeciągnij, aby zmienić kolejność"
+
+#: src/FormBuilder/BuilderI18n.php:82
+msgid "Allow multiple selections"
+msgstr "Zezwól na wielokrotny wybór"
+
+#: src/FormBuilder/BuilderI18n.php:83
+msgid "Allow multiple files"
+msgstr "Zezwól na wiele plików"
+
+#: src/FormBuilder/BuilderI18n.php:84
+msgid "Min. selections"
+msgstr "Min. zaznaczeń"
+
+#: src/FormBuilder/BuilderI18n.php:85
+msgid "Max. selections"
+msgstr "Maks. zaznaczeń"
+
+#: src/FormBuilder/BuilderI18n.php:86
+msgid "Max. number of files"
+msgstr "Maks. liczba plików"
+
+#: src/FormBuilder/BuilderI18n.php:87
+msgid "Min. number of files"
+msgstr "Min. liczba plików"
+
+#: src/FormBuilder/BuilderI18n.php:88
+msgid "Choose file button text"
+msgstr "Tekst przycisku wyboru pliku"
+
+#: src/FormBuilder/BuilderI18n.php:89
+msgid "Layout"
+msgstr "Układ"
+
+#: src/FormBuilder/BuilderI18n.php:90
+msgid "Vertical"
+msgstr "Pionowy"
+
+#: src/FormBuilder/BuilderI18n.php:91
+msgid "Horizontal"
+msgstr "Poziomy"
+
+#: src/FormBuilder/BuilderI18n.php:92
+msgid "Show upload rules"
+msgstr "Pokaż reguły uploadu"
+
+#: src/FormBuilder/BuilderI18n.php:93 src/Frontend/Assets.php:101
+#: templates/frontend/field.php:228
+msgid "Choose file"
+msgstr "Wybierz plik"
+
+#: src/FormBuilder/BuilderI18n.php:94 src/Frontend/Assets.php:102
+#: templates/frontend/field.php:228
+msgid "Choose files"
+msgstr "Wybierz pliki"
+
+#: src/FormBuilder/BuilderI18n.php:95
+msgid "Allowed file types"
+msgstr "Dozwolone typy plików"
+
+#: src/FormBuilder/BuilderI18n.php:96
+msgid "Max. file size (KB)"
+msgstr "Maks. rozmiar pliku (KB)"
+
+#: src/FormBuilder/BuilderI18n.php:97
+msgid "Consent text"
+msgstr "Treść zgody"
+
+#: src/FormBuilder/BuilderI18n.php:98
+msgid ""
+"Allowed HTML tags: br, strong, em, a, p, span (with href/title/target/rel/cl"
+"ass)."
+msgstr ""
+"Dozwolone tagi HTML: br, strong, em, a, p, span (z href/title/target/rel/cla"
+"ss)."
+
+#: src/FormBuilder/BuilderI18n.php:99
+msgid "Hide label"
+msgstr "Ukryj etykietę"
+
+#: src/FormBuilder/BuilderI18n.php:100
+msgid "Submit button text"
+msgstr "Tekst przycisku"
+
+#: src/FormBuilder/BuilderI18n.php:101
+msgid "Loading text"
+msgstr "Tekst ładowania"
+
+#: src/FormBuilder/BuilderI18n.php:104
+msgid "Delete this row?"
+msgstr "Usunąć ten wiersz?"
+
+#: src/FormBuilder/BuilderI18n.php:105
+msgid "Delete this column?"
+msgstr "Usunąć tę kolumnę?"
+
+#: src/FormBuilder/BuilderI18n.php:106
+msgid "Delete this field?"
+msgstr "Usunąć to pole?"
+
+#: src/FormBuilder/BuilderI18n.php:107
+#: templates/admin/partials/form-shortcodes.php:41
+#: templates/admin/partials/form-shortcodes.php:62
+#: templates/admin/partials/form-shortcodes.php:79
+msgid "Copy shortcode"
+msgstr "Kopiuj shortcode"
+
+#: src/FormBuilder/BuilderI18n.php:108
+msgid "Shortcode copied to clipboard!"
+msgstr "Shortcode skopiowany do schowka!"
+
+#: src/FormBuilder/BuilderI18n.php:109
+msgid "Could not copy shortcode. Please copy it manually."
+msgstr "Nie udało się skopiować shortcode. Skopiuj go ręcznie."
+
+#: src/FormBuilder/BuilderI18n.php:112
+msgid "Validation"
+msgstr "Walidacja"
+
+#: src/FormBuilder/BuilderI18n.php:113
+msgid "Notifications"
+msgstr "Powiadomienia"
+
+#: src/FormBuilder/BuilderI18n.php:126
+msgid "Visible field label shown to visitors on the frontend."
+msgstr "Widoczna etykieta pola wyświetlana odwiedzającym na froncie."
+
+#: src/FormBuilder/BuilderI18n.php:127
+msgid ""
+"HTML name attribute used when saving submission data. Use lowercase letters,"
+" numbers, and underscores."
+msgstr ""
+"Atrybut HTML name używany przy zapisie zgłoszenia. Używaj małych liter, cyfr"
+" i podkreślników."
+
+#: src/FormBuilder/BuilderI18n.php:128
+msgid "When enabled, the field must be filled in before the form can be submitted."
+msgstr "Gdy włączone, pole musi być wypełnione przed wysłaniem formularza."
+
+#: src/FormBuilder/BuilderI18n.php:129
+msgid "Hint text displayed inside the input before the user types."
+msgstr "Tekst podpowiedzi wyświetlany w polu przed wpisaniem treści."
+
+#: src/FormBuilder/BuilderI18n.php:130
+msgid "Pre-filled value when the form is first displayed."
+msgstr "Wartość wstępnie wypełniona przy pierwszym wyświetleniu formularza."
+
+#: src/FormBuilder/BuilderI18n.php:131
+msgid "Additional CSS class added to the field wrapper for custom styling."
+msgstr "Dodatkowa klasa CSS dodawana do opakowania pola w celu własnego stylowania."
+
+#: src/FormBuilder/BuilderI18n.php:132
+msgid ""
+"Custom HTML id on the field wrapper. Leave empty for no id. Must be unique w"
+"ithin the form."
+msgstr ""
+"Własne id HTML na opakowaniu pola. Zostaw puste, jeśli niepotrzebne. Musi by"
+"ć unikalne w formularzu."
+
+#: src/FormBuilder/BuilderI18n.php:133
+msgid "Minimum number of characters required for text fields."
+msgstr "Minimalna liczba znaków wymagana w polach tekstowych."
+
+#: src/FormBuilder/BuilderI18n.php:134
+msgid "Maximum number of characters allowed for text fields."
+msgstr "Maksymalna liczba znaków dozwolona w polach tekstowych."
+
+#: src/FormBuilder/BuilderI18n.php:135
+msgid "Number of visible lines for a textarea field."
+msgstr "Liczba widocznych linii w polu textarea."
+
+#: src/FormBuilder/BuilderI18n.php:136
+msgid "Minimum allowed numeric value."
+msgstr "Minimalna dozwolona wartość liczbowa."
+
+#: src/FormBuilder/BuilderI18n.php:137
+msgid "Maximum allowed numeric value."
+msgstr "Maksymalna dozwolona wartość liczbowa."
+
+#: src/FormBuilder/BuilderI18n.php:138
+msgid "Lowest star value (default: 1)."
+msgstr "Najniższa wartość gwiazdki (domyślnie: 1)."
+
+#: src/FormBuilder/BuilderI18n.php:139
+msgid "Highest star value (default: 5)."
+msgstr "Najwyższa wartość gwiazdki (domyślnie: 5)."
+
+#: src/FormBuilder/BuilderI18n.php:140
+msgid "Increment step for number or range inputs."
+msgstr "Krok przyrostu dla pól liczbowych lub zakresu."
+
+#: src/FormBuilder/BuilderI18n.php:141
+msgid ""
+"Add, edit, reorder, or remove choices. Label is shown to visitors; value is "
+"saved in submissions."
+msgstr ""
+"Dodawaj, edytuj, zmieniaj kolejność lub usuwaj opcje. Etykieta jest widoczna"
+" dla użytkownika; wartość trafia do zgłoszenia."
+
+#: src/FormBuilder/BuilderI18n.php:142
+msgid ""
+"Pre-select this option when the form loads. For single choice fields only on"
+"e default is allowed."
+msgstr ""
+"Zaznacz tę opcję po załadowaniu formularza. W polach jednokrotnego wyboru do"
+"zwolona jest tylko jedna domyślna opcja."
+
+#: src/FormBuilder/BuilderI18n.php:143
+msgid "When enabled, visitors can select more than one option using checkboxes."
+msgstr "Po włączeniu użytkownik może zaznaczyć wiele opcji (checkboxy)."
+
+#: src/FormBuilder/BuilderI18n.php:144
+msgid "When enabled, visitors can upload more than one file in this field."
+msgstr "Po włączeniu odwiedzający mogą przesłać więcej niż jeden plik w tym polu."
+
+#: src/FormBuilder/BuilderI18n.php:145
+msgid ""
+"Minimum number of options that must be selected. Used when multiple selectio"
+"n is enabled."
+msgstr "Minimalna liczba opcji do zaznaczenia przy wielokrotnym wyborze."
+
+#: src/FormBuilder/BuilderI18n.php:146
+msgid "Maximum number of options that can be selected. Leave empty for no limit."
+msgstr "Maksymalna liczba opcji do zaznaczenia. Zostaw puste, jeśli bez limitu."
+
+#: src/FormBuilder/BuilderI18n.php:147
+msgid "Maximum number of files that can be uploaded. Leave empty for no limit."
+msgstr ""
+"Maksymalna liczba plików do przesłania. Zostaw puste, aby nie ustawiać limit"
+"u."
+
+#: src/FormBuilder/BuilderI18n.php:148
+msgid ""
+"Minimum number of files required when multiple upload is enabled. Leave empt"
+"y to use the required flag only (minimum 1)."
+msgstr ""
+"Minimalna liczba plików przy wielokrotnym uploadzie. Zostaw puste, aby użyć "
+"tylko flagi wymagane (minimum 1)."
+
+#: src/FormBuilder/BuilderI18n.php:149
+msgid "Custom label on the file upload button. Leave empty for the default text."
+msgstr "Własna etykieta przycisku wyboru pliku. Zostaw puste dla tekstu domyślnego."
+
+#: src/FormBuilder/BuilderI18n.php:150
+msgid ""
+"Display options or uploaded files vertically (stacked) or horizontally (in a"
+" row)."
+msgstr ""
+"Wyświetlaj opcje lub pliki pionowo (jeden pod drugim) lub poziomo (w rzędzie"
+")."
+
+#: src/FormBuilder/BuilderI18n.php:151
+msgid ""
+"Vertical keeps a dropdown. Horizontal displays options in a row (like radio "
+"buttons)."
+msgstr ""
+"Pionowy zostawia listę rozwijaną. Poziomy wyświetla opcje w rzędzie (jak prz"
+"yciski radio)."
+
+#: src/FormBuilder/BuilderI18n.php:152
+msgid ""
+"When enabled, shows allowed file types and size limits below the upload butt"
+"on."
+msgstr ""
+"Po włączeniu pokazuje dozwolone typy plików i limity rozmiaru pod przyciskie"
+"m uploadu."
+
+#: src/FormBuilder/BuilderI18n.php:153
+msgid "Comma-separated file extensions without dots, e.g. pdf,jpg,png."
+msgstr "Rozszerzenia plików oddzielone przecinkami, bez kropek, np. pdf,jpg,png."
+
+#: src/FormBuilder/BuilderI18n.php:154
+msgid "Maximum upload size in kilobytes (KB)."
+msgstr "Maksymalny rozmiar przesyłanego pliku w kilobajtach (KB)."
+
+#: src/FormBuilder/BuilderI18n.php:155
+msgid ""
+"Consent text shown next to the checkbox. You can use HTML (e.g. br, a, stron"
+"g) — see the hint below the field."
+msgstr ""
+"Treść zgody obok checkboxa. Możesz użyć HTML (np. br, a, strong) — zobacz po"
+"dpowiedź pod polem."
+
+#: src/FormBuilder/BuilderI18n.php:156
+msgid ""
+"Hide the field label above the control. For consent, only the checkbox and c"
+"onsent text are shown."
+msgstr ""
+"Ukryj etykietę nad polem. Dla zgody wyświetlany jest tylko checkbox z treści"
+"ą."
+
+#: src/FormBuilder/BuilderI18n.php:157
+msgid "Text displayed on the submit button before sending."
+msgstr "Tekst wyświetlany na przycisku wysyłki przed wysłaniem."
+
+#: src/FormBuilder/BuilderI18n.php:158
+msgid "Text displayed on the button while the form is being submitted."
+msgstr "Tekst wyświetlany na przycisku podczas wysyłania formularza."
+
+#: src/FormBuilder/BuilderI18n.php:169
+msgid "Text"
+msgstr "Tekst"
+
+#: src/FormBuilder/BuilderI18n.php:172
+msgid "URL"
+msgstr "URL"
+
+#: src/FormBuilder/BuilderI18n.php:173
+msgid "Number"
+msgstr "Liczba"
+
+#: src/FormBuilder/BuilderI18n.php:174
+msgid "Range"
+msgstr "Zakres"
+
+#: src/FormBuilder/BuilderI18n.php:175
+msgid "Star rating"
+msgstr "Ocena gwiazdki"
+
+#: src/FormBuilder/BuilderI18n.php:176
+msgid "Date"
+msgstr "Data"
+
+#: src/FormBuilder/BuilderI18n.php:177
+msgid "Textarea"
+msgstr "Obszar tekstu"
+
+#: src/FormBuilder/BuilderI18n.php:178
+msgid "Select"
+msgstr "Lista wyboru"
+
+#: src/FormBuilder/BuilderI18n.php:179
+msgid "Radio buttons"
+msgstr "Pole wyboru"
+
+#: src/FormBuilder/BuilderI18n.php:180
+msgid "Checkbox"
+msgstr "Pole tak/nie"
+
+#: src/FormBuilder/BuilderI18n.php:181
+msgid "Consent"
+msgstr "Zgoda"
+
+#: src/FormBuilder/BuilderI18n.php:182
+msgid "File"
+msgstr "Plik"
+
+#: src/FormBuilder/BuilderI18n.php:183
+msgid "Submit button"
+msgstr "Przycisk wysyłki"
+
+#: src/FormBuilder/BuilderI18n.php:194
+msgid ""
+"Choose whether to notify the administrator and/or the person who submitted t"
+"he form."
+msgstr "Wybierz, czy powiadomić administratora i/lub osobę wysyłającą formularz."
+
+#: src/FormBuilder/BuilderI18n.php:195
+msgid "Email address that receives new submission notifications."
+msgstr "Adres e-mail odbierający powiadomienia o nowych zgłoszeniach."
+
+#: src/FormBuilder/BuilderI18n.php:196
+msgid "Sender name shown in outgoing emails."
+msgstr "Nazwa nadawcy widoczna w wychodzących wiadomościach e-mail."
+
+#: src/FormBuilder/BuilderI18n.php:197
+msgid "Sender email address used in outgoing messages."
+msgstr "Adres e-mail nadawcy używany w wychodzących wiadomościach."
+
+#: src/FormBuilder/BuilderI18n.php:198
+msgid ""
+"Reply-To address for admin notifications. Leave empty to use the submitter e"
+"mail when available."
+msgstr ""
+"Adres Reply-To dla powiadomień administratora. Pozostaw puste, aby użyć e-ma"
+"ila nadawcy formularza."
+
+#: src/FormBuilder/BuilderI18n.php:199
+msgid ""
+"Subject line for the administrator notification email. Merge tags are suppor"
+"ted."
+msgstr "Temat wiadomości e-mail do administratora. Obsługiwane są tagi scalające."
+
+#: src/FormBuilder/BuilderI18n.php:200
+msgid ""
+"HTML body for the administrator email. Use {all_fields} to include all answe"
+"rs."
+msgstr ""
+"Treść HTML wiadomości do administratora. Użyj {all_fields}, aby dodać wszyst"
+"kie odpowiedzi."
+
+#: src/FormBuilder/BuilderI18n.php:201
+msgid "Subject line for the confirmation email sent to the user."
+msgstr "Temat wiadomości potwierdzającej wysyłanej do użytkownika."
+
+#: src/FormBuilder/BuilderI18n.php:202
+msgid "HTML body for the user confirmation email."
+msgstr "Treść HTML wiadomości potwierdzającej dla użytkownika."
+
+#: src/FormBuilder/BuilderI18n.php:203
+msgid "Message shown when a required field is empty."
+msgstr "Komunikat wyświetlany, gdy wymagane pole jest puste."
+
+#: src/FormBuilder/BuilderI18n.php:204
+msgid "Message shown when the email format is invalid."
+msgstr "Komunikat wyświetlany przy nieprawidłowym formacie e-mail."
+
+#: src/FormBuilder/BuilderI18n.php:205
+msgid "Message shown when the value is shorter than allowed."
+msgstr "Komunikat wyświetlany, gdy wartość jest za krótka."
+
+#: src/FormBuilder/BuilderI18n.php:206
+msgid "Message shown when the value is longer than allowed."
+msgstr "Komunikat wyświetlany, gdy wartość jest za długa."
+
+#: src/FormBuilder/BuilderI18n.php:207
+msgid "Message shown when the uploaded file type is not allowed."
+msgstr "Komunikat wyświetlany, gdy typ przesłanego pliku jest niedozwolony."
+
+#: src/FormBuilder/BuilderI18n.php:208
+msgid "Message shown when the uploaded file exceeds the size limit."
+msgstr "Komunikat wyświetlany, gdy przesłany plik przekracza limit rozmiaru."
+
+#: src/FormBuilder/BuilderI18n.php:209
+msgid "Generic message shown when submission fails."
+msgstr "Ogólny komunikat wyświetlany, gdy wysyłka się nie powiedzie."
+
+#: src/FormBuilder/BuilderI18n.php:210
+msgid "Display a success message after the form is submitted successfully."
+msgstr "Wyświetl komunikat sukcesu po pomyślnym wysłaniu formularza."
+
+#: src/FormBuilder/BuilderI18n.php:211
+msgid "Text of the success message shown on the frontend."
+msgstr "Treść komunikatu sukcesu wyświetlanego na froncie."
+
+#: src/FormBuilder/BuilderI18n.php:212
+msgid "Show additional HTML content below the success message."
+msgstr "Pokaż dodatkową treść HTML pod komunikatem sukcesu."
+
+#: src/FormBuilder/BuilderI18n.php:213
+msgid "Extra HTML content displayed after a successful submission."
+msgstr "Dodatkowa treść HTML wyświetlana po pomyślnym wysłaniu."
+
+#: src/FormBuilder/BuilderI18n.php:214
+msgid "Hide the form fields after successful submission."
+msgstr "Ukryj pola formularza po pomyślnym wysłaniu."
+
+#: src/FormBuilder/BuilderI18n.php:215
+msgid "Redirect the visitor to another page after successful submission."
+msgstr "Przekieruj odwiedzającego na inną stronę po pomyślnym wysłaniu."
+
+#: src/FormBuilder/BuilderI18n.php:216
+msgid "Full URL to redirect to after submission."
+msgstr "Pełny adres URL przekierowania po wysłaniu."
+
+#: src/FormBuilder/BuilderI18n.php:217
+msgid "Delay in seconds before redirect starts."
+msgstr "Opóźnienie w sekundach przed rozpoczęciem przekierowania."
+
+#: src/FormBuilder/BuilderI18n.php:218
+msgid "Allow only one submission per browser (cookie-based)."
+msgstr "Zezwól tylko na jedno wysłanie na przeglądarkę (na podstawie ciasteczek)."
+
+#: src/FormBuilder/BuilderI18n.php:219
+msgid "Minimum time before the same visitor can submit again."
+msgstr ""
+"Minimalny czas, zanim ten sam odwiedzający będzie mógł wysłać formularz pono"
+"wnie."
+
+#: src/FormBuilder/BuilderI18n.php:220
+msgid "Message shown when submission is blocked by limits."
+msgstr "Komunikat wyświetlany, gdy wysyłka jest zablokowana przez limity."
+
+#: src/FormBuilder/BuilderI18n.php:221
+msgid ""
+"Use a browser fingerprint (IP, user agent, email) for more accurate submissi"
+"on limits."
+msgstr ""
+"Użyj odcisku przeglądarki (IP, user agent, e-mail) dla dokładniejszych limit"
+"ów wysyłki."
+
+#: src/FormBuilder/BuilderI18n.php:222
+msgid ""
+"Custom folder for uploaded files from this form. Leave empty to use the glob"
+"al default from plugin settings."
+msgstr ""
+"Niestandardowy folder na pliki z tego formularza. Zostaw puste, aby użyć ust"
+"awienia globalnego wtyczki."
+
+#: src/FormBuilder/BuilderI18n.php:223
+msgid ""
+"Relative to wp-content/uploads/. Tags: {form_slug}, {form_id}, {form_title}."
+" Files are stored in YYYY/MM/entry-ID subfolders."
+msgstr ""
+"Względem wp-content/uploads/. Tagi: {form_slug}, {form_id}, {form_title}. Pl"
+"iki trafiają do podfolderów RRRR/MM/entry-ID."
+
+#: src/FormBuilder/BuilderI18n.php:224
+msgid "Copy a shortcode and paste it into a page or post to display the form."
+msgstr ""
+"Skopiuj shortcode i wklej go na stronie lub we wpisie, aby wyświetlić formul"
+"arz."
+
+#: src/FormBuilder/BuilderI18n.php:225
+msgid "Displays the full form directly on the page."
+msgstr "Wyświetla cały formularz bezpośrednio na stronie."
+
+#: src/FormBuilder/BuilderI18n.php:226
+msgid "Shows a button that opens the form in a modal window."
+msgstr "Pokazuje przycisk otwierający formularz w oknie modalnym."
+
+#: src/FormBuilder/BuilderI18n.php:227
+msgid ""
+"Opens the form in a modal when a page element matching the CSS selector is c"
+"licked."
+msgstr ""
+"Otwiera formularz w modalu po kliknięciu elementu pasującego do selektora CS"
+"S."
+
+#: src/FormBuilder/BuilderI18n.php:228
+msgid "Text displayed on the button that opens the modal."
+msgstr "Tekst wyświetlany na przycisku otwierającym modal."
+
+#: src/FormBuilder/BuilderI18n.php:229
+msgid "Additional CSS classes for the modal button (e.g. btn btn-primary)."
+msgstr "Dodatkowe klasy CSS przycisku (np. btn btn-primary)."
+
+#: src/FormBuilder/BuilderI18n.php:230
+msgid "CSS selector of the element that opens the modal (e.g. .open-contact-form)."
+msgstr "Selektor CSS elementu otwierającego modal (np. .otworz-kontakt)."
+
+#: src/FormBuilder/BuilderI18n.php:231 src/FormBuilder/BuilderI18n.php:327
+msgid "Available merge tags:"
+msgstr "Dostępne tagi scalające:"
+
+#: src/FormBuilder/BuilderI18n.php:242
+msgid "Required field"
+msgstr "Pole wymagane"
+
+#: src/FormBuilder/BuilderI18n.php:243
+msgid "Invalid email"
+msgstr "Nieprawidłowy e-mail"
+
+#: src/FormBuilder/BuilderI18n.php:244
+msgid "Value too short"
+msgstr "Zbyt krótka wartość"
+
+#: src/FormBuilder/BuilderI18n.php:245
+msgid "Value too long"
+msgstr "Zbyt długa wartość"
+
+#: src/FormBuilder/BuilderI18n.php:246
+msgid "Invalid file"
+msgstr "Nieprawidłowy plik"
+
+#: src/FormBuilder/BuilderI18n.php:247
+msgid "File too large"
+msgstr "Plik za duży"
+
+#: src/FormBuilder/BuilderI18n.php:248
+msgid "Submit error"
+msgstr "Błąd wysyłki"
+
+#: src/FormBuilder/BuilderI18n.php:339
+msgid "Seconds"
+msgstr "Sekundy"
+
+#: src/FormBuilder/BuilderI18n.php:340
+msgid "Minutes"
+msgstr "Minuty"
+
+#: src/FormBuilder/BuilderI18n.php:341
+msgid "Hours"
+msgstr "Godziny"
+
+#: src/FormBuilder/BuilderI18n.php:342
+msgid "Days"
+msgstr "Dni"
+
+#: src/FormBuilder/BuilderScreen.php:36
+#: templates/admin/form-builder-settings.php:309
+msgid "Shortcodes"
+msgstr "Shortcode"
+
+#: src/FormBuilder/FormSettingsStorage.php:97
+msgid "New submission: {form:title}"
+msgstr "Nowe zgłoszenie: {form:title}"
+
+#: src/FormBuilder/FormSettingsStorage.php:99
+msgid "Submission confirmation"
+msgstr "Potwierdzenie zgłoszenia"
+
+#: src/FormBuilder/FormSettingsStorage.php:100
+msgid "Thank you for submitting the form."
+msgstr "Dziękujemy za przesłanie formularza."
+
+#: src/FormBuilder/FormSettingsStorage.php:133 src/Frontend/Assets.php:97
+#: src/Submission/Validator.php:155 src/Submission/Validator.php:243
+#: src/Submission/Validator.php:347
+msgid "This field is required."
+msgstr "To pole jest wymagane."
+
+#: src/FormBuilder/FormSettingsStorage.php:134 src/Submission/Validator.php:165
+msgid "Please enter a valid email address."
+msgstr "Podaj prawidłowy adres e-mail."
+
+#: src/FormBuilder/FormSettingsStorage.php:135 src/Submission/Validator.php:174
+msgid "The value is too short."
+msgstr "Wartość jest zbyt krótka."
+
+#: src/FormBuilder/FormSettingsStorage.php:136 src/Submission/Validator.php:179
+msgid "The value is too long."
+msgstr "Wartość jest zbyt długa."
+
+#: src/FormBuilder/FormSettingsStorage.php:137 src/Frontend/Assets.php:98
+#: src/Submission/Validator.php:424 src/Submission/Validator.php:434
+#: src/Submission/Validator.php:438
+msgid "This file type is not allowed."
+msgstr "Niedozwolony typ pliku."
+
+#: src/FormBuilder/FormSettingsStorage.php:138 src/Frontend/Assets.php:99
+#: src/Submission/EntrySaver.php:141 src/Submission/Validator.php:405
+msgid "The file is too large."
+msgstr "Plik jest zbyt duży."
+
+#: src/FormBuilder/FormSettingsStorage.php:139 src/Frontend/Assets.php:112
+msgid "An error occurred while submitting. Please try again."
+msgstr "Wystąpił błąd podczas wysyłki. Spróbuj ponownie."
+
+#: src/FormBuilder/FormSettingsStorage.php:173 src/Frontend/Assets.php:113
+#: src/Submission/Honeypot.php:58 src/Submission/SubmitRestApi.php:173
+msgid "The form has been submitted. Thank you!"
+msgstr "Formularz został wysłany. Dziękujemy!"
+
+#: src/FormBuilder/FormSettingsStorage.php:230
+#: src/Submission/SubmitLimiter.php:52
+msgid "You can submit this form again shortly."
+msgstr "Możesz wysłać ten formularz ponownie za chwilę."
+
+#: src/FormBuilder/FormSettingsStorage.php:232 src/Frontend/Shortcode.php:34
+#: src/Frontend/ShortcodeAttributes.php:66
+#: templates/admin/partials/form-shortcodes.php:53
+msgid "Open form"
+msgstr "Otwórz formularz"
+
+#: src/FormBuilder/RestApi.php:127 src/Submission/EntrySaver.php:41
+msgid "The form does not exist."
+msgstr "Formularz nie istnieje."
+
+#: src/FormBuilder/RestApi.php:190
+msgid "Could not save the form schema."
+msgstr "Nie udało się zapisać schemy formularza."
+
+#: src/FormBuilder/RestApi.php:221
+msgid "The form has been saved."
+msgstr "Formularz został zapisany."
+
+#: src/Frontend/Assets.php:94 templates/frontend/form.php:40
+msgid "Close"
+msgstr "Zamknij"
+
+#: src/Frontend/Assets.php:95 templates/frontend/form.php:75
+msgid "Sending…"
+msgstr "Wysyłanie…"
+
+#: src/Frontend/Assets.php:96
+msgid "Please fill in the required fields."
+msgstr "Uzupełnij wymagane pola."
+
+#: src/Frontend/Assets.php:100
+msgid "Maximum size:"
+msgstr "Maksymalny rozmiar:"
+
+#: src/Frontend/Assets.php:103 templates/frontend/field.php:280
+msgid "No file selected"
+msgstr "Nie wybrano pliku"
+
+#: src/Frontend/Assets.php:104 templates/frontend/field.php:229
+msgid "Remove file"
+msgstr "Usuń plik"
+
+#: src/Frontend/Assets.php:105
+msgid "Too many files selected."
+msgstr "Wybrano zbyt wiele plików."
+
+#: src/Frontend/Assets.php:106
+msgid "Upload at least the minimum number of files."
+msgstr "Prześlij co najmniej wymaganą liczbę plików."
+
+#. translators: %d: minimum number of selections
+#: src/Frontend/Assets.php:107 src/Submission/Validator.php:249
+msgid "Select at least %d option(s)."
+msgstr "Wybierz co najmniej %d opcji."
+
+#. translators: %d: maximum number of selections
+#: src/Frontend/Assets.php:108 src/Submission/Validator.php:257
+msgid "Select at most %d option(s)."
+msgstr "Wybierz maksymalnie %d opcji."
+
+#: src/Frontend/Assets.php:109
+msgid "Anti-spam verification error."
+msgstr "Błąd weryfikacji antyspamowej."
+
+#: src/Frontend/Assets.php:110
+msgid "Form configuration error."
+msgstr "Błąd konfiguracji formularza."
+
+#: src/Frontend/Assets.php:111
+msgid "Submission error."
+msgstr "Błąd wysyłki."
+
+#: src/Integrations/RecaptchaVerifier.php:36
+#: src/Integrations/TurnstileVerifier.php:35
+msgid "Anti-spam verification failed. Refresh the page and try again."
+msgstr "Weryfikacja antyspamowa nie powiodła się. Odśwież stronę i spróbuj ponownie."
+
+#: src/Integrations/RecaptchaVerifier.php:55
+msgid "Could not verify reCAPTCHA. Please try again."
+msgstr "Nie udało się zweryfikować reCAPTCHA. Spróbuj ponownie."
+
+#: src/Integrations/RecaptchaVerifier.php:63
+#: src/Integrations/RecaptchaVerifier.php:72
+#: src/Integrations/TurnstileVerifier.php:62
+msgid "Anti-spam verification failed."
+msgstr "Weryfikacja antyspamowa nie powiodła się."
+
+#: src/Integrations/RecaptchaVerifier.php:78
+msgid "Your submission was blocked as suspicious. Please try again later."
+msgstr ""
+"Twoje zgłoszenie zostało zablokowane jako podejrzane. Spróbuj ponownie późni"
+"ej."
+
+#: src/Integrations/TurnstileVerifier.php:54
+msgid "Could not verify Turnstile. Please try again."
+msgstr "Nie udało się zweryfikować Turnstile. Spróbuj ponownie."
+
+#: src/PostTypes/EntryPostType.php:49 src/PostTypes/FormPostType.php:45
+msgid "Add new"
+msgstr "Dodaj nowy"
+
+#: src/PostTypes/EntryPostType.php:50
+msgid "Add new submission"
+msgstr "Dodaj nowe zgłoszenie"
+
+#: src/PostTypes/EntryPostType.php:51 src/PostTypes/EntryPostType.php:53
+msgid "View submission"
+msgstr "Zobacz zgłoszenie"
+
+#: src/PostTypes/EntryPostType.php:52
+msgid "New submission"
+msgstr "Nowe zgłoszenie"
+
+#: src/PostTypes/EntryPostType.php:54
+msgid "Search submissions"
+msgstr "Szukaj zgłoszeń"
+
+#: src/PostTypes/EntryPostType.php:55
+msgid "No submissions found."
+msgstr "Nie znaleziono zgłoszeń."
+
+#: src/PostTypes/EntryPostType.php:56
+msgid "No submissions found in trash."
+msgstr "Nie znaleziono zgłoszeń w koszu."
+
+#: src/PostTypes/EntryPostType.php:57
+msgid "All submissions"
+msgstr "Wszystkie zgłoszenia"
+
+#: src/PostTypes/FormPostType.php:47
+msgid "Edit form"
+msgstr "Edytuj formularz"
+
+#: src/PostTypes/FormPostType.php:48
+msgid "New form"
+msgstr "Nowy formularz"
+
+#: src/PostTypes/FormPostType.php:49
+msgid "View form"
+msgstr "Zobacz formularz"
+
+#: src/PostTypes/FormPostType.php:50
+msgid "Search forms"
+msgstr "Szukaj formularzy"
+
+#: src/PostTypes/FormPostType.php:51
+msgid "No forms found."
+msgstr "Nie znaleziono formularzy."
+
+#: src/PostTypes/FormPostType.php:52
+msgid "No forms found in trash."
+msgstr "Nie znaleziono formularzy w koszu."
+
+#: src/PostTypes/FormPostType.php:86
+msgid "Form name"
+msgstr "Nazwa formularza"
+
+#. translators: %s: form title
+#: src/Submission/EntrySaver.php:50
+msgid "Submission — %s"
+msgstr "Zgłoszenie — %s"
+
+#. translators: 1: entry ID, 2: form title
+#: src/Submission/EntrySaver.php:92
+msgid "Submission #%1$d — %2$s"
+msgstr "Zgłoszenie #%1$d — %2$s"
+
+#. translators: %s: error message
+#: src/Submission/EntrySaver.php:172
+msgid "Could not save file: %s"
+msgstr "Nie udało się zapisać pliku: %s"
+
+#: src/Submission/SubmitLimiter.php:47
+msgid "This form has already been submitted."
+msgstr "Ten formularz został już wysłany."
+
+#: src/Submission/SubmitLimiter.php:178
+msgid "Too many submission attempts. Please try again later."
+msgstr "Zbyt wiele prób wysłania formularza. Spróbuj ponownie później."
+
+#: src/Submission/SubmitRestApi.php:76
+msgid "The form is unavailable."
+msgstr "Formularz jest niedostępny."
+
+#: src/Submission/SubmitRestApi.php:90
+msgid "Your session has expired. Refresh the page and try again."
+msgstr "Sesja wygasła. Odśwież stronę i spróbuj ponownie."
+
+#: src/Submission/SubmitRestApi.php:129
+msgid "Please correct the errors in the form."
+msgstr "Popraw błędy w formularzu."
+
+#: src/Submission/SubmitRestApi.php:148
+msgid "Could not save the submission."
+msgstr "Nie udało się zapisać zgłoszenia."
+
+#: src/Submission/Validator.php:169
+msgid "Please enter a valid URL."
+msgstr "Podaj prawidłowy adres URL."
+
+#: src/Submission/Validator.php:184
+msgid "Please enter a valid number."
+msgstr "Podaj prawidłową liczbę."
+
+#: src/Submission/Validator.php:196
+msgid "Please enter a valid rating."
+msgstr "Podaj prawidłową ocenę."
+
+#: src/Submission/Validator.php:203
+msgid "The value is too small."
+msgstr "Wartość jest zbyt mała."
+
+#: src/Submission/Validator.php:207
+msgid "The value is too large."
+msgstr "Wartość jest zbyt duża."
+
+#: src/Submission/Validator.php:215 src/Submission/Validator.php:219
+#: src/Submission/Validator.php:266
+msgid "An invalid option was selected."
+msgstr "Wybrano nieprawidłową opcję."
+
+#: src/Submission/Validator.php:353
+msgid "Only one file can be uploaded."
+msgstr "Można przesłać tylko jeden plik."
+
+#. translators: %d: minimum number of files
+#: src/Submission/Validator.php:366
+msgid "Upload at least %d file(s)."
+msgstr "Prześlij co najmniej %d plik(ów)."
+
+#. translators: %d: maximum number of files
+#: src/Submission/Validator.php:374
+msgid "You can upload at most %d file(s)."
+msgstr "Można przesłać maksymalnie %d plik(ów)."
+
+#: src/Submission/Validator.php:400
+msgid "An error occurred while uploading the file."
+msgstr "Błąd podczas przesyłania pliku."
+
+#. translators: %s: comma-separated file extensions
+#: src/Support/FileUploadHint.php:31
+msgid "Allowed file types: %s"
+msgstr "Dozwolone typy plików: %s"
+
+#. translators: %s: maximum file size
+#: src/Support/FileUploadHint.php:41
+msgid "Maximum file size: %s"
+msgstr "Maksymalny rozmiar pliku: %s"
+
+#. translators: %d: maximum number of files
+#: src/Support/FileUploadHint.php:53
+msgid "Maximum number of files: %d"
+msgstr "Maksymalna liczba plików: %d"
+
+#. translators: %d: minimum number of files
+#: src/Support/FileUploadHint.php:61
+msgid "Minimum number of files: %d"
+msgstr "Minimalna liczba plików: %d"
+
+#: src/Support/FileUploadHint.php:68
+msgid "All common file types are allowed."
+msgstr "Dozwolone są wszystkie popularne typy plików."
+
+#: src/Support/UploadPath.php:97
+msgid "form slug (post name)"
+msgstr "slug formularza (nazwa wpisu)"
+
+#: src/Support/UploadPath.php:98
+msgid "numeric form ID"
+msgstr "numeryczne ID formularza"
+
+#: src/Support/UploadPath.php:99
+msgid "sanitized form title"
+msgstr "oczyszczony tytuł formularza"
+
+#: templates/admin/entry-detail.php:24 templates/admin/entry-detail.php:26
+msgid "Submission status"
+msgstr "Status zgłoszenia"
+
+#: templates/admin/entry-detail.php:34
+msgid "Save the entry to update the status (click “Update” above)."
+msgstr "Zapisz wpis, aby zaktualizować status (przycisk „Aktualizuj” powyżej)."
+
+#: templates/admin/entry-detail.php:38
+msgid "Summary"
+msgstr "Podsumowanie"
+
+#: templates/admin/entry-detail.php:52
+msgid "Answers"
+msgstr "Odpowiedzi"
+
+#: templates/admin/entry-detail.php:55
+msgid "No saved answers."
+msgstr "Brak zapisanych odpowiedzi."
+
+#: templates/admin/entry-detail.php:60
+msgid "Field"
+msgstr "Pole"
+
+#: templates/admin/entry-detail.php:61
+msgid "Answer"
+msgstr "Odpowiedź"
+
+#: templates/admin/form-builder-settings.php:42
+msgid "Email sending"
+msgstr "Wysyłka e-mail"
+
+#: templates/admin/form-builder-settings.php:46
+msgid "Send to administrator"
+msgstr "Wyślij do administratora"
+
+#: templates/admin/form-builder-settings.php:47
+msgid "Send confirmation to user"
+msgstr "Wyślij potwierdzenie do użytkownika"
+
+#: templates/admin/form-builder-settings.php:52
+msgid "Administrator email"
+msgstr "E-mail administratora"
+
+#: templates/admin/form-builder-settings.php:61
+msgid "From name"
+msgstr "Nadawca — nazwa"
+
+#: templates/admin/form-builder-settings.php:70
+msgid "From email"
+msgstr "Nadawca — e-mail"
+
+#: templates/admin/form-builder-settings.php:79
+msgid "Reply-To"
+msgstr "Reply-To"
+
+#: templates/admin/form-builder-settings.php:88
+msgid "Admin subject"
+msgstr "Temat (admin)"
+
+#: templates/admin/form-builder-settings.php:98
+msgid "Admin message"
+msgstr "Treść (admin)"
+
+#: templates/admin/form-builder-settings.php:109
+msgid "User subject"
+msgstr "Temat (użytkownik)"
+
+#: templates/admin/form-builder-settings.php:119
+msgid "User message"
+msgstr "Treść (użytkownik)"
+
+#: templates/admin/form-builder-settings.php:165
+msgid "Success"
+msgstr "Sukces"
+
+#: templates/admin/form-builder-settings.php:169
+msgid "Show success message"
+msgstr "Pokaż komunikat sukcesu"
+
+#: templates/admin/form-builder-settings.php:174
+msgid "Success message"
+msgstr "Treść sukcesu"
+
+#: templates/admin/form-builder-settings.php:183
+msgid "Extra content"
+msgstr "Dodatkowa treść"
+
+#: templates/admin/form-builder-settings.php:187
+msgid "Show extra content after submit"
+msgstr "Pokaż dodatkową treść po wysłaniu"
+
+#: templates/admin/form-builder-settings.php:192
+msgid "Extra content HTML"
+msgstr "Treść dodatkowa (HTML)"
+
+#: templates/admin/form-builder-settings.php:201
+msgid "After submit"
+msgstr "Po wysłaniu"
+
+#: templates/admin/form-builder-settings.php:205
+msgid "Hide form after submit"
+msgstr "Ukryj formularz po wysłaniu"
+
+#: templates/admin/form-builder-settings.php:210
+msgid "Redirect"
+msgstr "Przekierowanie"
+
+#: templates/admin/form-builder-settings.php:214
+msgid "Enable redirect"
+msgstr "Włącz przekierowanie"
+
+#: templates/admin/form-builder-settings.php:219
+msgid "Redirect URL"
+msgstr "URL przekierowania"
+
+#: templates/admin/form-builder-settings.php:228
+msgid "Redirect delay (sec.)"
+msgstr "Opóźnienie przekierowania (sek.)"
+
+#: templates/admin/form-builder-settings.php:242
+msgid "Submit limits"
+msgstr "Limity wysyłki"
+
+#: templates/admin/form-builder-settings.php:246
+msgid "Allow only one submission"
+msgstr "Tylko jedna wysyłka"
+
+#: templates/admin/form-builder-settings.php:251
+msgid "Cooldown"
+msgstr "Blokada czasowa"
+
+#: templates/admin/form-builder-settings.php:266
+msgid "Cooldown message"
+msgstr "Komunikat blokady"
+
+#: templates/admin/form-builder-settings.php:275
+msgid "File upload path"
+msgstr "Ścieżka zapisu plików"
+
+#: templates/admin/form-builder-settings.php:282
+msgid "Effective path for this form:"
+msgstr "Efektywna ścieżka dla tego formularza:"
+
+#. translators: %s: uploads URL
+#: templates/admin/form-builder-settings.php:290
+msgid "Full URL: %s"
+msgstr "Pełny URL: %s"
+
+#: templates/admin/form-builder-settings.php:300
+msgid "Fingerprint"
+msgstr "Odcisk przeglądarki"
+
+#: templates/admin/form-builder-settings.php:304
+msgid "Enable submission fingerprint"
+msgstr "Włącz identyfikację zgłoszenia (odcisk)"
+
+#: templates/admin/form-builder.php:48
+msgid "Form layout is saved when you click “Save form” or “Update”."
+msgstr ""
+"Układ formularza zapisuje się po kliknięciu „Zapisz formularz” lub „Aktualiz"
+"uj”."
+
+#: templates/admin/manager.php:21
+msgid "Select a form before exporting."
+msgstr "Wybierz formularz przed eksportem."
+
+#: templates/admin/manager.php:25
+msgid "Export submissions to CSV"
+msgstr "Eksport zgłoszeń do CSV"
+
+#: templates/admin/manager.php:26
+msgid ""
+"Download submissions for the selected form as CSV (UTF-8, semicolon separato"
+"r)."
+msgstr ""
+"Pobierz zgłoszenia wybranego formularza w formacie CSV (UTF-8, separator śre"
+"dnik)."
+
+#: templates/admin/manager.php:34
+msgid "required"
+msgstr "wymagane"
+
+#: templates/admin/manager.php:37
+msgid "— Select form —"
+msgstr "— Wybierz formularz —"
+
+#: templates/admin/manager.php:54
+msgid "Export CSV"
+msgstr "Eksportuj CSV"
+
+#: templates/admin/partials/form-shortcodes.php:35
+msgid "Inline form"
+msgstr "Formularz inline"
+
+#: templates/admin/partials/form-shortcodes.php:48
+msgid "Button with modal"
+msgstr "Przycisk z modalem"
+
+#: templates/admin/partials/form-shortcodes.php:52
+msgid "Button text"
+msgstr "Tekst przycisku"
+
+#: templates/admin/partials/form-shortcodes.php:56
+msgid "Button CSS classes"
+msgstr "Klasy CSS przycisku"
+
+#: templates/admin/partials/form-shortcodes.php:69
+msgid "CSS trigger (modal)"
+msgstr "Trigger CSS (modal)"
+
+#: templates/admin/partials/form-shortcodes.php:73
+msgid "CSS selector / class"
+msgstr "Selektor CSS / klasa"
+
+#: templates/admin/settings.php:25
+msgid "Settings saved."
+msgstr "Ustawienia zostały zapisane."
+
+#: templates/admin/settings.php:32
+msgid "Anti-spam protection"
+msgstr "Ochrona antyspamowa"
+
+#: templates/admin/settings.php:33
+msgid ""
+"Choose one captcha provider for all forms. Configure keys in the provider da"
+"shboard."
+msgstr ""
+"Wybierz jednego dostawcę captchy dla wszystkich formularzy. Klucze skonfigur"
+"uj w panelu dostawcy."
+
+#: templates/admin/settings.php:38
+msgid ""
+"Captcha is disabled. Honeypot and hourly rate limiting are active, but enabl"
+"ing reCAPTCHA or Turnstile is strongly recommended on production sites."
+msgstr ""
+"Captcha jest wyłączona. Honeypot i limit godzinowy są aktywne, ale na produk"
+"cji zalecamy włączenie reCAPTCHA lub Turnstile."
+
+#: templates/admin/settings.php:45
+msgid "Captcha provider"
+msgstr "Dostawca captchy"
+
+#: templates/admin/settings.php:48
+msgid "Disabled"
+msgstr "Wyłączone"
+
+#: templates/admin/settings.php:49 templates/admin/settings.php:57
+msgid "Google reCAPTCHA v3"
+msgstr "Google reCAPTCHA v3"
+
+#: templates/admin/settings.php:50 templates/admin/settings.php:86
+msgid "Cloudflare Turnstile"
+msgstr "Cloudflare Turnstile"
+
+#: templates/admin/settings.php:58
+msgid "Get keys from Google reCAPTCHA Admin."
+msgstr "Klucze uzyskasz w Google reCAPTCHA Admin."
+
+#: templates/admin/settings.php:61 templates/admin/settings.php:90
+msgid "Site key"
+msgstr "Klucz witryny"
+
+#: templates/admin/settings.php:65 templates/admin/settings.php:94
+msgid "Secret key"
+msgstr "Klucz tajny"
+
+#: templates/admin/settings.php:69
+msgid "Action name"
+msgstr "Nazwa akcji"
+
+#: templates/admin/settings.php:72
+msgid "Default: fast_forms_submit"
+msgstr "Domyślnie: fast_forms_submit"
+
+#: templates/admin/settings.php:76
+msgid "Minimum score"
+msgstr "Minimalny score"
+
+#: templates/admin/settings.php:79
+msgid ""
+"Recommended: 0.5. Lower score blocks more submissions, higher allows more sp"
+"am."
+msgstr "Zalecane: 0.5. Niższy score = więcej blokad, wyższy = więcej spamu."
+
+#: templates/admin/settings.php:87
+msgid "Get keys from Cloudflare dashboard → Turnstile."
+msgstr "Klucze uzyskasz w panelu Cloudflare → Turnstile."
+
+#: templates/admin/settings.php:100
+msgid "File uploads"
+msgstr "Przesyłanie plików"
+
+#: templates/admin/settings.php:101
+msgid ""
+"Configure where uploaded files from form fields are stored. Path is relative"
+" to the WordPress uploads directory."
+msgstr ""
+"Skonfiguruj, gdzie zapisywane są pliki z pól formularza. Ścieżka jest względ"
+"em katalogu uploads WordPress."
+
+#: templates/admin/settings.php:104
+msgid "Default upload path"
+msgstr "Domyślna ścieżka uploadu"
+
+#: templates/admin/settings.php:108
+msgid "Available tags:"
+msgstr "Dostępne tagi:"
+
+#. translators: %s: example uploads URL
+#: templates/admin/settings.php:116
+msgid "Example: %s"
+msgstr "Przykład: %s"
+
+#: templates/admin/settings.php:125
+msgid "Uninstall"
+msgstr "Odinstalowanie"
+
+#: templates/admin/settings.php:128
+msgid "Delete data"
+msgstr "Usuwanie danych"
+
+#: templates/admin/settings.php:132
+msgid "Remove forms, entries, and uploaded files when uninstalling the plugin"
+msgstr "Usuń formularze, zgłoszenia i pliki po odinstalowaniu wtyczki"
+
+#: templates/admin/settings.php:134
+msgid ""
+"By default data remains in the database after uninstall. Check only for comp"
+"lete removal."
+msgstr ""
+"Domyślnie dane pozostają w bazie po odinstalowaniu. Zaznacz tylko jeśli chce"
+"sz całkowite usunięcie."
+
+#: templates/admin/settings.php:139
+msgid "Save settings"
+msgstr "Zapisz ustawienia"
+
+#: templates/frontend/field.php:117
+msgid "— Select —"
+msgstr "— Wybierz —"
+
+#. translators: 1: star value, 2: max stars
+#: templates/frontend/field.php:352
+msgid "%1$d of %2$d stars"
+msgstr "%1$d z %2$d gwiazdek"
+
+#: templates/frontend/form.php:59
+msgid "Leave this field empty"
+msgstr "Pozostaw to pole puste"

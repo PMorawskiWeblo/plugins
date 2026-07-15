@@ -184,52 +184,65 @@ class PersonalizerController
 			return;
 		}
 
+		$debug_enabled  = $this->settings->is_debug_enabled();
+		$layout_config  = $layout->to_array();
+		$is_crop_layout = ( $layout_config['personalization_mode'] ?? 'layout_2' ) === 'layout_2';
+		$lazy_load      = $this->settings->is_lazy_load_personalizer_enabled();
+
+		wp_enqueue_style('wpp-frontend');
+
+		$wpp_data = $this->build_wpp_data( $product_id, $config, $layout, $debug_enabled, $lazy_load, $is_crop_layout );
+
+		if ( $lazy_load ) {
+			UploadSession::ensure_session();
+			UploadSession::get_token();
+
+			wp_enqueue_script( 'wpp-personalizer-bootstrap' );
+			wp_localize_script( 'wpp-personalizer-bootstrap', 'wppData', $wpp_data );
+
+			$this->assets_enqueued = true;
+			return;
+		}
+
+		$this->enqueue_personalizer_scripts( $is_crop_layout, $debug_enabled );
+		wp_localize_script( 'wpp-personalizer', 'wppData', $wpp_data );
+
+		$this->assets_enqueued = true;
+	}
+
+	/**
+	 * Register and enqueue Konva, personalizer, and optional crop/debug scripts.
+	 *
+	 * @param bool $is_crop_layout Crop mode layout.
+	 * @param bool $debug_enabled  Debug mode.
+	 * @return void
+	 */
+	private function enqueue_personalizer_scripts( $is_crop_layout, $debug_enabled ) {
 		UploadSession::ensure_session();
 		UploadSession::get_token();
 
-		$debug_enabled = $this->settings->is_debug_enabled();
-		$layout_config   = $layout->to_array();
-		$is_crop_layout  = ( $layout_config['personalization_mode'] ?? 'layout_2' ) === 'layout_2';
+		wp_enqueue_script( 'konva' );
 
-		wp_enqueue_style('wpp-frontend');
-		wp_enqueue_script('konva');
-
-		$personalizer_deps = array('jquery', 'konva', 'wpp-google-fonts', 'wpp-mask-border');
+		$personalizer_deps = array( 'jquery', 'konva', 'wpp-google-fonts', 'wpp-mask-border' );
 
 		if ( $is_crop_layout ) {
-			wp_enqueue_style(
-				'wpp-cropper',
-				WPP_PLUGIN_URL . 'assets/css/cropper.min.css',
-				array(),
-				'1.6.2'
-			);
-			wp_enqueue_script(
-				'wpp-cropper-lib',
-				WPP_PLUGIN_URL . 'assets/js/vendor/cropper.min.js',
-				array(),
-				'1.6.2',
-				true
-			);
+			wp_enqueue_style( 'wpp-cropper' );
+			wp_enqueue_script( 'wpp-cropper-lib' );
 			wp_add_inline_script(
 				'wpp-cropper-lib',
-				'window.WppCropperLib = ( typeof Cropper === "function" && Cropper.prototype && typeof Cropper.prototype.getCroppedCanvas === "function" ) ? Cropper : null;',
+				$this->get_cropper_inline_script(),
 				'after'
 			);
-			wp_enqueue_script(
-				'wpp-image-crop',
-				WPP_PLUGIN_URL . 'assets/js/wpp-image-crop.js',
-				array('jquery', 'wpp-cropper-lib'),
-				WPP_VERSION,
-				true
-			);
+			wp_enqueue_script( 'wpp-image-crop' );
 			$personalizer_deps[] = 'wpp-image-crop';
 		}
-		if ($debug_enabled) {
-			wp_enqueue_script('wpp-debug');
+
+		if ( $debug_enabled ) {
+			wp_enqueue_script( 'wpp-debug' );
 			$personalizer_deps[] = 'wpp-debug';
 		}
 
-		wp_deregister_script('wpp-personalizer');
+		wp_deregister_script( 'wpp-personalizer' );
 		wp_register_script(
 			'wpp-personalizer',
 			WPP_PLUGIN_URL . 'assets/js/personalizer.js',
@@ -237,65 +250,172 @@ class PersonalizerController
 			WPP_VERSION,
 			true
 		);
-		wp_enqueue_script('wpp-personalizer');
+		wp_enqueue_script( 'wpp-personalizer' );
+	}
 
-		$product = wc_get_product( $product_id );
+	/**
+	 * Localized data for storefront personalizer scripts.
+	 *
+	 * @param int                  $product_id     Product ID.
+	 * @param ProductConfiguration $config         Config.
+	 * @param \WooProductPersonalizer\Domain\Layout\Layout $layout Layout.
+	 * @param bool                 $debug_enabled  Debug on.
+	 * @param bool                 $lazy_load      Defer script loading.
+	 * @param bool                 $is_crop_layout Crop layout.
+	 * @return array<string, mixed>
+	 */
+	private function build_wpp_data( $product_id, ProductConfiguration $config, $layout, $debug_enabled, $lazy_load, $is_crop_layout ) {
+		$product          = wc_get_product( $product_id );
 		$add_to_cart_text = $this->get_standard_add_to_cart_text( $product );
 
-		wp_localize_script(
-			'wpp-personalizer',
-			'wppData',
-			array(
-				'ajaxUrl'            => admin_url('admin-ajax.php'),
-				'nonce'              => wp_create_nonce('wpp_personalizer'),
-				'uploadNonce'        => wp_create_nonce('wpp_upload'),
-				'debugEnabled'       => $debug_enabled,
-				'debugLogNonce'      => wp_create_nonce('wpp_debug_log'),
-				'productId'          => $product_id,
-				'layout'             => LayoutAssetResolver::resolve($layout->to_array()),
-				'layoutId'           => $layout->get_id(),
-				'mode'               => 'modal',
-				'replaceAddToCart'   => $this->settings->is_replace_add_to_cart_enabled(),
-				'addToCartText'      => $add_to_cart_text,
-				'validationEnabled'      => $config->is_validation_enabled(),
-				'buttonLabel'            => $config->get_button_label() ?: $this->settings->get('default_button_label'),
-				'buttonLabelCompleted'   => $this->settings->get('default_button_label_completed'),
-				'acceptanceRequired'     => $config->is_acceptance_required(),
-				'maxUploadMb'        => (int) $this->settings->get('max_upload_mb', 10),
-				'previewExportScale' => (int) $this->settings->get('preview_export_scale', 2),
-				'allowedMimeTypes'   => (array) $this->settings->get('allowed_mime_types', array()),
-				'i18n'               => array(
-					'uploadImage'    => __('Upload image', 'woo-product-personalizer'),
-					'chooseFile'     => __('Choose file', 'woo-product-personalizer'),
-					'moveLeft'       => __('Move left', 'woo-product-personalizer'),
-					'moveRight'      => __('Move right', 'woo-product-personalizer'),
-					'moveUp'         => __('Move up', 'woo-product-personalizer'),
-					'moveDown'       => __('Move down', 'woo-product-personalizer'),
-					'zoomIn'         => __('Zoom in', 'woo-product-personalizer'),
-					'zoomOut'        => __('Zoom out', 'woo-product-personalizer'),
-					'rotate'         => __('Rotate', 'woo-product-personalizer'),
-					'flipH'          => __('Flip horizontal', 'woo-product-personalizer'),
-					'flipV'          => __('Flip vertical', 'woo-product-personalizer'),
-					'autofit'        => __('Auto-fit', 'woo-product-personalizer'),
-					'reset'          => __('Reset', 'woo-product-personalizer'),
-					'requiredField'  => __('This field is required.', 'woo-product-personalizer'),
-					'invalidFile'    => __('Invalid file type or size.', 'woo-product-personalizer'),
-					'removeImage'    => __('Remove', 'woo-product-personalizer'),
-					'acceptRequired' => __('Please accept the preview before adding to cart.', 'woo-product-personalizer'),
-					'personalized'   => _x('Personalized', 'completed personalize button', 'woo-product-personalizer'),
-					'close'          => __('Close', 'woo-product-personalizer'),
-					'save'           => __('Save personalization', 'woo-product-personalizer'),
-					'selectFont'     => __('Font', 'woo-product-personalizer'),
-					'cropCancel'     => __('Cancel', 'woo-product-personalizer'),
-					'cropSelect'     => __('Select', 'woo-product-personalizer'),
-					'cropZoomIn'     => __('Zoom in', 'woo-product-personalizer'),
-					'cropZoomOut'    => __('Zoom out', 'woo-product-personalizer'),
-					'cropUploading'  => __('Processing image…', 'woo-product-personalizer'),
-				),
-			)
+		$allowed_mimes = $this->settings->get_allowed_mime_types();
+
+		$data = array(
+			'ajaxUrl'                 => admin_url( 'admin-ajax.php' ),
+			'nonce'                   => wp_create_nonce( 'wpp_personalizer' ),
+			'uploadNonce'             => wp_create_nonce( 'wpp_upload' ),
+			'debugEnabled'            => $debug_enabled,
+			'debugLogNonce'           => wp_create_nonce( 'wpp_debug_log' ),
+			'productId'               => $product_id,
+			'layout'                  => LayoutAssetResolver::resolve( $layout->to_array() ),
+			'layoutId'                => $layout->get_id(),
+			'mode'                    => 'modal',
+			'lazyLoad'                => $lazy_load,
+			'replaceAddToCart'        => $this->settings->is_replace_add_to_cart_enabled(),
+			'addToCartText'           => $add_to_cart_text,
+			'validationEnabled'       => $config->is_validation_enabled(),
+			'buttonLabel'             => $config->get_button_label() ?: $this->settings->get( 'default_button_label' ),
+			'buttonLabelCompleted'    => $this->settings->get( 'default_button_label_completed' ),
+			'acceptanceRequired'      => $config->is_acceptance_required(),
+			'maxUploadMb'             => (int) $this->settings->get( 'max_upload_mb', 10 ),
+			'previewExportScale'      => (int) $this->settings->get( 'preview_export_scale', 2 ),
+			'allowedMimeTypes'        => $allowed_mimes,
+			'allowedUploadAccept'     => UploadMimeTypes::accept_list( $allowed_mimes ),
+			'allowedUploadExtensions' => UploadMimeTypes::allowed_extensions( $allowed_mimes ),
+			'heic2anyUrl'             => UploadMimeTypes::allows_heic_upload( $allowed_mimes )
+				? WPP_PLUGIN_URL . 'assets/js/vendor/heic2any.min.js'
+				: '',
+			'i18n'                    => array(
+				'uploadImage'         => __( 'Upload image', 'woo-product-personalizer' ),
+				'chooseFile'          => __( 'Choose file', 'woo-product-personalizer' ),
+				'moveLeft'            => __( 'Move left', 'woo-product-personalizer' ),
+				'moveRight'           => __( 'Move right', 'woo-product-personalizer' ),
+				'moveUp'              => __( 'Move up', 'woo-product-personalizer' ),
+				'moveDown'            => __( 'Move down', 'woo-product-personalizer' ),
+				'zoomIn'              => __( 'Zoom in', 'woo-product-personalizer' ),
+				'zoomOut'             => __( 'Zoom out', 'woo-product-personalizer' ),
+				'rotate'              => __( 'Rotate', 'woo-product-personalizer' ),
+				'flipH'               => __( 'Flip horizontal', 'woo-product-personalizer' ),
+				'flipV'               => __( 'Flip vertical', 'woo-product-personalizer' ),
+				'autofit'             => __( 'Auto-fit', 'woo-product-personalizer' ),
+				'reset'               => __( 'Reset', 'woo-product-personalizer' ),
+				'requiredField'       => __( 'This field is required.', 'woo-product-personalizer' ),
+				'invalidFile'         => __( 'Invalid file type or size.', 'woo-product-personalizer' ),
+				'removeImage'         => __( 'Remove', 'woo-product-personalizer' ),
+				'acceptRequired'      => __( 'Please accept the preview before adding to cart.', 'woo-product-personalizer' ),
+				'personalized'        => _x( 'Personalized', 'completed personalize button', 'woo-product-personalizer' ),
+				'close'               => __( 'Close', 'woo-product-personalizer' ),
+				'save'                => __( 'Save personalization', 'woo-product-personalizer' ),
+				'selectFont'          => __( 'Font', 'woo-product-personalizer' ),
+				'cropCancel'          => __( 'Cancel', 'woo-product-personalizer' ),
+				'cropSelect'          => __( 'Select', 'woo-product-personalizer' ),
+				'cropZoomIn'          => __( 'Zoom in', 'woo-product-personalizer' ),
+				'cropZoomOut'         => __( 'Zoom out', 'woo-product-personalizer' ),
+				'cropUploading'       => __( 'Processing image…', 'woo-product-personalizer' ),
+				'cropPreviewFailed'   => __( 'Could not load this image for cropping. Please try JPEG or PNG.', 'woo-product-personalizer' ),
+				'loadingPersonalizer' => __( 'Loading personalization…', 'woo-product-personalizer' ),
+				'loadFailed'          => __( 'Could not load the personalizer. Please refresh the page and try again.', 'woo-product-personalizer' ),
+				'heicConvertFailed'   => __( 'Could not prepare this HEIC image. Please try JPEG or PNG instead.', 'woo-product-personalizer' ),
+			),
 		);
 
-		$this->assets_enqueued = true;
+		if ( $lazy_load ) {
+			$data['lazyAssets'] = $this->build_lazy_asset_manifest( $is_crop_layout, $debug_enabled );
+		}
+
+		return $data;
+	}
+
+	/**
+	 * Script/style URLs for deferred loading in the browser.
+	 *
+	 * @param bool $is_crop_layout Crop layout.
+	 * @param bool $debug_enabled  Debug on.
+	 * @return array{scripts: array<int, array{handle: string, src: string}>, styles: array<int, array{handle: string, src: string}>}
+	 */
+	private function build_lazy_asset_manifest( $is_crop_layout, $debug_enabled ) {
+		$handles = array( 'konva', 'wpp-google-fonts', 'wpp-mask-border' );
+
+		if ( $is_crop_layout ) {
+			$handles[] = 'wpp-cropper-lib';
+			$handles[] = 'wpp-image-crop';
+		}
+
+		if ( $debug_enabled ) {
+			$handles[] = 'wpp-debug';
+		}
+
+		$handles[] = 'wpp-personalizer';
+
+		$scripts = array();
+		foreach ( $handles as $handle ) {
+			$src = $this->get_registered_script_src( $handle );
+			if ( '' !== $src ) {
+				$scripts[] = array(
+					'handle' => $handle,
+					'src'    => $src,
+				);
+			}
+		}
+
+		$styles = array();
+		if ( $is_crop_layout ) {
+			$src = $this->get_registered_style_src( 'wpp-cropper' );
+			if ( '' !== $src ) {
+				$styles[] = array(
+					'handle' => 'wpp-cropper',
+					'src'    => $src,
+				);
+			}
+		}
+
+		return array(
+			'scripts' => $scripts,
+			'styles'  => $styles,
+		);
+	}
+
+	/**
+	 * @param string $handle Script handle.
+	 * @return string
+	 */
+	private function get_registered_script_src( $handle ) {
+		$wp_scripts = wp_scripts();
+		if ( ! isset( $wp_scripts->registered[ $handle ] ) ) {
+			return '';
+		}
+
+		return (string) $wp_scripts->registered[ $handle ]->src;
+	}
+
+	/**
+	 * @param string $handle Style handle.
+	 * @return string
+	 */
+	private function get_registered_style_src( $handle ) {
+		$wp_styles = wp_styles();
+		if ( ! isset( $wp_styles->registered[ $handle ] ) ) {
+			return '';
+		}
+
+		return (string) $wp_styles->registered[ $handle ]->src;
+	}
+
+	/**
+	 * @return string
+	 */
+	private function get_cropper_inline_script() {
+		return 'window.WppCropperLib = ( typeof Cropper === "function" && Cropper.prototype && typeof Cropper.prototype.getCroppedCanvas === "function" ) ? Cropper : null;';
 	}
 
 	/**
@@ -320,7 +440,7 @@ class PersonalizerController
 		}
 
 		$max_mb  = (int) $this->settings->get('max_upload_mb', 10);
-		$allowed = (array) $this->settings->get('allowed_mime_types', array());
+		$allowed = $this->settings->get_allowed_mime_types();
 		$file    = $_FILES['file'];
 
 		if (empty($allowed)) {

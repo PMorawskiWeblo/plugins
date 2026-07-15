@@ -1,0 +1,541 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Quick Returns\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 11:39+0000\n"
+"PO-Revision-Date: 2026-07-01 11:42+0000\n"
+"Last-Translator: Piotr Morawski\n"
+"Language-Team: Polski\n"
+"Language: pl_PL\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10 >= 2 && n%10<=4 "
+"&&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.5; wp-7.0; php-8.3.26\n"
+"X-Domain: quick-returns"
+
+#: src/Admin/SettingsPage.php:118
+msgid "Accent color"
+msgstr "Kolor akcentowy"
+
+#: src/Frontend/AjaxHandler.php:121 src/Frontend/AjaxHandler.php:126
+msgid "Access denied."
+msgstr "Brak dostępu."
+
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:22
+msgid "Add New"
+msgstr "Dodaj nowy"
+
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:23
+msgid "Add New Return Request"
+msgstr "Dodaj nowe zgłoszenie zwrotu"
+
+#: src/Admin/SettingsPage.php:176
+msgid "Add reason"
+msgstr "Dodaj powód"
+
+#: src/Admin/SettingsPage.php:273
+msgid "Admin email"
+msgstr "E-mail administratora"
+
+#: src/Admin/MetaBoxes.php:75
+msgid "Admin note"
+msgstr "Notatka administratora"
+
+#: src/Core/Assets.php:92
+msgid "already returned"
+msgstr "już zwrócono"
+
+#: src/Admin/SettingsPage.php:114
+msgid "Appearance"
+msgstr "Wygląd"
+
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:98
+msgid "Approved"
+msgstr "Zatwierdzone"
+
+#: src/Admin/SettingsPage.php:220
+msgid "Auto-select all products"
+msgstr "Automatycznie zaznacz wszystkie produkty"
+
+#: src/Admin/SettingsPage.php:246
+msgid "Available placeholders: {order_number}, {request_number}"
+msgstr "Dostępne placeholdery: {order_number}, {request_number}"
+
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:96
+msgid "Awaiting Shipment"
+msgstr "Oczekuje na wysyłkę"
+
+#: src/Core/Assets.php:108
+msgid "Back"
+msgstr "Wstecz"
+
+#: src/Core/Assets.php:109
+msgid "Back to shop"
+msgstr "Wróć do sklepu"
+
+#: src/Admin/SettingsPage.php:291
+msgid "Button that opens the return modal."
+msgstr "Przycisk otwierający okno modalne zwrotu."
+
+#: templates/modal-shell.php:11
+msgid "Close"
+msgstr "Zamknij"
+
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:101
+msgid "Closed"
+msgstr "Zamknięte"
+
+#: src/Admin/SettingsPage.php:216
+msgid "Comma-separated category IDs."
+msgstr "ID kategorii oddzielone przecinkami."
+
+#: src/Admin/SettingsPage.php:207
+msgid "Comma-separated product IDs."
+msgstr "ID produktów oddzielone przecinkami."
+
+#: src/Admin/MetaBoxes.php:90 src/Core/Assets.php:113
+msgid "Comment"
+msgstr "Komentarz"
+
+#: src/Core/Assets.php:100
+msgid "Confirmation"
+msgstr "Potwierdzenie"
+
+#: src/Admin/SettingsPage.php:242
+msgid "Confirmation message"
+msgstr "Wiadomość potwierdzająca"
+
+#: src/Frontend/AjaxHandler.php:149
+msgid "Could not save return request."
+msgstr "Nie udało się zapisać zgłoszenia zwrotu."
+
+#: src/Admin/SettingsPage.php:155
+msgid "CSS selectors for modal trigger"
+msgstr "Selektory CSS dla wyzwalacza modala"
+
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:53
+msgid "Customer Email"
+msgstr "E-mail klienta"
+
+#: src/Admin/MetaBoxes.php:55 src/Admin/SettingsPage.php:262
+msgid "Customer email"
+msgstr "E-mail klienta"
+
+#: src/Infrastructure/Repository/SettingsRepository.php:17
+msgid "Damaged"
+msgstr "Uszkodzony"
+
+#: src/Admin/SettingsPage.php:147
+msgid "Default trigger CSS class"
+msgstr "Domyślna klasa CSS wyzwalacza"
+
+#: src/Admin/SettingsPage.php:139
+msgid "Default trigger text"
+msgstr "Domyślny tekst wyzwalacza"
+
+#: src/Core/Assets.php:102
+msgid "e.g. 12345"
+msgstr "np. 12345"
+
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:24
+msgid "Edit Return Request"
+msgstr "Edytuj zgłoszenie zwrotu"
+
+#: src/Admin/SettingsPage.php:181
+msgid "Eligibility"
+msgstr "Uprawnienia"
+
+#: src/Admin/SettingsPage.php:190
+msgid "Eligible order statuses"
+msgstr "Statusy zamówień kwalifikujące do zwrotu"
+
+#: src/Core/Assets.php:103
+msgid "Email address"
+msgstr "Adres e-mail"
+
+#: src/Admin/SettingsPage.php:269 src/Admin/SettingsPage.php:280
+msgid "Email subject"
+msgstr "Temat wiadomości"
+
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:54
+msgid "Estimated Total"
+msgstr "Szacowana wartość całkowita"
+
+#: src/Admin/MetaBoxes.php:108
+msgid "Estimated total:"
+msgstr "Szacowana wartość całkowita:"
+
+#: src/Core/Assets.php:95
+msgid "Estimated value"
+msgstr "Szacowana wartość"
+
+#: src/Admin/SettingsPage.php:212
+msgid "Excluded category IDs"
+msgstr "Wykluczone ID kategorii"
+
+#: src/Admin/SettingsPage.php:203
+msgid "Excluded product IDs"
+msgstr "Wykluczone ID produktów"
+
+#: src/Core/Assets.php:105
+msgid "Fill in both fields to identify your order."
+msgstr "Wypełnij oba pola, aby zidentyfikować swoje zamówienie."
+
+#: templates/form-wrapper.php:26 templates/modal-shell.php:23
+msgid "Fill out the form so we can process your return."
+msgstr "Wypełnij formularz, abyśmy mogli przetworzyć Twój zwrot."
+
+#: src/Admin/SettingsPage.php:290
+msgid "Full inline return wizard."
+msgstr "Pełny osadzony kreator zwrotu."
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://weblo.pl/"
+msgstr "https://weblo.pl/"
+
+#: src/Admin/SettingsPage.php:127
+msgid "Intro description"
+msgstr "Opis wprowadzający"
+
+#: src/Frontend/AjaxHandler.php:53
+msgid "Invalid action."
+msgstr "Nieprawidłowa akcja."
+
+#: src/Frontend/AjaxHandler.php:110
+msgid "Invalid submission data."
+msgstr "Nieprawidłowe dane zgłoszenia."
+
+#: src/Admin/MetaBoxes.php:83
+msgid "Items"
+msgstr "Pozycje"
+
+#. Description of the plugin
+msgid "Lightweight WooCommerce return request wizard with HPOS support."
+msgstr "Lekki kreator zgłoszeń zwrotu dla WooCommerce z obsługą HPOS."
+
+#: src/Core/Assets.php:85
+msgid "Loading…"
+msgstr "Ładowanie…"
+
+#: src/Admin/SettingsPage.php:230
+msgid "Messages & emails"
+msgstr "Wiadomości i e-maile"
+
+#: src/Core/Assets.php:104
+msgid "name@domain.com"
+msgstr "nazwa@domena.com"
+
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:95
+msgid "New"
+msgstr "Nowe"
+
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:25
+msgid "New Return Request"
+msgstr "Nowe zgłoszenie zwrotu"
+
+#: src/Infrastructure/Repository/SettingsRepository.php:29
+msgid "New return request {request_number}"
+msgstr "Nowe zgłoszenie zwrotu {request_number}"
+
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:29
+msgid "No return requests found in Trash."
+msgstr "Nie znaleziono zgłoszeń zwrotu w koszu."
+
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:28
+msgid "No return requests found."
+msgstr "Nie znaleziono zgłoszeń zwrotu."
+
+#: src/Admin/SettingsPage.php:159
+msgid "One selector per line, e.g. .open-return-modal"
+msgstr "Jeden selektor w każdej linii, np. .open-return-modal"
+
+#: src/Core/Assets.php:114
+msgid "Optional comment for this product"
+msgstr "Opcjonalny komentarz do tego produktu"
+
+#: src/Admin/MetaBoxes.php:38 src/Core/Assets.php:98 src/Core/Assets.php:110
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:51
+msgid "Order"
+msgstr "Zamówienie"
+
+#: src/Frontend/AjaxHandler.php:90
+msgid "Order not found or access denied."
+msgstr "Nie znaleziono zamówienia lub brak dostępu."
+
+#: src/Frontend/AjaxHandler.php:115
+msgid "Order not found."
+msgstr "Nie znaleziono zamówienia."
+
+#: src/Core/Assets.php:101
+msgid "Order number"
+msgstr "Numer zamówienia"
+
+#: src/Core/Assets.php:91
+msgid "pc."
+msgstr "szt."
+
+#: src/Core/Assets.php:90
+msgid "Please fill in all required fields."
+msgstr "Proszę wypełnić wszystkie wymagane pola."
+
+#: src/Domain/OrderLookupService.php:185 src/Core/Assets.php:89
+msgid "Please select a return reason for each product."
+msgstr "Wybierz powód zwrotu dla każdego produktu."
+
+#: src/Domain/OrderLookupService.php:207 src/Core/Assets.php:88
+msgid "Please select at least one product."
+msgstr "Wybierz co najmniej jeden produkt."
+
+#: src/Infrastructure/Repository/SettingsRepository.php:31
+msgid ""
+"Please ship the items back within 14 days of submitting your return request."
+msgstr ""
+"Prosimy o odesłanie produktów w ciągu 14 dni od złożenia zgłoszenia zwrotu."
+
+#: src/Admin/SettingsPage.php:224
+msgid ""
+"Pre-select all eligible products for logged-in customers in \"return order\" "
+"mode."
+msgstr ""
+"Wstępnie zaznacz wszystkie kwalifikujące się produkty dla zalogowanych "
+"klientów w trybie \"zwrot zamówienia\"."
+
+#: src/Admin/SettingsPage.php:122
+msgid "Primary accent color used in the return form UI."
+msgstr "Główny kolor akcentowy używany w interfejsie formularza zwrotu."
+
+#: src/Admin/MetaBoxes.php:87
+msgid "Product"
+msgstr "Produkt"
+
+#: src/Core/Assets.php:99
+msgid "Products"
+msgstr "Produkty"
+
+#: src/Admin/MetaBoxes.php:88
+msgid "Qty"
+msgstr "Ilość"
+
+#: src/Core/Assets.php:111
+msgid "Quantity"
+msgstr "Ilość"
+
+#. Name of the plugin
+#: src/Admin/SettingsPage.php:20 src/Admin/SettingsPage.php:21
+msgid "Quick Returns"
+msgstr "Quick Returns"
+
+#: quick-returns.php:67
+msgid "Quick Returns requires WooCommerce to be active."
+msgstr "Quick Returns wymaga aktywnego WooCommerce."
+
+#: src/Admin/SettingsPage.php:110
+msgid "Quick Returns Settings"
+msgstr "Ustawienia Quick Returns"
+
+#: src/Admin/MetaBoxes.php:89
+msgid "Reason"
+msgstr "Powód"
+
+#: src/Core/Assets.php:112
+msgid "Reason for return"
+msgstr "Powód zwrotu"
+
+#: src/Admin/SettingsPage.php:167
+msgid "Reasons list"
+msgstr "Lista powodów"
+
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:97
+msgid "Received"
+msgstr "Otrzymane"
+
+#: src/Admin/SettingsPage.php:256
+msgid "Refund hold notice"
+msgstr "Informacja o wstrzymaniu zwrotu środków"
+
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:100
+msgid "Refunded"
+msgstr "Zwrócono środki"
+
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:99
+msgid "Rejected"
+msgstr "Odrzucone"
+
+#: src/Frontend/Shortcodes.php:112
+msgid "Report a return"
+msgstr "Zgłoś zwrot"
+
+#: src/Infrastructure/Repository/SettingsRepository.php:30
+msgid ""
+"Report a return in a few clicks. Provide order details, select the products "
+"you want to return and indicate the reason. The store will contact you with "
+"further instructions."
+msgstr ""
+"Zgłoś zwrot w kilku kliknięciach. Podaj dane zamówienia, wybierz produkty, "
+"które chcesz zwrócić, i wskaż powód. Sklep skontaktuje się z Tobą z dalszymi "
+"instrukcjami."
+
+#: src/Admin/SettingsPage.php:234
+msgid "Return address"
+msgstr "Adres zwrotu"
+
+#: src/Frontend/AjaxHandler.php:186 src/Core/Assets.php:116
+msgid "Return address:"
+msgstr "Adres zwrotu:"
+
+#: src/Domain/OrderLookupService.php:178
+msgid "Return quantity exceeds available quantity."
+msgstr "Ilość zwracanych produktów przekracza dostępną ilość."
+
+#: src/Admin/SettingsPage.php:164
+msgid "Return reasons"
+msgstr "Powody zwrotu"
+
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:21
+msgid "Return Request"
+msgstr "Zgłoszenie zwrotu"
+
+#: templates/form-wrapper.php:25 templates/modal-shell.php:22
+msgid "Return request"
+msgstr "Zgłoszenie zwrotu"
+
+#: src/Admin/MetaBoxes.php:17
+msgid "Return Request Details"
+msgstr "Szczegóły zgłoszenia zwrotu"
+
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:20
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:30
+msgid "Return Requests"
+msgstr "Zgłoszenia zwrotu"
+
+#: src/Core/Assets.php:106
+msgid "Search for order"
+msgstr "Wyszukaj zamówienie"
+
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:27
+msgid "Search Return Requests"
+msgstr "Szukaj zgłoszeń zwrotu"
+
+#: src/Core/Assets.php:93
+msgid "Selected products"
+msgstr "Wybrane produkty"
+
+#: src/Admin/SettingsPage.php:266
+msgid "Send confirmation email to customer"
+msgstr "Wyślij e-mail potwierdzający do klienta"
+
+#: src/Admin/SettingsPage.php:277
+msgid "Send notification email to store admin"
+msgstr "Wyślij e-mail z powiadomieniem do administratora sklepu"
+
+#: src/Core/Assets.php:107
+msgid "Send return request"
+msgstr "Wyślij zgłoszenie zwrotu"
+
+#: src/Admin/SettingsPage.php:250
+msgid "Ship-back notice"
+msgstr "Informacja o odesłaniu produktów"
+
+#: src/Admin/SettingsPage.php:289
+msgid "Shortcodes"
+msgstr "Shortcode’y"
+
+#: src/Core/Assets.php:86
+msgid "Something went wrong. Please try again."
+msgstr "Coś poszło nie tak. Spróbuj ponownie."
+
+#: src/Infrastructure/Repository/SettingsRepository.php:12
+msgid "Start request"
+msgstr "Rozpocznij zgłoszenie"
+
+#: src/Admin/MetaBoxes.php:63
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:52
+msgid "Status"
+msgstr "Status"
+
+#: src/Admin/MetaBoxes.php:59
+msgid "Submitted at"
+msgstr "Wysłano"
+
+#: src/Core/Assets.php:115
+msgid "Thank you for submitting your return"
+msgstr "Dziękujemy za przesłanie zgłoszenia zwrotu"
+
+#. %d: number of days
+#: src/Domain/EligibilityService.php:50
+msgid "The %d-day withdrawal period has expired for this order."
+msgstr "Termin %d dni na odstąpienie od umowy dla tego zamówienia upłynął."
+
+#: src/Core/Assets.php:96
+msgid "The final refund amount will be confirmed by the store."
+msgstr "Ostateczna kwota zwrotu zostanie potwierdzona przez sklep."
+
+#: src/Infrastructure/Repository/SettingsRepository.php:32
+msgid ""
+"The store may withhold the refund until the items are received or proof of "
+"shipment is provided."
+msgstr ""
+"Sklep może wstrzymać zwrot środków do momentu otrzymania produktów lub "
+"dostarczenia dowodu nadania."
+
+#: src/Domain/EligibilityService.php:37
+msgid "This order is not eligible for a return."
+msgstr "To zamówienie nie kwalifikuje się do zwrotu."
+
+#: src/Domain/EligibilityService.php:66
+msgid "This product is excluded from the right of withdrawal."
+msgstr "Ten produkt jest wyłączony z prawa odstąpienia od umowy."
+
+#: src/Frontend/AjaxHandler.php:64
+msgid "Too many attempts. Please try again later."
+msgstr "Zbyt wiele prób. Spróbuj ponownie później."
+
+#: src/Core/Assets.php:94
+msgid "Total quantity"
+msgstr "Łączna ilość"
+
+#: src/Admin/SettingsPage.php:135
+msgid "Triggers"
+msgstr "Wyzwalacze"
+
+#: src/Infrastructure/PostType/ReturnRequestPostType.php:26
+msgid "View Return Request"
+msgstr "Zobacz zgłoszenie zwrotu"
+
+#: src/Frontend/AjaxHandler.php:69 src/Core/Assets.php:87
+msgid "We could not find an order matching those details."
+msgstr "Nie udało się znaleźć zamówienia pasującego do tych danych."
+
+#: src/Infrastructure/Repository/SettingsRepository.php:20
+msgid ""
+"We have received your return request for order {order_number}. We have "
+"assigned it the number {request_number}. We will contact you shortly with "
+"further instructions."
+msgstr ""
+"Otrzymaliśmy Twoje zgłoszenie zwrotu dla zamówienia {order_number}. "
+"Nadaliśmy mu numer {request_number}. Wkrótce skontaktujemy się z Tobą z "
+"dalszymi instrukcjami."
+
+#. Author of the plugin
+msgid "Weblo"
+msgstr "Weblo"
+
+#: src/Infrastructure/Repository/SettingsRepository.php:16
+msgid "Withdrawal from the contract"
+msgstr "Odstąpienie od umowy"
+
+#: src/Admin/SettingsPage.php:184
+msgid "Withdrawal period (days)"
+msgstr "Okres odstąpienia od umowy (dni)"
+
+#: src/Infrastructure/Repository/SettingsRepository.php:28
+msgid "Your return request {request_number}"
+msgstr "Twoje zgłoszenie zwrotu {request_number}"
+
+#: src/Core/Assets.php:97
+msgid "— select —"
+msgstr "— wybierz —"

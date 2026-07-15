@@ -1,0 +1,61 @@
+.edit-php.post-type-wpf_entry .tablenav .actions select,
+.edit-php.post-type-wpf_entry .tablenav .actions input[type="date"],
+.edit-php.post-type-wpf_entry .tablenav .actions input[type="search"] {
+	margin-right: 6px;
+	vertical-align: middle;
+}
+
+.ff-entry-detail {
+	margin: 20px 0;
+}
+
+.ff-entry-detail h2 {
+	margin: 0 0 12px;
+	font-size: 16px;
+	padding-left: 0 !important;
+}
+
+.ff-entry-detail__status {
+	margin-bottom: 24px;
+}
+
+.ff-entry-detail__meta {
+	margin-bottom: 24px;
+}
+
+.ff-entry-detail__table th {
+	width: 220px;
+	font-weight: 600;
+}
+
+.ff-entry-detail__table td a {
+	word-break: break-all;
+}
+
+.ff-entry-files {
+	margin: 0;
+	padding-left: 18px;
+}
+
+.ff-entry-files li + li {
+	margin-top: 4px;
+}
+
+.ff-entry-file + .ff-entry-file,
+.ff-entry-files li + li .ff-entry-file {
+	margin-top: 12px;
+}
+
+.ff-entry-file__preview {
+	display: block;
+	margin-top: 6px;
+	height: 80px;
+	width: auto;
+	max-width: 100%;
+	object-fit: contain;
+}
+
+.ff-entry-detail__field-label_file{
+	display: flex;
+    align-items: flex-start;
+}

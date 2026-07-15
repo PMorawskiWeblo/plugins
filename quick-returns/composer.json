@@ -1,0 +1,14 @@
+{
+    "name": "weblo/quick-returns",
+    "description": "WooCommerce returns plugin by Weblo",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "Weblo\\QuickReturns\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.4"
+    }
+}

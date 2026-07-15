@@ -51,8 +51,66 @@
 	gap: 2px;
 }
 
-body.wpp-modal-open {
+body.wpp-modal-open,
+body.wpp-personalizer-loading {
 	overflow: hidden;
+}
+
+.wpp-lazy-loader {
+	display: none;
+	position: fixed;
+	inset: 0;
+	z-index: 100020;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+	background: rgba(0, 0, 0, 0.45);
+}
+
+.wpp-lazy-loader.is-active {
+	display: flex;
+}
+
+.wpp-lazy-loader__panel {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 14px;
+	min-width: 220px;
+	padding: 24px 28px;
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+	text-align: center;
+}
+
+.wpp-lazy-loader__spinner {
+	display: block;
+	width: 40px;
+	height: 40px;
+	border: 3px solid rgba(0, 0, 0, 0.12);
+	border-top-color: #111;
+	border-radius: 50%;
+	animation: wpp-lazy-spin 0.8s linear infinite;
+}
+
+.wpp-lazy-loader__text {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.4;
+	color: #222;
+}
+
+@keyframes wpp-lazy-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+body.wpp-personalizer-loading .wpp-open-personalizer,
+body.wpp-personalizer-loading form.cart .single_add_to_cart_button.wpp-atc-replaced {
+	opacity: 0.7;
+	pointer-events: none;
 }
 
 .wpp-modal {
@@ -342,6 +400,17 @@ margin-bottom: 0;
 	pointer-events: none;
 }
 
+.wpp-image-fields.is-upload-busy .wpp-image-field:not(.is-uploading) .wpp-image-upload-btn {
+	opacity: 0.45;
+	pointer-events: none;
+	cursor: not-allowed;
+}
+
+.wpp-image-fields.is-upload-busy .wpp-image-field:not(.is-uploading) .wpp-image-field__remove {
+	pointer-events: none;
+	opacity: 0.45;
+}
+
 @keyframes wpp-spin {
 	to {
 		transform: rotate(360deg);
@@ -466,6 +535,7 @@ body.wpp-crop-modal-open {
 	overflow: hidden;
 }
 
+
 .wpp-crop-modal__close {
 	position: absolute;
 	top: 10px;
@@ -505,34 +575,33 @@ body.wpp-crop-modal-open {
 	inset: 0 !important;
 	width: 100% !important;
 	height: 100% !important;
-	max-width: 100% !important;
-	max-height: 100% !important;
-	overflow: hidden !important;
 }
 
-.wpp-crop-modal__crop-area .cropper-wrap-box,
-.wpp-crop-modal__crop-area .cropper-canvas,
-.wpp-crop-modal__crop-area .cropper-drag-box {
-	max-width: 100%;
-	max-height: 100%;
-}
+/* Cropper.js sizes/moves .cropper-canvas on zoom — never cap it to 100% (causes gray gaps). */
 
 .wpp-crop-modal__image {
 	display: block;
-	max-width: 100%;
-	max-height: 100%;
+	max-width: none;
+	max-height: none;
 }
 
 /* Crop frame shaped like slot mask (layout option: crop_mask_shape). */
 .wpp-crop--mask-shape .cropper-view-box {
 	outline: none;
 	box-shadow: none;
-	border: 2px solid rgba(51, 153, 255, 0.85);
+	border: none;
 	overflow: hidden;
 }
 
-.wpp-crop--mask-shape .cropper-view-box,
-.wpp-crop--mask-shape .cropper-face {
+/* Shape guide only — do not mask view-box (that exposed the dark modal inside the crop rect). */
+.wpp-crop--mask-shape .cropper-view-box::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	z-index: 1;
+	box-sizing: border-box;
+	border: 2px solid rgba(51, 153, 255, 0.85);
 	-webkit-mask-image: var(--wpp-crop-mask-url);
 	mask-image: var(--wpp-crop-mask-url);
 	-webkit-mask-size: 100% 100%;
@@ -543,9 +612,29 @@ body.wpp-crop-modal-open {
 	mask-position: center;
 }
 
+/* Dim inside crop rect but outside mask silhouette (export area preview). */
+.wpp-crop--mask-shape .cropper-crop-box::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	z-index: 2;
+	background-color: rgba(0, 0, 0, 0.5);
+	-webkit-mask-image: linear-gradient(#fff, #fff), var(--wpp-crop-mask-url);
+	mask-image: linear-gradient(#fff, #fff), var(--wpp-crop-mask-url);
+	-webkit-mask-size: 100% 100%, 100% 100%;
+	mask-size: 100% 100%, 100% 100%;
+	-webkit-mask-repeat: no-repeat, no-repeat;
+	mask-repeat: no-repeat, no-repeat;
+	-webkit-mask-position: center, center;
+	mask-position: center, center;
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+}
+
 .wpp-crop--mask-shape .cropper-face {
-	background-color: rgba(51, 153, 255, 0.12);
-	opacity: 1;
+	background-color: transparent;
+	opacity: 0;
 }
 
 .wpp-crop--mask-shape .cropper-line,
@@ -571,8 +660,10 @@ body.wpp-crop-modal-open {
 @media (max-width: 640px) {
 	.wpp-crop-modal__dialog {
 		width: 100vw;
-		height: 100vh;
-		max-height: 100vh;
+		height: 75vh;
+		max-height: -webkit-fill-available;
+        max-height: 75dvh;
+        max-height: 75vh;
 		margin: 0;
 		border-radius: 0;
 	}

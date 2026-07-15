@@ -285,5 +285,13 @@ class Assets {
 			WPP_VERSION,
 			true
 		);
+
+		wp_register_script(
+			'wpp-personalizer-bootstrap',
+			WPP_PLUGIN_URL . 'assets/js/wpp-personalizer-bootstrap.js',
+			array( 'jquery' ),
+			WPP_VERSION,
+			true
+		);
 	}
 }

@@ -142,6 +142,7 @@ class CartHooks {
 			return false;
 		}
 
+		$state  = $this->merge_static_image_fields_into_state( $state, $layout );
 		$result = $this->validator->validate( $state, $layout, $config );
 		if ( is_wp_error( $result ) ) {
 			wc_add_notice( $result->get_error_message(), 'error' );

@@ -23,6 +23,20 @@
 		}
 	}
 
+	function normalizeSlotId(slotId) {
+		return String(slotId == null ? '' : slotId);
+	}
+
+	function readSlotIdFromElement($el) {
+		var id = $el.attr('data-slot-id');
+
+		if (id != null && id !== '') {
+			return normalizeSlotId(id);
+		}
+
+		return normalizeSlotId($el.data('slot-id'));
+	}
+
 	if (typeof Konva === 'undefined') {
 		wppError('Konva.js failed to load.');
 	}
@@ -37,11 +51,13 @@
 	};
 
 	var stage, textLayer, photoLayer, borderLayer, bgLayer, overlayLayer, previewScale = 1;
+	var personalizerInitialized = false;
 	var imageNodes = {};
 	var slotBorderNodes = {};
 	var textNodes = {};
 	var maskCache = {};
 	var previewResizeObserver = null;
+	var uploadBusyCount = 0;
 
 	function getLivePreviewRenderScale() {
 		var dpr = window.devicePixelRatio || 1;
@@ -352,6 +368,10 @@
 	}
 
 	function init() {
+		if (personalizerInitialized) {
+			return;
+		}
+
 		bindEvents();
 		initCropModal();
 
@@ -370,6 +390,8 @@
 		initReplaceAddToCart();
 		validate();
 
+		personalizerInitialized = true;
+
 		wppLog('init:personalizer', {
 			layoutId: wppData.layoutId,
 			slots: (wppData.layout.image_slots || []).map(function (s) {
@@ -380,15 +402,30 @@
 
 	function moveHiddenFieldsToCartForm() {
 		var $form = $('form.cart');
-		if (!$form.length || $form.find('input.wpp-project-state').length) {
+		if (!$form.length) {
 			return;
 		}
-		$form.append('<input type="hidden" name="wpp_personalizer_nonce" class="wpp-personalizer-nonce" value="" />');
-		$form.append('<input type="hidden" name="wpp_project_state" class="wpp-project-state" value="" />');
-		$form.append('<input type="hidden" name="wpp_preview_data" class="wpp-preview-data" value="" />');
-		$form.append('<input type="hidden" name="wpp_preview_layers_data" class="wpp-preview-layers-data" value="" />');
-		$form.append('<input type="hidden" name="wpp_project_pdf_data" class="wpp-project-pdf-data" value="" />');
-		$form.append('<input type="hidden" name="wpp_text_svg_data" class="wpp-text-svg-data" value="" />');
+
+		var fields = [
+			{ name: 'wpp_personalizer_nonce', className: 'wpp-personalizer-nonce' },
+			{ name: 'wpp_project_state', className: 'wpp-project-state' },
+			{ name: 'wpp_preview_data', className: 'wpp-preview-data' },
+			{ name: 'wpp_preview_layers_data', className: 'wpp-preview-layers-data' },
+			{ name: 'wpp_project_pdf_data', className: 'wpp-project-pdf-data' },
+			{ name: 'wpp_text_svg_data', className: 'wpp-text-svg-data' }
+		];
+
+		fields.forEach(function (field) {
+			if (!$form.find('input.' + field.className).length) {
+				$form.append(
+					'<input type="hidden" name="' +
+						field.name +
+						'" class="' +
+						field.className +
+						'" value="" />'
+				);
+			}
+		});
 	}
 
 	function bindEvents() {
@@ -401,8 +438,13 @@
 		$(document).on('change', '.wpp-image-upload', onImageUpload);
 		$(document).on('click', '.wpp-image-field', onImageFieldActivate);
 		$(document).on('click', '.wpp-image-field__remove', onImageRemove);
-		$(document).on('click', '.wpp-image-upload-btn', function () {
-			setActiveImageField($(this).closest('.wpp-image-field').data('slot-id'));
+		$(document).on('click', '.wpp-image-upload-btn', function (e) {
+			if (isAnyUploadBusy()) {
+				e.preventDefault();
+				return false;
+			}
+
+			setActiveImageField(readSlotIdFromElement($(this).closest('.wpp-image-field')));
 		});
 		$(document).on('click', '.wpp-transform-toolbar [data-action]', onTransformAction);
 		$(document).on('change', '.wpp-font-family-select', onFontFamilyChange);
@@ -421,16 +463,19 @@
 
 	function onReplacedAddToCartClick(e) {
 		if (!wppData.replaceAddToCart) {
-			return;
+			return 'ignore';
 		}
 
 		if (!wppData.validationEnabled || state.valid) {
 			persistHiddenFields();
-			return;
+			return 'submit';
 		}
 
-		e.preventDefault();
+		if (e && e.preventDefault) {
+			e.preventDefault();
+		}
 		openModal(e);
+		return 'modal';
 	}
 
 	function openModal(e) {
@@ -539,15 +584,46 @@
 		});
 	}
 
+	function isAnyUploadBusy() {
+		return uploadBusyCount > 0;
+	}
+
+	function syncGlobalUploadBusyState() {
+		var busy = isAnyUploadBusy();
+
+		$('.wpp-image-fields').toggleClass('is-upload-busy', busy);
+		$('.wpp-image-field').each(function () {
+			var $field = $(this);
+			var isActive = $field.hasClass('is-uploading');
+
+			$field
+				.find('.wpp-image-upload')
+				.prop('disabled', busy && !isActive);
+			$field
+				.find('.wpp-image-upload-btn')
+				.prop('disabled', busy && !isActive);
+		});
+	}
+
 	function setImageUploadLoading(slotId, isLoading) {
+		slotId = normalizeSlotId(slotId);
 		var $field = $('.wpp-image-field[data-slot-id="' + slotId + '"]');
+		var wasUploading = $field.hasClass('is-uploading');
+
+		if (isLoading && !wasUploading) {
+			uploadBusyCount += 1;
+		} else if (!isLoading && wasUploading) {
+			uploadBusyCount = Math.max(0, uploadBusyCount - 1);
+		}
 
 		$field.toggleClass('is-uploading', !!isLoading);
 		$field.find('.wpp-image-upload-spinner').prop('hidden', !isLoading);
 		$field.find('.wpp-image-upload-btn').prop('disabled', !!isLoading);
+		syncGlobalUploadBusyState();
 	}
 
 	function updateUploadButton(slotId, fileName) {
+		slotId = normalizeSlotId(slotId);
 		var $field = $('.wpp-image-field[data-slot-id="' + slotId + '"]');
 		var text = fileName ? truncateFilename(fileName) : chooseFileLabel();
 		$field.find('.wpp-image-upload-btn').text(text);
@@ -556,6 +632,8 @@
 	}
 
 	function setActiveImageField(slotId) {
+		slotId = normalizeSlotId(slotId);
+
 		if (!slotId) {
 			return;
 		}
@@ -676,7 +754,7 @@
 	function buildFormFields() {
 		var $imgWrap = $('.wpp-image-fields').empty();
 		var $txtWrap = $('.wpp-text-fields').empty();
-		var uploadAccept = (wppData.allowedMimeTypes || []).join(',');
+		var uploadAccept = (wppData.allowedUploadAccept || wppData.allowedMimeTypes || []).join(',');
 
 		if (!uploadAccept) {
 			uploadAccept = 'image/jpeg,image/png,image/webp';
@@ -1182,12 +1260,17 @@
 	}
 
 	function onImageFieldActivate(e) {
+		if (isAnyUploadBusy()) {
+			e.preventDefault();
+			return;
+		}
+
 		if ($(e.target).closest('.wpp-image-field__remove').length) {
 			return;
 		}
 
 		var $field = $(this);
-		var slotId = $field.data('slot-id');
+		var slotId = readSlotIdFromElement($field);
 		var hasFile = $field.hasClass('has-file');
 		var clickedUploadWrap = $(e.target).closest('.wpp-image-upload-wrap').length > 0;
 		var clickedUploadControl = $(e.target).closest('.wpp-image-upload-btn, .wpp-image-upload').length > 0;
@@ -1207,12 +1290,17 @@
 		e.preventDefault();
 		e.stopPropagation();
 
-		var slotId = $(this).closest('.wpp-image-field').data('slot-id');
+		if (isAnyUploadBusy()) {
+			return;
+		}
+
+		var slotId = readSlotIdFromElement($(this).closest('.wpp-image-field'));
 		clearSlotImage(slotId);
 		validate();
 	}
 
 	function clearSlotImage(slotId) {
+		slotId = normalizeSlotId(slotId);
 		var $field = $('.wpp-image-field[data-slot-id="' + slotId + '"]');
 		var node = imageNodes[slotId];
 
@@ -1234,31 +1322,136 @@
 		}
 	}
 
-	function onImageUpload() {
-		var slotId = $(this).data('slot-id');
-		var file = this.files[0];
+	function isAllowedUploadFile(file) {
 		if (!file) {
-			return;
+			return false;
 		}
 
-		if (wppData.allowedMimeTypes.indexOf(file.type) === -1) {
-			alert(wppData.i18n.invalidFile);
-			return;
+		var allowedMimes = wppData.allowedMimeTypes || [];
+		if (file.type && allowedMimes.indexOf(file.type) !== -1) {
+			return true;
 		}
 
-		if (file.size > wppData.maxUploadMb * 1024 * 1024) {
-			alert(wppData.i18n.invalidFile);
-			return;
+		var name = String(file.name || '');
+		var dot = name.lastIndexOf('.');
+		if (dot < 0) {
+			return false;
 		}
 
-		wppLog('upload:start', { slotId: slotId, fileName: file.name, fileType: file.type, fileSize: file.size });
+		var ext = name.slice(dot + 1).toLowerCase();
+		var allowedExt = wppData.allowedUploadExtensions || [];
 
-		var previousSource = state.imageFields[slotId] && state.imageFields[slotId].source;
+		return allowedExt.indexOf(ext) !== -1;
+	}
 
-		updateUploadButton(slotId, file.name);
-		setActiveImageField(slotId);
-		setImageUploadLoading(slotId, true);
+	var heic2anyLoadPromise = null;
 
+	function isHeicUploadFile(file) {
+		if (!file) {
+			return false;
+		}
+
+		var type = String(file.type || '').toLowerCase();
+		if (type === 'image/heic' || type === 'image/heif') {
+			return true;
+		}
+
+		var name = String(file.name || '');
+		var dot = name.lastIndexOf('.');
+		if (dot < 0) {
+			return false;
+		}
+
+		var ext = name.slice(dot + 1).toLowerCase();
+		return ext === 'heic' || ext === 'heif';
+	}
+
+	function loadHeic2Any() {
+		if (typeof window.heic2any === 'function') {
+			return $.when(window.heic2any);
+		}
+
+		if (!wppData.heic2anyUrl) {
+			return $.Deferred().reject(new Error('heic2any_missing')).promise();
+		}
+
+		if (!heic2anyLoadPromise) {
+			heic2anyLoadPromise = $.Deferred();
+			var script = document.createElement('script');
+			script.src = wppData.heic2anyUrl;
+			script.async = true;
+			script.onload = function () {
+				if (typeof window.heic2any === 'function') {
+					heic2anyLoadPromise.resolve(window.heic2any);
+					return;
+				}
+
+				heic2anyLoadPromise.reject(new Error('heic2any_missing'));
+			};
+			script.onerror = function () {
+				heic2anyLoadPromise.reject(new Error('heic2any_load_failed'));
+			};
+			document.body.appendChild(script);
+		}
+
+		return heic2anyLoadPromise.promise();
+	}
+
+	function heicFileToJpegName(fileName) {
+		var name = String(fileName || 'photo.heic');
+
+		if (/\.(heic|heif)$/i.test(name)) {
+			return name.replace(/\.(heic|heif)$/i, '.jpg');
+		}
+
+		return name + '.jpg';
+	}
+
+	function wrapUploadBlob(blob, file) {
+		var name = heicFileToJpegName(file && file.name);
+
+		try {
+			return new File([blob], name, {
+				type: 'image/jpeg',
+				lastModified: file && file.lastModified ? file.lastModified : Date.now()
+			});
+		} catch (err) {
+			blob.name = name;
+			return blob;
+		}
+	}
+
+	function prepareUploadFile(file) {
+		if (!isHeicUploadFile(file)) {
+			return $.when(file);
+		}
+
+		return loadHeic2Any()
+			.then(function (heic2any) {
+				return heic2any({
+					blob: file,
+					toType: 'image/jpeg',
+					quality: 0.92
+				});
+			})
+			.then(function (result) {
+				var blob = Array.isArray(result) ? result[0] : result;
+
+				if (!blob) {
+					throw new Error('heic_convert_empty');
+				}
+
+				wppLog('upload:heic_converted', {
+					fileName: file.name,
+					outputType: blob.type,
+					outputSize: blob.size
+				});
+
+				return wrapUploadBlob(blob, file);
+			});
+	}
+
+	function uploadTempImage(slotId, file, previousSource) {
 		var formData = new FormData();
 		formData.append('action', 'wpp_upload_temp');
 		formData.append('nonce', wppData.uploadNonce);
@@ -1310,6 +1503,53 @@
 			});
 	}
 
+	function onImageUpload() {
+		if (isAnyUploadBusy()) {
+			this.value = '';
+			return;
+		}
+
+		var $input = $(this);
+		var slotId = readSlotIdFromElement($input);
+		var file = this.files[0];
+		if (!file) {
+			return;
+		}
+
+		if (!isAllowedUploadFile(file)) {
+			alert(wppData.i18n.invalidFile);
+			return;
+		}
+
+		if (file.size > wppData.maxUploadMb * 1024 * 1024) {
+			alert(wppData.i18n.invalidFile);
+			return;
+		}
+
+		wppLog('upload:start', { slotId: slotId, fileName: file.name, fileType: file.type, fileSize: file.size });
+
+		var previousSource = state.imageFields[slotId] && state.imageFields[slotId].source;
+
+		updateUploadButton(slotId, file.name);
+		setActiveImageField(slotId);
+		setImageUploadLoading(slotId, true);
+
+		prepareUploadFile(file)
+			.done(function (preparedFile) {
+				uploadTempImage(slotId, preparedFile, previousSource);
+			})
+			.fail(function (err) {
+				setImageUploadLoading(slotId, false);
+				$input.val('');
+				updateUploadButton(
+					slotId,
+					previousSource ? filenameFromPath(previousSource) : ''
+				);
+				wppWarn('upload:heic_prepare_failed', { slotId: slotId, error: String(err) });
+				alert(wppData.i18n.heicConvertFailed || wppData.i18n.invalidFile);
+			});
+	}
+
 	function openCropModal(slotId, url, file) {
 		var slot = getSlotConfig(slotId);
 		if (!slot || !window.WppImageCrop) {
@@ -1347,11 +1587,15 @@
 				cancel: wppData.i18n.cropCancel,
 				select: wppData.i18n.cropSelect,
 				zoomIn: wppData.i18n.cropZoomIn,
-				zoomOut: wppData.i18n.cropZoomOut
+				zoomOut: wppData.i18n.cropZoomOut,
+				previewFailed: wppData.i18n.cropPreviewFailed
 			},
 			onFallback: function () {
 				setSlotImage(slotId, url);
 				validate();
+			},
+			onPreviewError: function () {
+				setImageUploadLoading(slotId, false);
 			}
 		});
 	}
@@ -1398,6 +1642,7 @@
 	}
 
 	function setSlotImage(slotId, url) {
+		slotId = normalizeSlotId(slotId);
 		var slot = getSlotConfig(slotId);
 		if (!slot) {
 			wppWarn('setSlotImage:no_slot_config', { slotId: slotId });
@@ -2073,8 +2318,10 @@
 	}
 
 	function getSlotConfig(slotId) {
+		var key = normalizeSlotId(slotId);
+
 		return (wppData.layout.image_slots || []).find(function (s) {
-			return s.id === slotId;
+			return normalizeSlotId(s.id) === key;
 		});
 	}
 
@@ -2115,7 +2362,9 @@
 
 			var $field = $('.wpp-image-field[data-slot-id="' + slot.id + '"]');
 
-			if (slot.required && !(state.imageFields[slot.id] && state.imageFields[slot.id].source)) {
+			var slotKey = normalizeSlotId(slot.id);
+
+			if (slot.required && !(state.imageFields[slotKey] && state.imageFields[slotKey].source)) {
 				ok = false;
 
 				if (showErrors) {
@@ -2228,7 +2477,7 @@
 		var out = {};
 		Object.keys(state.imageFields || {}).forEach(function (slotId) {
 			var field = state.imageFields[slotId] || {};
-			out[slotId] = {
+			out[normalizeSlotId(slotId)] = {
 				source: field.source || '',
 				transform: field.transform || {}
 			};
@@ -2782,6 +3031,7 @@
 	}
 
 	function persistHiddenFields() {
+		moveHiddenFieldsToCartForm();
 		var json = JSON.stringify(exportState());
 		var preview = exportPreview();
 		var layersPreview = exportLayersPreview();
@@ -2849,5 +3099,16 @@
 			.replace(/"/g, '&quot;');
 	}
 
-	$(init);
+	window.WppPersonalizer = {
+		init: init,
+		openModal: openModal,
+		handleReplacedAddToCart: onReplacedAddToCartClick,
+		isReady: function () {
+			return personalizerInitialized;
+		}
+	};
+
+	if (!wppData.lazyLoad) {
+		$(init);
+	}
 })(jQuery);

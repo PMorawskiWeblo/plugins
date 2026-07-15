@@ -1,0 +1,1638 @@
+# Copyright (C) 2026 Weblo
+# This file is distributed under the same license as the Fast Forms plugin.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fast Forms 1.6.2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fast-forms\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-07-15 07:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: fast-forms\n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;"
+
+#. 1: star value, 2: max stars
+#: templates/frontend/field.php:376
+#, php-format
+msgid "%1$d of %2$d stars"
+msgstr ""
+
+#: src/Admin/EntryFileDownload.php:148
+msgid "Access denied"
+msgstr ""
+
+#: templates/admin/settings.php:69
+msgid "Action name"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:59
+msgid "Add a row to start building your form."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:44
+msgid "Add column"
+msgstr ""
+
+#: src/PostTypes/EntryPostType.php:49 src/PostTypes/FormPostType.php:45
+msgid "Add new"
+msgstr ""
+
+#: src/Admin/Menu.php:66 src/Admin/Menu.php:67
+#: src/PostTypes/FormPostType.php:46
+msgid "Add new form"
+msgstr ""
+
+#: src/PostTypes/EntryPostType.php:50
+msgid "Add new submission"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:79
+msgid "Add option"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:40
+msgid "Add row"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:144
+msgid ""
+"Add, edit, reorder, or remove choices. Label is shown to visitors; value is "
+"saved in submissions."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:134
+msgid "Additional CSS class added to the field wrapper for custom styling."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:235
+msgid "Additional CSS classes for the modal button (e.g. btn btn-primary)."
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:98
+msgid "Admin message"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:88
+msgid "Admin subject"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:52
+msgid "Administrator email"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:201
+msgid "After submit"
+msgstr ""
+
+#: src/Support/FileUploadHint.php:68
+msgid "All common file types are allowed."
+msgstr ""
+
+#: src/Admin/EntryListFilters.php:56 src/PostTypes/FormPostType.php:53
+msgid "All forms"
+msgstr ""
+
+#: src/Admin/EntryListFilters.php:74
+msgid "All statuses"
+msgstr ""
+
+#: src/PostTypes/EntryPostType.php:57
+msgid "All submissions"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:83
+msgid "Allow multiple files"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:82
+msgid "Allow multiple selections"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:246
+msgid "Allow only one submission"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:224
+msgid "Allow only one submission per browser (cookie-based)."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:95
+msgid "Allowed file types"
+msgstr ""
+
+#. %s: comma-separated file extensions
+#: src/Support/FileUploadHint.php:31
+#, php-format
+msgid "Allowed file types: %s"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:101
+msgid ""
+"Allowed HTML tags: br, strong, em, a, p, span (with "
+"href/title/target/rel/class)."
+msgstr ""
+
+#: src/FormBuilder/FormSettingsStorage.php:139 src/Frontend/Assets.php:112
+msgid "An error occurred while submitting. Please try again."
+msgstr ""
+
+#: src/Submission/Validator.php:400
+msgid "An error occurred while uploading the file."
+msgstr ""
+
+#: src/Submission/Validator.php:215 src/Submission/Validator.php:219
+#: src/Submission/Validator.php:266
+msgid "An invalid option was selected."
+msgstr ""
+
+#: templates/admin/entry-detail.php:61
+msgid "Answer"
+msgstr ""
+
+#: templates/admin/entry-detail.php:52
+msgid "Answers"
+msgstr ""
+
+#: templates/admin/settings.php:32
+msgid "Anti-spam protection"
+msgstr ""
+
+#: src/Frontend/Assets.php:109
+msgid "Anti-spam verification error."
+msgstr ""
+
+#: src/Integrations/TurnstileVerifier.php:62
+#: src/Integrations/RecaptchaVerifier.php:63
+#: src/Integrations/RecaptchaVerifier.php:72
+msgid "Anti-spam verification failed."
+msgstr ""
+
+#: src/Integrations/TurnstileVerifier.php:35
+#: src/Integrations/RecaptchaVerifier.php:36
+msgid "Anti-spam verification failed. Refresh the page and try again."
+msgstr ""
+
+#: src/Admin/EntryAdmin.php:189 src/Admin/EntryAdmin.php:204
+#: src/Admin/EntryPresenter.php:181 src/Admin/EntryListFilters.php:77
+msgid "Archived"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:237 src/FormBuilder/BuilderI18n.php:333
+msgid "Available merge tags:"
+msgstr ""
+
+#: templates/admin/settings.php:108
+msgid "Available tags:"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Buduj formularze drag & drop, zbieraj zgłoszenia i zarządzaj nimi w panelu "
+"WordPress."
+msgstr ""
+
+#: templates/admin/partials/form-shortcodes.php:56
+msgid "Button CSS classes"
+msgstr ""
+
+#: templates/admin/partials/form-shortcodes.php:52
+msgid "Button text"
+msgstr ""
+
+#: templates/admin/partials/form-shortcodes.php:48
+msgid "Button with modal"
+msgstr ""
+
+#: templates/admin/settings.php:134
+msgid ""
+"By default data remains in the database after uninstall. Check only for "
+"complete removal."
+msgstr ""
+
+#: templates/admin/settings.php:38
+msgid ""
+"Captcha is disabled. Honeypot and hourly rate limiting are active, but "
+"enabling reCAPTCHA or Turnstile is strongly recommended on production sites."
+msgstr ""
+
+#: templates/admin/settings.php:45
+msgid "Captcha provider"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:185
+msgid "Checkbox"
+msgstr ""
+
+#: templates/frontend/field.php:252 src/FormBuilder/BuilderI18n.php:93
+#: src/Frontend/Assets.php:101
+msgid "Choose file"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:88
+msgid "Choose file button text"
+msgstr ""
+
+#: templates/frontend/field.php:252 src/FormBuilder/BuilderI18n.php:94
+#: src/Frontend/Assets.php:102
+msgid "Choose files"
+msgstr ""
+
+#: templates/admin/settings.php:33
+msgid ""
+"Choose one captcha provider for all forms. Configure keys in the provider "
+"dashboard."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:200
+msgid ""
+"Choose whether to notify the administrator and/or the person who submitted "
+"the form."
+msgstr ""
+
+#: templates/frontend/form.php:40 src/Frontend/Assets.php:94
+msgid "Close"
+msgstr ""
+
+#: templates/admin/settings.php:50 templates/admin/settings.php:86
+msgid "Cloudflare Turnstile"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:156
+msgid "Comma-separated file extensions without dots, e.g. pdf,jpg,png."
+msgstr ""
+
+#: templates/admin/settings.php:101
+msgid ""
+"Configure where uploaded files from form fields are stored. Path is relative "
+"to the WordPress uploads directory."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:186
+msgid "Consent"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:97
+msgid "Consent text"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:158
+msgid ""
+"Consent text shown next to the checkbox. You can use HTML (e.g. br, a, "
+"strong) — see the hint below the field."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:98 src/FormBuilder/BuilderI18n.php:187
+msgid "Content"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:251
+msgid "Cooldown"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:266
+msgid "Cooldown message"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:230
+msgid "Copy a shortcode and paste it into a page or post to display the form."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:110
+#: templates/admin/partials/form-shortcodes.php:41
+#: templates/admin/partials/form-shortcodes.php:41
+#: templates/admin/partials/form-shortcodes.php:62
+#: templates/admin/partials/form-shortcodes.php:62
+#: templates/admin/partials/form-shortcodes.php:79
+#: templates/admin/partials/form-shortcodes.php:79
+msgid "Copy shortcode"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:112
+msgid "Could not copy shortcode. Please copy it manually."
+msgstr ""
+
+#: src/Export/CsvExporter.php:52
+msgid "Could not generate the CSV file."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:53
+msgid "Could not load the form. Refresh the page and try again."
+msgstr ""
+
+#. %s: error message
+#: src/Submission/EntrySaver.php:172
+#, php-format
+msgid "Could not save file: %s"
+msgstr ""
+
+#: src/FormBuilder/RestApi.php:190
+msgid "Could not save the form schema."
+msgstr ""
+
+#: src/Submission/SubmitRestApi.php:148
+msgid "Could not save the submission."
+msgstr ""
+
+#: src/Integrations/RecaptchaVerifier.php:55
+msgid "Could not verify reCAPTCHA. Please try again."
+msgstr ""
+
+#: src/Integrations/TurnstileVerifier.php:54
+msgid "Could not verify Turnstile. Please try again."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:65
+msgid "CSS class"
+msgstr ""
+
+#: templates/admin/partials/form-shortcodes.php:73
+msgid "CSS selector / class"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:236
+msgid ""
+"CSS selector of the element that opens the modal (e.g. .open-contact-form)."
+msgstr ""
+
+#: templates/admin/partials/form-shortcodes.php:69
+msgid "CSS trigger (modal)"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:228
+msgid ""
+"Custom folder for uploaded files from this form. Leave empty to use the "
+"global default from plugin settings."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:135
+msgid ""
+"Custom HTML id on the field wrapper. Leave empty for no id. Must be unique "
+"within the form."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:152
+msgid ""
+"Custom label on the file upload button. Leave empty for the default text."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:181
+msgid "Date"
+msgstr ""
+
+#: templates/admin/manager.php:45 src/Admin/EntryListFilters.php:96
+msgid "Date from"
+msgstr ""
+
+#: templates/admin/manager.php:49 src/Admin/EntryListFilters.php:103
+msgid "Date to"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:348
+msgid "Days"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:78
+msgid "Default"
+msgstr ""
+
+#: templates/admin/settings.php:104
+msgid "Default upload path"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:64
+msgid "Default value"
+msgstr ""
+
+#: templates/admin/settings.php:72
+msgid "Default: fast_forms_submit"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:223
+msgid "Delay in seconds before redirect starts."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:46
+msgid "Delete column"
+msgstr ""
+
+#: templates/admin/settings.php:128
+msgid "Delete data"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:47
+msgid "Delete field"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:45
+msgid "Delete row"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:108
+msgid "Delete this column?"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:109
+msgid "Delete this field?"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:107
+msgid "Delete this row?"
+msgstr ""
+
+#: templates/admin/settings.php:48
+msgid "Disabled"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:216
+msgid "Display a success message after the form is submitted successfully."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:153
+msgid ""
+"Display options or uploaded files vertically (stacked) or horizontally (in a "
+"row)."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:231
+msgid "Displays the full form directly on the page."
+msgstr ""
+
+#: templates/admin/manager.php:26
+msgid ""
+"Download submissions for the selected form as CSV (UTF-8, semicolon "
+"separator)."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:58
+msgid "Drag a field here"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:81
+msgid "Drag to reorder"
+msgstr ""
+
+#: src/PostTypes/FormPostType.php:47
+msgid "Edit form"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:282
+msgid "Effective path for this form:"
+msgstr ""
+
+#: src/Admin/EntryPresenter.php:156 src/FormBuilder/BuilderI18n.php:114
+#: src/FormBuilder/BuilderI18n.php:175
+msgid "Email"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:201
+msgid "Email address that receives new submission notifications."
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:42
+msgid "Email sending"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:214
+msgid "Enable redirect"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:304
+msgid "Enable submission fingerprint"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:99
+msgid "Enter information text for form visitors."
+msgstr ""
+
+#: src/Export/CsvExporter.php:107
+msgid "Entry ID"
+msgstr ""
+
+#: src/Admin/EntryFileDownload.php:156
+msgid "Error"
+msgstr ""
+
+#. %s: example uploads URL
+#: templates/admin/settings.php:116
+#, php-format
+msgid "Example: %s"
+msgstr ""
+
+#: templates/admin/manager.php:57
+msgid "Export CSV"
+msgstr ""
+
+#: templates/admin/manager.php:25
+msgid "Export submissions to CSV"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:183
+msgid "Extra content"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:192
+msgid "Extra content HTML"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:219
+msgid "Extra HTML content displayed after a successful submission."
+msgstr ""
+
+#. Name of the plugin
+msgid "Fast Forms"
+msgstr ""
+
+#: templates/admin/entry-detail.php:60
+msgid "Field"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:55
+msgid "Field settings"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:54
+msgid "Fields"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:188
+msgid "File"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:253
+msgid "File too large"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:275
+msgid "File upload path"
+msgstr ""
+
+#: templates/admin/settings.php:100
+msgid "File uploads"
+msgstr ""
+
+#: templates/admin/manager.php:52
+msgid ""
+"Filters by submission date (Submitted at). Leave empty to include all dates."
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:300
+msgid "Fingerprint"
+msgstr ""
+
+#: templates/admin/manager.php:34 src/Admin/EntryAdmin.php:50
+#: src/Admin/EntryPresenter.php:145 src/Admin/EntryListFilters.php:54
+#: src/PostTypes/FormPostType.php:43 src/FormBuilder/BuilderI18n.php:113
+msgid "Form"
+msgstr ""
+
+#: src/Frontend/Assets.php:110
+msgid "Form configuration error."
+msgstr ""
+
+#: src/Admin/EntryPresenter.php:146
+msgid "Form ID"
+msgstr ""
+
+#: templates/admin/form-builder.php:48
+msgid "Form layout is saved when you click “Save form” or “Update”."
+msgstr ""
+
+#: src/Admin/Menu.php:91 src/Admin/Menu.php:92 src/Admin/Menu.php:153
+msgid "Form manager"
+msgstr ""
+
+#: src/PostTypes/FormPostType.php:86
+msgid "Form name"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:56
+msgid "Form preview"
+msgstr ""
+
+#: src/Support/UploadPath.php:97
+msgid "form slug (post name)"
+msgstr ""
+
+#: src/Admin/Menu.php:74 src/Admin/Menu.php:75
+#: src/PostTypes/EntryPostType.php:46 src/PostTypes/EntryPostType.php:48
+msgid "Form submissions"
+msgstr ""
+
+#: src/Admin/Menu.php:55 src/Admin/Menu.php:56
+#: src/PostTypes/FormPostType.php:42 src/PostTypes/FormPostType.php:44
+msgid "Forms"
+msgstr ""
+
+#: src/Admin/EntryListFilters.php:98
+msgid "From"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:70
+msgid "From email"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:61
+msgid "From name"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:222
+msgid "Full URL to redirect to after submission."
+msgstr ""
+
+#. %s: uploads URL
+#: templates/admin/form-builder-settings.php:290
+#, php-format
+msgid "Full URL: %s"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:215
+msgid "Generic message shown when submission fails."
+msgstr ""
+
+#: templates/admin/settings.php:87
+msgid "Get keys from Cloudflare dashboard → Turnstile."
+msgstr ""
+
+#: templates/admin/settings.php:58
+msgid "Get keys from Google reCAPTCHA Admin."
+msgstr ""
+
+#: src/Admin/Menu.php:82 src/Admin/Menu.php:83 src/Admin/Menu.php:136
+msgid "Global settings"
+msgstr ""
+
+#: templates/admin/settings.php:49 templates/admin/settings.php:57
+msgid "Google reCAPTCHA v3"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:205
+msgid "Hide form after submit"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:102
+msgid "Hide label"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:161
+msgid ""
+"Hide the field label above the control. For consent, only the checkbox and "
+"consent text are shown."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:220
+msgid "Hide the form fields after successful submission."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:142
+msgid "Highest star value (default: 5)."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:132
+msgid "Hint text displayed inside the input before the user types."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:91
+msgid "Horizontal"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:347
+msgid "Hours"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:206
+msgid ""
+"HTML body for the administrator email. Use {all_fields} to include all "
+"answers."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:208
+msgid "HTML body for the user confirmation email."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:66
+msgid "HTML ID"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:130
+msgid ""
+"HTML name attribute used when saving submission data. Use lowercase letters, "
+"numbers, and underscores."
+msgstr ""
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://weblo.pl/"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:143
+msgid "Increment step for number or range inputs."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:159
+msgid ""
+"Information text shown to visitors. This field is display-only and is not "
+"saved in submissions."
+msgstr ""
+
+#: templates/admin/partials/form-shortcodes.php:35
+msgid "Inline form"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:249
+msgid "Invalid email"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:252
+msgid "Invalid file"
+msgstr ""
+
+#: src/Export/CsvExporter.php:37
+msgid "Invalid form."
+msgstr ""
+
+#: src/Admin/EntryFileDownload.php:156
+msgid "Invalid request."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:60
+msgid "Label"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:89
+msgid "Layout"
+msgstr ""
+
+#: templates/frontend/form.php:59
+msgid "Leave this field empty"
+msgstr ""
+
+#: templates/admin/form-builder.php:21 src/FormBuilder/BuilderI18n.php:52
+msgid "Loading form…"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:104
+msgid "Loading text"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:141
+msgid "Lowest star value (default: 1)."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:96
+msgid "Max. file size (KB)"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:68
+msgid "Max. length"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:86
+msgid "Max. number of files"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:85
+msgid "Max. selections"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:73
+msgid "Max. stars"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:71
+msgid "Max. value"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:140
+msgid "Maximum allowed numeric value."
+msgstr ""
+
+#. %s: maximum file size
+#: src/Support/FileUploadHint.php:41
+#, php-format
+msgid "Maximum file size: %s"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:137
+msgid "Maximum number of characters allowed for text fields."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:150
+msgid "Maximum number of files that can be uploaded. Leave empty for no limit."
+msgstr ""
+
+#. %d: maximum number of files
+#: src/Support/FileUploadHint.php:53
+msgid "Maximum number of files: %d"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:149
+msgid ""
+"Maximum number of options that can be selected. Leave empty for no limit."
+msgstr ""
+
+#: src/Frontend/Assets.php:100
+msgid "Maximum size:"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:157
+msgid "Maximum upload size in kilobytes (KB)."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:209
+msgid "Message shown when a required field is empty."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:226
+msgid "Message shown when submission is blocked by limits."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:210
+msgid "Message shown when the email format is invalid."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:214
+msgid "Message shown when the uploaded file exceeds the size limit."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:213
+msgid "Message shown when the uploaded file type is not allowed."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:212
+msgid "Message shown when the value is longer than allowed."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:211
+msgid "Message shown when the value is shorter than allowed."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:67
+msgid "Min. length"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:87
+msgid "Min. number of files"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:84
+msgid "Min. selections"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:72
+msgid "Min. stars"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:70
+msgid "Min. value"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:139
+msgid "Minimum allowed numeric value."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:136
+msgid "Minimum number of characters required for text fields."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:151
+msgid ""
+"Minimum number of files required when multiple upload is enabled. Leave "
+"empty to use the required flag only (minimum 1)."
+msgstr ""
+
+#. %d: minimum number of files
+#: src/Support/FileUploadHint.php:61
+msgid "Minimum number of files: %d"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:148
+msgid ""
+"Minimum number of options that must be selected. Used when multiple "
+"selection is enabled."
+msgstr ""
+
+#: templates/admin/settings.php:76
+msgid "Minimum score"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:225
+msgid "Minimum time before the same visitor can submit again."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:346
+msgid "Minutes"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:43
+msgid "Move row down"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:42
+msgid "Move row up"
+msgstr ""
+
+#: src/Admin/EntryPresenter.php:151
+msgid "Name"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:61
+msgid "Name attribute"
+msgstr ""
+
+#: src/Admin/EntryAdmin.php:187 src/Admin/EntryAdmin.php:202
+#: src/Admin/EntryPresenter.php:179 src/Admin/EntryListFilters.php:75
+msgid "New"
+msgstr ""
+
+#: src/PostTypes/FormPostType.php:48
+msgid "New form"
+msgstr ""
+
+#: src/PostTypes/EntryPostType.php:52
+msgid "New submission"
+msgstr ""
+
+#: src/FormBuilder/FormSettingsStorage.php:97
+msgid "New submission: {form:title}"
+msgstr ""
+
+#: src/Admin/EntryPresenter.php:116 src/Submission/MergeTagParser.php:172
+msgid "No"
+msgstr ""
+
+#: templates/frontend/field.php:304 src/Frontend/Assets.php:103
+msgid "No file selected"
+msgstr ""
+
+#: src/PostTypes/FormPostType.php:52
+msgid "No forms found in trash."
+msgstr ""
+
+#: src/PostTypes/FormPostType.php:51
+msgid "No forms found."
+msgstr ""
+
+#: templates/admin/entry-detail.php:55
+msgid "No saved answers."
+msgstr ""
+
+#: src/PostTypes/EntryPostType.php:56
+msgid "No submissions found in trash."
+msgstr ""
+
+#: src/PostTypes/EntryPostType.php:55
+msgid "No submissions found."
+msgstr ""
+
+#: src/Admin/EntryFileDownload.php:164 src/Admin/EntryFileDownload.php:170
+msgid "Not found"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:116
+msgid "Notifications"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:178
+msgid "Number"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:138
+msgid "Number of visible lines for a textarea field."
+msgstr ""
+
+#: src/Support/UploadPath.php:98
+msgid "numeric form ID"
+msgstr ""
+
+#: src/Submission/Validator.php:353
+msgid "Only one file can be uploaded."
+msgstr ""
+
+#: src/FormBuilder/FormSettingsStorage.php:232
+#: src/Frontend/ShortcodeAttributes.php:66 src/Frontend/Shortcode.php:34
+#: templates/admin/partials/form-shortcodes.php:53
+msgid "Open form"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:233
+msgid ""
+"Opens the form in a modal when a page element matching the CSS selector is "
+"clicked."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:76
+msgid "Option label"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:77
+msgid "Option value"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:100
+msgid "Optional heading (label)"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:160
+msgid "Optional heading displayed above the content when “Hide label” is off."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:75
+msgid "Options"
+msgstr ""
+
+#: src/Admin/EntryPresenter.php:161 src/FormBuilder/BuilderI18n.php:176
+msgid "Phone"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:63
+msgid "Placeholder"
+msgstr ""
+
+#: src/Submission/SubmitRestApi.php:129
+msgid "Please correct the errors in the form."
+msgstr ""
+
+#: src/FormBuilder/FormSettingsStorage.php:134 src/Submission/Validator.php:165
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: src/Submission/Validator.php:184
+msgid "Please enter a valid number."
+msgstr ""
+
+#: src/Submission/Validator.php:196
+msgid "Please enter a valid rating."
+msgstr ""
+
+#: src/Submission/Validator.php:169
+msgid "Please enter a valid URL."
+msgstr ""
+
+#: src/Frontend/Assets.php:96
+msgid "Please fill in the required fields."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:133
+msgid "Pre-filled value when the form is first displayed."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:145
+msgid ""
+"Pre-select this option when the form loads. For single choice fields only "
+"one default is allowed."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:184
+msgid "Radio buttons"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:179
+msgid "Range"
+msgstr ""
+
+#: src/Admin/EntryAdmin.php:188 src/Admin/EntryAdmin.php:203
+#: src/Admin/EntryPresenter.php:180 src/Admin/EntryListFilters.php:76
+msgid "Read"
+msgstr ""
+
+#: src/Admin/EntryPresenter.php:169 src/Export/CsvExporter.php:110
+msgid "reCAPTCHA score"
+msgstr ""
+
+#: templates/admin/settings.php:79
+msgid ""
+"Recommended: 0.5. Lower score blocks more submissions, higher allows more "
+"spam."
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:210
+msgid "Redirect"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:228
+msgid "Redirect delay (sec.)"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:221
+msgid "Redirect the visitor to another page after successful submission."
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:219
+msgid "Redirect URL"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:229
+msgid ""
+"Relative to wp-content/uploads/. Tags: {form_slug}, {form_id}, {form_title}. "
+"Files are stored in YYYY/MM/entry-ID subfolders."
+msgstr ""
+
+#: templates/frontend/field.php:253 src/Frontend/Assets.php:104
+msgid "Remove file"
+msgstr ""
+
+#: templates/admin/settings.php:132
+msgid "Remove forms, entries, and uploaded files when uninstalling the plugin"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:80
+msgid "Remove option"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:79
+msgid "Reply-To"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:204
+msgid ""
+"Reply-To address for admin notifications. Leave empty to use the submitter "
+"email when available."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:62
+msgid "Required"
+msgstr ""
+
+#: templates/admin/manager.php:34
+msgid "required"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:248
+msgid "Required field"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:41
+msgid "Row"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:69
+msgid "Rows (textarea)"
+msgstr ""
+
+#: src/Support/UploadPath.php:99
+msgid "sanitized form title"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:51
+msgid "Save failed. Please try again."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:48
+msgid "Save form"
+msgstr ""
+
+#: templates/admin/settings.php:139
+msgid "Save settings"
+msgstr ""
+
+#: templates/admin/entry-detail.php:34
+msgid "Save the entry to update the status (click “Update” above)."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:50
+msgid "Saved."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:49
+msgid "Saving..."
+msgstr ""
+
+#: src/Admin/EntryPresenter.php:172
+msgid "Schema version"
+msgstr ""
+
+#: src/Admin/EntryListFilters.php:112
+msgid "Search"
+msgstr ""
+
+#: src/PostTypes/FormPostType.php:50
+msgid "Search forms"
+msgstr ""
+
+#: src/PostTypes/EntryPostType.php:54
+msgid "Search submissions"
+msgstr ""
+
+#: src/Admin/EntryListFilters.php:114
+msgid "Search submissions…"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:345
+msgid "Seconds"
+msgstr ""
+
+#: templates/admin/settings.php:65 templates/admin/settings.php:94
+msgid "Secret key"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:183
+msgid "Select"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:57
+msgid "Select a field to edit its settings."
+msgstr ""
+
+#: templates/admin/manager.php:21
+msgid "Select a form before exporting."
+msgstr ""
+
+#. %d: minimum number of selections
+#: src/Submission/Validator.php:249 src/Frontend/Assets.php:107
+msgid "Select at least %d option(s)."
+msgstr ""
+
+#. %d: maximum number of selections
+#: src/Submission/Validator.php:257 src/Frontend/Assets.php:108
+msgid "Select at most %d option(s)."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:23
+msgid "Send"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:47
+msgid "Send confirmation to user"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:46
+msgid "Send to administrator"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:203
+msgid "Sender email address used in outgoing messages."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:202
+msgid "Sender name shown in outgoing emails."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:30
+msgid "Sending..."
+msgstr ""
+
+#: templates/frontend/form.php:75 src/Frontend/Assets.php:95
+msgid "Sending…"
+msgstr ""
+
+#: src/Admin/PluginLinks.php:36 src/FormBuilder/BuilderI18n.php:117
+msgid "Settings"
+msgstr ""
+
+#: templates/admin/settings.php:25
+msgid "Settings saved."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:111
+msgid "Shortcode copied to clipboard!"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:309
+#: src/FormBuilder/BuilderScreen.php:36
+msgid "Shortcodes"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:218
+msgid "Show additional HTML content below the success message."
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:187
+msgid "Show extra content after submit"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:169
+msgid "Show success message"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:92
+msgid "Show upload rules"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:232
+msgid "Shows a button that opens the form in a modal window."
+msgstr ""
+
+#: templates/admin/settings.php:61 templates/admin/settings.php:90
+msgid "Site key"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:180
+msgid "Star rating"
+msgstr ""
+
+#: src/Admin/EntryAdmin.php:52 src/Admin/EntryPresenter.php:165
+#: src/Admin/EntryListFilters.php:80 src/Export/CsvExporter.php:109
+msgid "Status"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:74
+msgid "Step"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:205
+msgid ""
+"Subject line for the administrator notification email. Merge tags are "
+"supported."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:207
+msgid "Subject line for the confirmation email sent to the user."
+msgstr ""
+
+#: src/Admin/EntryAdmin.php:45 src/PostTypes/EntryPostType.php:47
+msgid "Submission"
+msgstr ""
+
+#. 1: entry ID, 2: form title
+#: src/Submission/EntrySaver.php:92
+#, php-format
+msgid "Submission #%1$d — %2$s"
+msgstr ""
+
+#: src/FormBuilder/FormSettingsStorage.php:99
+msgid "Submission confirmation"
+msgstr ""
+
+#: src/Frontend/Assets.php:111
+msgid "Submission error."
+msgstr ""
+
+#: templates/admin/entry-detail.php:24 templates/admin/entry-detail.php:26
+msgid "Submission status"
+msgstr ""
+
+#. %s: form title
+#: src/Submission/EntrySaver.php:50
+#, php-format
+msgid "Submission — %s"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:189
+msgid "Submit button"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:103
+msgid "Submit button text"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:254
+msgid "Submit error"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:242
+msgid "Submit limits"
+msgstr ""
+
+#: src/Admin/EntryAdmin.php:51 src/Admin/EntryPresenter.php:164
+#: src/Export/CsvExporter.php:108
+msgid "Submitted at"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:165
+msgid "Success"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:174
+msgid "Success message"
+msgstr ""
+
+#: templates/admin/entry-detail.php:38
+msgid "Summary"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:174
+msgid "Text"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:234
+msgid "Text displayed on the button that opens the modal."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:163
+msgid "Text displayed on the button while the form is being submitted."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:162
+msgid "Text displayed on the submit button before sending."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:217
+msgid "Text of the success message shown on the frontend."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:182
+msgid "Textarea"
+msgstr ""
+
+#: src/FormBuilder/FormSettingsStorage.php:100
+msgid "Thank you for submitting the form."
+msgstr ""
+
+#: src/Admin/EntryFileDownload.php:164
+msgid "The file does not exist."
+msgstr ""
+
+#: src/Admin/EntryFileDownload.php:170
+msgid "The file is not available."
+msgstr ""
+
+#: src/FormBuilder/FormSettingsStorage.php:138
+#: src/Submission/EntrySaver.php:141 src/Submission/Validator.php:405
+#: src/Frontend/Assets.php:99
+msgid "The file is too large."
+msgstr ""
+
+#: src/FormBuilder/RestApi.php:127 src/Submission/EntrySaver.php:41
+msgid "The form does not exist."
+msgstr ""
+
+#: src/FormBuilder/RestApi.php:221
+msgid "The form has been saved."
+msgstr ""
+
+#: src/FormBuilder/FormSettingsStorage.php:173 src/Submission/Honeypot.php:58
+#: src/Submission/SubmitRestApi.php:173 src/Frontend/Assets.php:113
+msgid "The form has been submitted. Thank you!"
+msgstr ""
+
+#: src/Submission/SubmitRestApi.php:76
+msgid "The form is unavailable."
+msgstr ""
+
+#: src/Submission/Validator.php:207
+msgid "The value is too large."
+msgstr ""
+
+#: src/FormBuilder/FormSettingsStorage.php:136 src/Submission/Validator.php:179
+msgid "The value is too long."
+msgstr ""
+
+#: src/FormBuilder/FormSettingsStorage.php:135 src/Submission/Validator.php:174
+msgid "The value is too short."
+msgstr ""
+
+#: src/Submission/Validator.php:203
+msgid "The value is too small."
+msgstr ""
+
+#: src/FormBuilder/FormSettingsStorage.php:133 src/Submission/Validator.php:155
+#: src/Submission/Validator.php:243 src/Submission/Validator.php:347
+#: src/Frontend/Assets.php:97
+msgid "This field is required."
+msgstr ""
+
+#: src/FormBuilder/FormSettingsStorage.php:137 src/Submission/Validator.php:424
+#: src/Submission/Validator.php:434 src/Submission/Validator.php:438
+#: src/Frontend/Assets.php:98
+msgid "This file type is not allowed."
+msgstr ""
+
+#: src/Submission/SubmitLimiter.php:47
+msgid "This form has already been submitted."
+msgstr ""
+
+#: src/Admin/EntryListFilters.php:105
+msgid "To"
+msgstr ""
+
+#: src/Frontend/Assets.php:105
+msgid "Too many files selected."
+msgstr ""
+
+#: src/Submission/SubmitLimiter.php:178
+msgid "Too many submission attempts. Please try again later."
+msgstr ""
+
+#: templates/admin/settings.php:125
+msgid "Uninstall"
+msgstr ""
+
+#. %d: minimum number of files
+#: src/Submission/Validator.php:366
+msgid "Upload at least %d file(s)."
+msgstr ""
+
+#: src/Frontend/Assets.php:106
+msgid "Upload at least the minimum number of files."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:177
+msgid "URL"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:227
+msgid ""
+"Use a browser fingerprint (IP, user agent, email) for more accurate "
+"submission limits."
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:119
+msgid "User message"
+msgstr ""
+
+#: templates/admin/form-builder-settings.php:109
+msgid "User subject"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:115
+msgid "Validation"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:251
+msgid "Value too long"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:250
+msgid "Value too short"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:90
+msgid "Vertical"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:154
+msgid ""
+"Vertical keeps a dropdown. Horizontal displays options in a row (like radio "
+"buttons)."
+msgstr ""
+
+#: src/PostTypes/FormPostType.php:49
+msgid "View form"
+msgstr ""
+
+#: src/PostTypes/EntryPostType.php:51 src/PostTypes/EntryPostType.php:53
+msgid "View submission"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:129
+msgid "Visible field label shown to visitors on the frontend."
+msgstr ""
+
+#. Author of the plugin
+msgid "Weblo"
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:155
+msgid ""
+"When enabled, shows allowed file types and size limits below the upload "
+"button."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:131
+msgid ""
+"When enabled, the field must be filled in before the form can be submitted."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:146
+msgid ""
+"When enabled, visitors can select more than one option using checkboxes."
+msgstr ""
+
+#: src/FormBuilder/BuilderI18n.php:147
+msgid "When enabled, visitors can upload more than one file in this field."
+msgstr ""
+
+#: src/Admin/EntryPresenter.php:116 src/Submission/MergeTagParser.php:172
+msgid "Yes"
+msgstr ""
+
+#: src/FormBuilder/FormSettingsStorage.php:230
+#: src/Submission/SubmitLimiter.php:52
+msgid "You can submit this form again shortly."
+msgstr ""
+
+#. %d: maximum number of files
+#: src/Submission/Validator.php:374
+msgid "You can upload at most %d file(s)."
+msgstr ""
+
+#: src/Admin/Menu.php:130 src/Admin/Menu.php:147
+msgid "You do not have permission to view this page."
+msgstr ""
+
+#: src/Admin/EntryFileDownload.php:148 src/Admin/SettingsAdmin.php:41
+#: src/Admin/ManagerAdmin.php:56
+msgid "You do not have permission."
+msgstr ""
+
+#: src/Submission/SubmitRestApi.php:90
+msgid "Your session has expired. Refresh the page and try again."
+msgstr ""
+
+#: src/Integrations/RecaptchaVerifier.php:78
+msgid "Your submission was blocked as suspicious. Please try again later."
+msgstr ""
+
+#: templates/admin/manager.php:37
+msgid "— Select form —"
+msgstr ""
+
+#: templates/frontend/field.php:141
+msgid "— Select —"
+msgstr ""

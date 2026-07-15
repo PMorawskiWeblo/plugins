@@ -76,8 +76,19 @@ $manual_cleanup_days = isset($options['cleanup_interval']) ? (int) $options['cle
 							?>
                     </label>
                     <?php endforeach; ?>
+                    <p style="margin:12px 0 6px;">
+                        <label for="wpp_allowed_mime_custom">
+                            <?php esc_html_e('Additional formats (comma-separated)', 'woo-product-personalizer'); ?>
+                        </label>
+                    </p>
+                    <input type="text" id="wpp_allowed_mime_custom" name="wpp_settings[allowed_mime_custom]"
+                        value="<?php echo esc_attr($options['allowed_mime_custom'] ?? ''); ?>" class="large-text"
+                        placeholder="image/tiff, tif" />
                     <p class="description">
-                        <?php esc_html_e('Formats the storefront personalizer can load on the canvas (Konva). GIF/AVIF support depends on the customer’s browser; BMP is widely supported.', 'woo-product-personalizer'); ?>
+                        <?php esc_html_e('Optional MIME types (e.g. image/tiff) or extensions (e.g. tiff, heic). Image types only; invalid entries are ignored on save.', 'woo-product-personalizer'); ?>
+                    </p>
+                    <p class="description">
+                        <?php esc_html_e('Formats the storefront personalizer can load on the canvas (Konva). GIF/AVIF/HEIC support depends on the customer’s browser; BMP is widely supported.', 'woo-product-personalizer'); ?>
                     </p>
                 </td>
             </tr>
@@ -151,6 +162,17 @@ $manual_cleanup_days = isset($options['cleanup_interval']) ? (int) $options['cle
                         <?php esc_html_e('Use the default personalize button label on the add to cart button and open the modal on click', 'woo-product-personalizer'); ?></label>
                     <p class="description">
                         <?php esc_html_e('Hides the separate personalize button (including shortcode). The modal save button becomes active after required fields are filled and then acts as add to cart with the standard WooCommerce label.', 'woo-product-personalizer'); ?>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row"><?php esc_html_e('Defer personalizer loading', 'woo-product-personalizer'); ?></th>
+                <td>
+                    <label><input type="checkbox" name="wpp_settings[lazy_load_personalizer]" value="1"
+                            <?php checked(! empty($options['lazy_load_personalizer'])); ?> />
+                        <?php esc_html_e('Load Konva, canvas, and layout assets only after the personalize button is clicked', 'woo-product-personalizer'); ?></label>
+                    <p class="description">
+                        <?php esc_html_e('Improves initial product page speed. A loading indicator is shown while scripts and the editor initialize.', 'woo-product-personalizer'); ?>
                     </p>
                 </td>
             </tr>
