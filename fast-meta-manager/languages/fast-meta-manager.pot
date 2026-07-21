@@ -1,0 +1,287 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fast Meta Manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 09:14+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.4; wp-7.0; php-8.2.23\n"
+"X-Domain: fast-meta-manager"
+
+#. 1: post type slug, 2: post ID, 3: post title
+#: includes/Target/Custom_Post_Type_Target_Adapter.php:31
+#, php-format
+msgid "%1$s #%2$d: %3$s"
+msgstr ""
+
+#: includes/Target/Custom_Post_Type_Target_Adapter.php:34
+#: includes/Target/Product_Target_Adapter.php:23
+#: includes/Target/Post_Target_Adapter.php:42
+msgid "(no title)"
+msgstr ""
+
+#: includes/Render/Meta_Table_Renderer.php:29
+msgid "Actions"
+msgstr ""
+
+#: includes/Admin/Tools_Page.php:130 includes/Admin/Tools_Page.php:145
+msgid "Add metadata"
+msgstr ""
+
+#: includes/Admin/Settings_Manager.php:143
+msgid "Additional settings tabs"
+msgstr ""
+
+#: includes/Admin/Settings_Manager.php:130
+msgid "Allow editing protected/system keys (advanced)"
+msgstr ""
+
+#: includes/Render/Meta_Table_Renderer.php:69
+#: includes/Render/Meta_Table_Renderer.php:93
+msgid "Cancel"
+msgstr ""
+
+#: includes/Core/Target_Resolver.php:114
+msgid "comment"
+msgstr ""
+
+#: includes/Target/Comment_Target_Adapter.php:46
+#, php-format
+msgid "Comment #%1$d on post #%2$d"
+msgstr ""
+
+#: includes/Target/Comment_Target_Adapter.php:43
+msgid "Comment #%d"
+msgstr ""
+
+#: includes/Admin/Settings_Manager.php:116
+msgid "Default target"
+msgstr ""
+
+#: includes/Render/Meta_Table_Renderer.php:87
+#: includes/Render/Meta_Table_Renderer.php:100
+msgid "Delete"
+msgstr ""
+
+#: includes/Render/Meta_Table_Renderer.php:87
+#: includes/Render/Meta_Table_Renderer.php:256
+msgid "Delete this metadata key?"
+msgstr ""
+
+#: includes/Admin/Settings_Manager.php:111
+#: includes/Render/Meta_Table_Renderer.php:69
+#: includes/Render/Meta_Table_Renderer.php:69
+#: includes/Render/Meta_Table_Renderer.php:93
+#: includes/Render/Meta_Table_Renderer.php:93
+msgid "Edit"
+msgstr ""
+
+#: includes/Core/Plugin.php:111
+msgid "Editing protected/system meta keys is disabled in settings."
+msgstr ""
+
+#: includes/Admin/Settings_Manager.php:96
+msgid "Enabled targets"
+msgstr ""
+
+#. Name of the plugin
+#: includes/Admin/Tools_Page.php:32 includes/Admin/Tools_Page.php:33
+#: includes/Admin/Tools_Page.php:90 includes/Admin/Meta_Box.php:35
+msgid "Fast Meta Manager"
+msgstr ""
+
+#: includes/Admin/Settings_Manager.php:91 includes/Admin/Tools_Page.php:41
+#: includes/Admin/Tools_Page.php:42
+msgid "Fast Meta Manager Settings"
+msgstr ""
+
+#: includes/Admin/Tools_Page.php:117
+msgid "Filter meta keys"
+msgstr ""
+
+#: includes/Render/Meta_Table_Renderer.php:106
+msgid ""
+"Inline editing is disabled in the editor to avoid form conflicts. Use the "
+"full manager to edit metadata."
+msgstr ""
+
+#: includes/API/Save_Controller.php:51
+msgid "Insufficient permissions."
+msgstr ""
+
+#: includes/Admin/Tools_Page.php:121
+msgid "Load metadata"
+msgstr ""
+
+#: includes/Admin/Tools_Page.php:138 includes/Render/Meta_Table_Renderer.php:26
+msgid "Meta key"
+msgstr ""
+
+#: includes/Admin/Tools_Page.php:142
+msgid "Meta value"
+msgstr ""
+
+#: includes/Core/Plugin.php:108
+msgid "Metadata updated."
+msgstr ""
+
+#: includes/Admin/Settings_Manager.php:107
+msgid "Mode"
+msgstr ""
+
+#: includes/Render/Meta_Table_Renderer.php:35
+msgid "No metadata found for this object."
+msgstr ""
+
+#: includes/Admin/Tools_Page.php:113
+msgid "Object ID"
+msgstr ""
+
+#: includes/Admin/Meta_Box.php:104
+msgid "Open full manager"
+msgstr ""
+
+#: includes/Core/Plugin.php:109
+msgid "Operation failed. Please verify target, permissions and input value."
+msgstr ""
+
+#: includes/Core/Target_Resolver.php:105
+msgid "order"
+msgstr ""
+
+#: includes/Target/Order_Target_Adapter.php:81
+#, php-format
+msgid "Order #%1$d (%2$s)"
+msgstr ""
+
+#: includes/Target/Order_Target_Adapter.php:78
+msgid "Order #%d"
+msgstr ""
+
+#. Author of the plugin
+msgid "Piotr Morawski"
+msgstr ""
+
+#: includes/Core/Target_Resolver.php:99
+msgid "post"
+msgstr ""
+
+#: includes/Target/Post_Target_Adapter.php:42
+#, php-format
+msgid "Post #%1$d: %2$s"
+msgstr ""
+
+#. %s: custom post type label
+#. %s: custom post type slug
+#: includes/Core/Target_Resolver.php:123 includes/Core/Target_Resolver.php:130
+#, php-format
+msgid "post type: %s"
+msgstr ""
+
+#: includes/Core/Target_Resolver.php:102
+msgid "product"
+msgstr ""
+
+#: includes/Target/Product_Target_Adapter.php:23
+#, php-format
+msgid "Product #%1$d: %2$s"
+msgstr ""
+
+#: includes/Admin/Settings_Manager.php:126
+msgid "Protected/system meta keys"
+msgstr ""
+
+#: includes/Admin/Meta_Box.php:90
+msgid ""
+"Quick metadata view for current content. For advanced filtering, open Tools "
+"page."
+msgstr ""
+
+#: includes/Render/Meta_Table_Renderer.php:109
+msgid "Read only"
+msgstr ""
+
+#: includes/Render/Meta_Table_Renderer.php:76
+#: includes/Render/Meta_Table_Renderer.php:99
+msgid "Save"
+msgstr ""
+
+#: includes/Admin/Settings_Manager.php:138
+msgid "Save settings"
+msgstr ""
+
+#: includes/Core/Plugin.php:91 includes/Admin/Tools_Page.php:93
+msgid "Settings"
+msgstr ""
+
+#: includes/Admin/Tools_Page.php:101
+msgid "Target"
+msgstr ""
+
+#: includes/Core/Target_Resolver.php:108
+msgid "term"
+msgstr ""
+
+#: includes/Target/Term_Target_Adapter.php:46
+#, php-format
+msgid "Term #%1$d: %2$s"
+msgstr ""
+
+#: includes/Target/Term_Target_Adapter.php:43
+msgid "Term #%d"
+msgstr ""
+
+#: includes/Render/Meta_Table_Renderer.php:28
+msgid "Type"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Unified admin tool for viewing and editing metadata across WordPress object "
+"types."
+msgstr ""
+
+#: includes/Core/Target_Resolver.php:111
+msgid "user"
+msgstr ""
+
+#: includes/Target/User_Target_Adapter.php:46
+#, php-format
+msgid "User #%1$d: %2$s"
+msgstr ""
+
+#: includes/Target/User_Target_Adapter.php:43
+msgid "User #%d"
+msgstr ""
+
+#: includes/Render/Meta_Table_Renderer.php:27
+msgid "Value"
+msgstr ""
+
+#: includes/Admin/Settings_Manager.php:110
+msgid "View"
+msgstr ""
+
+#: includes/Admin/Settings_Manager.php:133
+msgid "When disabled, keys like _wp_* and _edit_lock are blocked for safety."
+msgstr ""
+
+#: includes/Admin/Tools_Page.php:52
+msgid "You are not allowed to access this page."
+msgstr ""
+
+#: includes/Admin/Settings_Manager.php:82
+msgid "You are not allowed to manage these settings."
+msgstr ""
+
+#: includes/Admin/Meta_Box.php:75
+msgid "You are not allowed to view metadata for this content."
+msgstr ""

@@ -1,0 +1,211 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Fast Meta Manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-21 09:14+0000\n"
+"PO-Revision-Date: 2026-07-21 09:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: Polski\n"
+"Language: pl_PL\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10 >= 2 && n%10<=4 "
+"&&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.4; wp-7.0; php-8.2.23\n"
+"X-Domain: fast-meta-manager"
+
+msgid "%1$s #%2$d: %3$s"
+msgstr "%1$s #%2$d: %3$s"
+
+msgid "(no title)"
+msgstr "(brak tytułu)"
+
+msgid "Actions"
+msgstr "Akcje"
+
+msgid "Add metadata"
+msgstr "Dodaj metadane"
+
+msgid "Additional settings tabs"
+msgstr "Dodatkowe zakładki ustawień"
+
+msgid "Allow editing protected/system keys (advanced)"
+msgstr "Zezwól na edycję chronionych/systemowych kluczy (zaawansowane)"
+
+msgid "Cancel"
+msgstr "Anuluj"
+
+msgid "comment"
+msgstr "komentarz"
+
+msgid "Comment #%1$d on post #%2$d"
+msgstr "Komentarz #%1$d do wpisu #%2$d"
+
+msgid "Comment #%d"
+msgstr "Komentarz #%d"
+
+msgid "Default target"
+msgstr "Domyślny cel"
+
+msgid "Delete"
+msgstr "Usuń"
+
+msgid "Delete this metadata key?"
+msgstr "Usunąć ten klucz metadanych?"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "Editing protected/system meta keys is disabled in settings."
+msgstr "Edycja chronionych/systemowych kluczy meta jest wyłączona w ustawieniach."
+
+msgid "Enabled targets"
+msgstr "Włączone cele"
+
+msgid "Fast Meta Manager"
+msgstr "Fast Meta Manager"
+
+msgid "Fast Meta Manager Settings"
+msgstr "Ustawienia Fast Meta Manager"
+
+msgid "Filter meta keys"
+msgstr "Filtruj klucze meta"
+
+msgid ""
+"Inline editing is disabled in the editor to avoid form conflicts. Use the "
+"full manager to edit metadata."
+msgstr ""
+"Edycja inline jest wyłączona w edytorze, aby uniknąć konfliktów formularzy. "
+"Użyj pełnego menedżera do edycji metadanych."
+
+msgid "Insufficient permissions."
+msgstr "Brak wystarczających uprawnień."
+
+msgid "Load metadata"
+msgstr "Wczytaj metadane"
+
+msgid "Meta key"
+msgstr "Klucz meta"
+
+msgid "Meta value"
+msgstr "Wartość meta"
+
+msgid "Metadata updated."
+msgstr "Zaktualizowano metadane."
+
+msgid "Mode"
+msgstr "Tryb"
+
+msgid "No metadata found for this object."
+msgstr "Nie znaleziono metadanych dla tego obiektu."
+
+msgid "Object ID"
+msgstr "ID obiektu"
+
+msgid "Open full manager"
+msgstr "Otwórz pełny menedżer"
+
+msgid "Operation failed. Please verify target, permissions and input value."
+msgstr "Operacja nie powiodła się. Sprawdź cel, uprawnienia i wprowadzoną wartość."
+
+msgid "order"
+msgstr "zamówienie"
+
+msgid "Order #%1$d (%2$s)"
+msgstr "Zamówienie #%1$d (%2$s)"
+
+msgid "Order #%d"
+msgstr "Zamówienie #%d"
+
+msgid "Piotr Morawski"
+msgstr "Piotr Morawski"
+
+msgid "post"
+msgstr "wpis"
+
+msgid "Post #%1$d: %2$s"
+msgstr "Wpis #%1$d: %2$s"
+
+msgid "post type: %s"
+msgstr "typ wpisu: %s"
+
+msgid "product"
+msgstr "produkt"
+
+msgid "Product #%1$d: %2$s"
+msgstr "Produkt #%1$d: %2$s"
+
+msgid "Protected/system meta keys"
+msgstr "Chronione/systemowe klucze meta"
+
+msgid ""
+"Quick metadata view for current content. For advanced filtering, open Tools "
+"page."
+msgstr ""
+"Szybki podgląd metadanych dla bieżącej treści. Aby użyć zaawansowanego "
+"filtrowania, otwórz stronę Narzędzia."
+
+msgid "Read only"
+msgstr "Tylko do odczytu"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Save settings"
+msgstr "Zapisz ustawienia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Target"
+msgstr "Cel"
+
+msgid "term"
+msgstr "termin"
+
+msgid "Term #%1$d: %2$s"
+msgstr "Termin #%1$d: %2$s"
+
+msgid "Term #%d"
+msgstr "Termin #%d"
+
+msgid "Type"
+msgstr "Typ"
+
+msgid ""
+"Unified admin tool for viewing and editing metadata across WordPress object "
+"types."
+msgstr ""
+"Ujednolicone narzędzie administracyjne do przeglądania i edycji metadanych "
+"różnych typów obiektów WordPressa."
+
+msgid "user"
+msgstr "użytkownik"
+
+msgid "User #%1$d: %2$s"
+msgstr "Użytkownik #%1$d: %2$s"
+
+msgid "User #%d"
+msgstr "Użytkownik #%d"
+
+msgid "Value"
+msgstr "Wartość"
+
+msgid "View"
+msgstr "Podgląd"
+
+msgid "When disabled, keys like _wp_* and _edit_lock are blocked for safety."
+msgstr ""
+"Gdy wyłączone, klucze takie jak _wp_* i _edit_lock są blokowane dla "
+"bezpieczeństwa."
+
+msgid "You are not allowed to access this page."
+msgstr "Nie masz uprawnień do dostępu do tej strony."
+
+msgid "You are not allowed to manage these settings."
+msgstr "Nie masz uprawnień do zarządzania tymi ustawieniami."
+
+msgid "You are not allowed to view metadata for this content."
+msgstr "Nie masz uprawnień do podglądu metadanych dla tej treści."

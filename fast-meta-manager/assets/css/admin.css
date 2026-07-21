@@ -1,0 +1,74 @@
+.ffmm-meta-table {
+	table-layout: fixed;
+	width: 100%;
+}
+
+.ffmm-meta-table th,
+.ffmm-meta-table td {
+	vertical-align: top;
+}
+
+.ffmm-meta-key {
+	display: block;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	word-break: break-word;
+}
+
+.ffmm-meta-value-preview {
+	margin: 0;
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+	word-break: break-word;
+	max-height: 140px;
+	overflow: auto;
+}
+
+.ffmm-actions-cell {
+	min-width: 320px;
+}
+
+.ffmm-edit-form {
+	margin: 0 0 8px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.ffmm-edit-panel[hidden],
+.ffmm-save-delete-row[hidden] {
+	display: none !important;
+}
+
+.ffmm-meta-input {
+	width: 100%;
+	min-width: 260px;
+}
+
+.ffmm-action-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.ffmm-delete-form {
+	margin: 0;
+}
+
+.ffmm-delete-button {
+	background: #d63638;
+	border-color: #d63638;
+	color: #fff;
+}
+
+.ffmm-delete-button:hover,
+.ffmm-delete-button:focus {
+	background: #b32d2e;
+	border-color: #b32d2e;
+	color: #fff;
+}
+
+.ffmm-target-label {
+	display: inline-block;
+	margin-right: 10px;
+}
